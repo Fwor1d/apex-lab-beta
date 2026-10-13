@@ -1,0 +1,5 @@
+© OpenStreetMap contributors. Data licensed under ODbL-1.0.
+https://www.openstreetmap.org/copyright
+https://opendatacommons.org/licenses/odbl/1-0/
+Source: https://github.com/tobi/track-atlas/blob/8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d/tracks/portimao/raw/layers/gp.geojson
+Outline only, no third-party corner metadata imported. Original coordinates retained. Reference geometry is approximate, not an independently validated LMU racing trajectory. No elevation, width, yaw or Lap Dist registration.

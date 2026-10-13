@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <title>APEX LAB — каталог трасс</title>
+    <link rel="stylesheet" href="../assets/shell.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="icon" href="../assets/icon.svg" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">К карте</a>
+    <header class="platform-header">
+      <a class="platform-brand" href="../">APEX LAB</a>
+      <nav class="platform-nav" aria-label="Разделы APEX LAB">
+        <a href="../">Главная</a><a href="../telemetry/">Телеметрия</a
+        ><a href="../mobile/">Тренажёр</a><a href="../reports/">Отчёты</a
+        ><a href="./" aria-current="page">Трассы</a>
+      </nav>
+    </header>
+    <main id="main">
+      <h1>Трассы LMU</h1>
+      <p>
+        Справочная геометрия с открытыми источниками. Карта не является
+        записанной траекторией или эталонной линией.
+      </p>
+      <p id="coverage" class="muted"></p>
+      <div class="selectors">
+        <label>Трасса<select id="atlas-track"></select></label
+        ><label>Конфигурация<select id="atlas-layout"></select></label
+        ><label
+          >Вид<select id="atlas-mode">
+            <option value="full2d">Полная 2D-карта</option>
+            <option value="full3d">Плоская 3D-проекция · без высоты</option>
+          </select></label
+        >
+      </div>
+      <div class="actions">
+        <button id="atlas-in">Приблизить</button
+        ><button id="atlas-out">Отдалить</button
+        ><button id="atlas-fit">Вписать трассу</button
+        ><a href="../mobile/">Исходный тренажёр Sebring</a>
+      </div>
+      <p id="atlas-status" role="status">Загрузка каталога…</p>
+      <canvas
+        id="atlas-canvas"
+        role="img"
+        aria-label="Справочный контур; перетаскивание для перемещения; + и − для масштаба, 0 для сброса"
+        hidden
+      ></canvas>
+      <p class="muted">
+        © OpenStreetMap contributors · ODbL. USDA/USGS NAIP: public domain там,
+        где указан этот источник.
+      </p>
+      <p class="muted">
+        Перемещение: протяжка или стрелки. Обычное колесо прокручивает страницу;
+        Ctrl + колесо изменяет масштаб карты.
+      </p>
+      <p>
+        <a id="atlas-download" hidden download
+          >Скачать исходную геометрию (ODbL)</a
+        >
+        ·
+        <a href="../telemetry/data/atlas/manifest.json" download
+          >Скачать каталог 1.0</a
+        >
+      </p>
+      <details>
+        <summary>Источник, метрика и ограничения</summary>
+        <pre id="atlas-details"></pre>
+        <p>
+          <a href="../telemetry/data/atlas/NOTICE.txt"
+            >Атрибуция OSM/ODbL, USDA/USGS и условия повторного использования</a
+          >
+        </p>
+      </details>
+      <p>
+        Телеметрические позиции, ghost-машины и heatmap доступны только после
+        независимой регистрации геометрии. В текущем atlas такая регистрация не
+        подтверждена. Проверенные поворотные метки остаются в исходном учебном
+        Sebring; приблизительные метки других источников не перенесены.
+      </p>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

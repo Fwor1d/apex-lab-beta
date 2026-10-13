@@ -1,0 +1,674 @@
+{
+  "appVersion": "0.8.0-beta.1",
+  "deploymentBase": "/apex-lab-beta/",
+  "assets": {
+    ".nojekyll": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "app.js": {
+      "bytes": 2185,
+      "sha256": "c7354fac29f1b443fceaddd7c01c6a56a1b8968658bbfdf6bf247ec340dd4d91"
+    },
+    "assets/icon-192.png": {
+      "bytes": 9471,
+      "sha256": "4c8bb6e0fdb40b892cec8320a52aa0b14239f542f9e8c4999f457d946eb1ba23"
+    },
+    "assets/icon-512.png": {
+      "bytes": 47526,
+      "sha256": "f9bceac55757a8e56b41b4e57ab3c61c9f233b23664ef49c5bcd69e50ae85013"
+    },
+    "assets/icon.svg": {
+      "bytes": 216,
+      "sha256": "3e517003380e01f7188420f9733a81eb2fe5b1087234898212d0fe56915c6b07"
+    },
+    "assets/shell.css": {
+      "bytes": 1865,
+      "sha256": "23f448630eafcd426715e68fc37eeb7934a27eedb3bf40c103a622af2dc6a491"
+    },
+    "atlas/app.js": {
+      "bytes": 4294,
+      "sha256": "b3062660e8e3cc74f167e00f56624d36058ef5a1e79fd619892ecff427c40d63"
+    },
+    "atlas/index.html": {
+      "bytes": 4320,
+      "sha256": "b4477e6bb0470ce6e9b73fa7a90131daeaedf621265d7c406d6af65756043538"
+    },
+    "atlas/styles.css": {
+      "bytes": 1810,
+      "sha256": "4af207610b6f1af44dc3e8aa2a2dbf2325c26f1b72ac37d0ccc3952f2e950aee"
+    },
+    "index.html": {
+      "bytes": 5811,
+      "sha256": "a193ec0864066594f61db0cbec7fbaadd9efdc22d75ba6936d47bf2634453401"
+    },
+    "manifest.webmanifest": {
+      "bytes": 416,
+      "sha256": "2366d89fa8276b0d56f6d97b8b414504f1a286a31d68a5f28c085f945d707edf"
+    },
+    "mobile/assets/icon-180.png": {
+      "bytes": 4075,
+      "sha256": "ce0911ea0fe3c4bcea3df34c7f6d91546c7cfbc8bddd28eaf1639003bdf501fe"
+    },
+    "mobile/assets/icon-192.png": {
+      "bytes": 9471,
+      "sha256": "4c8bb6e0fdb40b892cec8320a52aa0b14239f542f9e8c4999f457d946eb1ba23"
+    },
+    "mobile/assets/icon-512.png": {
+      "bytes": 47526,
+      "sha256": "f9bceac55757a8e56b41b4e57ab3c61c9f233b23664ef49c5bcd69e50ae85013"
+    },
+    "mobile/assets/icon.svg": {
+      "bytes": 216,
+      "sha256": "3e517003380e01f7188420f9733a81eb2fe5b1087234898212d0fe56915c6b07"
+    },
+    "mobile/assets/shell.css": {
+      "bytes": 1865,
+      "sha256": "23f448630eafcd426715e68fc37eeb7934a27eedb3bf40c103a622af2dc6a491"
+    },
+    "mobile/data/circuits.js": {
+      "bytes": 6466,
+      "sha256": "79b26f48106f1061dba233fe73dcc7e488743ccc2900df5bbfca783be2c37220"
+    },
+    "mobile/data/sebring/NOTICE.txt": {
+      "bytes": 3253,
+      "sha256": "2ac54cdde66c54a638da4fe64d365c314bfe5037efc5d9ea4a9a8e54a02e82ef"
+    },
+    "mobile/data/sebring/centerline.geojson": {
+      "bytes": 10299,
+      "sha256": "a881644b3dc3fa46d82527c5c6db22bdcb0b1f863106281bdf647a14818f5541"
+    },
+    "mobile/data/sebring/centerline.js": {
+      "bytes": 8559,
+      "sha256": "362b9547923236a435acbd57d9d7518052d4adf443778d7a1554fb6d5e826c86"
+    },
+    "mobile/index.html": {
+      "bytes": 26103,
+      "sha256": "b8d7f799142fba40076f788a9918d7949e0c0e63db2b3c93d4db4f501306ea5c"
+    },
+    "mobile/manifest.webmanifest": {
+      "bytes": 657,
+      "sha256": "9aa0b0ef3fd1a5ae1dd61f4b2c6cbbf6a05e8deb01a14f4be79e383f1cf3b3a5"
+    },
+    "mobile/src/app.js": {
+      "bytes": 23740,
+      "sha256": "4ed18fc027f5c7e316d30e185037d51b8d1549b9f88ad5f95928f299220ef6d4"
+    },
+    "mobile/src/bootstrap.js": {
+      "bytes": 555,
+      "sha256": "6d0ca52dd42d5ac234756265e63b6a3075f76e8aeee8c8069a44da9b8ff5bc1f"
+    },
+    "mobile/src/charts.js": {
+      "bytes": 5390,
+      "sha256": "26ea6ab3bb7296ea6f584fc2058fed1c636c6a2eec8f026aacce78c8764d5c8c"
+    },
+    "mobile/src/driving-profile.js": {
+      "bytes": 9914,
+      "sha256": "1ca97be3f2f5e6693ae8c158ad8b4791157e8bc6b56428f3763fa0df2d09f1b9"
+    },
+    "mobile/src/full-track-view.js": {
+      "bytes": 9038,
+      "sha256": "da27d2da64f48fdad324d88f0cf721bea4ec2b8495ec3e03adb4c2648770f6d2"
+    },
+    "mobile/src/geometry.js": {
+      "bytes": 6746,
+      "sha256": "81404806847916cccf3c7b79da2fdfc039539812364e0828745d4dfdcb2c621f"
+    },
+    "mobile/src/model.js": {
+      "bytes": 10227,
+      "sha256": "67e512252ca912ebf1acb8a398f8dadd60defa660972766a9d72939b1bedc24f"
+    },
+    "mobile/src/offline.js": {
+      "bytes": 3271,
+      "sha256": "235be0e18ac9edba26bfa35954b424f9bdac7240b8f82e9433adcb47e70bf84e"
+    },
+    "mobile/src/profile-contract.js": {
+      "bytes": 7535,
+      "sha256": "7d8921ec9ae460f3521716aef80e7358371b63aaa7b5d14f5dda0acfd8fd7879"
+    },
+    "mobile/src/renderer.js": {
+      "bytes": 12582,
+      "sha256": "f7655509c0d52486bd99e1b0dd06e87935d472264ae2ffae3a37946c43978330"
+    },
+    "mobile/src/state.js": {
+      "bytes": 3720,
+      "sha256": "5079566409afb02b7c065431c628f934c847bd2ede5dc3ea5cca815824d976c6"
+    },
+    "mobile/src/track-map.js": {
+      "bytes": 2748,
+      "sha256": "55afa1a9c7b9a95a9578402ed7a7f115951316993e08a76eaa7ac7eaba42324c"
+    },
+    "mobile/src/trajectory.js": {
+      "bytes": 1073,
+      "sha256": "f4e9dd92be43f25a05503c1cf3be2ab331a2bdbbb12d74bbb6394e2313013ccb"
+    },
+    "mobile/src/visual-tokens.js": {
+      "bytes": 403,
+      "sha256": "a19203da5fce52158d77a13d3318a5ed62a057f21449cc07024903674a34f89b"
+    },
+    "mobile/src/workspace-ui.js": {
+      "bytes": 21210,
+      "sha256": "b62ea37b0df88094479f8a21bdebdf766acc888d267adbd7afaeb0b08ec86b1d"
+    },
+    "mobile/styles.css": {
+      "bytes": 32756,
+      "sha256": "8cb327a92e191a48da5d12ec05e2a3e73cd35d69d0216eca7475dbdb582df3d4"
+    },
+    "mobile/sw.js": {
+      "bytes": 2561,
+      "sha256": "e081074335af2fe3e177e342c8ca0ead5012fd506ab498cae46d0578750a4d9c"
+    },
+    "mobile/workspace.css": {
+      "bytes": 29189,
+      "sha256": "56521ba9f485668c126b210c4c8f587fdfdbae0ce0d6965d600f92a381697e86"
+    },
+    "reports/assets/chevron.svg": {
+      "bytes": 209,
+      "sha256": "b7c0dabffad2655ef0f0aa61457100e0137a35e8ac8e8b9f9b5d9c9d591772b1"
+    },
+    "reports/assets/icon-192.png": {
+      "bytes": 9471,
+      "sha256": "4c8bb6e0fdb40b892cec8320a52aa0b14239f542f9e8c4999f457d946eb1ba23"
+    },
+    "reports/assets/icon-512.png": {
+      "bytes": 47526,
+      "sha256": "f9bceac55757a8e56b41b4e57ab3c61c9f233b23664ef49c5bcd69e50ae85013"
+    },
+    "reports/assets/icon.svg": {
+      "bytes": 216,
+      "sha256": "3e517003380e01f7188420f9733a81eb2fe5b1087234898212d0fe56915c6b07"
+    },
+    "reports/assets/shell.css": {
+      "bytes": 1621,
+      "sha256": "4b7eb9d9d9a219a0d08d07b9d038e89d0d7e2422dc6ce3a20fb52125971174c6"
+    },
+    "reports/data/algarve/NOTICE.txt": {
+      "bytes": 502,
+      "sha256": "be1968eaec9c635864f711461f195056f9c9b36a5d10dc623030a6cfd92671b0"
+    },
+    "reports/data/algarve/gp-outline.geojson": {
+      "bytes": 14573,
+      "sha256": "c81e36cd0fb92521a5b9f0294a43eccc9c807c58d7260e68a6e97d12c77e0462"
+    },
+    "reports/data/atlas/NOTICE.txt": {
+      "bytes": 648,
+      "sha256": "3b2b542f1c05c04b09e37edd73c5764332021f3689deff5f906bdd24b62f1054"
+    },
+    "reports/data/atlas/UPSTREAM-ATTRIBUTION.txt": {
+      "bytes": 1092,
+      "sha256": "e4652ec5e895386b434a55497af60d3e5e57f5270ec4814b92dc01834b5b68a9"
+    },
+    "reports/data/atlas/bahrain.geojson": {
+      "bytes": 8131,
+      "sha256": "3ceb27a2e78d8a833794c47c871f089b5c7501246fe3d556d360da731275d680"
+    },
+    "reports/data/atlas/barcelona.geojson": {
+      "bytes": 6688,
+      "sha256": "f9e0b599b47dc8c75a0820f233851d785bac10e15e4bcc0cecd0419999f186c1"
+    },
+    "reports/data/atlas/cota.geojson": {
+      "bytes": 25052,
+      "sha256": "c2fccb7fdd79ecb14d58a927d76e17b3970940426e3c5139de92e7f726b54ce6"
+    },
+    "reports/data/atlas/daytona.geojson": {
+      "bytes": 22517,
+      "sha256": "7433ca32524584eeaf388368fa385c86736367620ba1c3937e6207de6ce8f344"
+    },
+    "reports/data/atlas/fuji.geojson": {
+      "bytes": 7772,
+      "sha256": "5488512ddb6aefe66e79f39c6a1fa12107e40a7d6192a00813e5dbb155f2fcd0"
+    },
+    "reports/data/atlas/imola.geojson": {
+      "bytes": 7627,
+      "sha256": "293a1c177efc9f4b5b9e5015ef7307b3ce4798c8a47cb076e84b3eeef7d0c4ac"
+    },
+    "reports/data/atlas/interlagos.geojson": {
+      "bytes": 8549,
+      "sha256": "a7200742aa7ff5cbd187685845af70428629f677cc1a3bb95b06c5026d828d0f"
+    },
+    "reports/data/atlas/laguna-seca.geojson": {
+      "bytes": 17194,
+      "sha256": "9f0fa4e11452fa0b6a04990ed9348e893d0c300b7935457c904a19da21b0bf09"
+    },
+    "reports/data/atlas/le-mans.geojson": {
+      "bytes": 56175,
+      "sha256": "47ed837c99778ef6f8b31c4a7004e9ab070398886ba2b75ed749bf49c6032886"
+    },
+    "reports/data/atlas/long-beach.geojson": {
+      "bytes": 18500,
+      "sha256": "170e03f2f07d080624bc85f7e76f428f8d0ee7845308ce99cce0ba2ebfae7ece"
+    },
+    "reports/data/atlas/lusail.geojson": {
+      "bytes": 8708,
+      "sha256": "980623eb2cee3a641afff16fe7cae93b27b18ec350cfd1b5c8287d919c0b033a"
+    },
+    "reports/data/atlas/manifest.json": {
+      "bytes": 89437,
+      "sha256": "a89f2ebd7d42f3815de49bfbd2af1998ac9d72382cbdc628a95f184340db1d8a"
+    },
+    "reports/data/atlas/monza.geojson": {
+      "bytes": 9222,
+      "sha256": "ac5f3627ab8aeb9480e0908821255b637c3f1772f68895e8bd495e20ffa8cc6c"
+    },
+    "reports/data/atlas/paul-ricard.geojson": {
+      "bytes": 10421,
+      "sha256": "13c1ef12535dc449eef3b88f6646bd2f51c0c6894b517cbb2fb9486f3b5e9de0"
+    },
+    "reports/data/atlas/road-atlanta.geojson": {
+      "bytes": 15921,
+      "sha256": "c9871549b96c066aaa87e0c8bdd443767e0c21455fa01a6b5f7d3122ecbff5e4"
+    },
+    "reports/data/atlas/sebring.geojson": {
+      "bytes": 7660,
+      "sha256": "7e8638239dc5a1ee78b05a1ce5fa88993fe3fafd8062da1404ac9b329b3f43b7"
+    },
+    "reports/data/atlas/silverstone.geojson": {
+      "bytes": 13250,
+      "sha256": "0e2e30a3e28c41358514de9c46d8d9f5229e00ec2e57e3025d1fda38cf41108e"
+    },
+    "reports/data/atlas/spa.geojson": {
+      "bytes": 9812,
+      "sha256": "99c99335c7f3e782995cf378961d8b95e35fdbc5e6d31af47985c7942b403f1c"
+    },
+    "reports/data/atlas/track-atlas-MIT.txt": {
+      "bytes": 1209,
+      "sha256": "bf9d967160c489e046c36a686167f8cf576aa93c6e378d293473eedc36ba9651"
+    },
+    "reports/index.html": {
+      "bytes": 14672,
+      "sha256": "aa922f086cc118cfbb81863423539877c5f8069126ac9b87cab27a3b309cb5d4"
+    },
+    "reports/manifest.webmanifest": {
+      "bytes": 436,
+      "sha256": "9a533a22b601a5d2ca4282ce0b97e1f7815dfce6d8cdd3cb35a191280850e72d"
+    },
+    "reports/src/analysis.js": {
+      "bytes": 16590,
+      "sha256": "27046826d9e402f9c44d6f3656bc481260e8d8f9d42e06b0e95a868ea173a06f"
+    },
+    "reports/src/app.js": {
+      "bytes": 26600,
+      "sha256": "1761cbbd5a14c453a7366989f951f8a6a98b5caaad95898b59458ee96ea078ee"
+    },
+    "reports/src/atlas.js": {
+      "bytes": 3755,
+      "sha256": "c14b2637efceb75876d81d1fef06449b4c9b42e9573101f2346d65fc8fbd32cf"
+    },
+    "reports/src/charts.js": {
+      "bytes": 7924,
+      "sha256": "82053e6220caa1816093cfc1a0434d90dc33509e5f7c2948add97a17c128dff4"
+    },
+    "reports/src/client.js": {
+      "bytes": 2133,
+      "sha256": "4f98fc74c57764c73f3f5d38574cfd9cb0dd396b28898501f353bf9c782a731b"
+    },
+    "reports/src/coaching-engine.js": {
+      "bytes": 27308,
+      "sha256": "bf36e46612edca4c834211203bd5c62fc4f7c970f2567b9e12f1f575293ab715"
+    },
+    "reports/src/coaching-view.js": {
+      "bytes": 15021,
+      "sha256": "0b423377ba2e1f8393ecfde474eabb0ae90de1910f16b8cbe12cf7351b9b7b05"
+    },
+    "reports/src/engine.js": {
+      "bytes": 3722,
+      "sha256": "c78e6db93a7b45564fdf69e253c4a1d0fc078873e2793c3c637148f5c0d81092"
+    },
+    "reports/src/findings-view.js": {
+      "bytes": 5079,
+      "sha256": "8342fc55314908664730d1acfc61396019cf855e04d8e542d0be23d6d57dfcf2"
+    },
+    "reports/src/hash-entry.js": {
+      "bytes": 36,
+      "sha256": "5fc5914a5b7aa3aecaf8d63c470312d33c7beb5ddef7120653b61cf3cde1ec7e"
+    },
+    "reports/src/importer.js": {
+      "bytes": 25150,
+      "sha256": "4052b8a65d96e45e8bc2bf20dfc548282dd985b5adecc66abb56f52290e9c1f9"
+    },
+    "reports/src/map-context.js": {
+      "bytes": 2395,
+      "sha256": "0734acdd75a0fefd190c1cdc223c365241d878afd47294447934fecd8520fab5"
+    },
+    "reports/src/offline.js": {
+      "bytes": 7702,
+      "sha256": "109913ed035a8a8832b506a49a63585592cc633ecc9a19e0f497b5532f3239a3"
+    },
+    "reports/src/report-worker.js": {
+      "bytes": 1956,
+      "sha256": "7ad600236c541dd8409d72e726fa29b87948875a1ee00609dc22722418b6cbd7"
+    },
+    "reports/src/report.js": {
+      "bytes": 13632,
+      "sha256": "0775e48b04e64c71304bbba7ce2eb2d4c105d11249b6213998795e4e4e9b57c2"
+    },
+    "reports/src/worker.js": {
+      "bytes": 6605,
+      "sha256": "a2d781ae3944c1cb77ba3709714265aeeb5dc85629c751252e1bb230cb169587"
+    },
+    "reports/styles.css": {
+      "bytes": 8698,
+      "sha256": "fbaac0712fbaabf9f082561d891d2bb3ed47eb645cd0d62d431236ee03376571"
+    },
+    "reports/sw.js": {
+      "bytes": 5252,
+      "sha256": "3cd3d81656ad2ab249711c08fc37266cecb2de09b06abd8ca95fb5b15bc02c69"
+    },
+    "styles.css": {
+      "bytes": 2497,
+      "sha256": "87d7ddfc8404aec44ebd78925eda40d301d54994e5ede5c2ce34e81fabc25d7a"
+    },
+    "sw.js": {
+      "bytes": 1332,
+      "sha256": "51ce2aab24a512090d0ce6016c2b047d0cc40f983cc80aa2895777ee46486361"
+    },
+    "telemetry/assets/chevron.svg": {
+      "bytes": 209,
+      "sha256": "b7c0dabffad2655ef0f0aa61457100e0137a35e8ac8e8b9f9b5d9c9d591772b1"
+    },
+    "telemetry/assets/icon-192.png": {
+      "bytes": 9471,
+      "sha256": "4c8bb6e0fdb40b892cec8320a52aa0b14239f542f9e8c4999f457d946eb1ba23"
+    },
+    "telemetry/assets/icon-512.png": {
+      "bytes": 47526,
+      "sha256": "f9bceac55757a8e56b41b4e57ab3c61c9f233b23664ef49c5bcd69e50ae85013"
+    },
+    "telemetry/assets/icon.svg": {
+      "bytes": 216,
+      "sha256": "3e517003380e01f7188420f9733a81eb2fe5b1087234898212d0fe56915c6b07"
+    },
+    "telemetry/assets/shell.css": {
+      "bytes": 1621,
+      "sha256": "4b7eb9d9d9a219a0d08d07b9d038e89d0d7e2422dc6ce3a20fb52125971174c6"
+    },
+    "telemetry/data/algarve/NOTICE.txt": {
+      "bytes": 502,
+      "sha256": "be1968eaec9c635864f711461f195056f9c9b36a5d10dc623030a6cfd92671b0"
+    },
+    "telemetry/data/algarve/gp-outline.geojson": {
+      "bytes": 14573,
+      "sha256": "c81e36cd0fb92521a5b9f0294a43eccc9c807c58d7260e68a6e97d12c77e0462"
+    },
+    "telemetry/data/atlas/NOTICE.txt": {
+      "bytes": 648,
+      "sha256": "3b2b542f1c05c04b09e37edd73c5764332021f3689deff5f906bdd24b62f1054"
+    },
+    "telemetry/data/atlas/UPSTREAM-ATTRIBUTION.txt": {
+      "bytes": 1092,
+      "sha256": "e4652ec5e895386b434a55497af60d3e5e57f5270ec4814b92dc01834b5b68a9"
+    },
+    "telemetry/data/atlas/bahrain.geojson": {
+      "bytes": 8131,
+      "sha256": "3ceb27a2e78d8a833794c47c871f089b5c7501246fe3d556d360da731275d680"
+    },
+    "telemetry/data/atlas/barcelona.geojson": {
+      "bytes": 6688,
+      "sha256": "f9e0b599b47dc8c75a0820f233851d785bac10e15e4bcc0cecd0419999f186c1"
+    },
+    "telemetry/data/atlas/cota.geojson": {
+      "bytes": 25052,
+      "sha256": "c2fccb7fdd79ecb14d58a927d76e17b3970940426e3c5139de92e7f726b54ce6"
+    },
+    "telemetry/data/atlas/daytona.geojson": {
+      "bytes": 22517,
+      "sha256": "7433ca32524584eeaf388368fa385c86736367620ba1c3937e6207de6ce8f344"
+    },
+    "telemetry/data/atlas/fuji.geojson": {
+      "bytes": 7772,
+      "sha256": "5488512ddb6aefe66e79f39c6a1fa12107e40a7d6192a00813e5dbb155f2fcd0"
+    },
+    "telemetry/data/atlas/imola.geojson": {
+      "bytes": 7627,
+      "sha256": "293a1c177efc9f4b5b9e5015ef7307b3ce4798c8a47cb076e84b3eeef7d0c4ac"
+    },
+    "telemetry/data/atlas/interlagos.geojson": {
+      "bytes": 8549,
+      "sha256": "a7200742aa7ff5cbd187685845af70428629f677cc1a3bb95b06c5026d828d0f"
+    },
+    "telemetry/data/atlas/laguna-seca.geojson": {
+      "bytes": 17194,
+      "sha256": "9f0fa4e11452fa0b6a04990ed9348e893d0c300b7935457c904a19da21b0bf09"
+    },
+    "telemetry/data/atlas/le-mans.geojson": {
+      "bytes": 56175,
+      "sha256": "47ed837c99778ef6f8b31c4a7004e9ab070398886ba2b75ed749bf49c6032886"
+    },
+    "telemetry/data/atlas/long-beach.geojson": {
+      "bytes": 18500,
+      "sha256": "170e03f2f07d080624bc85f7e76f428f8d0ee7845308ce99cce0ba2ebfae7ece"
+    },
+    "telemetry/data/atlas/lusail.geojson": {
+      "bytes": 8708,
+      "sha256": "980623eb2cee3a641afff16fe7cae93b27b18ec350cfd1b5c8287d919c0b033a"
+    },
+    "telemetry/data/atlas/manifest.json": {
+      "bytes": 89437,
+      "sha256": "a89f2ebd7d42f3815de49bfbd2af1998ac9d72382cbdc628a95f184340db1d8a"
+    },
+    "telemetry/data/atlas/monza.geojson": {
+      "bytes": 9222,
+      "sha256": "ac5f3627ab8aeb9480e0908821255b637c3f1772f68895e8bd495e20ffa8cc6c"
+    },
+    "telemetry/data/atlas/paul-ricard.geojson": {
+      "bytes": 10421,
+      "sha256": "13c1ef12535dc449eef3b88f6646bd2f51c0c6894b517cbb2fb9486f3b5e9de0"
+    },
+    "telemetry/data/atlas/road-atlanta.geojson": {
+      "bytes": 15921,
+      "sha256": "c9871549b96c066aaa87e0c8bdd443767e0c21455fa01a6b5f7d3122ecbff5e4"
+    },
+    "telemetry/data/atlas/sebring.geojson": {
+      "bytes": 7660,
+      "sha256": "7e8638239dc5a1ee78b05a1ce5fa88993fe3fafd8062da1404ac9b329b3f43b7"
+    },
+    "telemetry/data/atlas/silverstone.geojson": {
+      "bytes": 13250,
+      "sha256": "0e2e30a3e28c41358514de9c46d8d9f5229e00ec2e57e3025d1fda38cf41108e"
+    },
+    "telemetry/data/atlas/spa.geojson": {
+      "bytes": 9812,
+      "sha256": "99c99335c7f3e782995cf378961d8b95e35fdbc5e6d31af47985c7942b403f1c"
+    },
+    "telemetry/data/atlas/track-atlas-MIT.txt": {
+      "bytes": 1209,
+      "sha256": "bf9d967160c489e046c36a686167f8cf576aa93c6e378d293473eedc36ba9651"
+    },
+    "telemetry/index.html": {
+      "bytes": 14833,
+      "sha256": "87f6b778d80c0c39c8afbfffce186d56f8960b613dcc67e9c294a5bc66c05afd"
+    },
+    "telemetry/licenses/README.md": {
+      "bytes": 1873,
+      "sha256": "f7c087ec08542b89b5c691cb7ec5788562b2857b8db7a0b8eb11e6cea2130d62"
+    },
+    "telemetry/licenses/apache-arrow-LICENSE.txt": {
+      "bytes": 110423,
+      "sha256": "229dbe29e4e1344e95172f6f3a4277ec0da5c7850cb03897c47f3a24b7afce08"
+    },
+    "telemetry/licenses/apache-arrow-NOTICE.txt": {
+      "bytes": 3032,
+      "sha256": "b62ea242642d3a18f1e29b0c1fe082415a6943fe158ee22b48cff3762f354009"
+    },
+    "telemetry/licenses/duckdb-wasm-MIT.txt": {
+      "bytes": 1072,
+      "sha256": "7e17fd31249fa875cb3b1c5e05c6c3e99b75509f6a2804ca176c217834de1dcb"
+    },
+    "telemetry/licenses/flatbuffers-LICENSE.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "telemetry/licenses/js-sha256-MIT.txt": {
+      "bytes": 1076,
+      "sha256": "0fea2e0cffe72ee17adc25c42e55daf5c87c6e9cd5b3362ee4213890bda0ee7c"
+    },
+    "telemetry/licenses/json-bignum-LICENSE.txt": {
+      "bytes": 1065,
+      "sha256": "99abe8adce6d4fca0a75c2215d32036dc4c482198eeef0510955153980a97961"
+    },
+    "telemetry/licenses/swc-helpers-LICENSE.txt": {
+      "bytes": 10836,
+      "sha256": "d96eba1f1881334d50ffc144276dfa98e147a415e7c591ecdfcb81680361dc91"
+    },
+    "telemetry/licenses/tslib-CopyrightNotice.txt": {
+      "bytes": 806,
+      "sha256": "f8b254da37e08406ccb6c9d8321ef584d1b22f44f9e12d5436325aeea0e6d60b"
+    },
+    "telemetry/licenses/tslib-LICENSE.txt": {
+      "bytes": 645,
+      "sha256": "5989359645911c04a140c49d89496b13feca980bbf36d2250a12d3b9d06250d6"
+    },
+    "telemetry/manifest.webmanifest": {
+      "bytes": 441,
+      "sha256": "64095436648ed008edeabcd7ccce75f2df5feb044326e789c565e73a234596aa"
+    },
+    "telemetry/src/analysis.js": {
+      "bytes": 16590,
+      "sha256": "27046826d9e402f9c44d6f3656bc481260e8d8f9d42e06b0e95a868ea173a06f"
+    },
+    "telemetry/src/app.js": {
+      "bytes": 26600,
+      "sha256": "1761cbbd5a14c453a7366989f951f8a6a98b5caaad95898b59458ee96ea078ee"
+    },
+    "telemetry/src/atlas.js": {
+      "bytes": 3755,
+      "sha256": "c14b2637efceb75876d81d1fef06449b4c9b42e9573101f2346d65fc8fbd32cf"
+    },
+    "telemetry/src/charts.js": {
+      "bytes": 7924,
+      "sha256": "82053e6220caa1816093cfc1a0434d90dc33509e5f7c2948add97a17c128dff4"
+    },
+    "telemetry/src/client.js": {
+      "bytes": 2133,
+      "sha256": "4f98fc74c57764c73f3f5d38574cfd9cb0dd396b28898501f353bf9c782a731b"
+    },
+    "telemetry/src/coaching-engine.js": {
+      "bytes": 27308,
+      "sha256": "bf36e46612edca4c834211203bd5c62fc4f7c970f2567b9e12f1f575293ab715"
+    },
+    "telemetry/src/coaching-view.js": {
+      "bytes": 15021,
+      "sha256": "0b423377ba2e1f8393ecfde474eabb0ae90de1910f16b8cbe12cf7351b9b7b05"
+    },
+    "telemetry/src/engine.js": {
+      "bytes": 3696,
+      "sha256": "02633d6816813a05aba2ae7121f87d168ff81c5fc28af9f563ed965f15524a2b"
+    },
+    "telemetry/src/findings-view.js": {
+      "bytes": 5079,
+      "sha256": "8342fc55314908664730d1acfc61396019cf855e04d8e542d0be23d6d57dfcf2"
+    },
+    "telemetry/src/hash-entry.js": {
+      "bytes": 36,
+      "sha256": "5fc5914a5b7aa3aecaf8d63c470312d33c7beb5ddef7120653b61cf3cde1ec7e"
+    },
+    "telemetry/src/importer.js": {
+      "bytes": 25150,
+      "sha256": "4052b8a65d96e45e8bc2bf20dfc548282dd985b5adecc66abb56f52290e9c1f9"
+    },
+    "telemetry/src/map-context.js": {
+      "bytes": 2395,
+      "sha256": "0734acdd75a0fefd190c1cdc223c365241d878afd47294447934fecd8520fab5"
+    },
+    "telemetry/src/offline.js": {
+      "bytes": 7702,
+      "sha256": "109913ed035a8a8832b506a49a63585592cc633ecc9a19e0f497b5532f3239a3"
+    },
+    "telemetry/src/report-worker.js": {
+      "bytes": 1956,
+      "sha256": "7ad600236c541dd8409d72e726fa29b87948875a1ee00609dc22722418b6cbd7"
+    },
+    "telemetry/src/report.js": {
+      "bytes": 13632,
+      "sha256": "0775e48b04e64c71304bbba7ce2eb2d4c105d11249b6213998795e4e4e9b57c2"
+    },
+    "telemetry/src/worker.js": {
+      "bytes": 6592,
+      "sha256": "e4b5e93e8c2d7e8b8d446a2a1357d12d3c780db354e289e00913ff2d64b68b8d"
+    },
+    "telemetry/styles.css": {
+      "bytes": 8698,
+      "sha256": "fbaac0712fbaabf9f082561d891d2bb3ed47eb645cd0d62d431236ee03376571"
+    },
+    "telemetry/sw.js": {
+      "bytes": 5252,
+      "sha256": "3cd3d81656ad2ab249711c08fc37266cecb2de09b06abd8ca95fb5b15bc02c69"
+    },
+    "telemetry/vendor/LICENSE-arrow.txt": {
+      "bytes": 110423,
+      "sha256": "229dbe29e4e1344e95172f6f3a4277ec0da5c7850cb03897c47f3a24b7afce08"
+    },
+    "telemetry/vendor/duckdb-browser-eh.worker.js": {
+      "bytes": 772759,
+      "sha256": "f8ab72b6b90b3ad83077d47426d4a99d5d9a4c7e07cba1a2be37d655adc7c1ab"
+    },
+    "telemetry/vendor/duckdb-browser-mvp.worker.js": {
+      "bytes": 844644,
+      "sha256": "b0387027f174e2b60c2d5cfa31cecca9b89d8a9762346b6449a784cd1c4dde3c"
+    },
+    "telemetry/vendor/duckdb-eh.wasm": {
+      "bytes": 34242586,
+      "sha256": "4c221bfa59c11f24dbd750e70c90b9252eca6eec5633936e6a2ec766e55fd879"
+    },
+    "telemetry/vendor/duckdb-mvp.wasm": {
+      "bytes": 39362651,
+      "sha256": "45d72a81fba8e57693d890da837c7041310e385e75619a8559839b15388dfe97"
+    },
+    "telemetry/vendor/duckdb.js": {
+      "bytes": 227413,
+      "sha256": "69c7e67b41c57e9092ccf9eb609d94c12f917a41949863a56edeaabfeb4b6c62"
+    },
+    "telemetry/vendor/hash.js": {
+      "bytes": 9782,
+      "sha256": "26fa61267cc1e7ac5ebf73134b2dba8aace15a4b7776adb124a47eb97e93f84e"
+    },
+    "telemetry/vendor/hash.js.LEGAL.txt": {
+      "bytes": 259,
+      "sha256": "18bc355571a22f307e5bf6ff1acb99b8023238a84aef36d58dbd51b07418ef20"
+    },
+    "telemetry/vendor/licenses/README.md": {
+      "bytes": 1873,
+      "sha256": "f7c087ec08542b89b5c691cb7ec5788562b2857b8db7a0b8eb11e6cea2130d62"
+    },
+    "telemetry/vendor/licenses/apache-arrow-LICENSE.txt": {
+      "bytes": 110423,
+      "sha256": "229dbe29e4e1344e95172f6f3a4277ec0da5c7850cb03897c47f3a24b7afce08"
+    },
+    "telemetry/vendor/licenses/apache-arrow-NOTICE.txt": {
+      "bytes": 3032,
+      "sha256": "b62ea242642d3a18f1e29b0c1fe082415a6943fe158ee22b48cff3762f354009"
+    },
+    "telemetry/vendor/licenses/duckdb-wasm-MIT.txt": {
+      "bytes": 1072,
+      "sha256": "7e17fd31249fa875cb3b1c5e05c6c3e99b75509f6a2804ca176c217834de1dcb"
+    },
+    "telemetry/vendor/licenses/flatbuffers-LICENSE.txt": {
+      "bytes": 11358,
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+    },
+    "telemetry/vendor/licenses/js-sha256-MIT.txt": {
+      "bytes": 1076,
+      "sha256": "0fea2e0cffe72ee17adc25c42e55daf5c87c6e9cd5b3362ee4213890bda0ee7c"
+    },
+    "telemetry/vendor/licenses/json-bignum-LICENSE.txt": {
+      "bytes": 1065,
+      "sha256": "99abe8adce6d4fca0a75c2215d32036dc4c482198eeef0510955153980a97961"
+    },
+    "telemetry/vendor/licenses/swc-helpers-LICENSE.txt": {
+      "bytes": 10836,
+      "sha256": "d96eba1f1881334d50ffc144276dfa98e147a415e7c591ecdfcb81680361dc91"
+    },
+    "telemetry/vendor/licenses/tslib-CopyrightNotice.txt": {
+      "bytes": 806,
+      "sha256": "f8b254da37e08406ccb6c9d8321ef584d1b22f44f9e12d5436325aeea0e6d60b"
+    },
+    "telemetry/vendor/licenses/tslib-LICENSE.txt": {
+      "bytes": 645,
+      "sha256": "5989359645911c04a140c49d89496b13feca980bbf36d2250a12d3b9d06250d6"
+    },
+    "telemetry/vendor/manifest.json": {
+      "bytes": 920,
+      "sha256": "3b140896cc66bd8f31b39450eb257943a248acfc9b601b8b422260608135a4c3"
+    }
+  }
+}

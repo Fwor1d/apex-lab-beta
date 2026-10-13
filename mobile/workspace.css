@@ -1,0 +1,1328 @@
+/* Phase 6.6: task-first shell shared by Trainer, Telemetry and Reports. */
+.racing-workspace {
+  --work-accent: var(--lime, var(--accent));
+  --work-panel: var(--panel, var(--surface));
+  font-size: 14px;
+}
+.racing-workspace .app-shell {
+  max-width: none;
+  padding: 0 14px;
+}
+.racing-workspace .app-header,
+.racing-workspace .platform-header {
+  padding: 8px 14px;
+  min-height: 64px;
+  margin: 0;
+  border-bottom: 1px solid var(--line);
+}
+.racing-workspace .brand small,
+.racing-workspace .car-summary,
+.racing-workspace .section-heading {
+  display: none;
+}
+.racing-workspace .platform-route-nav {
+  padding: 4px 0;
+  margin: 0;
+}
+.racing-workspace .platform-nav a {
+  min-height: 44px;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+.racing-workspace main {
+  max-width: none;
+  padding: 12px 0;
+  margin: 0;
+}
+.racing-workspace .workspace-title {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+}
+.racing-workspace .workspace,
+.racing-workspace .analysis-workspace {
+  display: grid;
+  grid-template-columns: 240px minmax(360px, 1fr) 300px;
+  gap: 12px;
+  align-items: start;
+}
+.racing-workspace .panel,
+.racing-workspace .work-controls,
+.racing-workspace .work-insights {
+  border-radius: 12px;
+  padding: 14px;
+  background: var(--work-panel);
+  border: 1px solid var(--line);
+  min-width: 0;
+}
+.racing-workspace .work-controls,
+.racing-workspace .work-insights {
+  max-height: calc(100dvh - 138px);
+  overflow: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--line) transparent;
+}
+.racing-workspace .work-center {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.racing-workspace .work-center > .panel {
+  margin: 0;
+}
+.racing-workspace h2 {
+  margin: 0 0 10px;
+  font-size: 20px;
+  line-height: 1.3;
+}
+.racing-workspace h3 {
+  margin: 8px 0;
+  font-size: 16px;
+}
+.racing-workspace p,
+.racing-workspace .caption,
+.racing-workspace .settings-note {
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 8px 0;
+}
+.racing-workspace .workspace-provenance {
+  color: var(--muted);
+  font-size: 14px;
+}
+.racing-workspace .circuit-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.racing-workspace .circuit-panel > h2,
+.racing-workspace .circuit-panel > .caption,
+.racing-workspace .circuit-note {
+  display: none;
+}
+.racing-workspace .circuit-picker {
+  margin: 0;
+  min-height: 44px;
+  padding: 8px 10px;
+  font-size: 14px;
+}
+.racing-workspace .corner-cards {
+  gap: 6px;
+  margin: 0;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.racing-workspace .corner-card {
+  padding: 8px;
+  min-height: 68px;
+}
+.racing-workspace .corner-card strong {
+  font-size: 22px;
+}
+.racing-workspace .corner-card span {
+  font-size: 12px;
+}
+.racing-workspace .corner-card svg {
+  height: 25px;
+}
+.racing-workspace .track-map {
+  height: auto;
+}
+.racing-workspace .track-map svg {
+  height: 140px;
+  width: 100%;
+}
+.racing-workspace .scene-heading {
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 8px;
+}
+.racing-workspace #cornerSubtitle {
+  display: none;
+}
+.racing-workspace #cornerTitle {
+  font-size: 26px;
+  margin: 0;
+}
+.racing-workspace .scene-tools {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 6px 0;
+}
+.racing-workspace .visualization-controls,
+.racing-workspace .camera-tabs {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 4px;
+}
+.racing-workspace .visualization-controls button,
+.racing-workspace .camera-tabs button {
+  font-size: 12px;
+  padding: 8px;
+  min-height: 44px;
+  min-width: 44px;
+  border-radius: 6px;
+}
+.racing-workspace .viewport {
+  height: clamp(290px, 38dvh, 430px);
+  min-height: 290px;
+  margin: 6px 0;
+  border-radius: 8px;
+}
+.racing-workspace .viewport canvas {
+  width: 100%;
+  height: 100%;
+}
+.racing-workspace .scene-legend {
+  gap: 10px;
+  padding: 4px 0;
+  font-size: 12px;
+  margin: 4px 0;
+}
+.racing-workspace .scene-status {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 8px;
+  font-size: 12px;
+}
+.racing-workspace .scene-status a {
+  font-size: 12px;
+  min-height: 44px;
+}
+.racing-workspace .marker-actions {
+  gap: 6px;
+  margin: 8px 0;
+}
+.racing-workspace .marker-actions button {
+  min-height: 44px;
+  padding: 8px;
+}
+.racing-workspace .marker-actions small {
+  font-size: 11px;
+}
+.racing-workspace .playback {
+  margin: 8px 0;
+  gap: 10px;
+}
+.racing-workspace .play-button {
+  width: 44px;
+  height: 44px;
+}
+.racing-workspace .playback-footer {
+  margin: 4px 0;
+  font-size: 12px;
+}
+.racing-workspace .signals-panel h2 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+.racing-workspace .signal-values {
+  margin: 0 0 8px;
+  padding: 0;
+}
+.racing-workspace .signal-values strong {
+  font-size: 22px;
+}
+.racing-workspace .grip-status {
+  margin: 6px 0;
+}
+.racing-workspace .chart-row {
+  grid-template-columns: 68px minmax(0, 1fr);
+  margin: 0;
+}
+.racing-workspace .chart-row svg {
+  height: 80px;
+}
+.racing-workspace .chart-row > span {
+  font-size: 12px;
+}
+.racing-workspace .chart-caption {
+  margin: 8px 0;
+}
+.racing-workspace .settings-panel {
+  padding: 0;
+  border: 0;
+  background: transparent;
+}
+.racing-workspace .settings-panel h2 {
+  font-size: 16px;
+}
+.racing-workspace .settings-panel > .return-to-scene {
+  display: none;
+}
+.racing-workspace .parameters fieldset {
+  padding: 8px 0;
+  border: 0;
+  margin: 0;
+}
+.racing-workspace .parameter {
+  margin: 8px 0;
+}
+.racing-workspace .parameter-heading {
+  font-size: 12px;
+}
+.racing-workspace .parameter-ticks {
+  font-size: 11px;
+}
+.racing-workspace #parameters input {
+  min-height: 44px;
+}
+.racing-workspace .model-results {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 8px 0;
+}
+.racing-workspace .model-results strong {
+  font-size: 20px;
+}
+.racing-workspace .model-results span {
+  font-size: 12px;
+}
+.racing-workspace .evaluation-panel,
+.racing-workspace #coach {
+  padding: 14px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  margin: 10px 0 0;
+  border-top: 1px solid var(--line);
+}
+.racing-workspace .coach-copy {
+  padding: 0;
+}
+.racing-workspace .evaluation-check {
+  padding: 10px 0;
+  margin: 0;
+}
+.racing-workspace .evaluation-check strong {
+  font-size: 14px;
+}
+.racing-workspace .workspace-disclosure {
+  margin: 8px 0;
+  border-top: 1px solid var(--line);
+  padding-top: 6px;
+}
+.racing-workspace summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.racing-workspace summary::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-right: 1.5px solid currentColor;
+  border-bottom: 1.5px solid currentColor;
+  transform: rotate(45deg);
+  margin-left: auto;
+}
+.racing-workspace details[open] > summary::after {
+  transform: rotate(225deg);
+}
+.racing-workspace .workspace-layers {
+  position: relative;
+  margin-left: auto;
+}
+.racing-workspace .workspace-layers > summary {
+  border: 1px solid var(--line);
+  padding: 0 12px;
+  border-radius: 8px;
+  color: var(--work-accent);
+  min-width: 88px;
+}
+.racing-workspace .layer-options {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  width: 285px;
+  max-width: calc(100vw - 40px);
+  max-height: 480px;
+  overflow: auto;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--work-panel);
+  z-index: 12;
+  box-shadow: 0 12px 26px #0005;
+}
+.racing-workspace .workspace-check {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.racing-workspace .workspace-check input {
+  accent-color: var(--work-accent);
+  width: 20px;
+  height: 20px;
+  flex: none;
+}
+.racing-workspace .workspace-check:has(input:disabled) {
+  color: var(--muted);
+  cursor: default;
+}
+.racing-workspace .layer-heatmap p {
+  font-size: 14px;
+}
+.racing-workspace .workspace-toolbar {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.racing-workspace .workspace-button {
+  min-height: 44px;
+  border: 1px solid var(--line);
+  background: var(--work-panel);
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+.racing-workspace .workspace-button[aria-pressed="true"],
+.racing-workspace .workspace-button[aria-expanded="false"] {
+  border-color: var(--work-accent);
+  color: var(--work-accent);
+}
+.racing-workspace .panel-collapsed {
+  display: none !important;
+}
+.racing-workspace.toggleControls-collapsed .workspace,
+.racing-workspace.toggleControls-collapsed .analysis-workspace {
+  grid-template-columns: minmax(360px, 1fr) 300px;
+}
+.racing-workspace.toggleInsights-collapsed .workspace,
+.racing-workspace.toggleInsights-collapsed .analysis-workspace {
+  grid-template-columns: 240px minmax(360px, 1fr);
+}
+.racing-workspace.toggleControls-collapsed.toggleInsights-collapsed .workspace,
+.racing-workspace.toggleControls-collapsed.toggleInsights-collapsed
+  .analysis-workspace,
+.racing-workspace.workspace-expanded .workspace,
+.racing-workspace.workspace-expanded .analysis-workspace {
+  grid-template-columns: minmax(0, 1fr);
+}
+.racing-workspace.workspace-expanded .work-controls,
+.racing-workspace.workspace-expanded .work-insights {
+  display: none;
+}
+.racing-workspace footer {
+  padding: 12px;
+  font-size: 12px;
+  margin: 12px 0;
+}
+.analyzer-workspace main {
+  padding: 12px 14px;
+}
+.analyzer-workspace .workspace-titlebar {
+  margin: 0 0 10px;
+}
+.analyzer-workspace .workspace-titlebar h1 {
+  font-size: 20px;
+  margin: 0;
+}
+.analyzer-workspace .workspace-titlebar p {
+  display: none;
+}
+.analyzer-workspace .file-bar {
+  gap: 8px;
+  margin: 8px 0;
+}
+.analyzer-workspace .file-button,
+.analyzer-workspace .file-bar button {
+  width: 100%;
+  font-size: 14px;
+}
+.analyzer-workspace #status {
+  font-size: 14px;
+  color: var(--muted);
+}
+.analyzer-workspace #recording h2 {
+  font-size: 16px;
+}
+.analyzer-workspace #session-select,
+.analyzer-workspace .compare-controls select {
+  width: 100%;
+  min-width: 0;
+  height: 44px;
+  appearance: none;
+  padding: 8px;
+}
+.analyzer-workspace .compare-controls {
+  display: block;
+  margin: 0;
+}
+.analyzer-workspace .compare-controls label {
+  margin: 8px 0;
+  display: block;
+  font-size: 12px;
+}
+.analyzer-workspace .compare-controls button {
+  width: 100%;
+}
+.analyzer-workspace .export-controls {
+  gap: 8px;
+}
+.analyzer-workspace .export-controls button {
+  width: 100%;
+}
+.analyzer-workspace #analysis {
+  padding: 0;
+  border: 0;
+}
+.analyzer-workspace #analysis > h2 {
+  display: none;
+}
+.analyzer-workspace #analysis > .muted {
+  display: none;
+}
+.analyzer-workspace .lap-comparison {
+  display: block;
+  padding: 0;
+}
+.analyzer-workspace .lap-comparison p {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--line);
+}
+.analyzer-workspace .lap-comparison strong {
+  font-size: 20px;
+}
+.analyzer-workspace #comparison-summary {
+  font-size: 14px;
+}
+.analyzer-workspace #findings {
+  list-style: none;
+  padding: 0;
+}
+.analyzer-workspace #findings > li {
+  margin: 0;
+  padding: 12px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  border-bottom: 1px solid var(--line);
+}
+.analyzer-workspace #findings > li h3 {
+  font-size: 16px;
+}
+.analyzer-workspace #findings p {
+  font-size: 14px;
+}
+.analyzer-workspace .central-map {
+  background: var(--work-panel);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+  margin: 0 0 12px !important;
+}
+.analyzer-workspace .central-map > summary {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.analyzer-workspace #telemetry-map {
+  height: 340px;
+  margin: 10px 0;
+}
+.analyzer-workspace #telemetry-map-note {
+  font-size: 14px;
+}
+.analyzer-workspace .distance-overview {
+  min-height: 180px;
+  padding: 10px 0;
+}
+.analyzer-workspace #distanceStrip {
+  display: block;
+  width: 100%;
+  height: 140px;
+}
+.analyzer-workspace #distanceStrip text {
+  fill: var(--muted);
+  font-size: 14px;
+}
+.analyzer-workspace .distance-baseline {
+  stroke: var(--muted);
+  stroke-width: 4;
+}
+.analyzer-workspace .distance-region {
+  fill: var(--warning);
+  opacity: 0.75;
+}
+.analyzer-workspace .distance-cursor {
+  stroke: var(--accent);
+  stroke-width: 3;
+}
+.analyzer-workspace .cursor-bar {
+  margin: 12px 0;
+}
+.analyzer-workspace .plot {
+  height: 115px;
+}
+.analyzer-workspace .chart {
+  margin: 8px 0;
+  padding: 0;
+}
+.analyzer-workspace .chart h3 {
+  font-size: 14px;
+  margin: 0;
+}
+.analyzer-workspace .chart-legend {
+  font-size: 12px;
+  margin: 2px 0;
+}
+.analyzer-workspace #traces > h2 {
+  font-size: 16px;
+  margin: 12px 0 8px;
+}
+.analyzer-workspace #traces > .muted {
+  display: none;
+}
+.analyzer-workspace #readout {
+  margin: 10px 0;
+}
+.analyzer-workspace .analysis-empty {
+  min-height: 420px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--work-panel);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+@media (min-width: 1200px) {
+  .trainer-workspace .app-header {
+    position: relative;
+    padding-right: 470px;
+  }
+  .trainer-workspace .platform-route-nav {
+    position: absolute;
+    top: 8px;
+    right: 250px;
+    width: auto;
+  }
+}
+@media (max-width: 1199px) and (min-width: 901px) {
+  .racing-workspace .workspace,
+  .racing-workspace .analysis-workspace {
+    grid-template-columns: 200px minmax(300px, 1fr) 260px;
+  }
+}
+@media (max-width: 900px) {
+  .racing-workspace .app-shell {
+    padding: 0 10px;
+  }
+  .racing-workspace .workspace,
+  .racing-workspace .analysis-workspace,
+  .racing-workspace.toggleControls-collapsed .workspace,
+  .racing-workspace.toggleControls-collapsed .analysis-workspace,
+  .racing-workspace.toggleInsights-collapsed .workspace,
+  .racing-workspace.toggleInsights-collapsed .analysis-workspace {
+    display: flex;
+    flex-direction: column;
+  }
+  .racing-workspace .work-controls,
+  .racing-workspace .work-center,
+  .racing-workspace .work-insights {
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+  }
+  .trainer-workspace .work-controls {
+    display: contents;
+  }
+  .trainer-workspace .work-controls > * {
+    order: 5;
+  }
+  .trainer-workspace .work-controls > #circuitSelect,
+  .trainer-workspace .work-controls > #cornerCards {
+    order: 0;
+  }
+  .trainer-workspace .work-center {
+    order: 1;
+  }
+  .trainer-workspace .work-insights {
+    order: 2;
+  }
+  .trainer-workspace .work-controls > .mode-tabs {
+    order: 0;
+  }
+  .racing-workspace .viewport {
+    height: 300px;
+    min-height: 260px;
+  }
+  .racing-workspace .work-center {
+    gap: 8px;
+  }
+  .racing-workspace .workspace-toolbar {
+    justify-content: stretch;
+  }
+  .racing-workspace .workspace-toolbar button {
+    flex: 1;
+  }
+  .racing-workspace .scene-tools {
+    flex-direction: column;
+  }
+  .racing-workspace .visualization-controls button {
+    flex: 1;
+  }
+  .racing-workspace .camera-tabs button {
+    flex: 1;
+  }
+  .racing-workspace .layer-options {
+    position: absolute;
+    max-height: min(420px, 60dvh);
+  }
+  .racing-workspace .mobile-nav {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .analyzer-workspace .work-controls {
+    padding: 12px;
+  }
+  .analyzer-workspace #recording > .muted,
+  .analyzer-workspace #lap-summary {
+    font-size: 14px;
+  }
+  .analyzer-workspace #telemetry-map {
+    height: 280px;
+  }
+  .analyzer-workspace #distanceStrip {
+    height: 120px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .racing-workspace * {
+    scroll-behavior: auto;
+  }
+}
+
+/* Final composition pass: map + playback + signals share the first desktop screen. */
+.racing-workspace .scene-panel {
+  overflow: visible;
+}
+.racing-workspace .scene-heading {
+  padding: 0;
+  min-height: 44px;
+}
+.racing-workspace .workspace-toolbar {
+  align-items: center;
+}
+.racing-workspace .workspace-toolbar button {
+  height: 44px;
+}
+.racing-workspace .workspace-layers {
+  border: 0;
+  padding: 0;
+  margin: 0 0 0 auto;
+}
+.racing-workspace .workspace-layers > summary {
+  margin: 0;
+}
+.racing-workspace .tag {
+  font-size: 12px;
+}
+.racing-workspace .work-controls .scene-status {
+  font-size: 12px;
+}
+.racing-workspace .scene-panel > .marker-actions {
+  margin: 4px 0;
+}
+.racing-workspace .scene-panel > .playback-footer {
+  padding: 0;
+}
+.racing-workspace .scene-panel > .workspace-disclosure {
+  margin: 4px 0 0;
+  padding: 0;
+}
+.racing-workspace .scene-panel > .workspace-disclosure summary {
+  font-size: 12px;
+}
+.racing-workspace .viewport {
+  height: clamp(260px, 32dvh, 340px);
+}
+.racing-workspace .chart-row svg {
+  height: 76px;
+}
+.trainer-workspace .platform-route-nav {
+  position: static;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 1200px) {
+  .trainer-workspace .app-header {
+    padding-right: 14px;
+  }
+  .trainer-workspace .platform-route-nav {
+    position: absolute;
+    top: 10px;
+    left: 250px;
+    right: auto;
+  }
+}
+.racing-workspace [hidden] {
+  display: none !important;
+}
+.analyzer-workspace .analysis-context {
+  margin: 4px 0;
+}
+.analyzer-workspace .analysis-context .source-summary {
+  font-size: 18px;
+  font-weight: 650;
+}
+.analyzer-workspace .analysis-context p {
+  margin: 4px 0;
+}
+.analyzer-workspace .distance-overview {
+  min-height: 160px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+  background: var(--work-panel);
+}
+.analyzer-workspace .plot {
+  height: 94px;
+}
+@media (max-width: 900px) {
+  .analyzer-workspace .work-controls {
+    display: contents;
+  }
+  .analyzer-workspace .work-controls > * {
+    order: 5;
+  }
+  .analyzer-workspace .work-controls > .file-bar,
+  .analyzer-workspace .work-controls > #status,
+  .analyzer-workspace .work-controls > #error {
+    order: 0;
+  }
+  .analyzer-workspace .work-center {
+    order: 1;
+  }
+  .analyzer-workspace .work-insights {
+    order: 2;
+  }
+  .analyzer-workspace .file-bar {
+    display: flex;
+    gap: 6px;
+  }
+  .analyzer-workspace .file-bar > * {
+    width: auto;
+    flex: 1;
+    min-width: 0;
+  }
+  .analyzer-workspace .platform-nav {
+    flex-wrap: nowrap;
+    width: 100%;
+    justify-content: space-between;
+    gap: 0;
+  }
+  .analyzer-workspace .platform-nav a {
+    padding: 8px;
+    font-size: 12px;
+  }
+  .analyzer-workspace .workspace-titlebar {
+    display: none;
+  }
+  .racing-workspace .layer-options {
+    position: fixed;
+    top: auto;
+    bottom: calc(64px + env(safe-area-inset-bottom));
+    left: 12px;
+    right: 12px;
+    width: auto;
+    max-width: none;
+    max-height: 60dvh;
+  }
+  .racing-workspace .scene-tools {
+    flex-direction: column;
+  }
+  .racing-workspace .viewport {
+    height: 300px;
+    min-height: 260px;
+  }
+  .racing-workspace .work-controls.panel-collapsed {
+    display: none !important;
+  }
+}
+
+/* Controls stay beside the map on desktop; mobile keeps playback immediately below it. */
+.racing-workspace .workspace-player {
+  min-width: 0;
+}
+.racing-workspace .work-controls .playback {
+  flex-wrap: wrap;
+}
+.racing-workspace .work-controls .scrubber {
+  flex: 1;
+  min-width: 115px;
+}
+.racing-workspace .work-controls .marker-actions {
+  display: flex;
+  flex-direction: column;
+}
+.racing-workspace .work-controls .marker-actions button {
+  width: 100%;
+}
+.racing-workspace .work-insights .signal-values {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.racing-workspace .work-insights .signal-values span {
+  font-size: 12px;
+}
+.racing-workspace .scene-heading .tag {
+  display: none;
+}
+.racing-workspace .return-to-scene {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+}
+.analyzer-workspace .central-map {
+  padding: 0 12px;
+  margin: 6px 0 !important;
+}
+.analyzer-workspace .central-map > summary {
+  font-size: 14px;
+  margin: 0;
+}
+.analyzer-workspace .distance-overview {
+  min-height: 0;
+  padding: 10px 14px;
+}
+.analyzer-workspace #distanceStrip {
+  height: 100px;
+}
+.analyzer-workspace .distance-overview h3 {
+  margin: 0;
+}
+.analyzer-workspace .cursor-bar {
+  margin: 6px 0;
+}
+.analyzer-workspace #traces > h2 {
+  margin: 6px 0;
+}
+.analyzer-workspace .plot {
+  height: 84px;
+}
+.analyzer-workspace .legend {
+  font-size: 12px;
+  margin: 4px 0;
+}
+.analyzer-workspace .chart {
+  margin: 4px 0;
+}
+@media (max-width: 900px) {
+  .racing-workspace .app-header {
+    min-height: 54px;
+    padding: 4px 0;
+  }
+  .trainer-workspace .header-status {
+    flex-direction: row;
+    gap: 8px;
+  }
+  .trainer-workspace .header-status .local-label {
+    display: none;
+  }
+  .trainer-workspace .corner-card {
+    min-height: 60px;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    justify-content: center;
+  }
+  .trainer-workspace .corner-card svg {
+    display: none;
+  }
+  .trainer-workspace .corner-card span {
+    text-align: left;
+  }
+  .trainer-workspace .scene-tools {
+    gap: 4px;
+  }
+  .trainer-workspace .scene-heading {
+    margin: 0;
+  }
+  .trainer-workspace .scene-panel {
+    padding: 10px;
+  }
+  .racing-workspace .workspace-toolbar {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 6px;
+  }
+  .racing-workspace .workspace-toolbar button {
+    min-width: 0;
+    padding: 6px;
+  }
+  .racing-workspace .workspace-toolbar > .workspace-layers {
+    grid-column: 1 / -1;
+    justify-self: end;
+  }
+  .racing-workspace .work-center > .work-insights {
+    margin: 0;
+  }
+  .racing-workspace .scene-panel .playback {
+    margin: 4px 0;
+  }
+  .racing-workspace .scene-panel .playback-footer {
+    padding: 0;
+    margin: 0;
+  }
+  .racing-workspace .marker-actions button {
+    min-width: 0;
+  }
+  .racing-workspace .viewport {
+    height: 260px;
+    min-height: 260px;
+  }
+  .analyzer-workspace #analysis > .work-insights {
+    margin: 12px 0;
+  }
+  .analyzer-workspace .plot {
+    height: 120px;
+  }
+}
+.analyzer-workspace .plot canvas {
+  height: 100%;
+}
+.racing-workspace .mode-tabs {
+  margin: 4px 0;
+}
+@media (max-width: 900px) {
+  .trainer-workspace .platform-route-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+    gap: 0;
+  }
+  .trainer-workspace .platform-route-nav a {
+    font-size: 12px;
+    padding: 8px;
+  }
+  .trainer-workspace .work-insights > .mode-tabs {
+    display: flex;
+    margin: 0 0 8px;
+  }
+  .trainer-workspace .work-insights > .mode-tabs button {
+    flex: 1;
+    min-height: 44px;
+  }
+}
+.racing-workspace .track-map svg {
+  height: 200px;
+}
+.trainer-workspace .mobile-control-details {
+  display: none;
+}
+@media (max-width: 900px) {
+  .trainer-workspace .work-controls {
+    display: flex;
+    order: 0;
+    padding: 0;
+    background: transparent;
+    border: 0;
+  }
+  .trainer-workspace .mobile-control-details {
+    display: block;
+    width: 100%;
+    order: 5;
+  }
+  .trainer-workspace.toggleControls-collapsed .mobile-control-details,
+  .trainer-workspace.workspace-expanded .mobile-control-details {
+    display: none;
+  }
+}
+.analyzer-workspace .distance-selected {
+  fill: none;
+  stroke: var(--accent);
+  stroke-width: 2;
+  stroke-dasharray: 4 3;
+}
+.analyzer-workspace .lap-comparison {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+.analyzer-workspace .lap-comparison p:last-child {
+  grid-column: 1 / -1;
+}
+.analyzer-workspace .lap-comparison strong {
+  font-size: 18px;
+}
+.racing-workspace .skip-link {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .trainer-workspace .work-center > .work-insights {
+    order: 0;
+  }
+}
+.racing-workspace #cameraNote {
+  font-size: 12px;
+  padding: 8px;
+}
+.racing-workspace #evaluationTitle {
+  font-size: 14px;
+}
+@media (max-width: 900px) {
+  .trainer-workspace .mobile-control-details {
+    padding: 0 6px;
+  }
+  .trainer-workspace .mobile-control-details > h2,
+  .trainer-workspace .mobile-control-details > .caption {
+    display: none;
+  }
+}
+
+/* Additional Phase 6.6 polish: one map surface, compact measured/model readouts. */
+.racing-workspace .work-center > .scene-panel,
+.racing-workspace .work-center > .signals-panel {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+}
+.racing-workspace .viewport {
+  height: clamp(330px, 44dvh, 480px);
+  min-height: 330px;
+}
+.racing-workspace .work-insights {
+  padding: 12px;
+}
+.racing-workspace .work-insights .scene-status {
+  align-items: center;
+  flex-wrap: wrap;
+}
+.racing-workspace .work-insights .scene-status a {
+  display: inline-flex;
+  align-items: center;
+}
+.racing-workspace .model-overview h2 {
+  font-size: 16px;
+  margin: 8px 0;
+}
+.racing-workspace .model-results {
+  grid-template-columns: 1fr;
+  gap: 6px;
+}
+.racing-workspace .model-results > div {
+  padding: 0;
+}
+.racing-workspace .model-results span {
+  display: block;
+  font-size: 12px;
+}
+.racing-workspace .model-results strong {
+  display: block;
+  font-size: 21px;
+  white-space: nowrap;
+  line-height: 1.4;
+  font-variant-numeric: tabular-nums;
+}
+.racing-workspace .signal-values strong {
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.racing-workspace .signal-values small {
+  font-size: 12px;
+  margin-left: 3px;
+}
+.racing-workspace .grip-status {
+  display: block;
+  padding: 6px 0;
+  border: 0;
+  background: transparent;
+}
+.racing-workspace .work-insights .workspace-disclosure {
+  margin: 4px 0;
+  padding: 0;
+}
+.racing-workspace .work-insights .workspace-disclosure summary {
+  font-size: 12px;
+}
+.racing-workspace .work-insights .evaluation-panel {
+  margin-top: 8px;
+  padding: 8px 0;
+}
+.racing-workspace .work-insights .evaluation-panel > h2 {
+  font-size: 16px;
+}
+.racing-workspace .evaluation-summary {
+  padding: 4px 0;
+  border: 0;
+  background: transparent;
+}
+.racing-workspace .scene-legend {
+  border: 0;
+  flex-wrap: wrap;
+}
+.racing-workspace .scene-tools {
+  margin: 4px 0;
+}
+.racing-workspace .work-controls .marker-actions {
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.racing-workspace .work-controls .marker-actions button {
+  flex: 1;
+  width: auto;
+}
+.racing-workspace .work-controls .marker-actions small {
+  display: none;
+}
+.racing-workspace .workspace-toolbar {
+  position: sticky;
+  top: 0;
+  z-index: 8;
+  background: var(--background, var(--bg));
+  padding: 4px 0;
+}
+.racing-workspace .workspace-button {
+  line-height: 1.2;
+}
+.trainer-workspace.workspace-expanded .scene-panel > .workspace-disclosure,
+.trainer-workspace.workspace-expanded .signals-panel > .workspace-disclosure,
+.trainer-workspace.workspace-expanded .scene-panel > .marker-actions,
+.trainer-workspace.workspace-expanded .signals-panel > h2,
+.racing-workspace.workspace-expanded main ~ details,
+.racing-workspace.workspace-expanded footer {
+  display: none;
+}
+.trainer-workspace.workspace-expanded .viewport {
+  height: clamp(360px, 58dvh, 660px);
+}
+.trainer-workspace.workspace-expanded .workspace-player {
+  max-width: 900px;
+  width: 100%;
+  align-self: center;
+}
+.trainer-workspace.workspace-expanded .scene-tools {
+  justify-content: space-between;
+}
+.racing-workspace .chart-row svg {
+  height: 90px;
+}
+@media (max-width: 900px) {
+  .racing-workspace .viewport {
+    height: 300px;
+    min-height: 300px;
+  }
+  .trainer-workspace.workspace-expanded .viewport {
+    height: 360px;
+    min-height: 360px;
+  }
+  .racing-workspace .workspace-toolbar {
+    top: 0;
+  }
+  .racing-workspace .model-results {
+    grid-template-columns: 1fr 1fr;
+  }
+  .racing-workspace .model-results strong {
+    font-size: 18px;
+  }
+  .racing-workspace .model-source-label {
+    margin: 4px 0;
+  }
+}
+@media (max-width: 359px) {
+  .racing-workspace .model-results {
+    grid-template-columns: 1fr;
+  }
+}
+.racing-workspace .work-insights .workspace-disclosure {
+  border: 0;
+}
+.racing-workspace .work-insights .scene-status {
+  padding: 4px 0;
+  gap: 4px;
+}
+.racing-workspace .work-insights .scene-status a {
+  min-height: 44px;
+  padding: 0;
+}
+@media (max-width: 900px) {
+  .racing-workspace .camera-note {
+    max-width: none;
+  }
+  .trainer-workspace .viewport {
+    height: 280px;
+    min-height: 280px;
+  }
+  .trainer-workspace .camera-note,
+  .trainer-workspace .scene-coordinate {
+    position: static;
+    background: transparent;
+    padding: 2px 4px;
+    border-radius: 0;
+    letter-spacing: 0;
+  }
+  .trainer-workspace .viewport {
+    overflow: visible;
+    margin-bottom: 40px;
+  }
+  .trainer-workspace .camera-note {
+    position: absolute;
+    top: calc(100% + 2px);
+    bottom: auto;
+    left: 0;
+    right: auto;
+    max-width: calc(100% - 95px);
+    font-size: 12px;
+  }
+  .trainer-workspace .scene-coordinate {
+    position: absolute;
+    top: calc(100% + 2px);
+    bottom: auto;
+    right: 0;
+    left: auto;
+    font-size: 12px;
+  }
+  .trainer-workspace.workspace-expanded .viewport {
+    height: 340px;
+    min-height: 340px;
+  }
+}
+
+/* Release acceptance: sticky controls must not cover a scrolled finding. */
+@media (max-width: 900px) {
+  .analyzer-workspace #investigation,
+  .analyzer-workspace #coaching-main {
+    scroll-margin-top: calc(var(--workspace-toolbar-height, 104px) + 12px);
+  }
+}
+@media (max-width: 900px) and (max-height: 500px) and (orientation: landscape) {
+  .trainer-workspace.workspace-expanded .viewport {
+    height: clamp(200px, calc(100dvh - 130px), 280px);
+    min-height: 200px;
+    scroll-margin-top: calc(var(--workspace-toolbar-height, 52px) + 12px);
+  }
+}
+.racing-workspace canvas[data-navigation="pan"] {
+  touch-action: none;
+  cursor: grab;
+}
+.racing-workspace canvas[data-navigation="pan"]:active {
+  cursor: grabbing;
+}
+#map-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}

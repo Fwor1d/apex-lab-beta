@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#101311" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="apex-deployment-base" content="/apex-lab-beta/" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; worker-src 'self'; connect-src 'self'; img-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'"
+    />
+    <title>APEX LAB — тренировка и телеметрия LMU</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icon.svg" />
+    <link rel="apple-touch-icon" href="./assets/icon-192.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./assets/shell.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">К выбору инструмента</a>
+    <header class="platform-header">
+      <a class="platform-brand" href="./" aria-label="APEX LAB — главная"
+        >APEX LAB</a
+      >
+      <nav class="platform-nav" aria-label="Разделы APEX LAB">
+        <a href="./telemetry/">Телеметрия</a><a href="./mobile/">Тренажёр</a
+        ><a href="./reports/">Отчёты</a> <a href="./atlas/">Трассы</a>
+      </nav>
+    </header>
+    <main id="main">
+      <section class="welcome">
+        <h1>Разбирайте круг.<br />Тренируйте действие.</h1>
+        <p>
+          Найдите различия в своих кругах Le Mans Ultimate. Изучите технику в
+          повороте. Проверяйте выводы по измерениям и повтору.
+        </p>
+        <p class="muted">
+          Личные файлы остаются на вашем устройстве. Без аккаунта, загрузки в
+          облако и синхронизации.
+        </p>
+      </section>
+      <p class="muted">
+        Публичная beta: физическая приёмка Windows/iPhone ещё не завершена.
+        Карты справочные; личная телеметрия остаётся на устройстве.
+      </p>
+      <section class="tools" aria-label="Выберите задачу">
+        <article class="primary-tool">
+          <h2>Анализ телеметрии</h2>
+          <p>
+            Откройте локальную DuckDB-запись LMU, выберите круг и сравните его с
+            подходящим более быстрым кругом. Сначала — наблюдения и действия,
+            затем — графики для проверки.
+          </p>
+          <a class="action" href="./telemetry/">Анализ телеметрии</a>
+          <p class="muted">
+            Основной сценарий: Chrome или Edge на Windows. Модель машины
+            определяется только по проверенным метаданным.
+          </p>
+        </article>
+        <div class="secondary-tools">
+          <article>
+            <h2>Тренажёр поворотов</h2>
+            <p>
+              Sebring T1, T7 и T17: тормоз, траектория, апекс и газ. Учебная
+              модель с явными допущениями, а не расчёт физики LMU.
+            </p>
+            <a class="action secondary" href="./mobile/">Тренажёр поворотов</a>
+          </article>
+          <article>
+            <h2>Отчёт под рукой</h2>
+            <p>
+              Откройте ранее экспортированный JSON на iPhone или компьютере.
+              Измерения и пояснения доступны без загрузки DuckDB.
+            </p>
+            <a class="action secondary" href="./reports/">Открыть отчёт</a>
+          </article>
+        </div>
+      </section>
+      <section class="local">
+        <h2>Три источника — ясные границы</h2>
+        <p>
+          Телеметрия содержит записанные сигналы. JSON сообщает заявленное
+          происхождение, но не подтверждает подлинность базы. Тренажёр
+          использует образовательную модель. Эти данные не смешиваются
+          автоматически.
+        </p>
+        <details>
+          <summary>Работа без сети</summary>
+          <p>
+            Главная страница, тренажёр и просмотр отчётов имеют отдельные лёгкие
+            кеши. Подготовьте нужный раздел заранее. Для анализа native DuckDB
+            есть отдельный тяжёлый пакет; он не скачивается при просмотре
+            отчёта.
+          </p>
+          <button id="home-cache">Подготовить главную офлайн</button>
+          <p id="home-status" role="status">Личные записи не сохраняются.</p>
+          <button id="home-update" hidden>Обновить офлайн-копию</button>
+        </details>
+      </section>
+    </main>
+    <footer>
+      APEX LAB 0.8.0-beta.1 · локальный анализ и объяснимая тренировка
+    </footer>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <meta name="theme-color" content="#101311" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
+    />
+    <meta
+      name="description"
+      content="Локальный учебный тренажёр поворотов для Porsche 911 GT3 R. Карта Sebring, педали и учебные эксперименты с траекторией."
+    />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self'; object-src 'none'; base-uri 'self'; form-action 'none'"
+    />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/svg+xml" href="./assets/icon.svg" />
+    <link rel="apple-touch-icon" href="./assets/icon-180.png" />
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./assets/shell.css" />
+    <title>APEX LAB — Driving Trainer</title>
+    <link rel="stylesheet" href="./workspace.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#trainer">К тренажёру</a>
+    <div class="app-shell">
+      <header class="app-header">
+        <a class="brand" href="#trainer" aria-label="APEX LAB — к тренажёру"
+          ><img src="./assets/icon.svg" width="36" height="36" alt="" /><span
+            >APEX LAB<span class="brand-dot">.</span
+            ><small>ТРЕНАЖЁР</small></span
+          ></a
+        >
+        <div class="header-status">
+          <span class="local-label"><i></i> На устройстве</span
+          ><span id="offlineStatus" class="status" role="status"
+            >Подготовка офлайн…</span
+          >
+        </div>
+      </header>
+      <nav
+        class="platform-nav platform-route-nav"
+        aria-label="Разделы APEX LAB"
+      >
+        <a href="../">Главная</a><a href="../telemetry/">Телеметрия</a
+        ><a href="./" aria-current="page">Тренажёр</a
+        ><a href="../reports/">Отчёты</a> <a href="../atlas/">Трассы</a>
+      </nav>
+      <div id="offlineHelp" class="offline-help" hidden>
+        <span
+          >Офлайн-копия не подготовлена. Подключись к сети и повтори загрузку.
+          Текущий тренажёр можно использовать, пока вкладка открыта.</span
+        ><button type="button" id="retryOffline">Повторить загрузку</button>
+      </div>
+      <div id="updateBanner" class="update-banner" hidden>
+        <span>Доступна новая версия тренажёра.</span
+        ><button id="updateApp" type="button">Обновить</button>
+      </div>
+      <section id="startupError" class="startup-error" role="alert" hidden>
+        <h2>Не удалось загрузить тренажёр</h2>
+        <p>
+          Не все файлы приложения доступны. Подключись к сети и повтори
+          загрузку. Если ошибка сохраняется, проверь комплект файлов локальной
+          установки.
+        </p>
+        <button type="button" id="retryStartup">Повторить загрузку</button>
+      </section>
+      <main>
+        <section class="intro">
+          <div>
+            <h1>Каждый поворот — <span>осознанно.</span></h1>
+            <p class="intro-copy">
+              Изучи последовательность действий. Меняй один параметр. Наблюдай
+              за результатом.
+            </p>
+          </div>
+          <div class="car-summary">
+            <strong>PORSCHE 911 GT3 R</strong
+            ><span>992 · учебная визуализация</span>
+          </div>
+        </section>
+        <div class="workspace">
+          <aside class="circuit-panel panel" aria-labelledby="circuitHeading">
+            <div class="section-heading">
+              <span>SEBRING · INTERNATIONAL</span><span class="tag">OSM</span>
+            </div>
+            <h2 id="circuitHeading">Выбери поворот</h2>
+            <button
+              id="circuitSelect"
+              class="circuit-picker"
+              type="button"
+              aria-label="Выбрать трассу"
+              aria-haspopup="dialog"
+              aria-controls="circuitDialog"
+            >
+              <span id="circuitName">Sebring International Raceway</span
+              ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m6 9 6 6 6-6" />
+              </svg>
+            </button>
+            <p class="caption">WEC / LMU · три учебных окна</p>
+            <div
+              id="cornerCards"
+              class="corner-cards"
+              role="group"
+              aria-label="Повороты трассы"
+            ></div>
+            <details id="mapDetails" class="map-details">
+              <summary>Карта трассы · выбрать поворот</summary>
+              <div id="trackMap" class="track-map"></div>
+              <p id="geometryLength" class="caption"></p>
+            </details>
+            <div class="circuit-note">
+              <p>
+                Осевая линия — OpenStreetMap. Ширина дороги условная. Действия и
+                скорости — учебная модель.
+              </p>
+            </div>
+            <details class="help data-help">
+              <summary>Данные и точность</summary>
+              <p>
+                Маршрут International сверён с официальной картой WEC 2023.
+                Координаты OSM дают около 5,865 км; официальная длина LMU —
+                6,019 км. Масштаб не подгонялся. Пит-лейн WEC не показан.
+              </p>
+              <p>
+                Окна поворотов и ориентир апекса приближённые. Полоса шириной 14
+                м — иллюстрация, не лимиты трассы. Линии, педали и скорости не
+                получены из телеметрии; оптимальная траектория не определена.
+              </p>
+              <p>
+                © OpenStreetMap contributors · ODbL.
+                <a href="./data/sebring/NOTICE.txt">Источник и лицензия</a> ·
+                <a href="./data/sebring/centerline.geojson" download
+                  >Координаты GeoJSON</a
+                >
+              </p>
+            </details>
+            <details class="help">
+              <summary>Как тренироваться</summary>
+              <p>
+                В «Обучении» изучи базовую последовательность. В «Эксперименте»
+                меняй по одному параметру и используй перемотку для сравнения.
+                Перенос точек торможения в игру требует реальной телеметрии.
+              </p>
+            </details>
+          </aside>
+          <section class="trainer-column" id="trainer" aria-label="Тренажёр">
+            <section class="scene-panel panel">
+              <div class="scene-heading">
+                <div>
+                  <p class="caption" id="cornerSubtitle">
+                    Торможение и подготовка выхода
+                  </p>
+                  <h2 id="cornerTitle">T7 <span>Hairpin</span></h2>
+                </div>
+                <span class="tag lime-tag">УЧЕБНАЯ МОДЕЛЬ</span>
+              </div>
+              <div class="mode-tabs" role="group" aria-label="Режим">
+                <button type="button" data-mode="learn" aria-pressed="true">
+                  Обучение</button
+                ><button
+                  type="button"
+                  data-mode="experiment"
+                  aria-pressed="false"
+                >
+                  Эксперимент
+                </button>
+              </div>
+              <p id="modeDescription" class="caption"></p>
+              <div class="scene-status">
+                <span id="sceneMode">Обучение</span
+                ><a href="#evaluationHeading" id="sceneEvaluation"></a>
+              </div>
+              <div
+                class="visualization-controls"
+                role="group"
+                aria-label="Визуализация"
+              >
+                <input id="visualizationMode" type="hidden" value="original" />
+                <button
+                  type="button"
+                  data-visualization="original"
+                  aria-pressed="true"
+                >
+                  Исходный / схема
+                </button>
+                <button
+                  type="button"
+                  data-visualization="full2d"
+                  aria-pressed="false"
+                >
+                  Вся трасса · 2D
+                </button>
+                <button
+                  type="button"
+                  data-visualization="full3d"
+                  aria-pressed="false"
+                >
+                  Плоская 3D
+                </button>
+              </div>
+              <div
+                id="fullOverlayControls"
+                class="overlay-controls"
+                role="group"
+                aria-label="Учебное наложение"
+                hidden
+              >
+                <input id="trackOverlay" type="hidden" value="line" />
+                <button type="button" data-overlay="line" aria-pressed="true">
+                  Линия
+                </button>
+                <button type="button" data-overlay="speed" aria-pressed="false">
+                  Скорость
+                </button>
+                <button type="button" data-overlay="brake" aria-pressed="false">
+                  Тормоз
+                </button>
+                <button
+                  type="button"
+                  data-overlay="throttle"
+                  aria-pressed="false"
+                >
+                  Газ
+                </button>
+              </div>
+              <p id="overlayScale" class="caption" hidden></p>
+              <p id="visualizationNote" class="caption" role="status">
+                Исходный вид сохранён. Полная карта использует те же учебные
+                настройки и положение.
+              </p>
+              <p id="originalCameraHint" class="caption" hidden>
+                Камеры исходного вида: выбор вернёт к схеме без сброса
+                положения.
+              </p>
+              <div
+                class="camera-tabs"
+                role="group"
+                aria-label="Камера исходного вида"
+              >
+                <button type="button" data-view="top" aria-pressed="true">
+                  Сверху</button
+                ><button type="button" data-view="cockpit" aria-pressed="false">
+                  Кабина</button
+                ><button type="button" data-view="chase" aria-pressed="false">
+                  Сзади
+                </button>
+              </div>
+              <div class="viewport" id="viewport">
+                <canvas
+                  id="trackCanvas"
+                  role="img"
+                  aria-label="Учебная схема поворота с машиной и маркерами"
+                ></canvas>
+                <canvas
+                  id="fullTrackCanvas"
+                  role="img"
+                  aria-label="Полная карта Sebring с учебным окном; без реальной телеметрии"
+                  hidden
+                ></canvas>
+                <div class="scene-hud">
+                  <span id="phaseReadout">Подход</span
+                  ><span
+                    ><strong id="sceneSpeed">195</strong>
+                    <small>км/ч · модель</small></span
+                  >
+                </div>
+                <span id="cameraNote" class="camera-note"
+                  >Карта OSM · границы приблизительные</span
+                ><span id="distanceReadout" class="scene-coordinate"
+                  >0 / 390 м</span
+                >
+              </div>
+              <div class="scene-legend" id="lineLegend">
+                <span><i class="sample reference"></i>Линия примера</span
+                ><span><i class="sample active-line"></i>Планируемая линия</span
+                ><span><i class="point brake"></i>Тормоз</span
+                ><span><i class="point apex"></i>Апекс</span
+                ><span><i class="point throttle"></i>Газ</span>
+              </div>
+              <p id="renderError" class="render-error" role="alert" hidden>
+                Не удалось отрисовать карту. Попробуй актуальный Safari или
+                Chrome; графики и значения остаются доступны.
+              </p>
+              <div
+                class="marker-actions"
+                role="group"
+                aria-label="Перейти к этапу"
+              >
+                <button type="button" id="jumpBrake">
+                  <strong>Т · Тормоз</strong><small id="jumpBrakeValue"></small>
+                </button>
+                <button type="button" id="jumpApex">
+                  <strong>А · Апекс</strong><small>учебная отметка</small>
+                </button>
+                <button type="button" id="jumpThrottle">
+                  <strong>Г · Газ</strong><small id="jumpThrottleValue"></small>
+                </button>
+              </div>
+              <div class="playback">
+                <button
+                  id="play"
+                  class="play-button"
+                  type="button"
+                  aria-label="Начать воспроизведение"
+                  aria-pressed="false"
+                >
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path class="play-glyph" d="M8 5l11 7-11 7z" />
+                    <path class="pause-glyph" d="M7 5h4v14H7zm6 0h4v14h-4z" />
+                    <path
+                      class="replay-glyph"
+                      d="M4 10a8 8 0 1 1 1 8M4 4v6h6"
+                    />
+                  </svg>
+                </button>
+                <div class="scrubber">
+                  <div class="scrubber-label">
+                    <label for="progress">Положение на участке</label
+                    ><output id="progressOutput" for="progress">0%</output>
+                  </div>
+                  <input
+                    id="progress"
+                    type="range"
+                    min="0"
+                    max="100"
+                    step="0.1"
+                    value="0"
+                    aria-label="Положение на участке"
+                  />
+                </div>
+                <button
+                  id="playbackRate"
+                  class="rate-button"
+                  type="button"
+                  aria-label="Скорость воспроизведения: 1"
+                >
+                  1×
+                </button>
+              </div>
+              <div class="playback-footer">
+                <span>Анимация <span id="previewTime">0,0 с</span></span
+                ><span>Не время круга</span>
+              </div>
+              <div class="model-results" aria-label="Результат учебной модели">
+                <div>
+                  <span>Апекс: расчёт / цель</span
+                  ><strong id="apexResult"></strong>
+                </div>
+                <div>
+                  <span>От тормоза до апекса / минимум</span
+                  ><strong id="brakingResult"></strong>
+                </div>
+              </div>
+              <p class="model-note">
+                Дистанция между заданными точками по учебному пути на основе
+                OSM. Минимум — идеальное торможение по прямой, без отпускания и
+                поворота.
+              </p>
+              <p
+                id="modelWarning"
+                class="model-warning"
+                role="status"
+                hidden
+              ></p>
+            </section>
+            <section
+              class="signals-panel panel"
+              id="signals"
+              aria-labelledby="signalsHeading"
+            >
+              <div class="section-heading">
+                <span>СИНХРОННЫЕ СИГНАЛЫ</span
+                ><span class="tag">СИНТЕТИЧЕСКИЕ</span>
+              </div>
+              <h2 id="signalsHeading">Действия в одной точке</h2>
+              <div class="signal-values">
+                <div class="speed-value">
+                  <span>Скорость</span
+                  ><strong id="speedValue">195 <small>км/ч</small></strong>
+                </div>
+                <div class="brake-value">
+                  <span>Тормоз</span
+                  ><strong id="brakeValue">0<small>%</small></strong>
+                </div>
+                <div class="throttle-value">
+                  <span>Газ</span
+                  ><strong id="throttleValue">100<small>%</small></strong>
+                </div>
+                <div class="steering-value">
+                  <span>Руль</span
+                  ><strong id="steeringValue">0<small>%</small></strong>
+                </div>
+              </div>
+              <div class="grip-status">
+                <span>Запрос сцепления <strong id="gripReadout"></strong></span
+                ><span id="assistReadout"></span>
+              </div>
+              <div id="charts" class="charts"></div>
+              <p class="chart-caption">
+                Ось X — доля длины окна, в %. Педали — заданные действия;
+                скорость — расчёт. Руль — геометрическая потребность на условной
+                шкале −100…100, не положение руля LMU. Коснись графика для
+                перемотки.
+              </p>
+            </section>
+            <section
+              class="coach-panel panel"
+              id="coach"
+              aria-labelledby="coachTitle"
+            >
+              <div>
+                <h2 id="coachTitle">Подход</h2>
+                <p id="coachText"></p>
+                <p id="cornerFocus" class="caption"></p>
+                <details class="phase-guide">
+                  <summary>Разобрать поворот по этапам</summary>
+                  <p>
+                    Выбери этап: движение встанет на паузу. В неудачном
+                    эксперименте некоторые этапы могут перекрываться или не
+                    достигаться.
+                  </p>
+                  <div
+                    id="phaseButtons"
+                    class="phase-buttons"
+                    role="group"
+                    aria-label="Этапы поворота"
+                  ></div>
+                  <p id="phaseSnapshot" class="phase-snapshot"></p>
+                  <a class="return-to-scene" href="#viewport"
+                    >Показать выбранный этап на карте</a
+                  >
+                </details>
+              </div>
+            </section>
+          </section>
+          <aside
+            class="settings-column"
+            id="settings"
+            aria-label="Параметры и оценка"
+          >
+            <section class="settings-panel panel">
+              <div class="section-heading">
+                <span>ТВОЙ ЭКСПЕРИМЕНТ</span><span class="tag">ЛОКАЛЬНО</span>
+              </div>
+              <h2>Параметры прохождения</h2>
+              <p class="caption">
+                Выбери «Эксперимент» у сцены, чтобы менять параметры. Каждое
+                изменение ставит движение на паузу.
+              </p>
+              <a class="return-to-scene" href="#trainer"
+                >Посмотреть текущую линию</a
+              >
+              <div id="parameters" class="parameters"></div>
+              <button type="button" class="reset-button" id="reset">
+                <svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M4 10a8 8 0 1 1 1 8M4 4v6h6" />
+                </svg>
+                Вернуть учебный пример
+              </button>
+              <p class="settings-note">
+                <span id="cornerDistance"></span>. Положение в % и метрах осевой
+                линии. Эти маркеры — учебные настройки, не рекомендованные точки
+                для LMU.
+              </p>
+            </section>
+            <section
+              class="evaluation-panel panel"
+              aria-labelledby="evaluationHeading"
+            >
+              <div class="section-heading">
+                <span>ОБРАТНАЯ СВЯЗЬ</span>
+              </div>
+              <h2 id="evaluationHeading">Согласованность действий</h2>
+              <div
+                id="evaluationSummary"
+                class="evaluation-summary"
+                role="status"
+              >
+                <i></i><strong id="evaluationTitle"></strong>
+              </div>
+              <div id="evaluationChecks" class="evaluation-checks"></div>
+              <p class="settings-note">
+                Цвет проверяет согласованность с допущениями. Риски сноса и
+                потери заднего сцепления — эвристики, не доказанные ошибки
+                пилота. Линия показывает план, а не рассчитанное скольжение.
+              </p>
+            </section>
+          </aside>
+        </div>
+        <section class="install-info">
+          <details>
+            <summary>Установка на iPhone и работа офлайн</summary>
+            <p>
+              Открой приложение в Safari по HTTPS, выбери «Поделиться» → «На
+              экран Домой». Дождись статуса «Офлайн готов» перед отключением
+              сети. Сохраняется приложение, а настройки текущего эксперимента
+              живут только в открытой вкладке.
+            </p>
+            <p>
+              При локальном запуске на компьютере используется localhost.
+              Обычный HTTP по адресу компьютера в сети не обеспечивает PWA на
+              iPhone.
+            </p>
+          </details>
+        </section>
+      </main>
+      <footer>
+        <span>APEX LAB · 0.5.0 / Фаза 3</span
+        ><span>Без аккаунтов, аналитики и отправки данных</span
+        ><span>Независимый учебный проект</span>
+      </footer>
+    </div>
+    <dialog id="circuitDialog" aria-labelledby="circuitDialogTitle">
+      <div class="dialog-heading">
+        <h2 id="circuitDialogTitle">Выбери трассу</h2>
+        <button type="button" id="closeCircuit">Закрыть</button>
+      </div>
+      <p class="caption">
+        Sebring International · WEC / LMU. Доступны T1, T7 и T17.
+      </p>
+      <div id="circuitOptions" class="circuit-options"></div>
+    </dialog>
+    <nav class="mobile-nav" aria-label="Разделы тренажёра">
+      <a href="#trainer"
+        ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="m4 18 16-12M12 6h8v8" /></svg
+        ><span>Тренажёр</span></a
+      ><a href="#signals"
+        ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 16h4l3-10 4 13 3-9h4" /></svg
+        ><span>Сигналы</span></a
+      ><a href="#settings"
+        ><svg class="ui-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M3 6h18M3 12h18M3 18h18M8 3v6m8 0v6m-5 0v6" /></svg
+        ><span>Параметры</span></a
+      >
+    </nav>
+    <noscript
+      ><p class="noscript">
+        Для интерактивного тренажёра нужен JavaScript. Все расчёты выполняются
+        локально.
+      </p></noscript
+    >
+    <script type="module" src="./src/bootstrap.js"></script>
+  </body>
+</html>

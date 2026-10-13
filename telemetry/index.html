@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101311" />
+    <meta name="referrer" content="no-referrer" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self' 'wasm-unsafe-eval'; worker-src 'self'; connect-src 'self'; img-src 'self' blob:; style-src 'self'; style-src-attr 'unsafe-hashes' 'sha256-3oFxofzq3N//6J8H86e9ul4WT2OkJrtonB66gn/TLJw='; object-src 'none'; base-uri 'none'; form-action 'none'; frame-src 'none'"
+    />
+    <title>APEX LAB — локальная телеметрия</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./assets/shell.css" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" href="./assets/icon.svg" />
+    <link rel="apple-touch-icon" href="./assets/icon-192.png" />
+    <link rel="stylesheet" href="../mobile/workspace.css" />
+  </head>
+  <body data-mode="telemetry">
+    <a class="skip" href="#analysis">К анализу</a>
+    <header class="platform-header">
+      <a href="../" class="platform-brand">APEX LAB</a>
+      <nav class="platform-nav" aria-label="Разделы APEX LAB">
+        <a href="../">Главная</a><a href="./" aria-current="page">Телеметрия</a
+        ><a href="../mobile/">Тренажёр</a><a href="../reports/">Отчёты</a>
+        <a href="../atlas/">Трассы</a>
+      </nav>
+    </header>
+    <main>
+      <section class="intro">
+        <h1>Разберите свой круг</h1>
+        <p>
+          Откройте запись LMU и сравните её с вашим более быстрым кругом. Файл
+          читается на этом устройстве, без отправки в сеть.
+        </p>
+        <p class="muted">
+          Анализ на Windows Chrome / Edge. На iPhone удобнее открыть готовый
+          отчёт; импорт больших баз необязателен.
+        </p>
+      </section>
+      <section class="file-bar" aria-label="Открытие данных">
+        <label id="native-picker" class="file-button"
+          >Открыть .duckdb<input
+            id="file"
+            type="file"
+            accept=".duckdb"
+            aria-label="Открыть локальную базу DuckDB" /></label
+        ><label class="file-button secondary"
+          >Открыть отчёт<input
+            id="report-file"
+            type="file"
+            accept=".json"
+            aria-label="Открыть локальный JSON-отчёт" /></label
+        ><button id="clear" class="secondary" disabled>Очистить данные</button
+        ><button id="cancel" class="secondary" hidden>
+          Отменить обработку
+        </button>
+      </section>
+      <p id="status" role="status" aria-live="polite">
+        Выберите исходный файл через системное окно. ZIP нужно распаковать
+        заранее.
+      </p>
+      <p id="error" role="alert" hidden></p>
+      <button id="jump-analysis" class="secondary" hidden>
+        Перейти к сравнению и наблюдениям
+      </button>
+      <section id="recording" hidden>
+        <h2>Ваша запись</h2>
+        <p id="source-summary" class="source-summary"></p>
+        <p id="source-kind" class="muted"></p>
+        <label class="session-selector"
+          >Запись и сессия<select
+            id="session-select"
+            aria-describedby="session-help"
+          ></select
+        ></label>
+        <p id="session-help" class="muted">
+          Один исходный файл содержит одну сессию. Для другой сессии выберите её
+          файл; данные не объединяются.
+        </p>
+        <details id="recording-details">
+          <summary>Исходные метаданные</summary>
+          <dl id="metadata"></dl>
+        </details>
+        <details>
+          <summary>Происхождение и ограничения</summary>
+          <ul id="warnings"></ul>
+          <p>
+            Угол колёс, интервенции ABS/TC и координатная система не
+            подтверждены. Карта и диагнозы инцидентов отключены. Номера
+            поворотов не требуются для сравнения по дистанции.
+          </p>
+        </details>
+        <p id="lap-summary"></p>
+        <details id="lap-details">
+          <summary>Все круги и проверка качества</summary>
+          <div class="table-wrap">
+            <table>
+              <caption>
+                Исходные события Lap и рабочая проверка качества
+              </caption>
+              <thead>
+                <tr>
+                  <th>Круг</th>
+                  <th>Время, с</th>
+                  <th>Статус</th>
+                </tr>
+              </thead>
+              <tbody id="laps"></tbody>
+            </table>
+          </div>
+        </details>
+      </section>
+      <section id="analysis" hidden>
+        <h2>Сравнение по дистанции</h2>
+        <div class="compare-controls">
+          <label>A · ваш круг для сравнения<select id="lap-a"></select></label
+          ><label>B · разбираемый круг<select id="lap-b"></select></label
+          ><button id="compare">Сравнить круги</button>
+        </div>
+        <p class="muted">
+          Один и тот же круг A/B — отдельный просмотр. Пит-переезды и неполные
+          записи доступны для просмотра, но не для сравнения времени.
+        </p>
+        <div
+          id="lap-comparison"
+          class="lap-comparison"
+          aria-live="polite"
+        ></div>
+        <p id="comparison-summary" class="muted"></p>
+        <div id="findings-section">
+          <div id="coaching-main">
+            <h2>На что обратить внимание</h2>
+            <p id="coach-summary" class="muted"></p>
+            <label
+              >Режим разбора<select id="coaching-mode">
+                <option value="all">Потери и техника</option>
+                <option value="incident">Проверить по повтору</option>
+              </select></label
+            >
+            <p id="findings-empty"></p>
+            <ol id="findings"></ol>
+            <div id="coach-withheld"></div>
+            <details>
+              <summary>Исходные выводы эталонного анализа</summary>
+              <pre id="legacy-findings"></pre>
+            </details>
+          </div>
+        </div>
+        <div class="export-controls">
+          <button id="export-report">Сохранить отчёт</button
+          ><button id="export-profile" class="secondary">
+            Экспорт профиля A
+          </button>
+        </div>
+        <p class="muted">
+          Отчёт содержит выбранные один или два профиля и открывается без
+          DuckDB, в том числе на iPhone. Экспорт не подтверждает подлинность
+          исходного файла и не превращает эти круги в эталон Porsche/Sebring.
+        </p>
+        <div id="traces" hidden>
+          <section
+            id="investigation"
+            hidden
+            aria-label="Разбор выбранного наблюдения"
+          >
+            <h2 id="investigation-title" tabindex="-1">Разбор участка</h2>
+            <div id="investigation-notes"></div>
+            <p class="muted">
+              Подсвечен выбранный диапазон. Все четыре сигнала и дельта
+              используют общую дистанцию; A сплошная, B штриховая.
+            </p>
+            <details>
+              <summary>Значения A/B и ограничения привязки</summary>
+              <pre id="investigation-evidence"></pre>
+            </details>
+            <p>
+              <a id="training-link" href="../mobile/#trainer" hidden
+                >Учебный тренажёр</a
+              >
+            </p>
+            <p class="muted">
+              Учебные упражнения не используют измеренные скорости или тормозные
+              расстояния этой записи. Porsche/Sebring остаётся отдельным учебным
+              примером.
+            </p>
+            <button id="investigation-back" class="secondary">
+              Вернуться к главным выводам
+            </button>
+          </section>
+          <h2>Проверить по графикам</h2>
+          <p class="muted">
+            Выберите дистанцию касанием графика или ползунком. Пропуск сигнала
+            означает отсутствие данных.
+          </p>
+          <div class="cursor-bar">
+            <label for="cursor"
+              >Дистанция: <output id="distance">0 м</output></label
+            ><input
+              id="cursor"
+              type="range"
+              min="0"
+              max="1"
+              value="0"
+              step="any"
+            /><label class="toggle"
+              ><input id="zoom" type="checkbox" /> Участок ±200 м</label
+            >
+          </div>
+          <p class="legend">
+            A — сплошная линия · B — штриховая · вертикальный курсор общий для
+            всех сигналов
+          </p>
+          <details id="full-map-section">
+            <summary>Дополнительные виды трассы</summary>
+            <label for="telemetry-visualization">Визуализация</label>
+            <select id="telemetry-visualization">
+              <option value="original">Исходный / графики</option>
+              <option value="full2d">Вся трасса · 2D</option>
+              <option value="full3d">Вся трасса · плоская 3D</option>
+            </select>
+            <p id="telemetry-map-note" role="status">
+              Исходный анализ сохранён. Карта — отдельный необязательный слой.
+            </p>
+            <canvas
+              id="telemetry-map"
+              role="img"
+              aria-label="Справочная осевая линия; без привязки реальных машин"
+              hidden
+            ></canvas>
+            <div id="map-navigation" hidden>
+              <button id="map-zoom-in" type="button">Приблизить</button
+              ><button id="map-zoom-out" type="button">Отдалить</button
+              ><button id="map-fit" type="button">Вписать трассу</button>
+            </div>
+            <p>
+              Перемещение: протяжка карты или стрелки. Масштаб: кнопки / клавиши
+              + и −. 0 — вписать.
+            </p>
+            <p><a href="../atlas/">Каталог трасс и конфигураций</a></p>
+            <p>
+              <a href="./data/atlas/NOTICE.txt"
+                >© OpenStreetMap contributors · источник и ODbL</a
+              >
+            </p>
+            <p id="map-distance" class="muted"></p>
+            <p class="muted">
+              Скорость, тормоз, газ и Δt остаются на синхронных графиках. Машины
+              A/B, цветные наложения и пространственные ghost-машины недоступны
+              без проверенной позиционной привязки. Отсутствие карты не
+              ограничивает сравнение по Lap Dist.
+            </p>
+          </details>
+          <div id="charts"></div>
+          <table id="readout">
+            <caption>
+              Показания ближайшего отсчёта на сетке сравнения
+            </caption>
+            <thead>
+              <tr>
+                <th>Сигнал</th>
+                <th>A</th>
+                <th>B</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </section>
+      <details id="diagnostics">
+        <summary>Производительность и хранение</summary>
+        <p>
+          Обработка — в Worker. OPFS, IndexedDB и синхронизация не используются.
+          После импорта DuckDB и его файловый дескриптор закрываются;
+          нормированные данные остаются в оперативной памяти до очистки или
+          закрытия вкладки.
+        </p>
+        <pre id="metrics">Измерения появятся после открытия записи.</pre>
+        <button id="cache">Подготовить тренажёр и отчёты офлайн</button
+        ><button id="cache-native" class="secondary">
+          Добавить анализ DuckDB офлайн
+        </button>
+        <p id="cache-state">
+          Лёгкий кеш содержит интерфейс, тренажёр и просмотр отчётов.
+          Native-анализ готовится отдельно и загружает только выбранный пакет
+          Wasm. Личные файлы не сохраняются.
+        </p>
+      </details>
+      <noscript
+        >Для локального анализа включите JavaScript. Личные файлы обрабатываются
+        только на вашем устройстве.</noscript
+      >
+    </main>
+    <footer>
+      APEX LAB · образовательная модель, синтетические тесты и реальные
+      измерения имеют разные источники.
+    </footer>
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
