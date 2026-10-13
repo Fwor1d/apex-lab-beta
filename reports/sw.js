@@ -1,5 +1,5 @@
 // Explicit, static-only offline cache. Never store personal files or reports.
-const VERSION = "0.8.0-beta.1-cache1";
+const VERSION = "0.8.0-beta.2-cache1";
 const PREFIX = `apex-browser:${self.registration.scope}:`;
 const LIGHT_CACHE = `${PREFIX}${VERSION}:light`;
 const ASSETS = [

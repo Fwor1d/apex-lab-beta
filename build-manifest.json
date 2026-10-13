@@ -1,5 +1,5 @@
 {
-  "appVersion": "0.8.0-beta.1",
+  "appVersion": "0.8.0-beta.2",
   "deploymentBase": "/apex-lab-beta/",
   "assets": {
     ".nojekyll": {
@@ -31,16 +31,16 @@
       "sha256": "b3062660e8e3cc74f167e00f56624d36058ef5a1e79fd619892ecff427c40d63"
     },
     "atlas/index.html": {
-      "bytes": 4320,
-      "sha256": "b4477e6bb0470ce6e9b73fa7a90131daeaedf621265d7c406d6af65756043538"
+      "bytes": 4520,
+      "sha256": "8765c64456ee62fd2d5ed1169eb4ea912096e124419ada98f663475365791394"
     },
     "atlas/styles.css": {
-      "bytes": 1810,
-      "sha256": "4af207610b6f1af44dc3e8aa2a2dbf2325c26f1b72ac37d0ccc3952f2e950aee"
+      "bytes": 2017,
+      "sha256": "7fb30dd3a64abfb853b649275f056abb6b80c10a006dbbd46c4a3766fd4c5d04"
     },
     "index.html": {
       "bytes": 5811,
-      "sha256": "a193ec0864066594f61db0cbec7fbaadd9efdc22d75ba6936d47bf2634453401"
+      "sha256": "dd212d1a06ca8e1758b1df5d76cd87c17fd7b0aa00be6e12c45e24b58ad68769"
     },
     "manifest.webmanifest": {
       "bytes": 416,
@@ -352,7 +352,7 @@
     },
     "reports/sw.js": {
       "bytes": 5252,
-      "sha256": "3cd3d81656ad2ab249711c08fc37266cecb2de09b06abd8ca95fb5b15bc02c69"
+      "sha256": "c6394207fc31d34ec6ed5876ada95e9d350b6c447730ed69d47e5676f30e5b89"
     },
     "styles.css": {
       "bytes": 2497,
@@ -360,7 +360,7 @@
     },
     "sw.js": {
       "bytes": 1332,
-      "sha256": "51ce2aab24a512090d0ce6016c2b047d0cc40f983cc80aa2895777ee46486361"
+      "sha256": "68a8898e7af4f2e025183d03c84c42e5c1d01420ea836b70678bd1c2765ccb9b"
     },
     "telemetry/assets/chevron.svg": {
       "bytes": 209,
@@ -592,7 +592,7 @@
     },
     "telemetry/sw.js": {
       "bytes": 5252,
-      "sha256": "3cd3d81656ad2ab249711c08fc37266cecb2de09b06abd8ca95fb5b15bc02c69"
+      "sha256": "c6394207fc31d34ec6ed5876ada95e9d350b6c447730ed69d47e5676f30e5b89"
     },
     "telemetry/vendor/LICENSE-arrow.txt": {
       "bytes": 110423,

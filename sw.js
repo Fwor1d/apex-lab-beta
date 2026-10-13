@@ -1,5 +1,5 @@
 const PREFIX = `apex-home:${self.registration.scope}:`,
-  CACHE = PREFIX + "0.8.0-beta.1-cache1";
+  CACHE = PREFIX + "0.8.0-beta.2-cache1";
 const ASSETS = [
   "./",
   "./index.html",

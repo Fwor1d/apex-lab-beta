@@ -47,6 +47,13 @@ button {
   padding: 8px 12px;
 }
 select {
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  height: 44px;
+  padding-right: 38px;
+  background: #232a24 url("../telemetry/assets/chevron.svg") no-repeat right
+    12px center;
   min-width: 0;
   width: 100%;
 }
