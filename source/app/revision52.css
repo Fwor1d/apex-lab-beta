@@ -1,0 +1,74 @@
+/* Approved R5.2 polish only: camera framing, vehicle marks, responsive transport. */
+.directional-car{pointer-events:none}
+.directional-car .car-body{fill:#111b1c;stroke:var(--lap-a,#73d3ff);stroke-width:1.5;stroke-linejoin:round}
+.directional-car.car-b .car-body{fill:#ffc870;fill-opacity:.22;stroke:var(--lap-b,#ffc870);stroke-dasharray:3 1}
+.directional-car .car-glass{fill:var(--lap-a,#73d3ff);stroke:none;opacity:.85}
+.directional-car.car-b .car-glass{fill:var(--lap-b,#ffc870)}
+.directional-car .car-wing{fill:none;stroke:var(--lap-a,#73d3ff);stroke-width:1.5}
+.directional-car.car-b .car-wing{stroke:var(--lap-b,#ffc870)}
+[data-vehicle-detail=true] #marker-a,[data-vehicle-detail=true] #marker-b{display:none!important}
+.precision-sheet-toggle{display:none}
+.precision-supplement{z-index:25;background:var(--surface);border:1px solid var(--line);border-radius:8px}
+.precision-layout .mini-overview{pointer-events:auto}
+.precision-layout .workspace-playback button,.precision-layout .workspace-playback select{min-height:44px;min-width:44px}
+.precision-map-active .telemetry-context .pair-toggle{min-height:44px}
+.precision-layout .event-detail-sheet{max-height:320px;overflow:auto;overscroll-behavior:contain}
+.precision-layout .event-detail-head{position:sticky;top:-12px;background:var(--surface);z-index:1}
+.precision-layout .event-detail-sheet:not([hidden]){scroll-margin-block:12px}
+.precision-options summary:focus-visible,.precision-layout summary:focus-visible{outline:2px solid var(--lime);outline-offset:2px}
+@media(max-width:760px){
+ .precision-layout .workspace-toolbar{display:grid;grid-template-columns:1fr 1fr;gap:4px 10px}
+ .precision-layout .workspace-toolbar>.compact-field{width:auto}
+ .precision-layout .precision-options{grid-column:1/-1;justify-self:stretch}
+ .precision-layout .precision-options>summary{max-width:none;font-size:12px;min-height:44px;padding:8px}
+ .precision-options>summary:after{content:'⌄';margin-left:auto}
+ .precision-layout .map-stage{height:clamp(280px,39dvh,360px);min-height:280px}
+ .precision-layout .analysis-dock{display:flex;flex-direction:column}
+ .precision-layout .workspace-playback{order:0;padding-bottom:4px}
+ .precision-layout .event-detail-sheet{order:1;flex:none;max-height:320px}
+ .precision-layout .precision-ab-dock{order:2}
+ .precision-layout .playback-context{order:3}
+ .precision-map-active .telemetry-context .pair-toggle{font-size:12px}
+ .precision-layout .main-map-frame .map-caption{font-size:11px;line-height:14px;max-width:calc(100% - 16px)}
+}
+@media(min-width:761px) and (max-height:500px){
+ body.precision-map-active{--top:48px}
+ .precision-map-active .top{height:48px;min-height:48px;padding-block:0}
+ .precision-map-active main.has-track-workspace{padding:0 8px 8px}
+ .precision-map-active .telemetry-context{height:48px;min-height:48px;flex-wrap:nowrap;gap:6px;margin:0}
+ .precision-map-active .telemetry-context .tabs{flex:1 1 auto;order:0}
+ .precision-map-active .telemetry-context .precision-source{font-size:11px;order:1}
+ .precision-map-active .telemetry-context .pair-toggle{order:2;font-size:12px}
+ .precision-map-active .telemetry-context .precision-sheet-toggle{display:block;order:3;min-height:44px;min-width:70px}
+ .precision-map-active .motion-caption{display:none}
+ .precision-layout.track-workspace{display:grid;position:relative;height:calc(100dvh - 104px);grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(120px,1fr) 56px;gap:0;min-height:0}
+ .precision-layout .map-column{display:block;height:100%;min-height:0;grid-row:1}
+ .precision-layout .map-stage{height:100%;min-height:0}
+ .precision-layout .analysis-dock{grid-row:2;min-height:56px}
+ .precision-layout .workspace-playback{height:56px;padding:6px 8px;grid-template-columns:58px minmax(50px,1fr) auto 56px}
+ .precision-layout .camera-tools{top:6px;left:6px;display:grid;grid-template-columns:44px 44px;gap:2px}
+ .precision-layout .mini-overview{top:6px;right:6px;width:112px;height:82px;padding:4px}
+ .precision-layout .mini-overview svg{height:60px}
+ .precision-layout .mini-overview h3{font-size:11px;line-height:12px}
+ .precision-layout .main-map-frame .map-caption{bottom:3px;left:6px;font-size:11px;line-height:14px;max-width:calc(100% - 12px)}
+ .precision-layout .precision-supplement{position:absolute;right:0;top:0;bottom:60px;width:360px;max-width:70%;padding:8px;overflow:auto;overscroll-behavior:contain}
+ .precision-layout .precision-supplement .workspace-toolbar{display:grid;grid-template-columns:1fr;min-height:0;padding:0;gap:8px}
+ .precision-layout .precision-supplement .compact-field{display:flex;flex-direction:row;justify-content:space-between;align-items:center}
+ .precision-layout .precision-supplement .sector-select-group{width:200px}
+ .precision-layout .precision-supplement .precision-options{margin:0;justify-self:stretch}
+ .precision-layout .precision-options-body{position:static;max-width:none;width:auto;max-height:none;padding:12px 0;box-shadow:none;border:0}
+ .precision-layout .precision-ab-dock{display:grid;grid-template-columns:1fr 100px 1fr;gap:8px;padding:12px 0}
+ .precision-layout .precision-lap{display:block}.precision-layout .precision-lap-heading{display:block;font-size:11px}.precision-layout .precision-speed strong{font-size:24px}
+ .precision-layout .precision-pedals>div{grid-template-columns:35px 1fr 30px;gap:2px}
+ .precision-layout .precision-supplement .segment-toolbar{position:static;width:100%;max-width:none;padding:4px;margin:8px 0;display:flex}
+ .precision-layout .precision-mobile-disclosures{display:grid;grid-template-columns:1fr 1fr}
+ .precision-layout .precision-mobile-disclosures>details{position:static;width:auto;max-height:none;font-size:12px}
+ .precision-layout .precision-mobile-disclosures>details[open]{grid-column:1/-1}
+ .precision-layout .precision-mobile-disclosures .sector-comparison{display:block}
+ .precision-layout .event-detail-card.event-detail-sheet{position:absolute;top:0;right:0;bottom:60px;left:auto;width:320px;margin:0;max-width:48%;max-height:none;z-index:20;box-shadow:none;padding:10px}
+ .precision-layout:has(.event-detail-sheet:not([hidden])) .map-column{margin-right:330px}
+ .precision-layout:has(.event-detail-sheet:not([hidden])) .mini-overview{width:100px;height:76px}
+ .precision-layout:has(.event-detail-sheet:not([hidden])) .camera-tools{display:flex;flex-direction:row;gap:2px}
+ .precision-layout .trace-dock{grid-row:3}
+ .precision-map-active .workspace-footer{margin-top:4px}
+}

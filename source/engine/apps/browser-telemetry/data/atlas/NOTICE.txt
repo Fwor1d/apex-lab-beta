@@ -1,0 +1,9 @@
+APEX Track Atlas 2026.10.14
+© OpenStreetMap contributors, ODbL-1.0: https://opendatacommons.org/licenses/odbl/1-0/
+https://www.openstreetmap.org/copyright
+Source: https://github.com/tobi/track-atlas/tree/8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d
+Lovely corner/sector/pit metadata is NOT redistributed.
+US midlines additionally derived from USDA NAIP / USGS public-domain imagery, see per-feature sources.
+Phase9 context layers and two accepted/repaired outlines: OSM API snapshot 2026-10-14, see per-feature/source and manifest provenance. Buildings, landcover, mapped pavement polygons and pit ways are physical reference data, NOT surveyed LMU boundaries/pit layouts.
+Derived coordinate database remains ODbL; downloadable GeoJSON/manifest provide the reusable database.
+Sebring and old Algarve baseline coordinates preserved; preferred Algarve reference uses connected relation7509968. No surveyed LMU timing lines/vehicle paths/elevation claimed.

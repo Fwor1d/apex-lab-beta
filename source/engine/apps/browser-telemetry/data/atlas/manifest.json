@@ -1,0 +1,3075 @@
+{
+  "schemaVersion": "1.0.0",
+  "atlasVersion": "2026.10.14.2",
+  "inventoryCheckedAt": "2026-10-14",
+  "inventorySource": "https://lemansultimate.com/circuits/",
+  "geometryPolicy": "reference-only unless independently registered; no telemetry overlays",
+  "tracks": [
+    {
+      "id": "algarve",
+      "name": "Algarve International Circuit",
+      "aliases": [
+        "Algarve International Circuit",
+        "Portimão",
+        "Portimao",
+        "Autódromo Internacional do Algarve"
+      ],
+      "layouts": [
+        {
+          "id": "algarve-gp",
+          "layoutId": "gp",
+          "name": "Grand Prix",
+          "aliases": [
+            "GP",
+            "Grand Prix",
+            "Algarve International Circuit"
+          ],
+          "quality": "reference-only",
+          "geometry": "algarve-gp.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "physical source; LMU unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 4647.589329981255,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "unscaled OSM coordinates; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 172,
+            "maxSegmentM": 430.0216677899753,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "url": "https://www.openstreetmap.org/relation/7509968",
+            "retrievedAt": "2026-10-14",
+            "sourceSha256": "dd4c8af2638a84b6d498e01816ee3ee0fefb1efcf0a05f1aa4ffa7b7a37c7130",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "wayIds": [
+              "363133199",
+              "511858148",
+              "363133200",
+              "157736307",
+              "511858151",
+              "511858149",
+              "511858150",
+              "511858549",
+              "363133201",
+              "511858548",
+              "511858547",
+              "363133187",
+              "511858546",
+              "511859284",
+              "363133194",
+              "511858536",
+              "363133190",
+              "511858533",
+              "511858543",
+              "511858539",
+              "511859291",
+              "511859290",
+              "511859289",
+              "363133193",
+              "511859287",
+              "511859288",
+              "511859286",
+              "363133197",
+              "511859285",
+              "511859282",
+              "363133196",
+              "511859283",
+              "363133198",
+              "363133195"
+            ],
+            "method": "all 34 way members joined by exact node IDs; relation also has 2 non-path node members; closed; no stitching fallback or scale",
+            "sha256": "52483f16cccd7fde4451cfd3ce36d6a22ef85ad029c98e8d1f9a626d29d0a206",
+            "file": "variants/algarve-gp.geojson"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": [
+              4.376,
+              6.776
+            ],
+            "p95M": [
+              8.494,
+              13.598
+            ],
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Именованный OSM-контур замкнут по исходным узлам. Физическая справочная карта; привязка LMU и старт/финиш не подтверждены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Algarve International Circuit"
+          ],
+          "contextGeometry": {
+            "asset": "algarve-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-8.6328519,37.2252828,-8.6235762,37.2372845",
+              "retrievedAt": "2026-10-14",
+              "sha256": "dd4c8af2638a84b6d498e01816ee3ee0fefb1efcf0a05f1aa4ffa7b7a37c7130",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 98,
+            "vertices": 2056,
+            "roles": {
+              "building": 40,
+              "landcover": 56,
+              "mapped-pit-path": 2
+            }
+          }
+        },
+        {
+          "id": "algarve-elms",
+          "layoutId": "elms",
+          "name": "ELMS",
+          "aliases": [
+            "ELMS"
+          ],
+          "quality": "reference-only",
+          "geometry": "algarve-gp.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "physical source; LMU unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 4647.589329981255,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "unscaled OSM coordinates; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 172,
+            "maxSegmentM": 430.0216677899753,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "url": "https://www.openstreetmap.org/relation/7509968",
+            "retrievedAt": "2026-10-14",
+            "sourceSha256": "dd4c8af2638a84b6d498e01816ee3ee0fefb1efcf0a05f1aa4ffa7b7a37c7130",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "wayIds": [
+              "363133199",
+              "511858148",
+              "363133200",
+              "157736307",
+              "511858151",
+              "511858149",
+              "511858150",
+              "511858549",
+              "363133201",
+              "511858548",
+              "511858547",
+              "363133187",
+              "511858546",
+              "511859284",
+              "363133194",
+              "511858536",
+              "363133190",
+              "511858533",
+              "511858543",
+              "511858539",
+              "511859291",
+              "511859290",
+              "511859289",
+              "363133193",
+              "511859287",
+              "511859288",
+              "511859286",
+              "363133197",
+              "511859285",
+              "511859282",
+              "363133196",
+              "511859283",
+              "363133198",
+              "363133195"
+            ],
+            "method": "all 34 way members joined by exact node IDs; relation also has 2 non-path node members; closed; no stitching fallback or scale",
+            "sha256": "52483f16cccd7fde4451cfd3ce36d6a22ef85ad029c98e8d1f9a626d29d0a206",
+            "file": "variants/algarve-gp.geojson"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Общий физический справочный контур: официальный LMU описывает вариант решётки/пит-лейна. Старт/финиш и Lap Dist этого варианта не проверены; наложения отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [],
+          "geometryCompatibility": {
+            "basis": "official grid/pit variant; shared physical reference only",
+            "referenceLayoutId": "algarve-gp",
+            "source": "https://lemansultimate.com/le-mans-ultimate-releases-v1-3-update-with-final-elms-content-performance-updates/",
+            "timingLineVerified": false,
+            "simulationRegistrationVerified": false
+          },
+          "contextGeometry": {
+            "asset": "algarve-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-8.6328519,37.2252828,-8.6235762,37.2372845",
+              "retrievedAt": "2026-10-14",
+              "sha256": "dd4c8af2638a84b6d498e01816ee3ee0fefb1efcf0a05f1aa4ffa7b7a37c7130",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 98,
+            "vertices": 2056,
+            "roles": {
+              "building": 40,
+              "landcover": 56,
+              "mapped-pit-path": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "bahrain",
+      "name": "Bahrain International Circuit",
+      "aliases": [
+        "Bahrain International Circuit",
+        "Bahrain",
+        "Sakhir"
+      ],
+      "layouts": [
+        {
+          "id": "bahrain-gp",
+          "layoutId": "gp",
+          "name": "WEC / Grand Prix",
+          "aliases": [
+            "WEC",
+            "GP",
+            "Grand Prix",
+            "Bahrain International Circuit"
+          ],
+          "quality": "reference-only",
+          "geometry": "bahrain.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 5419.691613750486,
+            "sourceDeclaredM": 5412,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 348,
+            "maxSegmentM": 29.958544197005914,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/bahrain/raw/layers/gp.geojson",
+            "sha256": "da3a68d4ee54ea836ab6165c7c7971ea8a2339a83de33cd0670e8d9242a08e82",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "OSM assembled centerline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Bahrain International Circuit"
+          ],
+          "contextGeometry": {
+            "asset": "bahrain-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=50.5094540,26.0252750,50.5191480,26.0377010",
+              "retrievedAt": "2026-10-14",
+              "sha256": "b90410c226c8dda99ff5c846aec907bdf19d1501c0b8dc680ddce41172cd7647",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 186,
+            "vertices": 2223,
+            "roles": {
+              "building": 154,
+              "landcover": 31,
+              "mapped-pit-path": 1
+            }
+          }
+        },
+        {
+          "id": "bahrain-endurance",
+          "layoutId": "endurance",
+          "name": "Endurance",
+          "aliases": [
+            "Endurance",
+            "Bahrain Endurance"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        },
+        {
+          "id": "bahrain-outer",
+          "layoutId": "outer",
+          "name": "Outer",
+          "aliases": [
+            "Outer",
+            "Bahrain Outer Circuit"
+          ],
+          "quality": "reference-only",
+          "geometry": "bahrain-outer.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "physical source; LMU unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 3551.0441308692957,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "unscaled OSM coordinates; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 128,
+            "maxSegmentM": 386.2010599481212,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "url": "https://www.openstreetmap.org/relation/11987742",
+            "retrievedAt": "2026-10-14",
+            "sourceSha256": "b90410c226c8dda99ff5c846aec907bdf19d1501c0b8dc680ddce41172cd7647",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "wayIds": [
+              "4818385",
+              "881756725",
+              "881756731"
+            ],
+            "method": "exact node connectivity; all 3 relation members used once; long straight segments subdivided collinearly (<400m), no topology change or scale",
+            "sha256": "17993309e093dbb9284d6ae2612ba4b0168b26280a0630cfd97d190d8e40ebc7",
+            "file": "variants/bahrain-outer.geojson"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Именованный OSM-контур замкнут по исходным узлам. Физическая справочная карта; привязка LMU и старт/финиш не подтверждены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [],
+          "contextGeometry": {
+            "asset": "bahrain-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=50.5094540,26.0252750,50.5191480,26.0377010",
+              "retrievedAt": "2026-10-14",
+              "sha256": "b90410c226c8dda99ff5c846aec907bdf19d1501c0b8dc680ddce41172cd7647",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 186,
+            "vertices": 2223,
+            "roles": {
+              "building": 154,
+              "landcover": 31,
+              "mapped-pit-path": 1
+            }
+          }
+        },
+        {
+          "id": "bahrain-paddock",
+          "layoutId": "paddock",
+          "name": "Paddock",
+          "aliases": [
+            "Paddock",
+            "Bahrain Paddock"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        }
+      ]
+    },
+    {
+      "id": "le-mans",
+      "name": "Circuit de la Sarthe",
+      "aliases": [
+        "Circuit de la Sarthe",
+        "Le Mans",
+        "Circuit de La Sarthe"
+      ],
+      "layouts": [
+        {
+          "id": "le-mans-24h",
+          "layoutId": "24h",
+          "name": "24 Hours",
+          "aliases": [
+            "24h",
+            "WEC",
+            "Circuit de la Sarthe"
+          ],
+          "quality": "reference-only",
+          "geometry": "le-mans.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 13630.188090945407,
+            "sourceDeclaredM": 13626,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 2443,
+            "maxSegmentM": 19.502513886759118,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/circuit-de-la-sarthe/raw/layers/24h.geojson",
+            "sha256": "7ddb50c869a7a6c065609a03d34e793b5bd772b0f200176a9f87a99443af78d2",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "midline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Circuit de la Sarthe"
+          ],
+          "contextGeometry": {
+            "asset": "le-mans-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=0.2066602,47.9126344,0.2446993,47.9626726",
+              "retrievedAt": "2026-10-14",
+              "sha256": "634245d3cbc21d58b3e985262ea827505a3e331e9e224fe7a2090166c2e56ae8",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 159,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 1843,
+            "vertices": 19997,
+            "roles": {
+              "building": 1545,
+              "landcover": 284,
+              "mapped-pit-path": 14
+            }
+          }
+        },
+        {
+          "id": "le-mans-mulsanne",
+          "layoutId": "mulsanne",
+          "name": "Mulsanne / без шикан",
+          "aliases": [
+            "Mulsanne",
+            "Circuit de la Sarthe Mulsanne"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        }
+      ]
+    },
+    {
+      "id": "fuji",
+      "name": "Fuji Speedway",
+      "aliases": [
+        "Fuji Speedway",
+        "Fuji International Speedway",
+        "Fuji International Circuit",
+        "Fuji"
+      ],
+      "layouts": [
+        {
+          "id": "fuji-gp",
+          "layoutId": "gp",
+          "name": "WEC",
+          "aliases": [
+            "WEC",
+            "GP",
+            "Fuji Speedway"
+          ],
+          "quality": "reference-only",
+          "geometry": "fuji.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 4553.6704067489245,
+            "sourceDeclaredM": 4549,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 316,
+            "maxSegmentM": 30.00665053635053,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/fuji/raw/layers/gp.geojson",
+            "sha256": "f1a499054f1048f851c5fa844d9f6a9c761370989675071d93eddc57e364fdb8",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "OSM assembled centerline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Fuji Speedway"
+          ],
+          "contextGeometry": {
+            "asset": "fuji-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=138.9191860,35.3639140,138.9346290,35.3771520",
+              "retrievedAt": "2026-10-14",
+              "sha256": "f551df73524ee44eee50c6c04a2350de1cc3aeebc85435f21cfe63fd551d9346",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 153,
+            "vertices": 2959,
+            "roles": {
+              "building": 51,
+              "landcover": 101,
+              "mapped-pit-path": 1
+            }
+          }
+        },
+        {
+          "id": "fuji-classic",
+          "layoutId": "classic",
+          "name": "Classic / без шиканы",
+          "aliases": [
+            "Classic",
+            "Fuji Classic"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        }
+      ]
+    },
+    {
+      "id": "monza",
+      "name": "Autodromo Nazionale Monza",
+      "aliases": [
+        "Autodromo Nazionale Monza",
+        "Monza"
+      ],
+      "layouts": [
+        {
+          "id": "monza-gp",
+          "layoutId": "gp",
+          "name": "Grand Prix",
+          "aliases": [
+            "GP",
+            "WEC",
+            "Autodromo Nazionale Monza"
+          ],
+          "quality": "reference-only",
+          "geometry": "monza.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 5794.193435536751,
+            "sourceDeclaredM": 5793,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 417,
+            "maxSegmentM": 29.93146779432433,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/monza/raw/layers/gp.geojson",
+            "sha256": "5ca686275ac1b14971ec1b3aab4ac2ee3a411b48be787e9d5621a3c9f65d04c2",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "OSM assembled centerline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Autodromo Nazionale Monza"
+          ],
+          "contextGeometry": {
+            "asset": "monza-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=9.2798900,45.6110580,9.2976550,45.6321620",
+              "retrievedAt": "2026-10-14",
+              "sha256": "df406cdf286d0015f6021a4451d6f1e13f298c73369e1b7b93b298ab729050de",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 257,
+            "vertices": 2704,
+            "roles": {
+              "building": 214,
+              "landcover": 41,
+              "mapped-pavement": 1,
+              "mapped-pit-path": 1
+            }
+          }
+        },
+        {
+          "id": "monza-curva-grande",
+          "layoutId": "curva-grande",
+          "name": "Curva Grande",
+          "aliases": [
+            "Curva Grande",
+            "Monza Curva Grande Circuit"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        }
+      ]
+    },
+    {
+      "id": "sebring",
+      "name": "Sebring International Raceway",
+      "aliases": [
+        "Sebring International Raceway",
+        "Sebring"
+      ],
+      "layouts": [
+        {
+          "id": "sebring-wec",
+          "layoutId": "wec",
+          "name": "International / WEC",
+          "aliases": [
+            "WEC",
+            "Sebring International Raceway",
+            "International"
+          ],
+          "quality": "reference-only",
+          "geometry": "sebring.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 5865.866650822839,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 314,
+            "maxSegmentM": 29.67286690278483,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "APEX LAB preserved source",
+            "file": "data/sebring/centerline.geojson",
+            "sha256": "a881644b3dc3fa46d82527c5c6db22bdcb0b1f863106281bdf647a14818f5541",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "preserved centerline; no LMU length scaling"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Sebring International Raceway"
+          ],
+          "training": {
+            "schemaVersion": "1.0.0",
+            "dedicatedLessons": [
+              "t1",
+              "t7",
+              "t17"
+            ],
+            "definition": "apps/mobile/data/circuits.js",
+            "dataKind": "educational",
+            "calibratedToLMU": false
+          },
+          "contextGeometry": {
+            "asset": "sebring-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-81.3590690,27.4474670,-81.3452780,27.4580500",
+              "retrievedAt": "2026-10-14",
+              "sha256": "db4fc5157f83f6427a0e5ffe11bd21f3581a1e0f572a30447c362c6a9186d5d1",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 48,
+            "vertices": 707,
+            "roles": {
+              "building": 33,
+              "landcover": 13,
+              "mapped-pavement": 1,
+              "mapped-pit-path": 1
+            }
+          }
+        },
+        {
+          "id": "sebring-school",
+          "layoutId": "school",
+          "name": "School",
+          "aliases": [
+            "School",
+            "Sebring School Circuit"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        }
+      ]
+    },
+    {
+      "id": "spa",
+      "name": "Circuit de Spa-Francorchamps",
+      "aliases": [
+        "Circuit de Spa-Francorchamps",
+        "Spa-Francorchamps",
+        "Spa"
+      ],
+      "layouts": [
+        {
+          "id": "spa-gp",
+          "layoutId": "gp",
+          "name": "WEC",
+          "aliases": [
+            "WEC",
+            "GP",
+            "Circuit de Spa-Francorchamps"
+          ],
+          "quality": "reference-only",
+          "geometry": "spa.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 6994.670719169752,
+            "sourceDeclaredM": 7004,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 445,
+            "maxSegmentM": 29.837913107789593,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/spa-francorchamps/raw/layers/gp.geojson",
+            "sha256": "9e5f3820ff63d749cf824e7174f04f2f087d607c0ea3847629b3b419bc488c06",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "OSM assembled centerline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Circuit de Spa-Francorchamps"
+          ],
+          "contextGeometry": {
+            "asset": "spa-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=5.9587750,50.4268760,5.9783550,50.4470610",
+              "retrievedAt": "2026-10-14",
+              "sha256": "ecd1f8345dacb5e11a62bd68fe10f554e30b7b2d781997773d629a0f57b0318d",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 258,
+            "vertices": 4956,
+            "roles": {
+              "building": 142,
+              "landcover": 113,
+              "mapped-pit-path": 3
+            }
+          }
+        },
+        {
+          "id": "spa-endurance",
+          "layoutId": "endurance",
+          "name": "Endurance",
+          "aliases": [
+            "Endurance",
+            "Spa Endurance"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        },
+        {
+          "id": "spa-elms",
+          "layoutId": "elms",
+          "name": "ELMS",
+          "aliases": [
+            "ELMS"
+          ],
+          "quality": "reference-only",
+          "geometry": "spa.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 6994.670719169752,
+            "sourceDeclaredM": 7004,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 445,
+            "maxSegmentM": 29.837913107789593,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/spa-francorchamps/raw/layers/gp.geojson",
+            "sha256": "9e5f3820ff63d749cf824e7174f04f2f087d607c0ea3847629b3b419bc488c06",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "OSM assembled centerline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Общий физический справочный контур: официальный LMU описывает вариант решётки/пит-лейна. Старт/финиш и Lap Dist этого варианта не проверены; наложения отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [],
+          "geometryCompatibility": {
+            "basis": "official grid/pit variant; shared physical reference only",
+            "referenceLayoutId": "spa-gp",
+            "source": "https://lemansultimate.com/le-mans-ultimate-releases-v1-3-update-with-final-elms-content-performance-updates/",
+            "timingLineVerified": false,
+            "simulationRegistrationVerified": false
+          },
+          "contextGeometry": {
+            "asset": "spa-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=5.9587750,50.4268760,5.9783550,50.4470610",
+              "retrievedAt": "2026-10-14",
+              "sha256": "ecd1f8345dacb5e11a62bd68fe10f554e30b7b2d781997773d629a0f57b0318d",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 258,
+            "vertices": 4956,
+            "roles": {
+              "building": 142,
+              "landcover": 113,
+              "mapped-pit-path": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "imola",
+      "name": "Autodromo Internazionale Enzo e Dino Ferrari",
+      "aliases": [
+        "Autodromo Internazionale Enzo e Dino Ferrari",
+        "Imola"
+      ],
+      "layouts": [
+        {
+          "id": "imola-gp",
+          "layoutId": "gp",
+          "name": "WEC",
+          "aliases": [
+            "WEC",
+            "GP",
+            "Autodromo Internazionale Enzo e Dino Ferrari"
+          ],
+          "quality": "reference-only",
+          "geometry": "imola.geojson",
+          "direction": {
+            "value": "anticlockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 4904.5481806703165,
+            "sourceDeclaredM": 4909,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 325,
+            "maxSegmentM": 29.493915689126666,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/imola/raw/layers/gp.geojson",
+            "sha256": "4cc1d6692b9aeee69e2bde9f9e1affdf507aaa92d9b13a42af641122bb6c7227",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "OSM assembled centerline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Autodromo Internazionale Enzo e Dino Ferrari"
+          ],
+          "contextGeometry": {
+            "asset": "imola-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=11.7012530,44.3356670,11.7259980,44.3458500",
+              "retrievedAt": "2026-10-14",
+              "sha256": "9b4ed78d5e2bac4c5c05b1071204044a4f021a6e7d20ed46346e329138c5cab6",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 261,
+            "vertices": 3427,
+            "roles": {
+              "building": 218,
+              "landcover": 42,
+              "mapped-pit-path": 1
+            }
+          }
+        },
+        {
+          "id": "imola-elms",
+          "layoutId": "elms",
+          "name": "ELMS",
+          "aliases": [
+            "ELMS"
+          ],
+          "quality": "reference-only",
+          "geometry": "imola.geojson",
+          "direction": {
+            "value": "anticlockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 4904.5481806703165,
+            "sourceDeclaredM": 4909,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 325,
+            "maxSegmentM": 29.493915689126666,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/imola/raw/layers/gp.geojson",
+            "sha256": "4cc1d6692b9aeee69e2bde9f9e1affdf507aaa92d9b13a42af641122bb6c7227",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "OSM assembled centerline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Общий физический справочный контур: официальный LMU описывает вариант решётки/пит-лейна. Старт/финиш и Lap Dist этого варианта не проверены; наложения отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [],
+          "geometryCompatibility": {
+            "basis": "official grid/pit variant; shared physical reference only",
+            "referenceLayoutId": "imola-gp",
+            "source": "https://lemansultimate.com/le-mans-ultimate-releases-v1-3-update-with-final-elms-content-performance-updates/",
+            "timingLineVerified": false,
+            "simulationRegistrationVerified": false
+          },
+          "contextGeometry": {
+            "asset": "imola-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=11.7012530,44.3356670,11.7259980,44.3458500",
+              "retrievedAt": "2026-10-14",
+              "sha256": "9b4ed78d5e2bac4c5c05b1071204044a4f021a6e7d20ed46346e329138c5cab6",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 261,
+            "vertices": 3427,
+            "roles": {
+              "building": 218,
+              "landcover": 42,
+              "mapped-pit-path": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "cota",
+      "name": "Circuit of the Americas",
+      "aliases": [
+        "Circuit of the Americas",
+        "COTA"
+      ],
+      "layouts": [
+        {
+          "id": "cota-gp",
+          "layoutId": "gp",
+          "name": "Grand Prix",
+          "aliases": [
+            "GP",
+            "WEC",
+            "Circuit of the Americas"
+          ],
+          "quality": "reference-only",
+          "geometry": "cota.geojson",
+          "direction": {
+            "value": "anticlockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 5500.1418957880405,
+            "sourceDeclaredM": 5515,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 989,
+            "maxSegmentM": 19.031883941631918,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/circuit-of-the-americas/raw/layers/gp.geojson",
+            "sha256": "af84a91d26fb1cf3165e51aa62e1411297ef021c4080544b9f5f248288cc6274",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "midline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Circuit of the Americas"
+          ],
+          "contextGeometry": {
+            "asset": "cota-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-97.6442390,30.1292493,-97.6236713,30.1402318",
+              "retrievedAt": "2026-10-14",
+              "sha256": "abb03b602422cd17bca371cfd6e8d215a50a67b8b28e9d685a48883e4f357dfe",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 120,
+            "vertices": 1715,
+            "roles": {
+              "building": 82,
+              "landcover": 37,
+              "mapped-pit-path": 1
+            }
+          }
+        },
+        {
+          "id": "cota-national",
+          "layoutId": "national",
+          "name": "National",
+          "aliases": [
+            "National",
+            "COTA National"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        }
+      ]
+    },
+    {
+      "id": "interlagos",
+      "name": "Autodromo Jose Carlos Pace",
+      "aliases": [
+        "Autodromo Jose Carlos Pace",
+        "Interlagos",
+        "Autódromo José Carlos Pace"
+      ],
+      "layouts": [
+        {
+          "id": "interlagos-gp",
+          "layoutId": "gp",
+          "name": "Grand Prix",
+          "aliases": [
+            "GP",
+            "WEC",
+            "Autodromo Jose Carlos Pace"
+          ],
+          "quality": "reference-only",
+          "geometry": "interlagos.geojson",
+          "direction": {
+            "value": "anticlockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 4309.329653133648,
+            "sourceDeclaredM": 4309,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 336,
+            "maxSegmentM": 29.877450214343693,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/interlagos/raw/layers/gp.geojson",
+            "sha256": "f0af1ac34a730c7c2acb373d21446a9ab4b8dbd0f9fbb6f3fdaef643ffd4aa94",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "OSM assembled centerline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Autodromo Jose Carlos Pace"
+          ],
+          "contextGeometry": {
+            "asset": "interlagos-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-46.7014070,-23.7071210,-46.6932590,-23.6961940",
+              "retrievedAt": "2026-10-14",
+              "sha256": "0038d09bde6669a7a3179db2a534d9711c1551eb81c8473ba163329dcbe6bcd5",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 404,
+            "vertices": 7077,
+            "roles": {
+              "building": 349,
+              "landcover": 53,
+              "mapped-pit-path": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "lusail",
+      "name": "Lusail International Circuit",
+      "aliases": [
+        "Lusail International Circuit",
+        "Losail International Circuit",
+        "Lusail",
+        "Qatar"
+      ],
+      "layouts": [
+        {
+          "id": "lusail-gp",
+          "layoutId": "gp",
+          "name": "Grand Prix",
+          "aliases": [
+            "GP",
+            "WEC",
+            "Lusail International Circuit"
+          ],
+          "quality": "reference-only",
+          "geometry": "lusail.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 5425.742448934358,
+            "sourceDeclaredM": 5419,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 374,
+            "maxSegmentM": 29.95938386079267,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/losail/raw/layers/gp.geojson",
+            "sha256": "d185af857d3ae8dc67abeff4edff31093b6e6c0042e8230d7219dcb724778c7b",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "OSM assembled centerline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Lusail International Circuit"
+          ],
+          "contextGeometry": {
+            "asset": "lusail-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=51.4467250,25.4830420,51.4608080,25.4979310",
+              "retrievedAt": "2026-10-14",
+              "sha256": "1b80df50adfd5fb8ef283a0e8caaa02dfcd2c111331ed9d6f4125156c43b6bd8",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 161,
+            "vertices": 1388,
+            "roles": {
+              "building": 139,
+              "landcover": 18,
+              "mapped-pit-path": 4
+            }
+          }
+        },
+        {
+          "id": "lusail-short",
+          "layoutId": "short",
+          "name": "Short",
+          "aliases": [
+            "Short",
+            "Qatar Short"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        }
+      ]
+    },
+    {
+      "id": "silverstone",
+      "name": "Silverstone",
+      "aliases": [
+        "Silverstone",
+        "Silverstone Circuit",
+        "Silverstone International"
+      ],
+      "layouts": [
+        {
+          "id": "silverstone-gp",
+          "layoutId": "gp",
+          "name": "Grand Prix / ELMS",
+          "aliases": [
+            "GP",
+            "ELMS",
+            "Grand Prix"
+          ],
+          "quality": "reference-only",
+          "geometry": "silverstone.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 5880.654049542553,
+            "sourceDeclaredM": 5891,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 582,
+            "maxSegmentM": 29.93899253042642,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/silverstone/raw/layers/gp.geojson",
+            "sha256": "f3bc79c64eb6b7347e6a6f40b1bc7c2d31f40e348838edd9d6b99b7e9fe0f449",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "OSM assembled centerline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [],
+          "contextGeometry": {
+            "asset": "silverstone-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-1.0251290,52.0627170,-1.0084890,52.0797390",
+              "retrievedAt": "2026-10-14",
+              "sha256": "f537a69d5b94bd7edecc29fdd700c697b436a66a8dd2f9bc2f4311154f39c1d5",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 427,
+            "vertices": 6187,
+            "roles": {
+              "building": 162,
+              "landcover": 260,
+              "mapped-pit-path": 5
+            }
+          }
+        },
+        {
+          "id": "silverstone-wec",
+          "layoutId": "wec",
+          "name": "Grand Prix / WEC",
+          "aliases": [
+            "WEC"
+          ],
+          "quality": "reference-only",
+          "geometry": "silverstone.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 5880.654049542553,
+            "sourceDeclaredM": 5891,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 582,
+            "maxSegmentM": 29.93899253042642,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/silverstone/raw/layers/gp.geojson",
+            "sha256": "f3bc79c64eb6b7347e6a6f40b1bc7c2d31f40e348838edd9d6b99b7e9fe0f449",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "OSM assembled centerline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Общий физический справочный контур: официальный LMU описывает вариант решётки/пит-лейна. Старт/финиш и Lap Dist этого варианта не проверены; наложения отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [],
+          "geometryCompatibility": {
+            "basis": "official grid/pit variant; shared physical reference only",
+            "referenceLayoutId": "silverstone-gp",
+            "source": "https://lemansultimate.com/le-mans-ultimate-releases-v1-3-update-with-final-elms-content-performance-updates/",
+            "timingLineVerified": false,
+            "simulationRegistrationVerified": false
+          },
+          "contextGeometry": {
+            "asset": "silverstone-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-1.0251290,52.0627170,-1.0084890,52.0797390",
+              "retrievedAt": "2026-10-14",
+              "sha256": "f537a69d5b94bd7edecc29fdd700c697b436a66a8dd2f9bc2f4311154f39c1d5",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 427,
+            "vertices": 6187,
+            "roles": {
+              "building": 162,
+              "landcover": 260,
+              "mapped-pit-path": 5
+            }
+          }
+        },
+        {
+          "id": "silverstone-national",
+          "layoutId": "national",
+          "name": "National",
+          "aliases": [
+            "National"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        },
+        {
+          "id": "silverstone-international",
+          "layoutId": "international",
+          "name": "International",
+          "aliases": [
+            "International"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        }
+      ]
+    },
+    {
+      "id": "paul-ricard",
+      "name": "Circuit Paul Ricard",
+      "aliases": [
+        "Circuit Paul Ricard",
+        "Paul Ricard",
+        "Le Castellet"
+      ],
+      "layouts": [
+        {
+          "id": "paul-ricard-elms",
+          "layoutId": "elms",
+          "name": "ELMS 5.770 km",
+          "aliases": [
+            "ELMS",
+            "Circuit Paul Ricard"
+          ],
+          "quality": "reference-only",
+          "geometry": "paul-ricard.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 5771.121512401756,
+            "sourceDeclaredM": 5770,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 475,
+            "maxSegmentM": 29.679676342468184,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/paul-ricard/raw/layers/gp.geojson",
+            "sha256": "99673aa25b600129f5f9d20ea3bd81664ea4515db905d48fc9d94c6287ada43b",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "OSM assembled centerline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Circuit Paul Ricard"
+          ],
+          "contextGeometry": {
+            "asset": "paul-ricard-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=5.7773160,43.2462320,5.8045210,43.2594470",
+              "retrievedAt": "2026-10-14",
+              "sha256": "c0b00183368b9e0bfe1148799e1b1f8bbc2523320f85cf05e48dff20516bcf61",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 317,
+            "vertices": 4004,
+            "roles": {
+              "building": 206,
+              "landcover": 110,
+              "mapped-pavement": 1
+            }
+          }
+        },
+        {
+          "id": "paul-ricard-1a",
+          "layoutId": "1a",
+          "name": "1A",
+          "aliases": [
+            "1A"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        },
+        {
+          "id": "paul-ricard-1av2",
+          "layoutId": "1av2",
+          "name": "1A-V2",
+          "aliases": [
+            "1AV2",
+            "1A-V2"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        },
+        {
+          "id": "paul-ricard-1av2-short",
+          "layoutId": "1av2-short",
+          "name": "1A-V2 Short",
+          "aliases": [
+            "1AV2-Short",
+            "1A-V2 Short"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        },
+        {
+          "id": "paul-ricard-3a",
+          "layoutId": "3a",
+          "name": "3A",
+          "aliases": [
+            "3A"
+          ],
+          "quality": "unsupported",
+          "geometry": null,
+          "direction": {
+            "value": null,
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": null,
+            "sourceDeclaredM": null,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": null,
+          "source": null,
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет отдельно проверенного контура этой конфигурации; GP не подставляется."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": []
+        }
+      ]
+    },
+    {
+      "id": "barcelona",
+      "name": "Circuit de Barcelona-Catalunya",
+      "aliases": [
+        "Circuit de Barcelona-Catalunya",
+        "Barcelona",
+        "Circuit de Barcelona Catalunya"
+      ],
+      "layouts": [
+        {
+          "id": "barcelona-gp",
+          "layoutId": "gp",
+          "name": "Grand Prix / ELMS",
+          "aliases": [
+            "GP",
+            "ELMS",
+            "Circuit de Barcelona-Catalunya"
+          ],
+          "quality": "reference-only",
+          "geometry": "barcelona.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 4677.376210377877,
+            "sourceDeclaredM": 4657,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 295,
+            "maxSegmentM": 29.207071530374026,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/barcelona/raw/layers/gp.geojson",
+            "sha256": "737b13b61e4720501c5686f1a882be5bbe8cb50f57958cdf232bc65950a4e38e",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors",
+            "method": "OSM assembled centerline"
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Circuit de Barcelona-Catalunya"
+          ],
+          "contextGeometry": {
+            "asset": "barcelona-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=2.2513380,41.5633870,2.2644720,41.5754540",
+              "retrievedAt": "2026-10-14",
+              "sha256": "38eca903d539019faa6b84c8865b05ec69d779fc61cd96afcfbd7bab9d4d34f9",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 131,
+            "vertices": 1671,
+            "roles": {
+              "building": 98,
+              "landcover": 30,
+              "mapped-pit-path": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "daytona",
+      "name": "Daytona International Speedway",
+      "aliases": [
+        "Daytona International Speedway",
+        "Daytona"
+      ],
+      "layouts": [
+        {
+          "id": "daytona-road",
+          "layoutId": "road",
+          "name": "Road Course",
+          "aliases": [
+            "Road Course",
+            "Daytona International Speedway"
+          ],
+          "quality": "reference-only",
+          "geometry": "daytona.geojson",
+          "direction": {
+            "value": "anticlockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 5746.408620505496,
+            "sourceDeclaredM": 5729,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 836,
+            "maxSegmentM": 19.55992697701998,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/daytona/raw/layers/gp.geojson",
+            "sha256": "ad03fe58880fcffcbbe57a96f249b7e2dc05d4e9537c4cd5a97c9906380b779a",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors; USDA NAIP / USGS (Public Domain)",
+            "method": "midline",
+            "additionalSources": {
+              "imagery": {
+                "kind": "imagery",
+                "id": "fdep-2021",
+                "name": "Florida DOR county orthoimagery 2021 (FDOT yearly aerials, served by FDEP)",
+                "url": "https://ca.dep.state.fl.us/image/rest/services/FDOT_Yearly_Aerials/Aerial_Imagery_2021/ImageServer",
+                "license": "Florida public record; no licence restrictions stated",
+                "gsd_m": [
+                  0.1524
+                ],
+                "sampled_gsd_m": 0.25,
+                "acquisition_dates": [
+                  "2021"
+                ],
+                "rasters": [],
+                "request": {
+                  "crs": "EPSG:3857",
+                  "x0": -9025291.490406532,
+                  "y0": 3400108.267581863,
+                  "px": 0.2863510701888857,
+                  "width": 5315,
+                  "height": 6196
+                },
+                "frame": "WGS84-service",
+                "horizontal_accuracy": "specification: Florida county orthoimagery standard (Oct 2021), RMSEx/RMSEy <= 1.0 ft for 0.5 ft imagery; no tested report found",
+                "stated_ce95_m": 0.75
+              },
+              "reference": [
+                {
+                  "kind": "lidar",
+                  "name": "FL_Peninsular_Volusia_2018",
+                  "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/FL_Peninsular_Volusia_2018",
+                  "license": "public domain (US federal)",
+                  "year": 2019,
+                  "horizontal_accuracy": "metadata ldrchacc 0.5 m, statistic unspecified; taken as radial RMSE (x1.7308)"
+                }
+              ],
+              "seed": {
+                "kind": "osm",
+                "name": "layout centerline (OpenStreetMap)",
+                "file": "layers/gp.geojson",
+                "license": "ODbL",
+                "use": "seed only: fixes lap order, origin and direction; the edges are measured"
+              }
+            }
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены.",
+            "В upstream есть предупреждение о зеркальности прежнего outline. Направление площади нового midline совпадает с CCW; независимая проверка топологии LMU не выполнена."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Daytona International Speedway"
+          ],
+          "contextGeometry": {
+            "asset": "daytona-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-81.0757225,29.1778799,-81.0617911,29.1922750",
+              "retrievedAt": "2026-10-14",
+              "sha256": "071c2251d03a4d8f55e433412f11751e11b8a503d23242775b2bb979c1b4ced7",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 131,
+            "vertices": 2004,
+            "roles": {
+              "building": 68,
+              "landcover": 60,
+              "mapped-pit-path": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "laguna-seca",
+      "name": "WeatherTech Raceway Laguna Seca",
+      "aliases": [
+        "WeatherTech Raceway Laguna Seca",
+        "Laguna Seca"
+      ],
+      "layouts": [
+        {
+          "id": "laguna-seca-full",
+          "layoutId": "full",
+          "name": "Full Course",
+          "aliases": [
+            "Full Course",
+            "WeatherTech Raceway Laguna Seca"
+          ],
+          "quality": "reference-only",
+          "geometry": "laguna-seca.geojson",
+          "direction": {
+            "value": "anticlockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 3601.6226735147675,
+            "sourceDeclaredM": 3602,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 593,
+            "maxSegmentM": 19.042063964802793,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/laguna-seca/raw/layers/gp.geojson",
+            "sha256": "0ba5ba9906de7f89127d5498647e86e41d4be810c6deaef7f1d4874db5425dec",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors; USDA NAIP / USGS (Public Domain)",
+            "method": "midline",
+            "additionalSources": {
+              "imagery": {
+                "kind": "imagery",
+                "id": "naip",
+                "name": "USDA NAIP via USGS The National Map",
+                "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+                "license": "public domain (US federal)",
+                "gsd_m": [
+                  0.6
+                ],
+                "sampled_gsd_m": 0.5,
+                "acquisition_dates": [
+                  "2022-05-19"
+                ],
+                "rasters": [
+                  "m_3612126_ne_10_060_20220519",
+                  "m_3612127_nw_10_060_20220519"
+                ],
+                "request": {
+                  "crs": "EPSG:3857",
+                  "x0": -13554089.24741448,
+                  "y0": 4382002.905069409,
+                  "px": 0.6226795758775355,
+                  "width": 1812,
+                  "height": 2199
+                },
+                "frame": "WGS84-service",
+                "horizontal_accuracy": "NAIP contract: 95% of well-defined points within 4 m (2016+); not tested per acquisition",
+                "stated_ce95_m": 4.0
+              },
+              "reference": [
+                {
+                  "kind": "lidar",
+                  "name": "CA_FEMA_Z4_B1_2018",
+                  "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/CA_FEMA_Z4_B1_2018",
+                  "license": "public domain (US federal)",
+                  "year": 2018,
+                  "horizontal_accuracy": "assumed 1 m CE95 (not stated)"
+                },
+                {
+                  "kind": "lidar",
+                  "name": "ARRA-CA_CentralCoast-Z4_2010",
+                  "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/ARRA-CA_CentralCoast-Z4_2010",
+                  "license": "public domain (US federal)",
+                  "year": 2010,
+                  "horizontal_accuracy": "assumed 1 m CE95 (not stated)"
+                }
+              ],
+              "seed": {
+                "kind": "osm",
+                "name": "layout centerline (OpenStreetMap)",
+                "file": "layers/gp.geojson",
+                "license": "ODbL",
+                "use": "seed only: fixes lap order, origin and direction; the edges are measured"
+              }
+            }
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "WeatherTech Raceway Laguna Seca"
+          ],
+          "contextGeometry": {
+            "asset": "laguna-seca-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-121.7585808,36.5790837,-121.7481908,36.5894775",
+              "retrievedAt": "2026-10-14",
+              "sha256": "7956f3ce5ad232bfca5e2dfd6c21e079840d813654bf5045e5b2a28cbce2a923",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 58,
+            "vertices": 462,
+            "roles": {
+              "building": 50,
+              "landcover": 7,
+              "mapped-pit-path": 1
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "road-atlanta",
+      "name": "Michelin Raceway Road Atlanta",
+      "aliases": [
+        "Michelin Raceway Road Atlanta",
+        "Road Atlanta"
+      ],
+      "layouts": [
+        {
+          "id": "road-atlanta-full",
+          "layoutId": "full",
+          "name": "Full Course",
+          "aliases": [
+            "Full Course",
+            "Michelin Raceway Road Atlanta"
+          ],
+          "quality": "reference-only",
+          "geometry": "road-atlanta.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 4088.284467407051,
+            "sourceDeclaredM": 4088,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 564,
+            "maxSegmentM": 19.050555484314987,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/road-atlanta/raw/layers/gp.geojson",
+            "sha256": "b7461e999fc64d82accbd0528f5053a675e221bae7a10262ab13ce85b305e260",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors; USDA NAIP / USGS (Public Domain)",
+            "method": "midline",
+            "additionalSources": {
+              "imagery": {
+                "kind": "imagery",
+                "id": "naip",
+                "name": "USDA NAIP via USGS The National Map",
+                "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+                "license": "public domain (US federal)",
+                "gsd_m": [
+                  0.6
+                ],
+                "sampled_gsd_m": 0.5,
+                "acquisition_dates": [
+                  "2023-10-22"
+                ],
+                "rasters": [
+                  "m_3408350_se_17_060_20231022",
+                  "m_3408350_sw_17_060_20231022"
+                ],
+                "request": {
+                  "crs": "EPSG:3857",
+                  "x0": -9330741.51303487,
+                  "y0": 4049141.7472717953,
+                  "px": 0.6041336494500018,
+                  "width": 1815,
+                  "height": 3503
+                },
+                "frame": "WGS84-service",
+                "horizontal_accuracy": "NAIP contract: 95% of well-defined points within 4 m (2016+); not tested per acquisition",
+                "stated_ce95_m": 4.0
+              },
+              "reference": [
+                {
+                  "kind": "lidar",
+                  "name": "GA_Statewide_B3_2018",
+                  "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/GA_Statewide_B3_2018",
+                  "license": "public domain (US federal)",
+                  "year": 2019,
+                  "horizontal_accuracy": "assumed 1 m CE95 (not stated in the project metadata)"
+                },
+                {
+                  "kind": "lidar",
+                  "name": "ARRA-GA_LakeLanier_2010",
+                  "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/ARRA-GA_LakeLanier_2010",
+                  "license": "public domain (US federal)",
+                  "year": 2010,
+                  "horizontal_accuracy": "assumed 1 m CE95 (not stated)"
+                }
+              ],
+              "seed": {
+                "kind": "osm",
+                "name": "layout centerline (OpenStreetMap)",
+                "file": "layers/gp.geojson",
+                "license": "ODbL",
+                "use": "seed only: fixes lap order, origin and direction; the edges are measured"
+              }
+            }
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Michelin Raceway Road Atlanta"
+          ],
+          "contextGeometry": {
+            "asset": "road-atlanta-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-83.8196225,34.1353480,-83.8094798,34.1516029",
+              "retrievedAt": "2026-10-14",
+              "sha256": "c970256dbe8b80aa05d985defeb9361612fbce33ffe44d3c7388c70342ac5488",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 41,
+            "vertices": 705,
+            "roles": {
+              "building": 33,
+              "landcover": 6,
+              "mapped-pit-path": 2
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "long-beach",
+      "name": "Streets of Long Beach",
+      "aliases": [
+        "Streets of Long Beach",
+        "Long Beach",
+        "Long Beach Street Circuit",
+        "Streets of Long Beach Circuit"
+      ],
+      "layouts": [
+        {
+          "id": "long-beach-street",
+          "layoutId": "street",
+          "name": "Street Circuit",
+          "aliases": [
+            "Street Circuit",
+            "Streets of Long Beach"
+          ],
+          "quality": "reference-only",
+          "geometry": "long-beach.geojson",
+          "direction": {
+            "value": "clockwise",
+            "status": "source-declared; LMU alignment unvalidated"
+          },
+          "startFinish": {
+            "coordinate": null,
+            "offsetM": null,
+            "status": "not-validated; first vertex is not a timing line"
+          },
+          "length": {
+            "geodesicM": 3220.128664985278,
+            "sourceDeclaredM": 3167,
+            "unit": "m",
+            "status": "great-circle distance on WGS84 coordinates; Earth radius 6371008.8m; not rescaled; not recorded Lap Dist"
+          },
+          "qualityChecks": {
+            "vertices": 629,
+            "maxSegmentM": 19.049158598318453,
+            "closureGapM": 0.0
+          },
+          "source": {
+            "repository": "https://github.com/tobi/track-atlas",
+            "commit": "8c12ac414ea74ffe4a3ef74b294a2eafab7ee60d",
+            "file": "tracks/long-beach/raw/layers/gp.geojson",
+            "sha256": "6153b3aa1f42db2c68a7b3ae92f57ede1d4e3ec262032c7aa2ed73c551eebc9d",
+            "license": "ODbL-1.0",
+            "attribution": "© OpenStreetMap contributors; USDA NAIP / USGS (Public Domain)",
+            "method": "midline",
+            "additionalSources": {
+              "imagery": {
+                "kind": "imagery",
+                "id": "naip",
+                "name": "USDA NAIP via USGS The National Map",
+                "url": "https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer",
+                "license": "public domain (US federal)",
+                "gsd_m": [
+                  0.6
+                ],
+                "sampled_gsd_m": 0.5,
+                "acquisition_dates": [
+                  "2022-05-11"
+                ],
+                "rasters": [
+                  "m_3311815_se_11_060_20220511",
+                  "m_3311815_sw_11_060_20220511"
+                ],
+                "request": {
+                  "crs": "EPSG:3857",
+                  "x0": -13157737.43310664,
+                  "y0": 3997485.9954592213,
+                  "px": 0.601442624122428,
+                  "width": 2685,
+                  "height": 1167
+                },
+                "frame": "WGS84-service",
+                "horizontal_accuracy": "NAIP contract: 95% of well-defined points within 4 m (2016+); not tested per acquisition",
+                "stated_ce95_m": 4.0
+              },
+              "reference": [
+                {
+                  "kind": "lidar",
+                  "name": "CA_LosAngeles_1_B23",
+                  "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/CA_LosAngeles_1_B23",
+                  "license": "public domain (US federal)",
+                  "year": 2023,
+                  "horizontal_accuracy": "assumed 1 m CE95 (not stated in the metadata XML)"
+                },
+                {
+                  "kind": "lidar",
+                  "name": "USGS_LPC_CA_WestCoastElNinoUTM11_2016_LAS_2017",
+                  "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_CA_WestCoastElNinoUTM11_2016_LAS_2017",
+                  "license": "public domain (US federal)",
+                  "year": null,
+                  "horizontal_accuracy": "assumed 1 m CE95 (project not catalogued)"
+                },
+                {
+                  "kind": "lidar",
+                  "name": "USGS_LPC_CA_LosAngeles_2016_LAS_2018",
+                  "url": "https://s3-us-west-2.amazonaws.com/usgs-lidar-public/USGS_LPC_CA_LosAngeles_2016_LAS_2018",
+                  "license": "public domain (US federal)",
+                  "year": 2016,
+                  "horizontal_accuracy": "assumed 1 m CE95 (not stated)"
+                }
+              ],
+              "seed": {
+                "kind": "osm",
+                "name": "layout centerline (OpenStreetMap)",
+                "file": "layers/gp.geojson",
+                "license": "ODbL",
+                "use": "seed only: fixes lap order, origin and direction; the edges are measured"
+              }
+            }
+          },
+          "turnMarkers": [],
+          "telemetryMapping": {
+            "status": "unvalidated",
+            "directionAgreement": null,
+            "offsetM": null,
+            "rmsM": null,
+            "p95M": null,
+            "uncertaintyM": null
+          },
+          "limitations": [
+            "Нет независимой проверки LMU layout/стартовой линии. Реальные позиции, ghost и heatmap отключены."
+          ],
+          "inventorySources": [
+            "https://lemansultimate.com/circuits/",
+            "https://lemansultimate.com/february-update-public-release-notes/",
+            "https://guide.lemansultimate.com/hc/en-gb/articles/15634539149711-Update-V1-3-0-0"
+          ],
+          "legacyUnresolvedAliases": [
+            "Streets of Long Beach"
+          ],
+          "contextGeometry": {
+            "asset": "long-beach-context.geojson",
+            "source": {
+              "url": "https://api.openstreetmap.org/api/0.6/map?bbox=-118.1981135,33.7609569,-118.1833523,33.7667037",
+              "retrievedAt": "2026-10-14",
+              "sha256": "82a719859513177981a8dc95d98733f58b3f00a41699835d56f7e07752511821",
+              "license": "ODbL-1.0",
+              "attribution": "© OpenStreetMap contributors",
+              "method": "actual mapped polygons/ways; no inferred buffer or width; no LMU registration",
+              "omittedByVertexGuard": 0,
+              "extent": "bounded source bbox; partial surroundings, not complete track-surface coverage"
+            },
+            "featureCount": 91,
+            "vertices": 2515,
+            "roles": {
+              "building": 79,
+              "landcover": 12
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

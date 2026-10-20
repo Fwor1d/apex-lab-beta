@@ -1,0 +1,211 @@
+.instrument {
+  --instrument-ink: #f2f5ee;
+  --instrument-muted: #b0bcaf;
+  --instrument-line: #465247;
+  --instrument-lime: #c9fc60;
+  width: 100%;
+  min-width: 0;
+  color: var(--instrument-ink);
+  text-align: left;
+  font-size: 14px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.instrument *, .instrument *::before, .instrument *::after { box-sizing: border-box; }
+.instrument [hidden] { display: none !important; }
+.instrument p { max-width: none; }
+
+.instrument .instrument-frame {
+  position: relative;
+  isolation: isolate;
+  width: min(312px, 100%);
+  min-height: 176px;
+  aspect-ratio: 1;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: #121713;
+  box-shadow: 0 12px 26px #0003;
+}
+
+.instrument .instrument-scale {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: none;
+  pointer-events: none;
+}
+
+.instrument .instrument-rim { fill: none; stroke: #758171; stroke-width: 1; }
+.instrument .instrument-inner-rim { fill: none; stroke: #303b31; stroke-width: 1; }
+.instrument .instrument-tick { stroke: #566353; stroke-width: 1; stroke-linecap: butt; }
+.instrument .instrument-tick-major { stroke: #c0ccba; stroke-width: 1.5; }
+.instrument .instrument-number {
+  fill: #c0ccba;
+  stroke: none;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 500;
+  text-anchor: middle;
+  dominant-baseline: central;
+  font-variant-numeric: tabular-nums;
+}
+.instrument .instrument-redline { fill: none; stroke: #ed756c; stroke-width: 3; stroke-linecap: butt; }
+
+.instrument .instrument-dial-host {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 176px;
+  height: 176px;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+}
+
+/* Restore source SVG defaults that the prototype's global icon rule overrides. */
+.instrument .instrument-dial-host .comet-dial__ring {
+  fill: none;
+  stroke: none;
+  stroke-width: 1;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+  cursor: default;
+}
+.instrument .instrument-dial-host .comet-dial__track,
+.instrument .instrument-dial-host .comet-dial__lit,
+.instrument .instrument-dial-host .comet-dial__comet path { fill: none; stroke-linecap: round; }
+.instrument .instrument-dial-host .comet-dial__track { stroke: var(--cd-ink); }
+.instrument .instrument-dial-host .comet-dial__lit,
+.instrument .instrument-dial-host .comet-dial__comet path { stroke: var(--cd-accent); }
+.instrument .instrument-dial-host .comet-dial__head { fill: var(--cd-accent); stroke: none; }
+
+.instrument .instrument-placeholder {
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1;
+}
+.instrument .instrument-terminal {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: var(--instrument-lime);
+  font-size: 24px;
+  font-weight: 600;
+  letter-spacing: -.02em;
+}
+.instrument[data-state="error"] .instrument-terminal { color: #ffb0a6; }
+.instrument .instrument-scale-note {
+  margin: 0 auto 18px;
+  max-width: 34ch;
+  color: var(--instrument-muted);
+  font-size: 12px;
+  line-height: 1.5;
+  text-align: center;
+}
+.instrument .instrument-status {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  color: var(--instrument-ink);
+  font-size: 14px;
+  font-weight: 600;
+}
+.instrument .instrument-description {
+  margin: 4px 0 20px;
+  color: var(--instrument-muted);
+  font-size: 14px;
+}
+.instrument .instrument-error {
+  margin: 0 0 20px;
+  color: #ffb0a6;
+  font-size: 14px;
+}
+.instrument .instrument-stage-label { display: grid; gap: 8px; min-width: 0; font-size: 14px; }
+.instrument .instrument-stage {
+  width: 100%;
+  min-width: 0;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--instrument-line);
+  border-radius: 6px;
+  background: #121713;
+  color: var(--instrument-ink);
+  font-family: inherit;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.instrument .instrument-stage-readout { margin: 8px 0 20px; color: var(--instrument-muted); font-size: 14px; }
+.instrument .instrument-controls { display: flex; flex-wrap: wrap; gap: 8px; }
+.instrument .instrument-button {
+  min-height: 44px;
+  max-width: 100%;
+  flex: 1 1 140px;
+  border: 1px solid var(--instrument-line);
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: #1d261e;
+  color: var(--instrument-ink);
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  cursor: pointer;
+}
+.instrument .instrument-start { flex-basis: 100%; background: var(--instrument-lime); color: #121713; border-color: var(--instrument-lime); font-weight: 650; }
+.instrument .instrument-button:hover { background: #2e3a2e; }
+.instrument .instrument-start:hover { background: #dcff9c; color: #121713; }
+.instrument .instrument-button:disabled { opacity: 1; background: #151b16; color: #94a191; border-color: #354035; cursor: default; }
+.instrument .instrument-button:focus-visible,
+.instrument .instrument-stage:focus-visible { outline: 2px solid var(--instrument-lime); outline-offset: 3px; }
+.instrument .instrument-next { width: 100%; margin-top: 16px; border-color: var(--instrument-lime); color: var(--instrument-lime); }
+.instrument ::selection { background: var(--instrument-lime); color: #121713; }
+
+@media (max-width: 380px) {
+  .instrument .instrument-controls { gap: 8px; }
+  .instrument .instrument-button { flex-basis: 100%; }
+}
+
+.instrument .instrument-mode{position:absolute;left:50%;top:calc(50% + 22px);transform:translateX(-50%);font-size:12px;line-height:18px;color:var(--instrument-muted);letter-spacing:.02em;pointer-events:none}
+.instrument-terminal{animation:instrument-finish 160ms cubic-bezier(.16,1,.3,1)}
+@keyframes instrument-finish{from{opacity:.5}to{opacity:1}}
+@media(prefers-reduced-motion:reduce){.instrument-terminal{animation:none}}
+html[data-ui-motion=off] .instrument-terminal{animation:none}
+
+/* R3: the wrapper reports explicit manual values; original island assets unchanged. */
+.instrument .instrument-frame { box-shadow: none; }
+.instrument .instrument-number { font-size: 16px; }
+.instrument .instrument-pointer { fill: none; stroke: var(--instrument-lime); stroke-width: 3; stroke-linecap: butt; }
+.instrument .instrument-tick-active { stroke: var(--instrument-lime); }
+.instrument .instrument-field { display: grid; gap: 8px; margin: 0 0 16px; min-width: 0; font-size: 14px; }
+.instrument .instrument-demo-mode {
+  min-width: 0;
+  width: 100%;
+  min-height: 44px;
+  padding: 10px 12px;
+  border: 1px solid var(--instrument-line);
+  border-radius: 6px;
+  background: #121713;
+  color: var(--instrument-ink);
+  font: inherit;
+}
+.instrument .instrument-progress { display: block; width: 100%; min-width: 0; min-height: 44px; margin: 0; accent-color: var(--instrument-lime); cursor: pointer; }
+.instrument .instrument-progress:disabled { cursor: default; opacity: .55; }
+.instrument .instrument-progress:focus-visible,
+.instrument .instrument-demo-mode:focus-visible { outline: 2px solid var(--instrument-lime); outline-offset: 3px; }
+.instrument .instrument-input-note { margin: -4px 0 20px; color: var(--instrument-muted); font-size: 14px; }
+.instrument .instrument-input-value { color: var(--instrument-lime); font-variant-numeric: tabular-nums; }
+.instrument .instrument-mode { top: calc(50% + 25px); white-space: nowrap; font-size: 12px; }
+.instrument[data-state="complete"] .instrument-terminal { font-size: 28px; }
+.instrument[data-state="cancelled"] .instrument-terminal { color: var(--instrument-muted); }
+.instrument .instrument-terminal { animation: none; }
+
+.instrument[data-progress-motion=true] .instrument-tick{transition:stroke 180ms cubic-bezier(.16,1,.3,1)}
+@media(prefers-reduced-motion:reduce){.instrument .instrument-pointer,.instrument .instrument-tick{transition:none!important}}

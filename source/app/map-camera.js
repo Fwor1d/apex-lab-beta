@@ -1,0 +1,9 @@
+// Presentation-only camera and explicit synthetic distance/time mapping.
+import {LENGTH,pointAt,timeAt,lapTime,SECTORS,SEGMENTS,distanceAtTime} from './core/context.js';
+export {SECTORS,SEGMENTS,distanceAtTime};
+export function pathSamples(start=0,end=LENGTH,step=5){if(![start,end,step].every(Number.isFinite)||start<0||end>LENGTH||end<start||step<=0)throw Error('Invalid synthetic interval');const n=Math.max(1,Math.ceil((end-start)/step));return Array.from({length:n+1},(_,i)=>{const d=start+(end-start)*i/n;return{...pointAt(d),d};});}
+export function boundsOf(points){if(!points.length||points.some(p=>!Number.isFinite(p.x)||!Number.isFinite(p.y)))throw Error('Invalid path');const xs=points.map(p=>p.x),ys=points.map(p=>p.y);return{x:Math.min(...xs),y:Math.min(...ys),width:Math.max(...xs)-Math.min(...xs),height:Math.max(...ys)-Math.min(...ys)};}
+export function fitCamera(bounds,width,height,padding=32){if(![width,height,padding].every(Number.isFinite)||width<=0||height<=0||padding<0||2*padding>=Math.min(width,height))throw Error('Invalid camera viewport');const scale=Math.max(Math.max(bounds.width,1)/(width-2*padding),Math.max(bounds.height,1)/(height-2*padding));return{cx:bounds.x+bounds.width/2,cy:bounds.y+bounds.height/2,width:width*scale,height:height*scale};}
+export function zoomCamera(camera,factor,anchor){if(!Number.isFinite(factor)||factor<=0)throw Error('Invalid zoom');const x=anchor?.x??camera.cx,y=anchor?.y??camera.cy;return{cx:x+(camera.cx-x)/factor,cy:y+(camera.cy-y)/factor,width:camera.width/factor,height:camera.height/factor};}
+export function referenceDistance(state){return state.alignment==='time'?distanceAtTime(state.a,timeAt(state.b,state.cursorM)):state.cursorM;}
+export const svgPath=points=>points.map((p,i)=>`${i?'L':'M'}${p.x.toFixed(3)},${p.y.toFixed(3)}`).join(' ');

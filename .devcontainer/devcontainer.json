@@ -1,0 +1,22 @@
+{
+  "name": "APEX LAB Phase 1",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
+  "remoteUser": "node",
+  "postCreateCommand": "if [ -f source/package.json ]; then cd source; fi; npm run setup:cloud",
+  "forwardPorts": [
+    4190
+  ],
+  "portsAttributes": {
+    "4190": {
+      "label": "APEX LAB DEMO",
+      "onAutoForward": "notify"
+    }
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "remote.autoForwardPorts": false
+      }
+    }
+  }
+}

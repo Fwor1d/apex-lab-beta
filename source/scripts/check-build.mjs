@@ -1,0 +1,5 @@
+import fs from 'node:fs/promises';import path from 'node:path';import assert from 'node:assert/strict';import {createHash} from 'node:crypto';
+const root=path.resolve(import.meta.dirname,'..'),dist=path.join(root,'dist'),m=JSON.parse(await fs.readFile(path.join(dist,'build-manifest.json')));
+assert.equal(m.entry,'index.html');assert.equal(m.nativeImportConnected,false);assert.equal(Object.keys(m.assets).filter(p=>p.endsWith('.html')).length,1);
+for(const [file,info]of Object.entries(m.assets)){assert.ok(!/\.(duckdb|zip|pyc)$|node_modules|personal-data|\.venv|\.jsx$/.test(file),file);const data=await fs.readFile(path.join(dist,file));assert.equal(createHash('sha256').update(data).digest('hex'),info.sha256,file);if(/\.(js|html|css|json)$/.test(file)&&!file.includes('/vendor/')&&!file.startsWith('assets/ui/'))assert.ok(!/(?:\/(?:Users|home)\/[^/\s]+\/|[A-Z]:\\Users\\)/.test(data.toString()),file);}
+const html=await fs.readFile(path.join(dist,'index.html'),'utf8');assert.ok(!/(?:src|href)=["']\//.test(html));assert.ok(html.includes('./app.js'));console.log('Static build verified: one entry, relative assets, no private recordings or local paths.');

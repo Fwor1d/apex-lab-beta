@@ -1,0 +1,18 @@
+title = "APEX LAB: reviewed false positives only"
+[extend]
+useDefault = true
+
+[[rules]]
+id = "generic-api-key"
+[[rules.allowlists]]
+description = "Immutable educational enum comparison; not a credential (source SHA verified by check:security)"
+condition = "AND"
+paths = ['''(^|/)engine/apps/mobile/src/driving-profile\.js$''']
+regexTarget = "line"
+regexes = ['''\(key === "coastDecelerationMps2" \? value < 0 : value <= 0\)''']
+[[rules.allowlists]]
+description = "Exact public source-file SHA-256, not an API token"
+condition = "AND"
+paths = ['''(^|/)docs/SOURCE-PROVENANCE\.json$''']
+regexTarget = "line"
+regexes = ['''"apps/mobile/src/visual-tokens\.js": "a19203da5fce52158d77a13d3318a5ed62a057f21449cc07024903674a34f89b"''']

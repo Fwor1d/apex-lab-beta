@@ -1,0 +1,2436 @@
+{
+  "createdAt": "2026-10-20T09:26:11.743130+00:00",
+  "phase": 1,
+  "production": {
+    "head": "0f39b71cc83b772ead39081c100a606a3ecf25da",
+    "branch": "codex/mobile-foundation",
+    "status": "",
+    "files": {
+      ".agents/skills/impeccable/SKILL.md": "58c0252bca04521de87007aeb495f7ec99dc4c7341bc890fe82b6d577573af91",
+      ".agents/skills/impeccable/agents/impeccable_asset_producer.toml": "4dbdb0cfdc2466961da6b22d200f3ec7bf8bb47c27448a2e6e3c03cdbf589831",
+      ".agents/skills/impeccable/agents/impeccable_documenter.toml": "2feb3768125ba6469c92a50d516727e6d42f44579165ddfd33409948e2a3803d",
+      ".agents/skills/impeccable/agents/impeccable_finish_reviewer.toml": "d57c3e0453f601ad688911fca4471057c7b46b561fcd42a1e12a581101c5186c",
+      ".agents/skills/impeccable/agents/impeccable_manual_edit_applier.toml": "6c9ce3e27ec4520ead001da3aad2a2ebba481c4e5cd22873db8890259ee579fe",
+      ".agents/skills/impeccable/agents/openai.yaml": "cbd8bd68fa00935dd0f179adb169252629cf7ee443ea9dc7db77e7ef2cf77446",
+      ".agents/skills/impeccable/reference/adapt.md": "871a8e4d749b807c693ebabd83defbd6c76e1bd2a0f53a28a460cb1308ba8634",
+      ".agents/skills/impeccable/reference/adapt.native.md": "6acc0bf221a4ddc6e5c6438348920b2ca2393b29c4314dbde2cdc23f2b1a9639",
+      ".agents/skills/impeccable/reference/android.md": "058f81f256134841875fd3183e06b37a023de0c877fd2b9eecd97011640791fe",
+      ".agents/skills/impeccable/reference/animate.md": "d658c48ffbe0031e8e3b318996cad6ceafe29e40aa50d5bb25e4bf1d6839dc7c",
+      ".agents/skills/impeccable/reference/audit.md": "41764be7bf974b95ee469f11c496714b4b3cf2ba594c0b8f838a0742680229a9",
+      ".agents/skills/impeccable/reference/audit.native.md": "960cb922bc934adbf9192e9428ff6bec1f382038166f02a785939c93b7391067",
+      ".agents/skills/impeccable/reference/bolder.md": "f964506c0fae87b3c2c1db7016ddc9be9ef970bbcf5548d684b997b5d5991586",
+      ".agents/skills/impeccable/reference/clarify.md": "173dd66abe65633910dcb04a51f40d6ff2a793f87088f022a02fc4cad24dd133",
+      ".agents/skills/impeccable/reference/colorize.md": "bc5f71f1129d0f2c310d913d07c8dc609a1d25644121bd78c308f42d52a0b9e9",
+      ".agents/skills/impeccable/reference/component-review.md": "10489e5265e49a4ef2737cd0e674c149ed41e1f703efe922e53ea3c91e833427",
+      ".agents/skills/impeccable/reference/craft-floor.md": "e802e4f7bdc89050a9c0f2ca506e1d493a2316e6e810c0336c57aa073717ef3e",
+      ".agents/skills/impeccable/reference/craft.md": "9205e222bc6565b37fb504ceec93233c2d2a456802b69d16e6b1c44723907c4c",
+      ".agents/skills/impeccable/reference/critique.md": "cb8caddbb3919e5bf7f252143b519fb16db28a244642d937b186cb89962d9201",
+      ".agents/skills/impeccable/reference/degraded/asset-producer.md": "877d274f41500c780bad25b2bca7fa95eff1a32a7b95397dd388c72848e86a6c",
+      ".agents/skills/impeccable/reference/degraded/documenter.md": "bcc05ea92faebb5c74037a9d4263a5ce9a56f5ab07c8ab3c59ee704d8cade745",
+      ".agents/skills/impeccable/reference/degraded/finish-reviewer.md": "275dd1b6e63bbd30d2713227c4f79b880a8bc4e01cc48d392068bb86939d3afa",
+      ".agents/skills/impeccable/reference/degraded/manual-edit-applier.md": "5fae7f8a2fc3ddd49ad0a413446dc44daedef5b6b7de5eb935bd2fbfad646d58",
+      ".agents/skills/impeccable/reference/delight.md": "098a891028ce59c212b747d3c70468dd750aff7053a703d1336045ed31e0da7c",
+      ".agents/skills/impeccable/reference/distill.md": "ea8432c90c30ecb0426662a681ead5c0941113079704e1a766cda09e85b15b4f",
+      ".agents/skills/impeccable/reference/doctor.md": "3dbef3fe606de4de0f1b5cab5f19902799e05cf566eb8223e9aa1632eeb04698",
+      ".agents/skills/impeccable/reference/document.md": "3673248740bcdd1122ccc610093ba2fe52f3943a61ce0b7170b74dc49e5b6098",
+      ".agents/skills/impeccable/reference/extract.md": "31b90048c0b540daec46762a10c2b6b6434737a89af005054d8b848d829d003b",
+      ".agents/skills/impeccable/reference/generate.md": "53628d05b7eff0d4f48b95e48fad40266452fe1b42f398bd88dd9328353e0dd8",
+      ".agents/skills/impeccable/reference/harden.md": "16ba7fca1973c5faf53dd2ca523559129c0fe9e5f8d50b645f527afa78186cd2",
+      ".agents/skills/impeccable/reference/hooks.md": "3e3209e6b45497c7aee8234f5be880399ed6d99db442dcf3e024f061cd2027ba",
+      ".agents/skills/impeccable/reference/init.md": "da813ff325f84cefa1d01698caa093c78bca804d7e9746af14db925351266110",
+      ".agents/skills/impeccable/reference/ios.md": "40c87038b5f75147a5952a96237acf312a327bf70c1bcd8e0a5f064625ae9668",
+      ".agents/skills/impeccable/reference/layout.md": "0bc7d7971b3edf2acd0580e847458dc6d84129d90715b452799ace3bed815c7c",
+      ".agents/skills/impeccable/reference/live-setup.md": "2b5b2fbf5f658f34ea1997fb1aeebe01604d05187f75c6a4f1f55a5bc78520a4",
+      ".agents/skills/impeccable/reference/live.md": "68c5636a7858dd0b5137a9229c15e25fdc2ee40a0f8a4e9d809f78e809256262",
+      ".agents/skills/impeccable/reference/mode-operate.md": "7a52dd7a94ee75f6ae89542c86a1b6e1d306812b16e0d9dbf12d4acad44d148b",
+      ".agents/skills/impeccable/reference/mode-persuade.md": "21e78c8a77badb3f83290cd4577ed3b24bd4dd3b57136d7da75733d4f3ee9ac0",
+      ".agents/skills/impeccable/reference/mode-read.md": "a569989e6a3d6453b4c45e9474e162a15cc54e11732ac6baa7990a6e7cccc0b5",
+      ".agents/skills/impeccable/reference/new-work.md": "73f06ccc5ba8d1cd5324ed98f51d24273e5795170dc92332fe2b68c6a10ce50b",
+      ".agents/skills/impeccable/reference/onboard.md": "ef2dde00030580ed2765cbf7be9b2ea4a6f64cb915b804fd6f6abcf38051c7b9",
+      ".agents/skills/impeccable/reference/operate.md": "a9d2203acd45ca33a13d5c68b02b23ed512425ac15f0e8438318ed124b43729d",
+      ".agents/skills/impeccable/reference/optimize.md": "f672ef8251a3ed4051a053d30819664951b17540b2899acd27d20e500c234abc",
+      ".agents/skills/impeccable/reference/overdrive.md": "fce6688138d2ceb1e3d2cde5231f54b1d8dc8748b4c95a7919aa83b6f924cf96",
+      ".agents/skills/impeccable/reference/polish.md": "81666fc7f783b4e3514db6554e713dc0479bd9cdedb06e93d15f8b579aae869a",
+      ".agents/skills/impeccable/reference/quieter.md": "190a4e642ca362d7499f3c3ab123e21f18f75457d11f072b545a183f296e6495",
+      ".agents/skills/impeccable/reference/region-map.md": "778cedc9199b407d3e23fa1041e38d548b00b1101a33517aa2a2eb299f9d0edc",
+      ".agents/skills/impeccable/reference/routing.md": "77ae09542fbc10aa4e8b119d6fd19359908a47c13c30068d6a150bfdb50e3e10",
+      ".agents/skills/impeccable/reference/shape.md": "a55f016c046cb6a27c55bd7f346375aeb506a755c4fbca19a5f92dbd42309c23",
+      ".agents/skills/impeccable/reference/typeset.md": "442749aed338f51c1a3ccfb182c6ade9b74b90590b67984062ac94a5b100e914",
+      ".agents/skills/impeccable/reference/visualize.md": "2bcec5b8d22e9f87799529a41b984d27b4379ab1b70e1dd4f63b6d6390275730",
+      ".agents/skills/impeccable/scripts/VERSION": "9940d4b5219de8404015bc18af844c88d7e9e9105682a5d47b1d369d027dbd25",
+      ".agents/skills/impeccable/scripts/command-metadata.json": "e8720f3aa41135211cc58cc299a39eeda86c75651f4279cc1ede8db10dcc0584",
+      ".agents/skills/impeccable/scripts/data/font-index-failures.json": "835f19a0a3812f3652dd6979a2ce5597f654fd01f26e1b420b92d5f42b997ce4",
+      ".agents/skills/impeccable/scripts/data/font-index.json": "47edbdfaf27073c47033d1ac7dfee881be49e2dcbda7671d1157300481dde6da",
+      ".agents/skills/impeccable/scripts/impeccable": "39d9600489073e227e4f4d55c451ce4252a6632ed7ae37923efbbcbc91f16d07",
+      ".agents/skills/impeccable/scripts/impeccable.cmd": "69cad1ae7355825ef320ac9638a1c9675ba9fda01c9a0fa12244cc4a1973e550",
+      ".agents/skills/impeccable/scripts/live-browser-dom.js": "24f09f2597b9b55a1e2c4acd2ae5c95db5c8615cfc20aa07d1a3950538ad5c4a",
+      ".agents/skills/impeccable/scripts/live-browser-ignores.js": "c1cb6877ca99a0c1b38ba0c7d59f32702d3022f6821d8045f7133f7c40b6362f",
+      ".agents/skills/impeccable/scripts/live-browser-session.js": "42831c3cd874346d8e7f120808d91e6ed3cda5c3eca6eefd76b126659536bc87",
+      ".agents/skills/impeccable/scripts/live-browser.js": "d7f1ee3fdfc423e90268e9c666dce61b2180b62431dbb6ecfc48bca65398a1f8",
+      ".agents/skills/impeccable/scripts/modern-screenshot.umd.js": "bb36665889124a0b6e15f16045265737449c3bdcf2712cdb08af3cfa01563e2b",
+      ".github/workflows/pages.yml": "f3472f06984c9dd5c632dcd500d79fdb19be339a4d4d00f51489a737860b9ac8",
+      ".gitignore": "a2ea421f8d99d111d70704cec54181799f934e16d8cb9858204c685997f2b6b5",
+      ".impeccable/config.json": "96e7f74185615a3a1b471733a2a061d99c6606d23ded1d7981e288026919cc75",
+      ".impeccable/critique/2026-10-09T14-49-01Z__apps-mobile-index-html.md": "7ee7b2d842c4f6614418d046d99a7ecedb17cb60287cb3a73b1a76d823076e9b",
+      ".impeccable/critique/2026-10-09T17-52-23Z__apps-mobile-index-html.md": "678ed927c9dff01f70e6e0e87bbca5437982145beb7dfd608ad1d0a9af2f7373",
+      ".impeccable/critique/2026-10-11T19-37-16Z__apps-browser-telemetry-index-html.md": "7a89946dcffd7b0a62871544103786b1edae68eae3a694918147278545e3ec8c",
+      ".impeccable/design.json": "262fbc7e54b70639f7ea008c17f999efb76cb188e3d7fcb9551101bfb97130a7",
+      ".prettierignore": "45fb29023234d33c1266311fbd9fa752a5ebfb33dd9e448faacfdcc637a20012",
+      "AGENTS.md": "41b34ca7db76245c149673ed3835229d3eb8cc7721b41e6ab65d0d9b228309b6",
+      "DESIGN.md": "904b197096001dd29f3e4bf4a99e5d2cbb50423b41edd0063c332d1caf9ba9b1",
+      "PRODUCT.md": "38030c9262aff3331a7d76d66b615f186d181ad50a4b9a373c82e2951ecdd2b9",
+      "README.md": "4d43382aa8a59d9b21e867e628aad5842286fb097bfc6d69c22ffc6ba8bb948c",
+      "apps/browser-telemetry/assets/chevron.svg": "b7c0dabffad2655ef0f0aa61457100e0137a35e8ac8e8b9f9b5d9c9d591772b1",
+      "apps/browser-telemetry/assets/icon-192.png": "4c8bb6e0fdb40b892cec8320a52aa0b14239f542f9e8c4999f457d946eb1ba23",
+      "apps/browser-telemetry/assets/icon-512.png": "f9bceac55757a8e56b41b4e57ab3c61c9f233b23664ef49c5bcd69e50ae85013",
+      "apps/browser-telemetry/assets/icon.svg": "3e517003380e01f7188420f9733a81eb2fe5b1087234898212d0fe56915c6b07",
+      "apps/browser-telemetry/assets/shell.css": "a7d3841607897aec9998f8186cea1890f2f370a86d86bf86d9be4c19a50ef006",
+      "apps/browser-telemetry/data/algarve/NOTICE.txt": "be1968eaec9c635864f711461f195056f9c9b36a5d10dc623030a6cfd92671b0",
+      "apps/browser-telemetry/data/algarve/gp-outline.geojson": "c81e36cd0fb92521a5b9f0294a43eccc9c807c58d7260e68a6e97d12c77e0462",
+      "apps/browser-telemetry/data/atlas/NOTICE.txt": "3567301dcb58e456239a5b80d0c1961e79e283f2ce87cfc052c8d0f78b309591",
+      "apps/browser-telemetry/data/atlas/UPSTREAM-ATTRIBUTION.txt": "e4652ec5e895386b434a55497af60d3e5e57f5270ec4814b92dc01834b5b68a9",
+      "apps/browser-telemetry/data/atlas/algarve-context.geojson": "24d30628e822c1ead66cfc79b4d7919a6590acb14f8ecba797faed71404ca180",
+      "apps/browser-telemetry/data/atlas/algarve-gp.geojson": "52483f16cccd7fde4451cfd3ce36d6a22ef85ad029c98e8d1f9a626d29d0a206",
+      "apps/browser-telemetry/data/atlas/bahrain-context.geojson": "6c1250633d8e06656c616acdef311dcf3d1fc3ef63955bfa956f5193b585224b",
+      "apps/browser-telemetry/data/atlas/bahrain-outer.geojson": "223da87b3bd2814c358fc29ada1a5fefcd6deead50305cc04f3bdfe12a161f79",
+      "apps/browser-telemetry/data/atlas/bahrain.geojson": "3ceb27a2e78d8a833794c47c871f089b5c7501246fe3d556d360da731275d680",
+      "apps/browser-telemetry/data/atlas/barcelona-context.geojson": "a488ba20781f13d31d11006ed129267091611270b7ff088ce7875f17d91c5c4c",
+      "apps/browser-telemetry/data/atlas/barcelona.geojson": "f9e0b599b47dc8c75a0820f233851d785bac10e15e4bcc0cecd0419999f186c1",
+      "apps/browser-telemetry/data/atlas/cota-context.geojson": "e650ad8aa700a0df153a4d6dd855731a5c42888ce93186517365f4ed816e7d51",
+      "apps/browser-telemetry/data/atlas/cota.geojson": "c2fccb7fdd79ecb14d58a927d76e17b3970940426e3c5139de92e7f726b54ce6",
+      "apps/browser-telemetry/data/atlas/daytona-context.geojson": "bfe5b465bd3ae97d7df0551225653feb339ab8f85b5af2284360c19181948e20",
+      "apps/browser-telemetry/data/atlas/daytona.geojson": "7433ca32524584eeaf388368fa385c86736367620ba1c3937e6207de6ce8f344",
+      "apps/browser-telemetry/data/atlas/fuji-context.geojson": "1981995f2a1a2f4a1259ae06eb0cf1d3d12441e3d20fe474e53c8ac38c95760d",
+      "apps/browser-telemetry/data/atlas/fuji.geojson": "5488512ddb6aefe66e79f39c6a1fa12107e40a7d6192a00813e5dbb155f2fcd0",
+      "apps/browser-telemetry/data/atlas/imola-context.geojson": "a086731b2db48a9cfd3882dde1f388d052313b9332e3243409bf391ec5edf92d",
+      "apps/browser-telemetry/data/atlas/imola.geojson": "293a1c177efc9f4b5b9e5015ef7307b3ce4798c8a47cb076e84b3eeef7d0c4ac",
+      "apps/browser-telemetry/data/atlas/interlagos-context.geojson": "b9462b1dfc6e2b3b3288b18c0e69e5cfd626808c72a48b73dfacb70a9756c892",
+      "apps/browser-telemetry/data/atlas/interlagos.geojson": "a7200742aa7ff5cbd187685845af70428629f677cc1a3bb95b06c5026d828d0f",
+      "apps/browser-telemetry/data/atlas/laguna-seca-context.geojson": "e569230bcf6c7e5162e8d7253b5b43cd3c565417b8c294c07d9b8f1180ba62e3",
+      "apps/browser-telemetry/data/atlas/laguna-seca.geojson": "9f0fa4e11452fa0b6a04990ed9348e893d0c300b7935457c904a19da21b0bf09",
+      "apps/browser-telemetry/data/atlas/le-mans-context.geojson": "12c79990d6385a76e1e64975ddbb9bbcac533da97ba7914d15505e6d8caaa0a9",
+      "apps/browser-telemetry/data/atlas/le-mans.geojson": "47ed837c99778ef6f8b31c4a7004e9ab070398886ba2b75ed749bf49c6032886",
+      "apps/browser-telemetry/data/atlas/long-beach-context.geojson": "d87c5218765c2a8781e88f62fb7e1e74afba666d6a4f4f4cbd703d06601eea60",
+      "apps/browser-telemetry/data/atlas/long-beach.geojson": "170e03f2f07d080624bc85f7e76f428f8d0ee7845308ce99cce0ba2ebfae7ece",
+      "apps/browser-telemetry/data/atlas/lusail-context.geojson": "db5d8630a93cece49a03c8c599d707acbb719f8f5f1895fda7c448fa1580346d",
+      "apps/browser-telemetry/data/atlas/lusail.geojson": "980623eb2cee3a641afff16fe7cae93b27b18ec350cfd1b5c8287d919c0b033a",
+      "apps/browser-telemetry/data/atlas/manifest.json": "b5fda5ab506aca0f08bfa4832d7fc69532ad5b5342d2651e99433c1be205e471",
+      "apps/browser-telemetry/data/atlas/monza-context.geojson": "ed9875f7b568b942d3592dfa3f4262f062a0184a2b04d36c8100d88d97c0c3b4",
+      "apps/browser-telemetry/data/atlas/monza.geojson": "ac5f3627ab8aeb9480e0908821255b637c3f1772f68895e8bd495e20ffa8cc6c",
+      "apps/browser-telemetry/data/atlas/paul-ricard-context.geojson": "062c16425095a8f2285a9d0b0dd84f987ae059c86e53e177f9375273f6a76752",
+      "apps/browser-telemetry/data/atlas/paul-ricard.geojson": "13c1ef12535dc449eef3b88f6646bd2f51c0c6894b517cbb2fb9486f3b5e9de0",
+      "apps/browser-telemetry/data/atlas/road-atlanta-context.geojson": "03fa412554bce22606d5dee80280730a48fed387a3b8e49793c0a20a22877079",
+      "apps/browser-telemetry/data/atlas/road-atlanta.geojson": "c9871549b96c066aaa87e0c8bdd443767e0c21455fa01a6b5f7d3122ecbff5e4",
+      "apps/browser-telemetry/data/atlas/sebring-context.geojson": "085afb592a9bc3cec4af1bc1a7e8abd264c3f29387af7b6f7d9cf40c3dbcbd2b",
+      "apps/browser-telemetry/data/atlas/sebring.geojson": "7e8638239dc5a1ee78b05a1ce5fa88993fe3fafd8062da1404ac9b329b3f43b7",
+      "apps/browser-telemetry/data/atlas/silverstone-context.geojson": "85f34a1222fd63016fb535599bf11e8c9783e5639822eaa2d4bb21a4853d20f3",
+      "apps/browser-telemetry/data/atlas/silverstone.geojson": "0e2e30a3e28c41358514de9c46d8d9f5229e00ec2e57e3025d1fda38cf41108e",
+      "apps/browser-telemetry/data/atlas/spa-context.geojson": "9269a3342584e847ea3c5e1cb82ed388599faa8ca1695443b9c45ccd43e66a4d",
+      "apps/browser-telemetry/data/atlas/spa.geojson": "99c99335c7f3e782995cf378961d8b95e35fdbc5e6d31af47985c7942b403f1c",
+      "apps/browser-telemetry/data/atlas/track-atlas-MIT.txt": "bf9d967160c489e046c36a686167f8cf576aa93c6e378d293473eedc36ba9651",
+      "apps/browser-telemetry/index.html": "7cf9f8057698251cfb061e05ebb128455402deb7633450cfda2b1ce6626de938",
+      "apps/browser-telemetry/licenses/README.md": "f7c087ec08542b89b5c691cb7ec5788562b2857b8db7a0b8eb11e6cea2130d62",
+      "apps/browser-telemetry/licenses/apache-arrow-LICENSE.txt": "229dbe29e4e1344e95172f6f3a4277ec0da5c7850cb03897c47f3a24b7afce08",
+      "apps/browser-telemetry/licenses/apache-arrow-NOTICE.txt": "b62ea242642d3a18f1e29b0c1fe082415a6943fe158ee22b48cff3762f354009",
+      "apps/browser-telemetry/licenses/duckdb-wasm-MIT.txt": "7e17fd31249fa875cb3b1c5e05c6c3e99b75509f6a2804ca176c217834de1dcb",
+      "apps/browser-telemetry/licenses/flatbuffers-LICENSE.txt": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "apps/browser-telemetry/licenses/js-sha256-MIT.txt": "0fea2e0cffe72ee17adc25c42e55daf5c87c6e9cd5b3362ee4213890bda0ee7c",
+      "apps/browser-telemetry/licenses/json-bignum-LICENSE.txt": "99abe8adce6d4fca0a75c2215d32036dc4c482198eeef0510955153980a97961",
+      "apps/browser-telemetry/licenses/swc-helpers-LICENSE.txt": "d96eba1f1881334d50ffc144276dfa98e147a415e7c591ecdfcb81680361dc91",
+      "apps/browser-telemetry/licenses/tslib-CopyrightNotice.txt": "f8b254da37e08406ccb6c9d8321ef584d1b22f44f9e12d5436325aeea0e6d60b",
+      "apps/browser-telemetry/licenses/tslib-LICENSE.txt": "5989359645911c04a140c49d89496b13feca980bbf36d2250a12d3b9d06250d6",
+      "apps/browser-telemetry/manifest.webmanifest": "64095436648ed008edeabcd7ccce75f2df5feb044326e789c565e73a234596aa",
+      "apps/browser-telemetry/playwright.config.mjs": "b60a4ac5a6aca66545faeb194b620cf6298e58e2fe14ba162f235070c07f6a1d",
+      "apps/browser-telemetry/src/analysis.js": "27046826d9e402f9c44d6f3656bc481260e8d8f9d42e06b0e95a868ea173a06f",
+      "apps/browser-telemetry/src/analytics-extended.js": "cb10dcd6c6cd44e624c4399e6446e0340150d7901f14a5a18d7f0ccb0f7e6a0b",
+      "apps/browser-telemetry/src/analytics-view.js": "eb251f8a29efcf59ce955dd7ee13372c4480d3899e9781724266e9dbcdf6ad42",
+      "apps/browser-telemetry/src/app.js": "a42c2ce7781fe2975b9b17e756ded16356c6d6da01bf2feaceff86ba914b81fd",
+      "apps/browser-telemetry/src/atlas-types.d.ts": "9439d16b1459fa17f409591987cb44793069672f1526ac6a66f393662aeb2d2b",
+      "apps/browser-telemetry/src/atlas.js": "05210d61e7bdb2ffdefcfc447b3b963d5ae98c2b480f4cf65dd18688ad2d76e4",
+      "apps/browser-telemetry/src/charts.js": "82053e6220caa1816093cfc1a0434d90dc33509e5f7c2948add97a17c128dff4",
+      "apps/browser-telemetry/src/client.js": "4f98fc74c57764c73f3f5d38574cfd9cb0dd396b28898501f353bf9c782a731b",
+      "apps/browser-telemetry/src/coaching-engine.js": "5536741e27c99cd59924b71b1e91d6386481ce054c7a6b854174f2c9784b0a1a",
+      "apps/browser-telemetry/src/coaching-types.d.ts": "72825320dab295b467c9f899fba14f25ec80cb968058dcf03cffcd5ecf3a1cdb",
+      "apps/browser-telemetry/src/coaching-view.js": "fb1a74654cfe30d7a88314f2a72fc7027995a5ccf7f09e14c9162c5451bf3f7d",
+      "apps/browser-telemetry/src/engine.js": "02633d6816813a05aba2ae7121f87d168ff81c5fc28af9f563ed965f15524a2b",
+      "apps/browser-telemetry/src/findings-view.js": "8342fc55314908664730d1acfc61396019cf855e04d8e542d0be23d6d57dfcf2",
+      "apps/browser-telemetry/src/hash-entry.js": "5fc5914a5b7aa3aecaf8d63c470312d33c7beb5ddef7120653b61cf3cde1ec7e",
+      "apps/browser-telemetry/src/importer.js": "4052b8a65d96e45e8bc2bf20dfc548282dd985b5adecc66abb56f52290e9c1f9",
+      "apps/browser-telemetry/src/map-context.js": "068cd1f28c1a011ccb3c0a36f9925285b09ac2bfc6076881879634d28f1be739",
+      "apps/browser-telemetry/src/map-layers.js": "3d97c31319f4770047ca84b30a7e5b1548fedc0c36fd9e3a6757a392a6607168",
+      "apps/browser-telemetry/src/native-trajectory-types.d.ts": "f9420702a4bfbfd78471842faccb4964d636f7548467c52fd1850752d6115499",
+      "apps/browser-telemetry/src/native-trajectory.js": "e2c70e67508a18c9da2240533f096021ed910b97e43949f31c5645ae887d38b4",
+      "apps/browser-telemetry/src/native-view.js": "a06ebdfd643efed1698db42cae0fbca806160b3bb98f40013fbcfc009c69162d",
+      "apps/browser-telemetry/src/offline.js": "8606b1eef4f9b90957b6f765f0f2312285d64f154b470b7360ade81b10d102ba",
+      "apps/browser-telemetry/src/position-mapping.js": "24bb1e314b3af59d6c63d613cebf1cb2595a5f21c4b70b11c924b713aeecbafb",
+      "apps/browser-telemetry/src/position-source.js": "bccc4572c3adc234ef8884f818ef91a8494c76b30673e454615d3f1226975acf",
+      "apps/browser-telemetry/src/position-types.d.ts": "4d1b1fa9039b7f8b47de9d389cebd57a9a6540d4c4471b5724dd6381f901183f",
+      "apps/browser-telemetry/src/report-worker.js": "7ad600236c541dd8409d72e726fa29b87948875a1ee00609dc22722418b6cbd7",
+      "apps/browser-telemetry/src/report.js": "e7eca9ff841a848135f177cb8f611fd6382257c58cf6c254e0be0b0f4491e517",
+      "apps/browser-telemetry/src/worker.js": "269af2df776c3c85884d89bd04816d6e70e2e60f0dcc307410c65bca76d9dfbb",
+      "apps/browser-telemetry/styles.css": "2bbd0a47bcf7f0e2a9e1ea54eeb7ad54c72f183e5967c9d93e978ef8d5caaa18",
+      "apps/browser-telemetry/sw.js": "cf7010774ef71baa834b0016cad32f4450538c6b4052993fe767dd2d0385394a",
+      "apps/browser-telemetry/tests/native-trajectory.spec.mjs": "e6184d24ad3db89bcee5553b162172650d0eaa7d3eafb6a449df5bceaeefb395",
+      "apps/browser-telemetry/tests/native.spec.mjs": "85076903f6676c8613faca6c406cbd3dc15db8e38508dd81c0aea893dead1436",
+      "apps/browser-telemetry/tests/position.spec.mjs": "35321b63f514a9f9e677e65c0061b3fe51c17ba733716db340e8f2eb54a5bbfa",
+      "apps/browser-telemetry/tests/workspace-lifecycle.spec.mjs": "366ebe10ae12abedd413aa2ef08aee37d825d6f5d990f256c3a17743373ef9ef",
+      "apps/browser-telemetry/tests/workspace-ux.spec.mjs": "7fdb2a61a781a857da13c247c69c641eed14c3030675bf9bd5b6e173e295b556",
+      "apps/desktop/.streamlit/config.toml": "cb69b67471efe42386f6748f3e7ae792c83f1bea975e8b4de8e6b188b939c380",
+      "apps/desktop/README.md": "c66174c459dcfc68765b533babe2b161b12c93d0f89698a9b0cf682239752ff2",
+      "apps/desktop/apex_telemetry/__init__.py": "4462c38564a661beb8a7926327cef10e7d6891a3fb8618dc318a809d36960645",
+      "apps/desktop/apex_telemetry/__main__.py": "cf2336a010715438d60150d68d3ee3dae4fd4a3b3bf6da101c17b4628ae5ae8c",
+      "apps/desktop/apex_telemetry/analysis.py": "7ef97441a506befd70cb5cf64a279b29e5461529fa5fde7cda73cc5ca3630ae0",
+      "apps/desktop/apex_telemetry/demo.py": "1501cde3656131792c83244c1d1104230c7982fb8abcb2890106b30e2f828196",
+      "apps/desktop/apex_telemetry/discovery.py": "13b7068747266da2b26328d5597daedecf71efb19d9cb221a5e1eb360f2cb9fa",
+      "apps/desktop/apex_telemetry/files.py": "8b64a82038136e912400c607a87bf3e10b3f77f9cc0743b01bee0ca109acf468",
+      "apps/desktop/apex_telemetry/lmu.py": "9b2c77b5903b73f8bd881545d6066a58a3f07a2a383f57ad0fc032bcae36721a",
+      "apps/desktop/apex_telemetry/profiles.py": "63233b4858c9a7ca8ffe16fd29734a3944ef2ea1c3085e4bff7538db095abee3",
+      "apps/desktop/apex_telemetry/quality.py": "41ecdb977de1faa0d0b9ffcd607456dbff488024a0f210c9fd2be2516fbb7407",
+      "apps/desktop/apex_telemetry/ui.py": "d7ea1cab3ba45eec433ce8705e2b2643ad526a8190ef305b675a139201df7ef1",
+      "apps/desktop/app.py": "44263d5c6ce373bc0a06d8d98b559965f3e7ff3e21b87d4641a7ba705a69782c",
+      "apps/desktop/playwright.config.mjs": "54f1a5271e615949c49dafee01496d49796d238898ae3288f8eccf112e1db47d",
+      "apps/desktop/pyproject.toml": "56897762f5aef2cdc358a8fb57cdc32d97766af9e831138aebc4bec919f7c3d6",
+      "apps/desktop/requirements-dev.txt": "48ad395d29163f2466f5d72dd21bbbcc8baeae2f4f66c274334630e52ea80e6f",
+      "apps/desktop/requirements-lock.txt": "7aa409d99b0117c2e74b96014c20d1ebb1559e4a3d144ecba8e454f5c62ed6cf",
+      "apps/desktop/requirements.txt": "5aa3d7bfcebf6a996c57ecf30eff8a1d061e84747a60baf581adb8eb93c711fc",
+      "apps/desktop/run.py": "2f041023dec7b46a51fe12c4d499b1a524c543ba1cdda6fb6cace78268060196",
+      "apps/desktop/start-macos.command": "49b5fa241be7001ead1c9f12f4cc84b2db9a7a4ab20e79c502ede0e8c9d5d8af",
+      "apps/desktop/start-windows.cmd": "0591e14fa92a3067945f77b02d751670b79b079101965c2cfd9cf6e6f927ae91",
+      "apps/desktop/styles.css": "553b1c5832c49413660daaa90089ecedd85e7a089e99cabb0f987f5ffb432840",
+      "apps/desktop/tests/browser/analyzer.spec.mjs": "f8f6e69d74fb2876d825f1188f23627fd97b0a3fe84e0916cb2a0408f453cb31",
+      "apps/desktop/tests/conftest.py": "206856fa53bb7603a840b2ce6462eb2c1ea3eea4d948c29f8697c726a08ac31c",
+      "apps/desktop/tests/test_files_discovery.py": "48188fd007c95d51d9a307502f1d49e9c8789922a9cd31bb27ac88e5f80c6da9",
+      "apps/desktop/tests/test_lmu.py": "deae67cd2ab1084db42aaa064b22ae3f19301d9e1102e683473e80ca9358ca94",
+      "apps/desktop/tests/test_profiles_analysis.py": "1375e37a5505446e90ce3c6de3c65885856d4946a33b1df337f0339fe7edc402",
+      "apps/desktop/tests/test_real_archive.py": "ee15886b7b1c8ff20648e1ddd6b725ab9b035085fb53fd41e3ede5924b75dbe5",
+      "apps/mobile/assets/icon-180.png": "ce0911ea0fe3c4bcea3df34c7f6d91546c7cfbc8bddd28eaf1639003bdf501fe",
+      "apps/mobile/assets/icon-192.png": "4c8bb6e0fdb40b892cec8320a52aa0b14239f542f9e8c4999f457d946eb1ba23",
+      "apps/mobile/assets/icon-512.png": "f9bceac55757a8e56b41b4e57ab3c61c9f233b23664ef49c5bcd69e50ae85013",
+      "apps/mobile/assets/icon.svg": "3e517003380e01f7188420f9733a81eb2fe5b1087234898212d0fe56915c6b07",
+      "apps/mobile/assets/shell.css": "a7d3841607897aec9998f8186cea1890f2f370a86d86bf86d9be4c19a50ef006",
+      "apps/mobile/data/circuits.js": "79b26f48106f1061dba233fe73dcc7e488743ccc2900df5bbfca783be2c37220",
+      "apps/mobile/data/sebring/NOTICE.txt": "2ac54cdde66c54a638da4fe64d365c314bfe5037efc5d9ea4a9a8e54a02e82ef",
+      "apps/mobile/data/sebring/centerline.geojson": "a881644b3dc3fa46d82527c5c6db22bdcb0b1f863106281bdf647a14818f5541",
+      "apps/mobile/data/sebring/centerline.js": "362b9547923236a435acbd57d9d7518052d4adf443778d7a1554fb6d5e826c86",
+      "apps/mobile/index.html": "03661dca69bda247c13697de11b8516a2521b635a388e7be0d62d5062f71f5de",
+      "apps/mobile/manifest.webmanifest": "9aa0b0ef3fd1a5ae1dd61f4b2c6cbbf6a05e8deb01a14f4be79e383f1cf3b3a5",
+      "apps/mobile/src/app.js": "865cdea369d3003db7cf1bc840ba87b47fe9903db196a9edaa164a0311f90214",
+      "apps/mobile/src/bootstrap.js": "c25e75deb77fd08455c9cd7af5d22c5e6cec48a55094086aa154901e450c7543",
+      "apps/mobile/src/charts.js": "c019aaed4dc77e4c25227170907bfbb99ec52f8ea33e72eaf22e950797cadf4e",
+      "apps/mobile/src/driving-profile.js": "5b8d6f402b662045034535202ebe482cc5d6c1be71aed961b6de175d16846193",
+      "apps/mobile/src/full-track-view.js": "060f4f5a25c0122a7b9af56dacd9b0cda045d4d0337b6b85cfc683aff7ccedd3",
+      "apps/mobile/src/geometry.js": "81404806847916cccf3c7b79da2fdfc039539812364e0828745d4dfdcb2c621f",
+      "apps/mobile/src/lessons.js": "18d1216f2a95457b1b8e4e6f5cf9de9c097356dbd015fd72d96c8c8913744644",
+      "apps/mobile/src/model.js": "67e512252ca912ebf1acb8a398f8dadd60defa660972766a9d72939b1bedc24f",
+      "apps/mobile/src/offline.js": "235be0e18ac9edba26bfa35954b424f9bdac7240b8f82e9433adcb47e70bf84e",
+      "apps/mobile/src/profile-contract.js": "7d8921ec9ae460f3521716aef80e7358371b63aaa7b5d14f5dda0acfd8fd7879",
+      "apps/mobile/src/renderer.js": "8704253d0b58e59e89893dbcf6f1e959c60dacaa0cc19b51bb3ff34fb51fb2c2",
+      "apps/mobile/src/state.js": "a595da4e1f7cb6f719f82f1fc74a70ae60c95b1394cdda0725dce0c82b027c29",
+      "apps/mobile/src/track-experience.js": "c537e0db4edd027e4a532a5fb98e4919091543161f0ba783ed3602b745e9a1b4",
+      "apps/mobile/src/track-map.js": "c2ff3d987c29e2158434d22017e2de5fcfecb497a0cac9520d4a23293de3a329",
+      "apps/mobile/src/track-selection.js": "fe61cfc0b6a284b7a767caf582bcec0e3a24c31298ed30b022e31d866be6d27c",
+      "apps/mobile/src/trajectory.js": "f4e9dd92be43f25a05503c1cf3be2ab331a2bdbbb12d74bbb6394e2313013ccb",
+      "apps/mobile/src/visual-tokens.js": "a19203da5fce52158d77a13d3318a5ed62a057f21449cc07024903674a34f89b",
+      "apps/mobile/src/workspace-ui.js": "273a50dd52f046c59bd8f13d041fb68bee9bff3ad68b2ef527a273ff062ea69a",
+      "apps/mobile/styles.css": "8cb327a92e191a48da5d12ec05e2a3e73cd35d69d0216eca7475dbdb582df3d4",
+      "apps/mobile/sw.js": "c111a9daccaf5fe0c23ec3d7765ac40d5565bdfa2a241e90df88d52832982710",
+      "apps/mobile/workspace.css": "479407742c8f88060eed3e8df772d5ccb73f76bf2badd18bd7ac79253bd35e9a",
+      "apps/platform/app.js": "6958223162f45e1f5da350756be6e767eec85e793c24ca7cf8e1f03d020d547d",
+      "apps/platform/assets/icon-192.png": "4c8bb6e0fdb40b892cec8320a52aa0b14239f542f9e8c4999f457d946eb1ba23",
+      "apps/platform/assets/icon-512.png": "f9bceac55757a8e56b41b4e57ab3c61c9f233b23664ef49c5bcd69e50ae85013",
+      "apps/platform/assets/icon.svg": "3e517003380e01f7188420f9733a81eb2fe5b1087234898212d0fe56915c6b07",
+      "apps/platform/assets/sebring-outline.svg": "557f450004d4d5fae25400bb733e7f459dfcf590a3fa126e70adf7bb6cd6a318",
+      "apps/platform/assets/shell.css": "a7d3841607897aec9998f8186cea1890f2f370a86d86bf86d9be4c19a50ef006",
+      "apps/platform/atlas/app.js": "a31d1d5f9264aa26f1ca3ca7300224c308e93317af55e17531b1d36558ea0f2c",
+      "apps/platform/atlas/index.html": "350ecb9bd1937de78dde1eefe0d21e7b3aeff79afc621246849131727bde89f5",
+      "apps/platform/atlas/styles.css": "cf10dc1046855076444d8c4a693a9c2dbcc518ed3ce241f036a2ec8d1aa8a316",
+      "apps/platform/index.html": "51d12f2c82d2378cbe89156a4073f919e12b215cb462d5ef0c604b6923fd810e",
+      "apps/platform/manifest.webmanifest": "2366d89fa8276b0d56f6d97b8b414504f1a286a31d68a5f28c085f945d707edf",
+      "apps/platform/playwright.config.mjs": "60174efd8ed23e442b07203dd519f304d0e04909385c0d4a0f08992d0f2c9dbe",
+      "apps/platform/styles.css": "7e43548ea273fdd4a7e56fc8717ed521bf986687b40f74c4778d60161ecf871e",
+      "apps/platform/sw.js": "207d7ec5db9941bd1116f4ec859d942f3245b63ab24e55e89364ad704ee3bf28",
+      "apps/platform/tests/atlas.spec.mjs": "b9ba9fe309f03c66fe74c12a61d932658e181633ed4cd13051dc50b0b32243bb",
+      "apps/platform/tests/coaching.spec.mjs": "550c51fa2aaeffac550daa2f440129d2e2e46f163ca86b395d9917fc2342d878",
+      "apps/platform/tests/maps.spec.mjs": "fe56876eb44c8590e5f760777e43e51eb24241adb679c069bf9554270efabdfb",
+      "apps/platform/tests/motion.spec.mjs": "69208f58298a73a609fbba2a57d7698b87ad1f042cc26435af3e42382106e200",
+      "apps/platform/tests/phase9.spec.mjs": "b32e83fd99639120850e19068c9a143152151e5679276eeaf090833e5d43469b",
+      "apps/platform/tests/platform.spec.mjs": "faed6d149ae0b73cfc04177560387081dc6a53cc645af6f1f9746defc01b8fb8",
+      "apps/platform/tests/redesign.spec.mjs": "5d2cb4c862f765fd733954caa500458fd968ed536573b7cdab3e9f78a5915a8c",
+      "apps/platform/tests/track-experience.spec.mjs": "465151508625e016af97c03c1e86b645414286a8b7fe55fd42e5621fd99ee5dd",
+      "apps/platform/ui/anime-entry.js": "b36c3e1c9885d725a5757bfc2d717c1fb5b37c616da96a867ca4f967209eda7d",
+      "apps/platform/ui/islands.jsx": "7af8a676d72b0917fd355b8e726422627aea58b5098689022332d3c7fffed9a8",
+      "apps/platform/ui/licenses/animejs.txt": "3f3e835a9952cfc2a6ca836fb95b3257c981f24fa3ef51249055acb09931897b",
+      "apps/platform/ui/licenses/framer-motion.txt": "5ff46083b88563822b0560dd6221ab89d2f74bc97a52d4c97a75020fd62c6f32",
+      "apps/platform/ui/licenses/motion-dom.txt": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+      "apps/platform/ui/licenses/motion-utils.txt": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+      "apps/platform/ui/licenses/motion.txt": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+      "apps/platform/ui/licenses/react-bits.txt": "f4c33af6739191537738662d223b68d77bc226f4b57ea883e16481d8cc5c73c9",
+      "apps/platform/ui/licenses/react-dom.txt": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "apps/platform/ui/licenses/react.txt": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "apps/platform/ui/loading.js": "5a62e3b9d8adf279caad328906db95bc5dd88aa6e40032eb37b78ec66848565c",
+      "apps/platform/ui/motion.js": "e61b64083eea71ae8da9d35a2ae6eb9e20938488fd328dabc01950dccdf11f3a",
+      "apps/platform/ui/react-bits/CometDial.css": "428afc3fcf354f50aa21fc422755f88828fa8e0c1bc0f054b443c95630bc7197",
+      "apps/platform/ui/react-bits/CometDial.jsx": "15ca156d4c1b722b4bfb236f49008f94116683ab2b3d874dd292eb2bb34bc168",
+      "apps/platform/ui/react-bits/PROVENANCE.json": "73b45635d8cfb22759aedfdc598ec8dab8c79639104742fa77dbad5308c4d680",
+      "apps/platform/ui/react-bits/README.md": "0046a1f100aac3cfd467f3ff1e087caa1f8528c620b1ee76d1204371dc714d16",
+      "apps/platform/ui/react-bits/SpotlightCard.css": "b646b7da4bb46f0a4d819d0af275804c49a845a5c2dc848700aaf9282db13a92",
+      "apps/platform/ui/react-bits/SpotlightCard.jsx": "667d703709f1f86942645b0d4e00bca6074cb73ef44b622e93c9b0dc3870f445",
+      "data/track-atlas/context-index.json": "655208279e62c48336fb0cd1b04fe0c5b72187f6dea6fd0a0957dd63de7faa1f",
+      "data/track-atlas/inventory.json": "b5fda5ab506aca0f08bfa4832d7fc69532ad5b5342d2651e99433c1be205e471",
+      "data/track-atlas/layout-validation.json": "a4d012843194154a4ef6d804ea5eed3b2c0591dcef26ca32e5f2fb8c940bddb5",
+      "data/track-atlas/layouts.json": "87cd27e69cfb85e2378447a9f459d67bbcd2d88ad396fcb098272fe914f6be2a",
+      "data/track-atlas/training.json": "947780510979bde8a6ce0e000fb2ecbeec23034f26bb0603e96621aa335b73a8",
+      "data/track-atlas/variants/algarve-gp.geojson": "52483f16cccd7fde4451cfd3ce36d6a22ef85ad029c98e8d1f9a626d29d0a206",
+      "data/track-atlas/variants/bahrain-outer.geojson": "17993309e093dbb9284d6ae2612ba4b0168b26280a0630cfd97d190d8e40ebc7",
+      "docs/ARCHITECTURE.md": "ebecdef4424ccca9944042938da51e45d4a54501098c1d52591b27a165e36e2c",
+      "docs/AUDIT.md": "a9ae3492fadbe2b1a387fb594440a002535177ba4644d28860762de6fb26262e",
+      "docs/BROWSER-SURFACE.md": "739274f449dc106e31671ad0c03a2dabc93527f701d58c48054c6faa3d00fcc5",
+      "docs/BROWSER-TECHNOLOGY.md": "de495694f02f5bdccd8cb7847d42db2f12beac04580cc5250bea14298eef2030",
+      "docs/DATA-SOURCES.md": "3ec640d7a85637eef5c64d1f4c461a2b1771f3296a0ba2444e0533bf0a5d47c9",
+      "docs/DEVICE-ACCEPTANCE.md": "8d57e67cc3fc6002f35cfb0fc2450ce1cfc7ad4cb34b261d5477b943377a4622",
+      "docs/DIAGNOSTIC-POLICY.md": "424d6ed1f58e328380782865a036bf8ef01744b7935c9032197996ebeea739c6",
+      "docs/DRIVING-MODEL.md": "a622796b7bf34abbfaadc42281ac83dbf3e65d8da54e7797e22326b33b862ed4",
+      "docs/EXTERNAL-TELEMETRY-LAB-REVIEW.md": "5f74b3879709f80b1c9dc6d08ec76337fd72adaadf03cf8842440ca62ca0bc2a",
+      "docs/GEOMETRY-INVESTIGATION.md": "f62f27e5005302d1612cf4fde144b6e110bad00371d3c6a7ae397ca4c1e1402b",
+      "docs/HOSTING.md": "652efb9ad865cf152886be6bb650e33f2d40a808e489c51b263843277ec91ba8",
+      "docs/IMPECCABLE-ASSESSMENT-A.md": "f7bd1005c6b7cbb729ba645042f6ec5c56e40bb7273d9e0e15ed886d1717e0af",
+      "docs/IMPECCABLE-ASSESSMENT-B.md": "c6cbc1b3109b27516ef195dde30fe9cdde917ff35f35bd45e62dec6b83c6b38a",
+      "docs/IMPECCABLE-DETECTOR-BASELINE.json": "c5dcb82a0d2af4e82ebd0ac0351f432e1453a3d5b48516bee0d517fd34d3c5d4",
+      "docs/IMPECCABLE-DETECTOR-PHASE-2.json": "3c3a55ebb75cf65b1c24f3b30b3062b97cbaef0c952fa75619030d25d42e8063",
+      "docs/IMPECCABLE-DETECTOR-PHASE-3.json": "e6660370b3488d94d344cfe28662031ba6b54620b985deb4a03d11bfe525c147",
+      "docs/IMPECCABLE-PHASE-10-REVIEW.md": "2282afd23622981cc28b5d9273ce9bb646d8a43007941149d76cb16c426e9475",
+      "docs/IMPECCABLE-PHASE-11-REVIEW.md": "0abc71355a665d27aa3d149c489270f6ac1f2003d02449d4d70d429cbe3d63b8",
+      "docs/IMPECCABLE-PHASE-3-A.md": "ff22e10ebc2d13dcfab599304632a4cfd91c0ef0d2d1ec7f9e60589cd7ad19d5",
+      "docs/IMPECCABLE-PHASE-3-B.md": "a333578b73e518cf1b56113e9548792019cf58854a78cc4edd96667c0ad653c9",
+      "docs/IMPECCABLE-PHASE-3-REVIEW.md": "739207ac9442badc4913470475817b62e6ca1527e4a50b7fef62a56f71765adb",
+      "docs/IMPECCABLE-PHASE-4-DETECTOR.json": "fd9a253536a4c21aa364514aa9e40dd1d7b83641d7e1a940fb2c8dabd2dc422f",
+      "docs/IMPECCABLE-PHASE-4-REVIEW.md": "7c8f3de9f07abe1d2c588c65e271a769f208c827fe574e0809dc52a9c46bae20",
+      "docs/IMPECCABLE-PHASE-4.5-A.md": "dd4504ba165cfb3c38aafadee6633b37b6ee0f51f6222468257b6f92c1419ad9",
+      "docs/IMPECCABLE-PHASE-4.5-B-detector.json": "e5481b82d0e67c7e1a6d1d40f1ea3056b23b4050ead75e2059738579006ae51e",
+      "docs/IMPECCABLE-PHASE-4.5-B.md": "3eccb4f48b295115b697e73935f8ca4e61f2ff50eedda8577670266194d79d55",
+      "docs/IMPECCABLE-PHASE-4.5-FINISH.md": "409085bb719a5fa7fe80f0ea4b25a8f8c28a6b2ede74075377b5696a9bfaf508",
+      "docs/IMPECCABLE-PHASE-4.5-REVIEW.md": "db7f2336eb2e81cf14bf35791d0fd7e1f6279a8e75c90ec2a605e9a6a9c70041",
+      "docs/IMPECCABLE-PHASE-5-REVIEW.md": "9fe926a0de71ce443105aa1b9c740183867d8bacc301a0469413f8ef3e28b17d",
+      "docs/IMPECCABLE-PHASE-5-VISUAL-B.md": "695794141a0e62ca93248ab718648e186f24f73c8fb3092badf77ef842a931c6",
+      "docs/IMPECCABLE-PHASE-6-REVIEW.md": "159db7c5ebeb7149bb8c49a9cefa7385e3d5dcccdba345e2842add64276b2cba",
+      "docs/IMPECCABLE-PHASE-6.5-REVIEW.md": "0c42398221506ef4e3e21af3228ea02595732cfd952bb0a9abcd16b6dcc977a4",
+      "docs/IMPECCABLE-PHASE-6.6-REVIEW.md": "99a5c99a8aa8312e8e120f94f5d56a6813ac07d2e2448ff5f366b88f4546b3e5",
+      "docs/IMPECCABLE-PHASE-8-REVIEW.md": "e22f7c748ee00f9168227a2a150c8a5d04f0a0bd8b03d54147694fcfd022a58a",
+      "docs/IMPECCABLE-PHASE-9-REVIEW.md": "b77bb48f6d59385c0fc6e591cec18529ae382acb22c7dd11d306de19a6c24c97",
+      "docs/IMPECCABLE-REVIEW.md": "ebce5ff6a5f875eeb070b589ca292b178afaa5e1035ba814c6e3c549777e6aff",
+      "docs/IMPECCABLE-RUNTIME.md": "63ebef4e622c8f903306cc7fdf8544504f97e16550c61ad81dcd19cfe54a936b",
+      "docs/LMU-EVENT-SEMANTICS.md": "dc85a582d9a37f6fc09dc708dc8deb3cad5713e84dd0cf434573f3135dbeafab",
+      "docs/LMU-SCHEMA.md": "cddf61f22a257ecfd38b5fc3d51c470e615a6f58e533f2eadf96655e21873dae",
+      "docs/PHASE-1-REPORT.md": "cee349fc10a2a6b0370827368f819c399dc42f0204f10f85236989a0323a2b47",
+      "docs/PHASE-10-REPORT.md": "fcbcb10d3b25b1373c512d17db54cbda3eccde2a4da061bf658cdffd9734e199",
+      "docs/PHASE-11-MOTORSPORT-MOTION-DESIGN.md": "414f2b6648f0466445d8d3f2170d459bc32f2db334a27bdafcce625bfbee9b4b",
+      "docs/PHASE-11.1-TELEMETRY-WORKSPACE.md": "fd043cf1b45498397d5a8691c04095e3761741f9603c98da1ca1d5f20dd0fbfd",
+      "docs/PHASE-2-REPORT.md": "e362ede0a7df449deca5bed580e330166eee4ec54ca8436fc1795dd03a63bd25",
+      "docs/PHASE-3-REPORT.md": "5ddb70abdc7557c6d9e0f589ac2e416325d917bad7000b7110144c726494b5ba",
+      "docs/PHASE-4-REPORT.md": "166fdb6b40efee48aa2ee6cb19f462e0a572c384c0f4c2e2fd0c59a1180f5650",
+      "docs/PHASE-4.5-BROWSER-FEASIBILITY.md": "197ab03fe1f1bab5673679a52b442adfae9fbc796b165bb8c6e72a054c2c9a3f",
+      "docs/PHASE-5-REPORT.md": "ec99f3bd65b16b6db7ae80af4f1d797c0abe755d9bc647e746062741ca9b722f",
+      "docs/PHASE-6-COACH-REVIEW.md": "41fae7b1f6522cc03411790ba3e15e26d0a85ef2f785f98c65a46320a722986e",
+      "docs/PHASE-6-IMPECCABLE-A.md": "64ef96c5e411728338b79ec83606032b9aea017d255ba526ddb81bca32ac7516",
+      "docs/PHASE-6-IMPECCABLE-B.md": "d22411bd3d82a25e6e659dab770c3129dc21d5165fa4110595651198b312eb93",
+      "docs/PHASE-6-PIPELINE-AUDIT.md": "d3d537532421d3abeb79d18431066218c5247cfa8a2ead746b40e45ec37c1ff3",
+      "docs/PHASE-6-REPORT.md": "f341e419d0603591a6a460d60e93a40404097c46414d076dcdcc54582fdbc33b",
+      "docs/PHASE-6-RUNTIME-REVIEW.md": "172b37003376eac874b93748bccff45df96a9c87673485043e1a741816ba2492",
+      "docs/PHASE-6.5-REPORT.md": "e738ab6eff06b70ec0a595a7917bdc9a6cd795efed25f448121bbea1ce5ada21",
+      "docs/PHASE-6.6-FEATURE-INVENTORY.md": "38dc113a43827495e81a65b26cfb83b48bd9f0a6d08a5af6e423c7322f387c2a",
+      "docs/PHASE-6.6-POLISH.md": "24d0599b6e2dbb3b25b311c8705811dc79f64b84507f9650ce956ca7042a7c6a",
+      "docs/PHASE-6.6-SURFACE.md": "f64073ec9caf9c4d6001d1d4d1e7364e65b0547f60715a5b0c4f384665ad7c19",
+      "docs/PHASE-6.6-UI-REDESIGN.md": "e9f7d2af92e9aedf93a03d8884af86ff6f5e2780f6a281e9bc59f52d8c3c157a",
+      "docs/PHASE-7-REPORT.md": "5c3431b10c89f1a6851b5e70d57db5a3d0c6d837aca0bfac03bd693c9c45f184",
+      "docs/PHASE-8-COMPLETE-TRACK-EXPERIENCE.md": "27928892ed323e9238078f85e6e90792e3f4f3316f9962b11c34d62e795530c6",
+      "docs/PHASE-8-TRAJECTORY-AND-ATLAS.md": "63880aa6a194a8116ab750e28c39ad9e7ed1268c6718f6782ec6b22354f159b2",
+      "docs/PHASE-9-REPORT.md": "b4ac992d4f50fba546366fdf048873f2f83caf1a86daa8c3f029fea9a5e25c23",
+      "docs/PLATFORM-DESIGN.md": "5df05c8a5b7ec3ed1149787b884bcfd6de3c918185330123f565503f3cdb1462",
+      "docs/PLATFORM-SURFACE.md": "511e383a97c8938f1a5ba753852c10991cf7882558739171975909eef8fe4feb",
+      "docs/PORTIMAO-ANALYSIS.md": "accdcf69252465b08f4f286da2421fcf5c834d6d5dae3688099ef04d83f2bc13",
+      "docs/POSITION-VALIDATION.md": "3107f3aec42bf146b19666500f68c88ee6eefb66326a5f9aebecf70ba03e4cf6",
+      "docs/PUBLIC-BETA-REPORT.md": "716dc4e8397e35066296a808f56449eb7cbf1ccc5fdbddfd4367aabe5a3a0bd6",
+      "docs/RELEASE-BLOCKERS.md": "2d8693b0aa5257864d63fc0702451a2d7569f2e6afaed42fffb67445b9df496b",
+      "docs/RELEASE-CHECKLIST.md": "d9360ec7150d4afd3134929edc120c3f4c4be62846ab4b249044891cef4d8285",
+      "docs/ROADMAP.md": "efccbe4c57ac990337d264152ede33ccc0dd1295e904712f553c4e34ef135218",
+      "docs/SPATIAL-MAPPING-VALIDATION.md": "5d55404831f0b44f826a787d77cb6ff6d80cc664c10055eeb981418d310c343c",
+      "docs/TELEMETRY-ANALYTICS-EXTENDED.md": "2fd8ee03030755d0221dfc7699845ad00dbfe5d33516a5ca9e1083d45b4718f2",
+      "docs/TELEMETRY-PROFILE.md": "9ac785e3ea45ad179849d381825b485b140340123616bacb53ad55e5e1db4460",
+      "docs/TELEMETRY-QUALITY.md": "3270eb18ff7799bc5d1960ea33641d2d86a33b1ae32909a44a1a3c13a0db9a5b",
+      "docs/TESTING.md": "310e2d01dbd5d990108da01139861843a4e036623e88289ee181280d19c9684a",
+      "docs/TRACK-ATLAS-COVERAGE.md": "3ee84122520558e3317bd3e9e28e8cd76bfd8721b678064b4094e925fccd5479",
+      "docs/TRACK-ATLAS.md": "6be3fcd119c5a37b64de0ebd30a71fe2fd3e989668e1ba5de08ef5f37d545b1d",
+      "docs/TRACK-GEOMETRY-VALIDATION.md": "a51d9ffc340559169dc5fbe2fd036266ca9aa823483ad97fa04173270688e04d",
+      "docs/TRAINER-COVERAGE.md": "c255880fd572a840b8cd1b23c4df4eb14c63051416a26f85d6739cee14e02e7b",
+      "docs/lmu/channels.csv": "4e2dba469d2d18dab6c4dab41d56f2aa1f4daae01fb052c78c3e3d99731ca68f",
+      "docs/lmu/events.csv": "2771c08dbd1da3d52aed732bbdb443d77d07dd62412942c37543369a04fb470f",
+      "docs/screenshots/desktop-trainer.png": "fc894636eb4ecb3cf91b09766a06388e65549bc3db25f6b16fbdfa4c44ed2c64",
+      "docs/screenshots/iphone-trainer.png": "0ae25abed16325fff9aa988ea82aa4472d4481c535ba72d2d7d66586c3846db8",
+      "docs/screenshots/phase-10/native-desktop.png": "4523cbe01d16105cfbba6bff5576b4be718cfe026aa7290fa90443f1641aa51b",
+      "docs/screenshots/phase-10/native-mobile.png": "2260664734c73aef19db25cf8ff6ab6ef6c10787363aa3412ddd527d1e14f88a",
+      "docs/screenshots/phase-11.1/after/empty.png": "1471385b5f32174f30c5fee550c3866791cc97e11780c568c3fc39f25ac996d6",
+      "docs/screenshots/phase-11.1/after/metadata.png": "e67e05003aa1173ec343c560b4f73c0ffbb54716d8930ab29d9f4d9990e375d0",
+      "docs/screenshots/phase-11.1/after/missing-position.png": "157d5aaaee455206e438bc50eecf570e181b8b25339e2f8aaf1f7c8549ce68a6",
+      "docs/screenshots/phase-11.1/after/native-1024.png": "5a4f2ceac5fc6d23f4c1eb911532f53e390ad8684306a6b534e6249e5d32e775",
+      "docs/screenshots/phase-11.1/after/native-1440.png": "99dee16ba8e107000df39181f5a8f60375057bc211a7c9c2080ec8fdd0c98981",
+      "docs/screenshots/phase-11.1/after/native-1920.png": "4700dfc5f61151221208c38e80183f49f66b60ea743256186ff54050efef1df7",
+      "docs/screenshots/phase-11.1/after/native-390.png": "eec59e9c8b535675cc1253aff37bac03640c9bac09579c8942c2c19bfebcd1b2",
+      "docs/screenshots/phase-11.1/after/native-844.png": "0197cdd448a2cbc9792b3b7eb19698a65398fb0af3160e96926d74035a7c65bb",
+      "docs/screenshots/phase-11.1/after/rejected-position.png": "6328ce3c057ccf84c7573ebfee64844cda2ce12c2746b4b33183cba863efa11e",
+      "docs/screenshots/phase-11.1/after/workspace-1024.png": "6e027247798db2c35fcb4d12b9ef35b00052963216e51e22b596d8d5de8ff665",
+      "docs/screenshots/phase-11.1/after/workspace-1440.png": "779399e42d169233448ab9cb0b3be091d436466f83fa2115673704e8fa0477da",
+      "docs/screenshots/phase-11.1/after/workspace-1920.png": "4700dfc5f61151221208c38e80183f49f66b60ea743256186ff54050efef1df7",
+      "docs/screenshots/phase-11.1/after/workspace-390.png": "90db8890045a5d32c367c6f80c323bc142ebbbdf1702a1a28da785393c24e3f4",
+      "docs/screenshots/phase-11.1/after/workspace-844.png": "eab87fe83fcb6dedfec08635bf852c7a2608629e6f6392e64b3e75715dfa35e4",
+      "docs/screenshots/phase-11.1/before/empty.png": "a9ee8b8f7b7685eeb4725e959b9e08a75f5a79efcd0f3ce5a55aa619c8da5853",
+      "docs/screenshots/phase-11.1/before/metadata.png": "4a954960b841e45b7082ab18a66a9f89ec0fc04c10d434be31b3e9fbbed30474",
+      "docs/screenshots/phase-11.1/before/workspace-1024.png": "677b5938a35be13d22385db9b9b21053ab53de179d2db6b489e4f42ba861426b",
+      "docs/screenshots/phase-11.1/before/workspace-1440.png": "575baa4f0609596ce051c88694ffede9b712162528e48eea9b855ba899ebe86b",
+      "docs/screenshots/phase-11.1/before/workspace-1920.png": "7efbc9dd79d87c95058ab0eb1b56870c691ec0d87a9a5e69776a077e4a3295b6",
+      "docs/screenshots/phase-11.1/before/workspace-390.png": "34eee649cb4ae56c2e4c212d2356893bea92fb8683b43ec20ae1da8aee364f03",
+      "docs/screenshots/phase-11.1/before/workspace-844.png": "7bb022049156a6ae264a4295bbbae4b2c6dec02c22b9974b1c1071e570287837",
+      "docs/screenshots/phase-11/after/atlas-1440.png": "a4160b5f2d6717e0883fbb17077a548e29bc800eefc839cf1cf081c86968c7fa",
+      "docs/screenshots/phase-11/after/atlas-390.png": "11b983bd79278913d5ace3c694521e95d67bafd4488b8a238cb4f4ec348c324a",
+      "docs/screenshots/phase-11/after/home-1440.png": "4824fbcef2e6eb7ac33c7ab300f7bf61920571da2bc484562945ca261af2808d",
+      "docs/screenshots/phase-11/after/home-390.png": "e2add163ad166c76cfb91c2216d27faa7e2437902632e58903033dd2b3d8516f",
+      "docs/screenshots/phase-11/after/native-1440.png": "dec122e08bfa19bafeba638b1d2dca83f7e868244f81f936597382a8d9a7e693",
+      "docs/screenshots/phase-11/after/native-390.png": "d39d6dd1ed47db2f8c0bbd8c68eab757bf6ec7cd285a85c512440ea695f69887",
+      "docs/screenshots/phase-11/after/report-open-1440.png": "bfa9363abf25a1896916003af5d2a0a6e73c343887acca27fbcab29162421a6b",
+      "docs/screenshots/phase-11/after/report-open-390.png": "5351fe6723a428876e6fed2d76199f19893ab128e36bc64057a0b76644040756",
+      "docs/screenshots/phase-11/after/reports-1440.png": "e990935bcf01b171ba0591f3e452a14a3d15c80a9fed53d317c61a5e14ba68db",
+      "docs/screenshots/phase-11/after/reports-390.png": "efcc74d35d2250707db70b52e058353416c422467ebedde6b2c1ed0e892423d2",
+      "docs/screenshots/phase-11/after/telemetry-1440.png": "a9ee8b8f7b7685eeb4725e959b9e08a75f5a79efcd0f3ce5a55aa619c8da5853",
+      "docs/screenshots/phase-11/after/telemetry-390.png": "99efa2ed742c8de3819931fe6710a6bd31c60bb981363b580afc8fe4701bf9b9",
+      "docs/screenshots/phase-11/after/trainer-1440.png": "79a1063f87594d5f0371a5103d8af2a072e1240178a36a25dc7d03473ea1fb47",
+      "docs/screenshots/phase-11/after/trainer-390.png": "06279bb90ffd935a60bf37529534a9d6a36d060d62c2baa4db7ca5eff59afcfd",
+      "docs/screenshots/phase-11/before/atlas-1440.png": "f8397b3403a95d1dcc8279878fa5763071e1cefd0357172a5c7000e9bd80bead",
+      "docs/screenshots/phase-11/before/atlas-390.png": "e959e9f22e5e56cc3cd3ecbb8186409b6d45a142ecef5aff8c15e2bb888f5c90",
+      "docs/screenshots/phase-11/before/home-1440.png": "8f48220776732ca2c7c46a95cdebeb00553143b768e14da1778c2177701ac005",
+      "docs/screenshots/phase-11/before/home-390.png": "a5aa4519e7f3f30eec3d51b3aae34380d4d9b48586fc593946c88e3a19f0cb00",
+      "docs/screenshots/phase-11/before/native-1440.png": "622ba0d122f12e6730df895818c1ee2dfefa29067cbbe714e0416098ee8d9e1c",
+      "docs/screenshots/phase-11/before/native-390.png": "6a15147c123380c2f8f56468152e5c8afdae6d4eaa06a579be7852a84de07fb2",
+      "docs/screenshots/phase-11/before/report-open-1440.png": "dd11f0376af11b736ba7c1713544d5b37a7fa6fc1e5836b29b1c918e9fce626b",
+      "docs/screenshots/phase-11/before/report-open-390.png": "f9cf4663061e2e7944e845d8ecf72d953d3728ca84addd4215228269f43ae7bb",
+      "docs/screenshots/phase-11/before/reports-1440.png": "18f9abad43bcaaa415c54aca400dd9fb7d3406c6cb778f24c41050573f3fc8a2",
+      "docs/screenshots/phase-11/before/reports-390.png": "b8d847bbb221ebf170cc8aff246106542f9efcddf30558e9b8c26560c95d70f2",
+      "docs/screenshots/phase-11/before/telemetry-1440.png": "d08a72d4eba0f1401b11400a482a56a1899422112a8a440eb840c835d413e134",
+      "docs/screenshots/phase-11/before/telemetry-390.png": "0bb71d2209cdd879b019519e12a2ced298be27ec580cfc68ab170a9ecbd1c5a9",
+      "docs/screenshots/phase-11/before/trainer-1440.png": "8fb6406cebffdbb9287b3177eb7bcd21b90dca8e6d5a1893a7a01d012ece9fc6",
+      "docs/screenshots/phase-11/before/trainer-390.png": "17d417ae2aedd3dcef01aff38a2362ce493aa18922601d479002a2cc6e27e665",
+      "docs/screenshots/phase-11/comet-fidelity.png": "ad369aadc7c2fc789cd4139e9cfe18d72d81fb1f7fa4d69d51786d7812cab6f4",
+      "docs/screenshots/phase-11/comet-fidelity.webm": "a386115b8d97c70407b7ad50f4f94804c9b90742a79728512818c924886a5f2d",
+      "docs/screenshots/phase-11/native-loading.png": "89a6f5b19931971c3ef88701e84b327857889588a6cd0e0e4f4dd1e6f4fcd612",
+      "docs/screenshots/phase-11/native-loading.webm": "bd6fbb332084d601175003ad4cf5b984421c49e1ba7a9f4241ed49f4179dda7a",
+      "docs/screenshots/phase-4.5/desktop-summary.png": "a511623c69b2910a197206867ba6f9e872c0505b521d088cccdf400e7629e02b",
+      "docs/screenshots/phase-4.5/desktop-traces.png": "42ffd0005d3300eec42a9b985d2ae6c03f88498916ebae0bb7d9300c71725eaf",
+      "docs/screenshots/phase-4.5/mobile-report-summary.png": "7bbb0d95182dc7fe8f9d5d4d509afe34dc8aaa98e82c5594cbfa0d163d207718",
+      "docs/screenshots/phase-4.5/mobile-report-traces.png": "eeb0dd483ac43d5731cac18517ccf61f5953eff6e711a96c3a7b18a7b92aa3b6",
+      "docs/screenshots/phase-4/graphs-desktop.png": "88fe4dc09189fd52f9a1d632094f1e0a1f6dc1a0bbed9ab0b38775443615102f",
+      "docs/screenshots/phase-4/graphs-narrow.png": "d58ab354b28a7fb83a4dea2a10e2843f4eb1510f5aa57f9eb9107486735439ff",
+      "docs/screenshots/phase-4/telemetry-desktop.png": "4d1cada4024dcf2a6fd122b35f40aeb7921cc8241eca8e46dbea647243e87d5c",
+      "docs/screenshots/phase-4/telemetry-narrow.png": "dab615e25878dd6a9f11a255fb8caf4c1d02019460e1590e3ed5d31191711a66",
+      "docs/screenshots/phase-5/desktop-analysis.png": "2eea7c70347f020b5a1c94bafcef84b814b93de7fa2d40b055c9e090b10df0e3",
+      "docs/screenshots/phase-5/desktop-findings.png": "201f31fd5a5608d5ecdf6777b1753f5b012379df105aba4ad926e89513374420",
+      "docs/screenshots/phase-5/desktop-graphs.png": "1e431828a8e747c4c507da947f22b2dea083ae32d1b657bd4cf426e811fc3b63",
+      "docs/screenshots/phase-5/desktop-home.png": "c9186c3bd4b632a456eb60effdd2b3985eaf5ac2bdd6676c70fc48e37937a10b",
+      "docs/screenshots/phase-5/mobile-report-graphs.png": "1df249ab17a2cee9a9c7f6517bd582d7bc95489145827bbbd11aae835059d841",
+      "docs/screenshots/phase-5/mobile-report.png": "8027af0f73d94c9112b3ca8e779bbd87b65d8fdd52f75d9638951383b0f62c44",
+      "docs/screenshots/phase-5/mobile-trainer.png": "88ab42f4e0573232fcdbbe7a4908b4824bddb9de039ddf16cc356b460bb97172",
+      "docs/screenshots/phase-5/native/desktop-summary.png": "0bac444a24e5f10f28b3bb82ab266adfd9101bb6bd3c6a666553f6273e31a18b",
+      "docs/screenshots/phase-5/native/desktop-traces.png": "cd1e22eeae200844e9f66db7a327d9f85bfa99c5dad60e040bb074d095c032fc",
+      "docs/screenshots/phase-5/native/mobile-report-summary.png": "da97a00b26c3e46c88c09675aa9797c7996e607c2d5dd281bbba184460fb9811",
+      "docs/screenshots/phase-5/native/mobile-report-traces.png": "60fc577a559dfd2cc84e2362af9a43b55aede1af53e32d6c95995ca5d0fad4f0",
+      "docs/screenshots/phase-6.5/chromium-full2d.png": "d8d181b804bbd68995dc069e8348d443a91bea2a7cc567cb3456f9d060ac9c24",
+      "docs/screenshots/phase-6.5/chromium-full3d.png": "2fcdbb934bba8b9eadd4fd6bf7929e8ab680fc7c06e8e0c31801e10522a7eaca",
+      "docs/screenshots/phase-6.5/original-default.png": "8333f50aa4db8dce118525ca46e38133c242b8fa32d2e800953c124eb246dfc5",
+      "docs/screenshots/phase-6.5/platform-chromium-native-full2d.png": "316ddf34287c8db26815031406d6abd31a591b07fd325ae10582fdd46a7ab7d1",
+      "docs/screenshots/phase-6.5/platform-chromium-native-full3d.png": "19079d8c44b426cc086776ef79534a6bd2528e506006394e448437d9af4dccdb",
+      "docs/screenshots/phase-6.5/platform-chromium-report-full2d.png": "316ddf34287c8db26815031406d6abd31a591b07fd325ae10582fdd46a7ab7d1",
+      "docs/screenshots/phase-6.5/platform-chromium-report-full3d.png": "19079d8c44b426cc086776ef79534a6bd2528e506006394e448437d9af4dccdb",
+      "docs/screenshots/phase-6.5/platform-chromium-report-mobile.png": "273769679c51a2b999829331057ddb9498055b6868f1ecba4cfb5a9bb8b7809a",
+      "docs/screenshots/phase-6.5/platform-webkit-native-full2d.png": "b0f03e2487e582c0492f6b9b08a2c085e2b812f392cfa9a6dacfba8f7b236bed",
+      "docs/screenshots/phase-6.5/platform-webkit-native-full3d.png": "984637dcce7074c6bcdb0bc5cb508427dc114d89a268d2e501c4c17d614ab8bc",
+      "docs/screenshots/phase-6.5/platform-webkit-report-full2d.png": "b0f03e2487e582c0492f6b9b08a2c085e2b812f392cfa9a6dacfba8f7b236bed",
+      "docs/screenshots/phase-6.5/platform-webkit-report-full3d.png": "984637dcce7074c6bcdb0bc5cb508427dc114d89a268d2e501c4c17d614ab8bc",
+      "docs/screenshots/phase-6.5/platform-webkit-report-mobile.png": "e58c3190ca1fa2b3b46464d6fb6c63b9cea2bf43349af3d8c45efea2f146901d",
+      "docs/screenshots/phase-6.5/webkit-iphone-full2d.png": "5f96192798d7e7bb192ec24f0b42c4eb34c07492817c930e6c8106538d2ab20f",
+      "docs/screenshots/phase-6.5/webkit-iphone-full3d.png": "363a12b2fd2902ababc9772ba3fc6ed1632a79e212fec0a857285f81252c7ed5",
+      "docs/screenshots/phase-6.6-polish/after/1440-focus.png": "fa992425b341dd37d7c31dddab0013c098bf0f457f49799dddb66b4753f22c83",
+      "docs/screenshots/phase-6.6-polish/after/1440-full2d.png": "25922e601be2dc1b9a8ff8f5c4dc58250dfede0686cb0a8d9623d40dc2bbd41f",
+      "docs/screenshots/phase-6.6-polish/after/1440-full3d.png": "d40fafdca5e70c82caf9023882a92ad2b09872dc47ae3fbe4fc34dbdc9a18aa8",
+      "docs/screenshots/phase-6.6-polish/after/1440-original.png": "c21f3455db89e54713eb08d6fab673a6fde3054cb6c9247d463e139a2c49a449",
+      "docs/screenshots/phase-6.6-polish/after/1920-focus.png": "e8437fb9719aae4abbe6cb8108254daaacd9649796ee5133cf2cb183d62565f0",
+      "docs/screenshots/phase-6.6-polish/after/1920-full2d.png": "27c486993a66861a9bce9fd7d5b78f24e4005a11e18b182a3fbaf7c8d682c04b",
+      "docs/screenshots/phase-6.6-polish/after/1920-full3d.png": "2d3955895f7d7e3588ef0ce66941bbab7035e53017303d1b4ef83ef5e7f6be23",
+      "docs/screenshots/phase-6.6-polish/after/1920-original.png": "1fcdc58a5c7e0ab613c8f745479415e80c15f264c868f3b3e8a717b99bd882c7",
+      "docs/screenshots/phase-6.6-polish/after/390-focus.png": "6499bc3b44198e11ce91905601be6406fa249e8ee61542f33e20d98ebe3dd335",
+      "docs/screenshots/phase-6.6-polish/after/390-full2d.png": "9c565a1c85fadff0b4ef40f28fe29b69ad012c6dde24c735832370ff78a5e825",
+      "docs/screenshots/phase-6.6-polish/after/390-full3d.png": "6caf9a58379653356fb10ef860ef4ddb39437d9c9df388fbb10f69de1218c52a",
+      "docs/screenshots/phase-6.6-polish/after/390-original.png": "9f6af24d33f9d6ebb84d0c4d5007f57036873851af4f98ca19a04966a115cd1a",
+      "docs/screenshots/phase-6.6-polish/before/1440-full2d.png": "d68672e0007525091b829f7a99a6c7a76cc777cb878866f0200bea3db4ac99aa",
+      "docs/screenshots/phase-6.6-polish/before/1440-full3d.png": "ad3ea1c3b40c4c2c79272bf808a60ee269fe13e157351388fac16df800d203ea",
+      "docs/screenshots/phase-6.6-polish/before/1440-original.png": "e5cd21a5fcc4518c4be2a525cfc3bbd519d35296196ec2e0a981d1f6a7f2f6fa",
+      "docs/screenshots/phase-6.6-polish/before/1920-full2d.png": "610ced20bf2f969daf6ceab9a6f771842fd9b32e3bae3b2a9423ecc2c2fd5545",
+      "docs/screenshots/phase-6.6-polish/before/1920-full3d.png": "b79b07b872717f74fdd4ed23bcfea53885c90bc6398334d1d67d46d9dfd5c603",
+      "docs/screenshots/phase-6.6-polish/before/1920-original.png": "f6ef83173e0eaffb51fb9e236f13c2d33421cef09c0c73fe064e4e95e909ceab",
+      "docs/screenshots/phase-6.6-polish/before/390-full2d.png": "6c57531635d6857c23488746a6909f771f541326db353e4c12ec2af6c1cb018d",
+      "docs/screenshots/phase-6.6-polish/before/390-full3d.png": "8d77f8ca9c003fc1123ac669534ba5f892b5121f0816fc2b37539354d7991f0e",
+      "docs/screenshots/phase-6.6-polish/before/390-original.png": "40f810db076f77a8644bc9e2e7ff73b0c1c3b7a941d1287009edd3158dd1114e",
+      "docs/screenshots/phase-6.6/after/analysis-desktop-investigation.png": "9cca2f0177ea0ba8379583b2bb76dd6b48acf1879266cc4d89f42ca1451cb785",
+      "docs/screenshots/phase-6.6/after/analysis-desktop.png": "36003cda689f8d74f3715c0fad5bc211a2db615c1236e1ec48e464d4ebb956a0",
+      "docs/screenshots/phase-6.6/after/analysis-iphone-investigation.png": "7615b5f320259c72498a10f5e6d7a31a847def4a7be03608e30cba0e9e767ada",
+      "docs/screenshots/phase-6.6/after/analysis-iphone.png": "583d3f23064c47fee078bf69d29c2f71476980d27346318f014cb4dfa531c86d",
+      "docs/screenshots/phase-6.6/after/trainer-desktop-layers.png": "b438159ae4de5f969405137a3c009162725b06df78d19719cc5f385a334cdd25",
+      "docs/screenshots/phase-6.6/after/trainer-desktop.png": "f6ff8c441b54b58cc0765e4821da3446b869b0075482ebba6d754089cf289564",
+      "docs/screenshots/phase-6.6/after/trainer-iphone-layers.png": "1f38af0acdf2bb528467462f6fb9822bf161bb17695c7f18522d3d16f8b31931",
+      "docs/screenshots/phase-6.6/after/trainer-iphone.png": "e800ca515b4244afe4e6e28f11f2616e3fd001da6a4bb812fa10751dd26b85bf",
+      "docs/screenshots/phase-6.6/before/analysis-desktop.png": "9981b8ac6633a4ee745cbcb9ce264b232ce1fa5a4b771c9a6c7b5f98742db6d5",
+      "docs/screenshots/phase-6.6/before/analysis-iphone.png": "2f17b32b9b0886d61b4736c8127c495f9c1462db75751a6db406ec867813c866",
+      "docs/screenshots/phase-6.6/before/trainer-desktop.png": "00a79105571ed9bef82450ff45edfb9af9d8dbfab3c3c7a6f14a07460e2aa501",
+      "docs/screenshots/phase-6.6/before/trainer-iphone.png": "2ae2da81992629b1419a980d1640137e6744bc494450341f94dc029a3f67e71e",
+      "docs/screenshots/phase-6/desktop-coaching.png": "463ed0277bbef1176eca4ac9a167edf3bfb33cb8b74fcdac19249021461f12c8",
+      "docs/screenshots/phase-6/desktop-investigation-traces.png": "68ca562d25533408ffda1a8e1dc633154f2d6d691ce335559c9ca91ef479556e",
+      "docs/screenshots/phase-6/desktop-investigation.png": "ea814e0e3a670f3c2fb1c05158ded332ac9a77ee151b6093683ec26356a2007f",
+      "docs/screenshots/phase-6/mobile-incident.png": "86f1760ec738e0d8136899b007d9058732754c19068148e2b01904be110d4131",
+      "docs/screenshots/phase-6/mobile-investigation-traces.png": "221b6bfbe4a5bada2117f8be965747a085175d129f2b0318e48aa6c8eca2ff09",
+      "docs/screenshots/phase-6/mobile-investigation.png": "f0d1ab66cccf82beb424957d0fcb0b8da46dd7222fdf8cce0e82990d90f05755",
+      "docs/screenshots/phase-6/regression/desktop-analysis.png": "c5180032b142a81c08ea889f4afc0f815d08bd7c057f499569690acb5ba7f450",
+      "docs/screenshots/phase-6/regression/desktop-findings.png": "463ed0277bbef1176eca4ac9a167edf3bfb33cb8b74fcdac19249021461f12c8",
+      "docs/screenshots/phase-6/regression/desktop-graphs.png": "1e431828a8e747c4c507da947f22b2dea083ae32d1b657bd4cf426e811fc3b63",
+      "docs/screenshots/phase-6/regression/desktop-home.png": "c9186c3bd4b632a456eb60effdd2b3985eaf5ac2bdd6676c70fc48e37937a10b",
+      "docs/screenshots/phase-6/regression/mobile-report-graphs.png": "1df249ab17a2cee9a9c7f6517bd582d7bc95489145827bbbd11aae835059d841",
+      "docs/screenshots/phase-6/regression/mobile-report.png": "8aaa69af85ceae8c7dfaf6bf2c407646aa2f2055f3dc34aad7a2d525feb48bd5",
+      "docs/screenshots/phase-6/regression/mobile-trainer.png": "88ab42f4e0573232fcdbbe7a4908b4824bddb9de039ddf16cc356b460bb97172",
+      "docs/screenshots/phase-6/regression/native/desktop-summary.png": "0bac444a24e5f10f28b3bb82ab266adfd9101bb6bd3c6a666553f6273e31a18b",
+      "docs/screenshots/phase-6/regression/native/desktop-traces.png": "2ecc86f0c20655527fec3f53e0d946650ecc788744152454589cda14988b5ba9",
+      "docs/screenshots/phase-6/regression/native/mobile-report-summary.png": "4e2315382045498dcd9b8c77bde0444ec53fe032db6ec6f04c67537ea072d6de",
+      "docs/screenshots/phase-6/regression/native/mobile-report-traces.png": "60fc577a559dfd2cc84e2362af9a43b55aede1af53e32d6c95995ca5d0fad4f0",
+      "docs/screenshots/phase-7/coaching-traces-1440.png": "00191a04491ef1af30cac2798c90b9e6866fc552490eaa1ad1ecc240e287b5a3",
+      "docs/screenshots/phase-7/report-investigation-390.png": "83d685e57edde189f861a901c3fdf1cbcaf2826eb15d58bb7c493b748fcd51c7",
+      "docs/screenshots/phase-7/reports-390.png": "d9a4e6217f39a4f873dc78ae5fd7608d54a6c73fbe034218f4d585b2d3e764cf",
+      "docs/screenshots/phase-7/telemetry-1440.png": "da9d88796fb4a02ae966f1e0b14a19391ddae787de575405312945a8ff9128a0",
+      "docs/screenshots/phase-7/trainer-1440-original.png": "22f2034e8e16661a34540baa809fbb57b3f182a920e9785598dce8843d6c5ddc",
+      "docs/screenshots/phase-7/trainer-1920-full2d.png": "14391870052a15ab1e3939340cdd51ad15a632481d4fa65b8c854771280b47ab",
+      "docs/screenshots/phase-7/trainer-1920-full3d.png": "e309344e7fd08671d6f597f154147c86cab6d1acd1cd24b0c8bcacc202704191",
+      "docs/screenshots/phase-7/trainer-1920-original.png": "24e0eebc3486d277bbc920678c7dff3435ecbbfd176080d99a37692a8338ec32",
+      "docs/screenshots/phase-7/trainer-390-original.png": "81c4ba046c46c72b8f7acc3095d283c48d4b8117ffe1cbc845cd1037ab554d38",
+      "docs/screenshots/phase-7/trainer-844-full2d.png": "c3295a4312dac7660cbd99b08da66fdbe6ab753800c8f2dacbdb9fec1132afef",
+      "docs/screenshots/phase-8/platform-chromium-lesson-1440.png": "a4c832a813700af53d33b4e32dc1f66cd5307c9aa751ce5dc1759970c6760c0c",
+      "docs/screenshots/phase-8/platform-chromium-lesson-1920.png": "ede9ba10be64ac8c3389bc8b134ca664c302b9cc1f6cf7fd65b1bf6c507d9d36",
+      "docs/screenshots/phase-8/platform-chromium-lesson-390.png": "6aa6cf9302f87100b703cb9119b4bc8276fd11a2247767bb631ae1e8208d4591",
+      "docs/screenshots/phase-8/platform-webkit-lesson-1440.png": "a5bf9b0bc7769cb66f9063236405e35daaccc1263e9a21bfe527de6f05e88399",
+      "docs/screenshots/phase-8/platform-webkit-lesson-1920.png": "c37f1c46f2fdbc48c48771c31e7d3ea72c78e683ae1237946090e0ec29549fd2",
+      "docs/screenshots/phase-8/platform-webkit-lesson-390.png": "a2adeb0acaac028a21c0451c7e6f14a6d7ba0b8bdbda50a32091ee9cc08116c1",
+      "docs/screenshots/phase-9/atlas-flat3d-1440.png": "f22c4acf229f75dbd93935225cb34c6cdcf3442da9b5ee820f229e7391334764",
+      "docs/screenshots/phase-9/atlas-full2d-1440.png": "21c8ce943e0a407aa70956c990fb5f932f9ff5e77d79e1039ca40bfb58b0549d",
+      "docs/screenshots/phase-9/before-atlas-1440.png": "16bff7784f269e63ad857d2be538d05b875f5281caa5d6d1a5758928f4b200d4",
+      "docs/screenshots/phase-9/before-atlas-390.png": "551b1f04f63ecc6248173dd4bd3aa108f4358972d82c7a64407b98cbeed3a960",
+      "docs/screenshots/phase-9/platform-chromium-atlas-1440.png": "491f2b459182360c997aaf8e7a6720dc839b55ebb4753cf2e67570cc8caea668",
+      "docs/screenshots/phase-9/platform-chromium-atlas-1920.png": "ca989af057d7ce75bf8a7d94535b323d3d87aeeedf9acb2aa4303e14cccb2545",
+      "docs/screenshots/phase-9/platform-chromium-atlas-390.png": "df633357a048ea50ff335ad3bf48eeb9aa33afbe97012bdc245f5370f2c1c985",
+      "docs/screenshots/phase-9/platform-chromium-atlas-844.png": "dd1313b0493c91c6603cd98c31f01c1ba63abf7d647437815394aeb7723d2529",
+      "docs/screenshots/phase-9/platform-chromium-report-390.png": "0157d18a3a3756b3a5390f6be5bd27993cd8ac366a0749b4188da58ee64a4135",
+      "docs/screenshots/phase-9/platform-chromium-trainer-390.png": "e916e7ee573ec2edc4db8c29bf223cd414b094dfb75ab80df87361c29e349de2",
+      "docs/screenshots/phase-9/position-unavailable-1440.png": "e2bb5d56c66be02e8b99e5b8353093700be576abc20e147c6c6a76f4fc40c1d8",
+      "docs/screenshots/phase2-desktop.png": "561d4dbf3dcddfb15dc0d2846eedfa55f9d41eb21a9b21b53af0ef26f30385a7",
+      "docs/screenshots/phase2-iphone-experiment.png": "99172c1fae63a00830b4a399a2abf24c4d049493418c4f23e0c474509074b315",
+      "docs/screenshots/phase2-iphone-map.png": "c62277674ca776ddf71926bf0959637425c31d7d1fe5be0542d822ca97c991c8",
+      "docs/screenshots/phase2-iphone-t1.png": "aba084022bf7985853f4ce950750f9d7f2021e58e6ca5f8f96c296127108a350",
+      "docs/screenshots/phase2-iphone-t17.png": "461f6a0300cbf3d518b18f4c8c68c84ba20c72cee0566c1b2b201ed45b8da714",
+      "docs/screenshots/phase2-iphone-t7.png": "e1a22e1c9e50b0faeccd0fcfad72c5b0a368d762a25d7758f7889f0726ef08b6",
+      "docs/screenshots/phase3-desktop.png": "e5e04a3355cdfa7c2860a54064f7d9c091ad763754835cef152899ab056eeba8",
+      "docs/screenshots/phase3-iphone.png": "49b91f9ee15100b3a8c7588d2d819b7125d0eb4b603296aeef3bb9bb200ad28a",
+      "docs/screenshots/phase3-phases.png": "1e7df1dc54710b4dc59e92f23f42ecf257f13ada180d4a9e045ff911c3795636",
+      "docs/screenshots/phase3-warning.png": "ce45a9a238eec608035f586ab530e0715f4150c46788ef99fef0aca0c2f8f8c5",
+      "docs/screenshots/track-atlas/atlas-1440.png": "62bb208dcb4f1041ab94e5903ce31514e7412c836ded5501cb5e03d166124f93",
+      "docs/screenshots/track-atlas/atlas-390.png": "cb895632e8fb32a10216ea0bf1bb77dc4f89bc1c5e40041d29664c0d6e31ed49",
+      "examples/synthetic/t7-experiment.json": "0fb98ee7eb25ed5a830ab124f79abcaeba918d2ddcaa6e0e0a0657c1ae72c31c",
+      "licenses/impeccable-Apache-2.0.txt": "02bb8c3b4e70190e3986c0404ad2fd8d639b4f534252d82379cc1b502b6d1812",
+      "licenses/impeccable-NOTICE.md": "c60a093c2845fd9fb82f9c6f742ece31f379f8190b535309d32d66c45ccffdcb",
+      "licenses/track-atlas-MIT.txt": "bf9d967160c489e046c36a686167f8cf576aa93c6e378d293473eedc36ba9651",
+      "package-lock.json": "26a89e9d3bfbe0ea624d07de2ec8028a38949097ab6f7fe0ad253a32d2457e00",
+      "package.json": "e543fefa4d8c3ef13258da5a8a2f246bcc6cd47d2f622ac51f94c695904559a1",
+      "playwright.config.mjs": "6c2b641fee07d29ba80427cbb195f28a1d5c4f803ffa0c36e62339626395bd8f",
+      "reference/v0.2/README.md": "567421c87d66b42356fb4b86bdb1b1e38dc656697f947d4c3fe66f5cb1fdf177",
+      "reference/v0.2/icon-180.png": "ce0911ea0fe3c4bcea3df34c7f6d91546c7cfbc8bddd28eaf1639003bdf501fe",
+      "reference/v0.2/icon.svg": "3e517003380e01f7188420f9733a81eb2fe5b1087234898212d0fe56915c6b07",
+      "reference/v0.2/index.html": "884d6b4d5f7179503ff706b38396fe174d121cac4c99fa13cd62e660c4bccbb7",
+      "reference/v0.2/manifest.webmanifest": "45410dbd84ca8877b62004cd1f974dea10c42df55f6e6de15467211ad1d06de7",
+      "reference/v0.2/sw.js": "d821cdb29a5819e07b3f77d368fe3978a3cea4427dc140e7a4f95ea6ce5a2b75",
+      "scripts/audit-geometry.mjs": "e7efe73ce5738343f788f2db8d0e932e90e3d56c1f03b99ac47ebc57913ab6e9",
+      "scripts/audit-lmu.py": "287dc2da305d2d1cdc91156441522aa1628ff5e36f233cc8c9356d6c95bbe94d",
+      "scripts/audit-native-trajectory.py": "50574f57ac85a9a29b4bcbe9d87272b76194d12870dd93de8f2d1a9de05c10aa",
+      "scripts/audit-position.py": "ff5240b3baac68187ba3b001ae8112cc084a8d087d32c167816759966e8f58e8",
+      "scripts/benchmark-native-trajectory.mjs": "194f4789e2414dd3ca4e9edc866e85edba49c242bd6223f79978cc6d86842362",
+      "scripts/benchmark-native.py": "bde0067fd79a07b8b213af064580a04ea6ca5872b0eab919c3cb861260ce062c",
+      "scripts/benchmark-tracks.mjs": "37e0d6d43daf99e31bef9ca90acd66c7cdd173e139a91448bbb65301c3e3eca3",
+      "scripts/browser-oracle.py": "71d6610911507e71871baf063ef9d1a836a436392729d71d800b36c1640d2f38",
+      "scripts/build-browser.mjs": "5ba86a019c84bf56c8a665f4784b75ac241bf61ef9ed2d756c4c31c6bc9d0745",
+      "scripts/build-geometry.mjs": "c52328d706a83f17e7594b55c7ee9dceb1556794dc4d1346288fc89de6cb7a2a",
+      "scripts/build-site.mjs": "8a98371c25e1efe374881840d1ecc9179699167ceaa6a966f191248b453feb79",
+      "scripts/build-ui.mjs": "7b75fb5c45fa5ccc9bea71795f4f0575d0256bfd13255f139087bf1e2420d4f6",
+      "scripts/check-build.mjs": "f3b7143c2678b380ea5712a6ef1336cb2a3461fd0bc8fa223bb772a011a46959",
+      "scripts/check-security.mjs": "e0603e4b277e67c79044879cf0709aadac35b4019d8af48fb7c831611a394706",
+      "scripts/deployed-probe.mjs": "00d462577aaeb8e42a36b6124db9154921ae8858f737926c079646a21d7bad06",
+      "scripts/import-atlas.py": "87b9c3b3a158157c8869fc7d90d9efd98ca5678a8a2a9fd2fd95f8a2099590b2",
+      "scripts/package-acceptance.mjs": "a3b71362283c67f13a2119e340f31207fef4fe44357b093d351c17330188c827",
+      "scripts/prepare-track-context.py": "bc1fe771299ced350b4c2d46245f14249312d3348eba6617eba69216dc341b83",
+      "scripts/probe-track-build.mjs": "c24f6ea42627f2166f26ad31b49054172bb2445ff0b536121ca21e4c12426c48",
+      "scripts/release-probe.mjs": "b912af77b439b216d75278ad129b7af01854e6a4c76fe6b964ae7ed931384648",
+      "scripts/serve-browser.mjs": "e98b6fbec7c71d7a4feb59730ddc377273f445df24e768f6d789bf4ac04a3dcd",
+      "scripts/serve.mjs": "0d50f6ca33e63174922d0ccb5cb9e980005b5e0a2ca4b4803aad8760096c2b24",
+      "scripts/static-server.mjs": "b71f6b36f9ad44363773c50f64b8664298e138eb58c292f597d77a4dae055c8c",
+      "scripts/validate-native-trajectory.mjs": "97e7adab8008a75457ff5680a4e9169dd1a7e3c7f73a7c6f011e3a62cc550d2a",
+      "scripts/validate-position.mjs": "9497fac90ea9584337feda1e123c8a691d5bb0924045429f8fd19c8e4a26b3bf",
+      "tests/browser-unit/analysis.test.mjs": "f0141f65060cbd2552cd589331b27aaf5d91677c9a329245c8b3b0fd53713470",
+      "tests/browser-unit/analytics-extended.test.mjs": "54edd47801b558347fd667482ae55ba0bbee64a2cb59191aca1dc599ed8d51cb",
+      "tests/browser-unit/atlas.test.mjs": "da0289b579b7fd6bbf86f631ce9a6242594bc54091469f2ba12a14fbf98afe35",
+      "tests/browser-unit/coaching-engine.test.mjs": "9359914093c40e54c1351e90e63df8a6ac50593a9bfdcfc2f502dcf4c4dd6daa",
+      "tests/browser-unit/findings-view.test.mjs": "b277122af5ccd07e612ff7bcb124c581986bbd0f88bbb900254f9152ae07dc1a",
+      "tests/browser-unit/importer.test.mjs": "ebf8a2f4959e41d7bb01a011d828e1fee0f8d03858f2c3e5daa69500e2728744",
+      "tests/browser-unit/native-trajectory.test.mjs": "b778ab03ea3c1488e07ce51c10e09b7b23964249c7c09335883f9afc65eb3165",
+      "tests/browser-unit/offline.test.mjs": "3d81140368d7de03f3ee4ff552acad8ab3f9b06d3b922c3fe76af67ae474ef3f",
+      "tests/browser-unit/position-mapping.test.mjs": "6d8cf4eb331cb235bb045cb016b59b8a95c7b6575660b8c4d2513670547c9300",
+      "tests/browser-unit/report.test.mjs": "7a78e185bee98fe5281a53e3478f1187eb17758d08b40b32c816d3fcc650f403",
+      "tests/browser-unit/track-capabilities.test.mjs": "b8d79261a3bf7c15c546c6e573b4924b21e468c17084ce2f7d5467140e7e3f67",
+      "tests/browser/driving-model.spec.mjs": "c03f2bc549b0f613f65caf052f66939e816918f563648e2979162c14cbc8dde8",
+      "tests/browser/focus.spec.mjs": "71a33072155a82080ec88c27689fef1919a19af1f82fb68f62ff20e25ee4b1de",
+      "tests/browser/geometry.spec.mjs": "4588d265e3559471b5f9cbb0a0d2c039150cde5d65628334c207cf15c1228f80",
+      "tests/browser/offline.spec.mjs": "1bc7858df34667a885c1f731680e86c8ba64170b2993f2dfcabb04e02bbb6224",
+      "tests/browser/trainer.spec.mjs": "4b4899ddc46630406b262b1554110fb3216e422af8842d8e22c24d6765fc7c3b",
+      "tests/browser/visualization.spec.mjs": "2e449cdc5c60e33d706ddc4d19cf757592b168fad6ea26902d647707f0053e8f",
+      "tests/browser/workspace.spec.mjs": "93b5c129f49d8c1bfc110753a481b0dceefd82f5ce7563cf738ae17fab433aca",
+      "tests/fixtures/synthetic-portimao-profile.json": "4e7753547888027abc16437bed57aa1ecd02663df43a6e83e6500810b887411b",
+      "tests/unit/driving-model.test.mjs": "6487d99ecfcd8c22f2517cf804196a1f15945332a5bfdc65afc251cf8b9a46b7",
+      "tests/unit/full-track-view.test.mjs": "ba719f75b18328f352bcb567d61470459bc78022efc06feb12d192a852192552",
+      "tests/unit/geometry.test.mjs": "caa541a1428c3c82beaf963a873aa2d1a47bb217cb60c7829dd75a32c6f7039a",
+      "tests/unit/lessons.test.mjs": "8311c9747b3c754af269c377284f1f8bc82e58d26a83919404c3e5a10d8d08f3",
+      "tests/unit/profile-contract.test.mjs": "86801223cd96c6cdddfe42c364bd39a6907370e5a1976c25dc3494a3ed0758ab",
+      "tests/unit/pwa.test.mjs": "904db7a6fafb09b5d415213ec630b3293d7facdefeaa6276d3cfd8a5f9c23f25",
+      "tests/unit/static-server.test.mjs": "3773789b3b03c9ee26c843f35d18f9bb8a53e8f4fec876ce57eb63d694761faa",
+      "tests/unit/trainer.test.mjs": "71dfdd903d45d18da2ebab3b44416d5641fb76959189ce3861fd054f00473b50",
+      "tools/device-acceptance/Start-APEX.ps1": "b7ea774adddfff2164305f8fb4a0bad155e02815ac3a047b6d8785cc0118e284"
+    }
+  },
+  "revision52": {
+    "files": {
+      "estimation-ui.css": "44a0e98c5108def0947a496bbdcd188b17dffba30da8dba76df7c32b366ec78d",
+      "PRODUCT.md": "8d796ce758ac6a877d1e61dcbd89c51c4a32c00468dba79371b2f76d7fcb1c7b",
+      "index.html": "5cd979ced7d1bc70d55c1426af27935cbd224ccaff6cb04a1e6121025fa2262b",
+      "map-fit.js": "4018982ffa492eaed5fbc1564a038065d18de5dc3a2184bdd9a64d4033687a47",
+      "styles.css": "8b0f22abb5e04d754691ed00834ac3f9c8d6aadb668262bc94f2d5f700d2319f",
+      "startup.js": "cfb6e94732fdae28ca95d0ee3b0336ca4c169397d72bdef158ab67d8a4260e10",
+      "line-geometry.js": "e444d1a5ac87900f8489a1a047a50ffa4221216ccc3800b7b2ee8e4559f802a4",
+      "map-camera.js": "14a730287ce198738dd6a698d9e96b5eccf26151eed3214df729c6c7f9d46bca",
+      "line-editor.js": "098eca6f9f432309ebd644c2bbea2f569926af4db1cbb8dfcc62fb3e13dad51c",
+      "compact-popover.js": "2ad0e2241de3da6e7a1f46e0d1a865da83f9910a7ed9243881cf1dfd530fc48d",
+      "progress-contract.js": "0d56608113166639e6c6672acee7fdde84ed66ac4a24d3fb8c1810f4dc63058f",
+      "navigation-state.js": "573d49a3597b76f0904e4f8ed4322fd95d3d08d2bc133001dc7b8a4c524a3beb",
+      "pedal-events.js": "7c83497281fec834dfe7a038390d4992a3cec69687d5c8f44f09e6423caefaee",
+      "instrument.js": "3a982f9aa2fd681558ed35205b366f1b71824dbac00e874af0b33415d495ab22",
+      "preview.mjs": "9fab64c9f8e1fb1942f3115946e56e709e05b1da958b21de70ee70c7f97441e3",
+      "line-editor.css": "ff89fabbf5fd6dc577ebdb7ea6f4dcaa074543d2676966c4bfd91b3a49d0a3af",
+      "educational-estimator.js": "551fe26eb89c4eb16268c4819355329bc32b4191f08d173acecc6daa3c8e5ae0",
+      "estimation-ui.js": "6d766b9619d7c58bb92d11a0ca1bec4b28d7491b2044c7a47f97e6eb55e22d0c",
+      "instrument.css": "a38b8f28b9adfea6eb449d31660f7bb7f61b198cb1906ab069de1925432c197f",
+      "road-corridor.js": "9c69e758a54d42cb3c4904d8d2fd116af5b5028a79f5c493252c0301cffe756a",
+      "navigation.js": "e9e1dc4f4635a1f7d32def65bd2bc1d6a64599d834104b035e24ad7360a2f4c1",
+      "training-context.js": "85156a7f36ef9d9811f84a7431f71f2160d0cdb342653c507d3debbe74faccb7",
+      "sector-comparison.js": "88192298239506ae5a9964788cb0e3e68e9dfbd57e73e4953dff32e898e5aea1",
+      "vehicle-marks.js": "3e9f6f138df97af51819e0f81213dd77d228a31a31f9b602e19d628e91ca2731",
+      "track-workspace.css": "dbeea4c71b6febaea6a1a5fdb492405e99a2501705e8c1aba7cfed2113a44103",
+      "event-comparison.js": "5b8a32121252bd42b8427418fdae221906d8bafc452c65a5144396a42df243f3",
+      "precision-map.js": "245973206701d01d8c6acddf2e34a987e87bcb9fe32204679e5ee6f2d374dcd3",
+      "demo-analysis.js": "a27858e4af578bdadbe6c2e9d0972b6f1d47cd743c83fa5c4ac10c848b44643f",
+      "revision51.css": "0194ddb1be893d84ce3388f0c78e0df65c11887ac73c16d9249aa134ff627298",
+      "DESIGN.md": "c06fb3d8060d2adbc6dd8253f3c0451dd57296aef33ff6dabfa06805d3fcf84f",
+      "overview.js": "002022b28be50516c0ebe7c4d04acd3b1dd37b2fa97c8201e632049ccea52aa3",
+      "revision52.css": "d76cecfb1152771ff1097f7e7c46fef2beb903d9e0a4d87a53b8b39ae2d31e66",
+      "revision5.css": "d1d8b5753aed8cc6bf2708b47ea189c3f3680b221505729910213df5442d7e20",
+      "revision4.css": "0303b27a20874608d79d202b04b439e5b4fa952821995dbc78079f8f4e728da5",
+      "model.js": "5066174b523b853072c4b7b9fc1fb541c4463864e4a40a81bed753a665506475",
+      "comparison.js": "21844dc956a078860398672262ef946a69cf1953e77c7de83cf781b5c4eea23c",
+      "event-layout.js": "ccb48d3ea45115c179b2de74ce91fd096c7ab841405432e06941e32dcbe4de46",
+      "track-workspace.js": "1a25cc6b7333cbef1ba3d2af6ef4e9706f1caf0141db3c00b675d5f16c1ba20c",
+      "track-events.js": "d1ee781a40927f5ee61fa39bf9813c1b6e84b48590fb74588eca065b26299cdc",
+      "app.js": "3498ae474ae6c5674b064dc0da2a22664b157bee5943e270af4762a94e2f4de4",
+      "assets/algarve-gp.geojson": "52483f16cccd7fde4451cfd3ce36d6a22ef85ad029c98e8d1f9a626d29d0a206",
+      "assets/sebring.geojson": "7e8638239dc5a1ee78b05a1ce5fa88993fe3fafd8062da1404ac9b329b3f43b7",
+      "assets/ui/islands.js": "00ebc6b48dd88a0fc2fb345b02e7078ab9bb60577f0f97a1e73be6286674219a",
+      "assets/ui/islands.css": "dbcb4afaad0b7469f68aba580a6e190c88cdfd72651f9c0651b0599ae2e7c295",
+      "assets/ui/anime.js": "db0eea6cf4849b76107ad21c46278289f07029952977b1312e70c834d60d5a76",
+      "assets/licenses/anime.js.LEGAL.txt": "2dcc8697ed505f861a251ca46ccf3ae14160c71032f16a87bca8fb251ee1e157",
+      "assets/licenses/animejs.txt": "3f3e835a9952cfc2a6ca836fb95b3257c981f24fa3ef51249055acb09931897b",
+      "assets/licenses/framer-motion.txt": "5ff46083b88563822b0560dd6221ab89d2f74bc97a52d4c97a75020fd62c6f32",
+      "assets/licenses/react-bits.txt": "f4c33af6739191537738662d223b68d77bc226f4b57ea883e16481d8cc5c73c9",
+      "assets/licenses/islands.js.LEGAL.txt": "7dff61d0cd5b7cff2403db6cf5c586b1218c9e663784caeda7fd06916c997d46",
+      "assets/licenses/atlas-NOTICE.txt": "3567301dcb58e456239a5b80d0c1961e79e283f2ce87cfc052c8d0f78b309591",
+      "assets/licenses/motion-dom.txt": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+      "assets/licenses/react-dom.txt": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "assets/licenses/react-bits-provenance.json": "73b45635d8cfb22759aedfdc598ec8dab8c79639104742fa77dbad5308c4d680",
+      "assets/licenses/react.txt": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "assets/licenses/motion.txt": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+      "assets/licenses/motion-utils.txt": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+      ".impeccable/config.json": "9a8f8aa9afff426b578bd96f2869c304525dc3ed1ef5cfb44912f3207e8ced78",
+      ".impeccable/design.json": "48963cc65a3908c74819e3c7ff91ac7204e3c5c8686219ec7f446ea756bbc87d",
+      ".impeccable/surfaces/workspace.md": "a1528215f96ac65b13d2a287a832fec4cc935004787c088a000007c6a355243d"
+    }
+  },
+  "copies": [
+    {
+      "source": "estimation-ui.css",
+      "destination": "app/estimation-ui.css",
+      "sha256": "44a0e98c5108def0947a496bbdcd188b17dffba30da8dba76df7c32b366ec78d",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "44a0e98c5108def0947a496bbdcd188b17dffba30da8dba76df7c32b366ec78d"
+      }
+    },
+    {
+      "source": "PRODUCT.md",
+      "destination": "docs/baselines/revision52-PRODUCT.md",
+      "sha256": "8d796ce758ac6a877d1e61dcbd89c51c4a32c00468dba79371b2f76d7fcb1c7b",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "8d796ce758ac6a877d1e61dcbd89c51c4a32c00468dba79371b2f76d7fcb1c7b"
+      }
+    },
+    {
+      "source": "index.html",
+      "destination": "app/index.html",
+      "sha256": "5cd979ced7d1bc70d55c1426af27935cbd224ccaff6cb04a1e6121025fa2262b",
+      "origin": "revision52",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "caa6a8f975a1eedc6ef3f784209abddd339cc01787428b362da749a09d66b34d"
+      }
+    },
+    {
+      "source": "map-fit.js",
+      "destination": "app/map-fit.js",
+      "sha256": "4018982ffa492eaed5fbc1564a038065d18de5dc3a2184bdd9a64d4033687a47",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "4018982ffa492eaed5fbc1564a038065d18de5dc3a2184bdd9a64d4033687a47"
+      }
+    },
+    {
+      "source": "styles.css",
+      "destination": "app/styles.css",
+      "sha256": "8b0f22abb5e04d754691ed00834ac3f9c8d6aadb668262bc94f2d5f700d2319f",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "8b0f22abb5e04d754691ed00834ac3f9c8d6aadb668262bc94f2d5f700d2319f"
+      }
+    },
+    {
+      "source": "startup.js",
+      "destination": "app/startup.js",
+      "sha256": "cfb6e94732fdae28ca95d0ee3b0336ca4c169397d72bdef158ab67d8a4260e10",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "cfb6e94732fdae28ca95d0ee3b0336ca4c169397d72bdef158ab67d8a4260e10"
+      }
+    },
+    {
+      "source": "line-geometry.js",
+      "destination": "app/line-geometry.js",
+      "sha256": "e444d1a5ac87900f8489a1a047a50ffa4221216ccc3800b7b2ee8e4559f802a4",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "e444d1a5ac87900f8489a1a047a50ffa4221216ccc3800b7b2ee8e4559f802a4"
+      }
+    },
+    {
+      "source": "map-camera.js",
+      "destination": "app/map-camera.js",
+      "sha256": "14a730287ce198738dd6a698d9e96b5eccf26151eed3214df729c6c7f9d46bca",
+      "origin": "revision52",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "53530dad3f01272827e01751207e17c6311565c768c96ef7b6e59121b656ea37"
+      }
+    },
+    {
+      "source": "line-editor.js",
+      "destination": "app/line-editor.js",
+      "sha256": "098eca6f9f432309ebd644c2bbea2f569926af4db1cbb8dfcc62fb3e13dad51c",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "098eca6f9f432309ebd644c2bbea2f569926af4db1cbb8dfcc62fb3e13dad51c"
+      }
+    },
+    {
+      "source": "compact-popover.js",
+      "destination": "app/compact-popover.js",
+      "sha256": "2ad0e2241de3da6e7a1f46e0d1a865da83f9910a7ed9243881cf1dfd530fc48d",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "2ad0e2241de3da6e7a1f46e0d1a865da83f9910a7ed9243881cf1dfd530fc48d"
+      }
+    },
+    {
+      "source": "progress-contract.js",
+      "destination": "app/progress-contract.js",
+      "sha256": "0d56608113166639e6c6672acee7fdde84ed66ac4a24d3fb8c1810f4dc63058f",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "0d56608113166639e6c6672acee7fdde84ed66ac4a24d3fb8c1810f4dc63058f"
+      }
+    },
+    {
+      "source": "navigation-state.js",
+      "destination": "app/navigation-state.js",
+      "sha256": "573d49a3597b76f0904e4f8ed4322fd95d3d08d2bc133001dc7b8a4c524a3beb",
+      "origin": "revision52",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "3c3e8a3ae601a23d3f4b3ca7a5dc1600704848be3f3f5d345671a72a69b7fb87"
+      }
+    },
+    {
+      "source": "pedal-events.js",
+      "destination": "app/pedal-events.js",
+      "sha256": "7c83497281fec834dfe7a038390d4992a3cec69687d5c8f44f09e6423caefaee",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "7c83497281fec834dfe7a038390d4992a3cec69687d5c8f44f09e6423caefaee"
+      }
+    },
+    {
+      "source": "instrument.js",
+      "destination": "app/instrument.js",
+      "sha256": "3a982f9aa2fd681558ed35205b366f1b71824dbac00e874af0b33415d495ab22",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "3a982f9aa2fd681558ed35205b366f1b71824dbac00e874af0b33415d495ab22"
+      }
+    },
+    {
+      "source": "line-editor.css",
+      "destination": "app/line-editor.css",
+      "sha256": "ff89fabbf5fd6dc577ebdb7ea6f4dcaa074543d2676966c4bfd91b3a49d0a3af",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "ff89fabbf5fd6dc577ebdb7ea6f4dcaa074543d2676966c4bfd91b3a49d0a3af"
+      }
+    },
+    {
+      "source": "educational-estimator.js",
+      "destination": "app/educational-estimator.js",
+      "sha256": "551fe26eb89c4eb16268c4819355329bc32b4191f08d173acecc6daa3c8e5ae0",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "551fe26eb89c4eb16268c4819355329bc32b4191f08d173acecc6daa3c8e5ae0"
+      }
+    },
+    {
+      "source": "estimation-ui.js",
+      "destination": "app/estimation-ui.js",
+      "sha256": "6d766b9619d7c58bb92d11a0ca1bec4b28d7491b2044c7a47f97e6eb55e22d0c",
+      "origin": "revision52",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "4c8ac8337866c8ca482fe51d680227c7f7c5ead57b8837abf81e69fa10723c14"
+      }
+    },
+    {
+      "source": "instrument.css",
+      "destination": "app/instrument.css",
+      "sha256": "a38b8f28b9adfea6eb449d31660f7bb7f61b198cb1906ab069de1925432c197f",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "a38b8f28b9adfea6eb449d31660f7bb7f61b198cb1906ab069de1925432c197f"
+      }
+    },
+    {
+      "source": "road-corridor.js",
+      "destination": "app/road-corridor.js",
+      "sha256": "9c69e758a54d42cb3c4904d8d2fd116af5b5028a79f5c493252c0301cffe756a",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "9c69e758a54d42cb3c4904d8d2fd116af5b5028a79f5c493252c0301cffe756a"
+      }
+    },
+    {
+      "source": "navigation.js",
+      "destination": "app/navigation.js",
+      "sha256": "e9e1dc4f4635a1f7d32def65bd2bc1d6a64599d834104b035e24ad7360a2f4c1",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "e9e1dc4f4635a1f7d32def65bd2bc1d6a64599d834104b035e24ad7360a2f4c1"
+      }
+    },
+    {
+      "source": "training-context.js",
+      "destination": "app/training-context.js",
+      "sha256": "85156a7f36ef9d9811f84a7431f71f2160d0cdb342653c507d3debbe74faccb7",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "85156a7f36ef9d9811f84a7431f71f2160d0cdb342653c507d3debbe74faccb7"
+      }
+    },
+    {
+      "source": "sector-comparison.js",
+      "destination": "app/sector-comparison.js",
+      "sha256": "88192298239506ae5a9964788cb0e3e68e9dfbd57e73e4953dff32e898e5aea1",
+      "origin": "revision52",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "fe9752fb1102ff35cb20aefc08fb7656926630900604c9f36edf3e3d294f0d5b"
+      }
+    },
+    {
+      "source": "vehicle-marks.js",
+      "destination": "app/vehicle-marks.js",
+      "sha256": "3e9f6f138df97af51819e0f81213dd77d228a31a31f9b602e19d628e91ca2731",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "3e9f6f138df97af51819e0f81213dd77d228a31a31f9b602e19d628e91ca2731"
+      }
+    },
+    {
+      "source": "track-workspace.css",
+      "destination": "app/track-workspace.css",
+      "sha256": "dbeea4c71b6febaea6a1a5fdb492405e99a2501705e8c1aba7cfed2113a44103",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "dbeea4c71b6febaea6a1a5fdb492405e99a2501705e8c1aba7cfed2113a44103"
+      }
+    },
+    {
+      "source": "event-comparison.js",
+      "destination": "app/event-comparison.js",
+      "sha256": "5b8a32121252bd42b8427418fdae221906d8bafc452c65a5144396a42df243f3",
+      "origin": "revision52",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "e36eda1f2f0231c61b45f114b0d73ded93ff6bfc50f256b40f19422c1947c0d5"
+      }
+    },
+    {
+      "source": "precision-map.js",
+      "destination": "app/precision-map.js",
+      "sha256": "245973206701d01d8c6acddf2e34a987e87bcb9fe32204679e5ee6f2d374dcd3",
+      "origin": "revision52",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "aaec8a17936c855fe79f0c69cdf87161dbb506ada56d2e6e58f70559d583f542"
+      }
+    },
+    {
+      "source": "demo-analysis.js",
+      "destination": "app/demo-analysis.js",
+      "sha256": "a27858e4af578bdadbe6c2e9d0972b6f1d47cd743c83fa5c4ac10c848b44643f",
+      "origin": "revision52",
+      "integration": {
+        "status": "refactored",
+        "successors": [
+          "app/data/demo-source.js",
+          "app/core/context.js"
+        ]
+      }
+    },
+    {
+      "source": "revision51.css",
+      "destination": "app/revision51.css",
+      "sha256": "0194ddb1be893d84ce3388f0c78e0df65c11887ac73c16d9249aa134ff627298",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "0194ddb1be893d84ce3388f0c78e0df65c11887ac73c16d9249aa134ff627298"
+      }
+    },
+    {
+      "source": "overview.js",
+      "destination": "app/overview.js",
+      "sha256": "002022b28be50516c0ebe7c4d04acd3b1dd37b2fa97c8201e632049ccea52aa3",
+      "origin": "revision52",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "e6950371f87a7104c1f094d37d2aa23b8e244641bd3de11fd149d2ebb9f4eff7"
+      }
+    },
+    {
+      "source": "revision52.css",
+      "destination": "app/revision52.css",
+      "sha256": "d76cecfb1152771ff1097f7e7c46fef2beb903d9e0a4d87a53b8b39ae2d31e66",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "d76cecfb1152771ff1097f7e7c46fef2beb903d9e0a4d87a53b8b39ae2d31e66"
+      }
+    },
+    {
+      "source": "revision5.css",
+      "destination": "app/revision5.css",
+      "sha256": "d1d8b5753aed8cc6bf2708b47ea189c3f3680b221505729910213df5442d7e20",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "d1d8b5753aed8cc6bf2708b47ea189c3f3680b221505729910213df5442d7e20"
+      }
+    },
+    {
+      "source": "revision4.css",
+      "destination": "app/revision4.css",
+      "sha256": "0303b27a20874608d79d202b04b439e5b4fa952821995dbc78079f8f4e728da5",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "0303b27a20874608d79d202b04b439e5b4fa952821995dbc78079f8f4e728da5"
+      }
+    },
+    {
+      "source": "model.js",
+      "destination": "app/model.js",
+      "sha256": "5066174b523b853072c4b7b9fc1fb541c4463864e4a40a81bed753a665506475",
+      "origin": "revision52",
+      "integration": {
+        "status": "refactored",
+        "successors": [
+          "app/data/demo-model.js",
+          "app/core/app-state.js",
+          "app/education/braking-calculation.js"
+        ]
+      }
+    },
+    {
+      "source": "comparison.js",
+      "destination": "app/comparison.js",
+      "sha256": "21844dc956a078860398672262ef946a69cf1953e77c7de83cf781b5c4eea23c",
+      "origin": "revision52",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "14065aea23dca6aaf76b72b4c5d7391305fa4f511ada4c0152430e77efae8977"
+      }
+    },
+    {
+      "source": "event-layout.js",
+      "destination": "app/event-layout.js",
+      "sha256": "ccb48d3ea45115c179b2de74ce91fd096c7ab841405432e06941e32dcbe4de46",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "ccb48d3ea45115c179b2de74ce91fd096c7ab841405432e06941e32dcbe4de46"
+      }
+    },
+    {
+      "source": "track-workspace.js",
+      "destination": "app/track-workspace.js",
+      "sha256": "1a25cc6b7333cbef1ba3d2af6ef4e9706f1caf0141db3c00b675d5f16c1ba20c",
+      "origin": "revision52",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "59ed10456af73454753a323e49d5fd401f8485177bf8b5a6e8d324a43231ff7e"
+      }
+    },
+    {
+      "source": "track-events.js",
+      "destination": "app/track-events.js",
+      "sha256": "d1ee781a40927f5ee61fa39bf9813c1b6e84b48590fb74588eca065b26299cdc",
+      "origin": "revision52",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "c97ff028b7452c1bda90c166e4a2451d36f9332444629b32d5fbb057af6f1d85"
+      }
+    },
+    {
+      "source": "app.js",
+      "destination": "app/app.js",
+      "sha256": "3498ae474ae6c5674b064dc0da2a22664b157bee5943e270af4762a94e2f4de4",
+      "origin": "revision52",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "320dfa9673f4ca5d47286015941e10f235430b39583fbe7433a61ba5530af110"
+      }
+    },
+    {
+      "source": "assets/algarve-gp.geojson",
+      "destination": "app/assets/algarve-gp.geojson",
+      "sha256": "52483f16cccd7fde4451cfd3ce36d6a22ef85ad029c98e8d1f9a626d29d0a206",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "52483f16cccd7fde4451cfd3ce36d6a22ef85ad029c98e8d1f9a626d29d0a206"
+      }
+    },
+    {
+      "source": "assets/sebring.geojson",
+      "destination": "app/assets/sebring.geojson",
+      "sha256": "7e8638239dc5a1ee78b05a1ce5fa88993fe3fafd8062da1404ac9b329b3f43b7",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "7e8638239dc5a1ee78b05a1ce5fa88993fe3fafd8062da1404ac9b329b3f43b7"
+      }
+    },
+    {
+      "source": "assets/ui/islands.js",
+      "destination": "app/assets/ui/islands.js",
+      "sha256": "00ebc6b48dd88a0fc2fb345b02e7078ab9bb60577f0f97a1e73be6286674219a",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "00ebc6b48dd88a0fc2fb345b02e7078ab9bb60577f0f97a1e73be6286674219a"
+      }
+    },
+    {
+      "source": "assets/ui/islands.css",
+      "destination": "app/assets/ui/islands.css",
+      "sha256": "dbcb4afaad0b7469f68aba580a6e190c88cdfd72651f9c0651b0599ae2e7c295",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "dbcb4afaad0b7469f68aba580a6e190c88cdfd72651f9c0651b0599ae2e7c295"
+      }
+    },
+    {
+      "source": "assets/ui/anime.js",
+      "destination": "app/assets/ui/anime.js",
+      "sha256": "db0eea6cf4849b76107ad21c46278289f07029952977b1312e70c834d60d5a76",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "db0eea6cf4849b76107ad21c46278289f07029952977b1312e70c834d60d5a76"
+      }
+    },
+    {
+      "source": "assets/licenses/anime.js.LEGAL.txt",
+      "destination": "app/assets/licenses/anime.js.LEGAL.txt",
+      "sha256": "2dcc8697ed505f861a251ca46ccf3ae14160c71032f16a87bca8fb251ee1e157",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "2dcc8697ed505f861a251ca46ccf3ae14160c71032f16a87bca8fb251ee1e157"
+      }
+    },
+    {
+      "source": "assets/licenses/animejs.txt",
+      "destination": "app/assets/licenses/animejs.txt",
+      "sha256": "3f3e835a9952cfc2a6ca836fb95b3257c981f24fa3ef51249055acb09931897b",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "3f3e835a9952cfc2a6ca836fb95b3257c981f24fa3ef51249055acb09931897b"
+      }
+    },
+    {
+      "source": "assets/licenses/framer-motion.txt",
+      "destination": "app/assets/licenses/framer-motion.txt",
+      "sha256": "5ff46083b88563822b0560dd6221ab89d2f74bc97a52d4c97a75020fd62c6f32",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "5ff46083b88563822b0560dd6221ab89d2f74bc97a52d4c97a75020fd62c6f32"
+      }
+    },
+    {
+      "source": "assets/licenses/react-bits.txt",
+      "destination": "app/assets/licenses/react-bits.txt",
+      "sha256": "f4c33af6739191537738662d223b68d77bc226f4b57ea883e16481d8cc5c73c9",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "f4c33af6739191537738662d223b68d77bc226f4b57ea883e16481d8cc5c73c9"
+      }
+    },
+    {
+      "source": "assets/licenses/islands.js.LEGAL.txt",
+      "destination": "app/assets/licenses/islands.js.LEGAL.txt",
+      "sha256": "7dff61d0cd5b7cff2403db6cf5c586b1218c9e663784caeda7fd06916c997d46",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "7dff61d0cd5b7cff2403db6cf5c586b1218c9e663784caeda7fd06916c997d46"
+      }
+    },
+    {
+      "source": "assets/licenses/atlas-NOTICE.txt",
+      "destination": "app/assets/licenses/atlas-NOTICE.txt",
+      "sha256": "3567301dcb58e456239a5b80d0c1961e79e283f2ce87cfc052c8d0f78b309591",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "3567301dcb58e456239a5b80d0c1961e79e283f2ce87cfc052c8d0f78b309591"
+      }
+    },
+    {
+      "source": "assets/licenses/motion-dom.txt",
+      "destination": "app/assets/licenses/motion-dom.txt",
+      "sha256": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1"
+      }
+    },
+    {
+      "source": "assets/licenses/react-dom.txt",
+      "destination": "app/assets/licenses/react-dom.txt",
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+      }
+    },
+    {
+      "source": "assets/licenses/react-bits-provenance.json",
+      "destination": "app/assets/licenses/react-bits-provenance.json",
+      "sha256": "73b45635d8cfb22759aedfdc598ec8dab8c79639104742fa77dbad5308c4d680",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "73b45635d8cfb22759aedfdc598ec8dab8c79639104742fa77dbad5308c4d680"
+      }
+    },
+    {
+      "source": "assets/licenses/react.txt",
+      "destination": "app/assets/licenses/react.txt",
+      "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+      }
+    },
+    {
+      "source": "assets/licenses/motion.txt",
+      "destination": "app/assets/licenses/motion.txt",
+      "sha256": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1"
+      }
+    },
+    {
+      "source": "assets/licenses/motion-utils.txt",
+      "destination": "app/assets/licenses/motion-utils.txt",
+      "sha256": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "1bf0dc3f7727723e5a032ed12164a47cf92c05204cb1a3485f123c24e2833ed1"
+      }
+    },
+    {
+      "source": "DESIGN.md",
+      "destination": "DESIGN.md",
+      "sha256": "c06fb3d8060d2adbc6dd8253f3c0451dd57296aef33ff6dabfa06805d3fcf84f",
+      "origin": "revision52",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "c06fb3d8060d2adbc6dd8253f3c0451dd57296aef33ff6dabfa06805d3fcf84f"
+      }
+    },
+    {
+      "source": "PRODUCT.md",
+      "destination": "PRODUCT.md",
+      "sha256": "38030c9262aff3331a7d76d66b615f186d181ad50a4b9a373c82e2951ecdd2b9",
+      "origin": "production",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "f79ee7fa2df4eaf89b386654eb1c019c9b7305ec521087db62e1d95b0d760811"
+      }
+    },
+    {
+      "source": "AGENTS.md",
+      "destination": "docs/PRODUCTION-AGENTS.md",
+      "sha256": "41b34ca7db76245c149673ed3835229d3eb8cc7721b41e6ab65d0d9b228309b6",
+      "origin": "production",
+      "integration": {
+        "status": "public-redacted",
+        "currentSha256": "c56c5a76883fb6b905d63d27dac7ac427aa2ba964a5173b5585563e81297b735",
+        "reason": "Private recording evidence separated; runtime mathematics unchanged."
+      }
+    },
+    {
+      "source": "README.md",
+      "destination": "docs/baselines/production-README.md",
+      "sha256": "4d43382aa8a59d9b21e867e628aad5842286fb097bfc6d69c22ffc6ba8bb948c",
+      "origin": "production",
+      "integration": {
+        "status": "public-redacted",
+        "currentSha256": "a5d3d2cf2a968ce0a9bdd26fefbac21e0d1752fee1d3e874dfbaefc39c8d4458",
+        "reason": "Private recording evidence separated; runtime mathematics unchanged."
+      }
+    },
+    {
+      "source": "DESIGN.md",
+      "destination": "docs/baselines/production-DESIGN.md",
+      "sha256": "904b197096001dd29f3e4bf4a99e5d2cbb50423b41edd0063c332d1caf9ba9b1",
+      "origin": "production",
+      "integration": {
+        "status": "public-redacted",
+        "currentSha256": "a5d3d2cf2a968ce0a9bdd26fefbac21e0d1752fee1d3e874dfbaefc39c8d4458",
+        "reason": "Private recording evidence separated; runtime mathematics unchanged."
+      }
+    },
+    {
+      "source": "PRODUCT.md",
+      "destination": "docs/baselines/production-PRODUCT.md",
+      "sha256": "38030c9262aff3331a7d76d66b615f186d181ad50a4b9a373c82e2951ecdd2b9",
+      "origin": "production",
+      "integration": {
+        "status": "public-redacted",
+        "currentSha256": "a5d3d2cf2a968ce0a9bdd26fefbac21e0d1752fee1d3e874dfbaefc39c8d4458",
+        "reason": "Private recording evidence separated; runtime mathematics unchanged."
+      }
+    },
+    {
+      "source": "docs/DIAGNOSTIC-POLICY.md",
+      "destination": "docs/domain/DIAGNOSTIC-POLICY.md",
+      "sha256": "424d6ed1f58e328380782865a036bf8ef01744b7935c9032197996ebeea739c6",
+      "origin": "production",
+      "integration": {
+        "status": "public-redacted",
+        "currentSha256": "a51bd2af8c3695a7ff046093a6543e697a522b1a923140a724df7cc376192f15",
+        "reason": "Private recording evidence separated; runtime mathematics unchanged."
+      }
+    },
+    {
+      "source": "docs/DRIVING-MODEL.md",
+      "destination": "docs/domain/DRIVING-MODEL.md",
+      "sha256": "a622796b7bf34abbfaadc42281ac83dbf3e65d8da54e7797e22326b33b862ed4",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "a622796b7bf34abbfaadc42281ac83dbf3e65d8da54e7797e22326b33b862ed4"
+      }
+    },
+    {
+      "source": "docs/LMU-SCHEMA.md",
+      "destination": "docs/domain/LMU-SCHEMA.md",
+      "sha256": "cddf61f22a257ecfd38b5fc3d51c470e615a6f58e533f2eadf96655e21873dae",
+      "origin": "production",
+      "integration": {
+        "status": "public-redacted",
+        "currentSha256": "82d96ab4315417c9556e8a9a51dd9e675e2d942721e6493e4a85eb69f99fe5fb",
+        "reason": "Private recording evidence separated; runtime mathematics unchanged."
+      }
+    },
+    {
+      "source": "docs/LMU-EVENT-SEMANTICS.md",
+      "destination": "docs/domain/LMU-EVENT-SEMANTICS.md",
+      "sha256": "dc85a582d9a37f6fc09dc708dc8deb3cad5713e84dd0cf434573f3135dbeafab",
+      "origin": "production",
+      "integration": {
+        "status": "public-redacted",
+        "currentSha256": "2010995567f04310bb2785e5aff7df5962ef8dcf1f7bebbc6db9514415733f76",
+        "reason": "Private recording evidence separated; runtime mathematics unchanged."
+      }
+    },
+    {
+      "source": "docs/SPATIAL-MAPPING-VALIDATION.md",
+      "destination": "docs/domain/SPATIAL-MAPPING-VALIDATION.md",
+      "sha256": "5d55404831f0b44f826a787d77cb6ff6d80cc664c10055eeb981418d310c343c",
+      "origin": "production",
+      "integration": {
+        "status": "public-redacted",
+        "currentSha256": "e14a304b2497e5b41137965fe3b2761446b5cdfd3eca19a7de643030877bb2c5",
+        "reason": "Private recording evidence separated; runtime mathematics unchanged."
+      }
+    },
+    {
+      "source": "docs/RELEASE-BLOCKERS.md",
+      "destination": "docs/domain/RELEASE-BLOCKERS.md",
+      "sha256": "2d8693b0aa5257864d63fc0702451a2d7569f2e6afaed42fffb67445b9df496b",
+      "origin": "production",
+      "integration": {
+        "status": "public-redacted",
+        "currentSha256": "7c7a0833ad4f33346b2ca230680c6fee75855d3cbe11312d45ee26ec93df4ed2",
+        "reason": "Private recording evidence separated; runtime mathematics unchanged."
+      }
+    },
+    {
+      "source": "apps/mobile/src/profile-contract.js",
+      "destination": "engine/apps/mobile/src/profile-contract.js",
+      "sha256": "7d8921ec9ae460f3521716aef80e7358371b63aaa7b5d14f5dda0acfd8fd7879",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "7d8921ec9ae460f3521716aef80e7358371b63aaa7b5d14f5dda0acfd8fd7879"
+      }
+    },
+    {
+      "source": "apps/mobile/src/trajectory.js",
+      "destination": "engine/apps/mobile/src/trajectory.js",
+      "sha256": "f4e9dd92be43f25a05503c1cf3be2ab331a2bdbbb12d74bbb6394e2313013ccb",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "f4e9dd92be43f25a05503c1cf3be2ab331a2bdbbb12d74bbb6394e2313013ccb"
+      }
+    },
+    {
+      "source": "apps/mobile/src/geometry.js",
+      "destination": "engine/apps/mobile/src/geometry.js",
+      "sha256": "81404806847916cccf3c7b79da2fdfc039539812364e0828745d4dfdcb2c621f",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "81404806847916cccf3c7b79da2fdfc039539812364e0828745d4dfdcb2c621f"
+      }
+    },
+    {
+      "source": "apps/mobile/src/driving-profile.js",
+      "destination": "engine/apps/mobile/src/driving-profile.js",
+      "sha256": "5b8d6f402b662045034535202ebe482cc5d6c1be71aed961b6de175d16846193",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "5b8d6f402b662045034535202ebe482cc5d6c1be71aed961b6de175d16846193"
+      }
+    },
+    {
+      "source": "apps/mobile/data/circuits.js",
+      "destination": "engine/apps/mobile/data/circuits.js",
+      "sha256": "79b26f48106f1061dba233fe73dcc7e488743ccc2900df5bbfca783be2c37220",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "79b26f48106f1061dba233fe73dcc7e488743ccc2900df5bbfca783be2c37220"
+      }
+    },
+    {
+      "source": "apps/mobile/data/sebring/centerline.js",
+      "destination": "engine/apps/mobile/data/sebring/centerline.js",
+      "sha256": "362b9547923236a435acbd57d9d7518052d4adf443778d7a1554fb6d5e826c86",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "362b9547923236a435acbd57d9d7518052d4adf443778d7a1554fb6d5e826c86"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/atlas.js",
+      "destination": "engine/apps/browser-telemetry/src/atlas.js",
+      "sha256": "05210d61e7bdb2ffdefcfc447b3b963d5ae98c2b480f4cf65dd18688ad2d76e4",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "05210d61e7bdb2ffdefcfc447b3b963d5ae98c2b480f4cf65dd18688ad2d76e4"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/native-trajectory.js",
+      "destination": "engine/apps/browser-telemetry/src/native-trajectory.js",
+      "sha256": "e2c70e67508a18c9da2240533f096021ed910b97e43949f31c5645ae887d38b4",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "e2c70e67508a18c9da2240533f096021ed910b97e43949f31c5645ae887d38b4"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/analysis.js",
+      "destination": "engine/apps/browser-telemetry/src/analysis.js",
+      "sha256": "27046826d9e402f9c44d6f3656bc481260e8d8f9d42e06b0e95a868ea173a06f",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "27046826d9e402f9c44d6f3656bc481260e8d8f9d42e06b0e95a868ea173a06f"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/position-mapping.js",
+      "destination": "engine/apps/browser-telemetry/src/position-mapping.js",
+      "sha256": "24bb1e314b3af59d6c63d613cebf1cb2595a5f21c4b70b11c924b713aeecbafb",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "24bb1e314b3af59d6c63d613cebf1cb2595a5f21c4b70b11c924b713aeecbafb"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/position-source.js",
+      "destination": "engine/apps/browser-telemetry/src/position-source.js",
+      "sha256": "bccc4572c3adc234ef8884f818ef91a8494c76b30673e454615d3f1226975acf",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "bccc4572c3adc234ef8884f818ef91a8494c76b30673e454615d3f1226975acf"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/report-worker.js",
+      "destination": "engine/apps/browser-telemetry/src/report-worker.js",
+      "sha256": "7ad600236c541dd8409d72e726fa29b87948875a1ee00609dc22722418b6cbd7",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "7ad600236c541dd8409d72e726fa29b87948875a1ee00609dc22722418b6cbd7"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/report.js",
+      "destination": "engine/apps/browser-telemetry/src/report.js",
+      "sha256": "e7eca9ff841a848135f177cb8f611fd6382257c58cf6c254e0be0b0f4491e517",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "e7eca9ff841a848135f177cb8f611fd6382257c58cf6c254e0be0b0f4491e517"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/analytics-extended.js",
+      "destination": "engine/apps/browser-telemetry/src/analytics-extended.js",
+      "sha256": "cb10dcd6c6cd44e624c4399e6446e0340150d7901f14a5a18d7f0ccb0f7e6a0b",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "cb10dcd6c6cd44e624c4399e6446e0340150d7901f14a5a18d7f0ccb0f7e6a0b"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/coaching-engine.js",
+      "destination": "engine/apps/browser-telemetry/src/coaching-engine.js",
+      "sha256": "5536741e27c99cd59924b71b1e91d6386481ce054c7a6b854174f2c9784b0a1a",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "5536741e27c99cd59924b71b1e91d6386481ce054c7a6b854174f2c9784b0a1a"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/importer.js",
+      "destination": "engine/apps/browser-telemetry/src/importer.js",
+      "sha256": "4052b8a65d96e45e8bc2bf20dfc548282dd985b5adecc66abb56f52290e9c1f9",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "4052b8a65d96e45e8bc2bf20dfc548282dd985b5adecc66abb56f52290e9c1f9"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/engine.js",
+      "destination": "engine/apps/browser-telemetry/src/engine.js",
+      "sha256": "02633d6816813a05aba2ae7121f87d168ff81c5fc28af9f563ed965f15524a2b",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "02633d6816813a05aba2ae7121f87d168ff81c5fc28af9f563ed965f15524a2b"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/worker.js",
+      "destination": "engine/apps/browser-telemetry/src/worker.js",
+      "sha256": "269af2df776c3c85884d89bd04816d6e70e2e60f0dcc307410c65bca76d9dfbb",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "269af2df776c3c85884d89bd04816d6e70e2e60f0dcc307410c65bca76d9dfbb"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/client.js",
+      "destination": "engine/apps/browser-telemetry/src/client.js",
+      "sha256": "4f98fc74c57764c73f3f5d38574cfd9cb0dd396b28898501f353bf9c782a731b",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "4f98fc74c57764c73f3f5d38574cfd9cb0dd396b28898501f353bf9c782a731b"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/coaching-types.d.ts",
+      "destination": "engine/apps/browser-telemetry/src/coaching-types.d.ts",
+      "sha256": "72825320dab295b467c9f899fba14f25ec80cb968058dcf03cffcd5ecf3a1cdb",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "72825320dab295b467c9f899fba14f25ec80cb968058dcf03cffcd5ecf3a1cdb"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/algarve/gp-outline.geojson",
+      "destination": "engine/apps/browser-telemetry/data/algarve/gp-outline.geojson",
+      "sha256": "c81e36cd0fb92521a5b9f0294a43eccc9c807c58d7260e68a6e97d12c77e0462",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "c81e36cd0fb92521a5b9f0294a43eccc9c807c58d7260e68a6e97d12c77e0462"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/algarve/NOTICE.txt",
+      "destination": "engine/apps/browser-telemetry/data/algarve/NOTICE.txt",
+      "sha256": "be1968eaec9c635864f711461f195056f9c9b36a5d10dc623030a6cfd92671b0",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "be1968eaec9c635864f711461f195056f9c9b36a5d10dc623030a6cfd92671b0"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/monza-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/monza-context.geojson",
+      "sha256": "ed9875f7b568b942d3592dfa3f4262f062a0184a2b04d36c8100d88d97c0c3b4",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "ed9875f7b568b942d3592dfa3f4262f062a0184a2b04d36c8100d88d97c0c3b4"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/lusail.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/lusail.geojson",
+      "sha256": "980623eb2cee3a641afff16fe7cae93b27b18ec350cfd1b5c8287d919c0b033a",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "980623eb2cee3a641afff16fe7cae93b27b18ec350cfd1b5c8287d919c0b033a"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/algarve-gp.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/algarve-gp.geojson",
+      "sha256": "52483f16cccd7fde4451cfd3ce36d6a22ef85ad029c98e8d1f9a626d29d0a206",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "52483f16cccd7fde4451cfd3ce36d6a22ef85ad029c98e8d1f9a626d29d0a206"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/road-atlanta-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/road-atlanta-context.geojson",
+      "sha256": "03fa412554bce22606d5dee80280730a48fed387a3b8e49793c0a20a22877079",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "03fa412554bce22606d5dee80280730a48fed387a3b8e49793c0a20a22877079"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/lusail-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/lusail-context.geojson",
+      "sha256": "db5d8630a93cece49a03c8c599d707acbb719f8f5f1895fda7c448fa1580346d",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "db5d8630a93cece49a03c8c599d707acbb719f8f5f1895fda7c448fa1580346d"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/sebring.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/sebring.geojson",
+      "sha256": "7e8638239dc5a1ee78b05a1ce5fa88993fe3fafd8062da1404ac9b329b3f43b7",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "7e8638239dc5a1ee78b05a1ce5fa88993fe3fafd8062da1404ac9b329b3f43b7"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/long-beach-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/long-beach-context.geojson",
+      "sha256": "d87c5218765c2a8781e88f62fb7e1e74afba666d6a4f4f4cbd703d06601eea60",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "d87c5218765c2a8781e88f62fb7e1e74afba666d6a4f4f4cbd703d06601eea60"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/algarve-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/algarve-context.geojson",
+      "sha256": "24d30628e822c1ead66cfc79b4d7919a6590acb14f8ecba797faed71404ca180",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "24d30628e822c1ead66cfc79b4d7919a6590acb14f8ecba797faed71404ca180"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/bahrain.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/bahrain.geojson",
+      "sha256": "3ceb27a2e78d8a833794c47c871f089b5c7501246fe3d556d360da731275d680",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "3ceb27a2e78d8a833794c47c871f089b5c7501246fe3d556d360da731275d680"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/fuji-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/fuji-context.geojson",
+      "sha256": "1981995f2a1a2f4a1259ae06eb0cf1d3d12441e3d20fe474e53c8ac38c95760d",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "1981995f2a1a2f4a1259ae06eb0cf1d3d12441e3d20fe474e53c8ac38c95760d"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/spa.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/spa.geojson",
+      "sha256": "99c99335c7f3e782995cf378961d8b95e35fdbc5e6d31af47985c7942b403f1c",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "99c99335c7f3e782995cf378961d8b95e35fdbc5e6d31af47985c7942b403f1c"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/cota-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/cota-context.geojson",
+      "sha256": "e650ad8aa700a0df153a4d6dd855731a5c42888ce93186517365f4ed816e7d51",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "e650ad8aa700a0df153a4d6dd855731a5c42888ce93186517365f4ed816e7d51"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/long-beach.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/long-beach.geojson",
+      "sha256": "170e03f2f07d080624bc85f7e76f428f8d0ee7845308ce99cce0ba2ebfae7ece",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "170e03f2f07d080624bc85f7e76f428f8d0ee7845308ce99cce0ba2ebfae7ece"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/imola.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/imola.geojson",
+      "sha256": "293a1c177efc9f4b5b9e5015ef7307b3ce4798c8a47cb076e84b3eeef7d0c4ac",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "293a1c177efc9f4b5b9e5015ef7307b3ce4798c8a47cb076e84b3eeef7d0c4ac"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/monza.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/monza.geojson",
+      "sha256": "ac5f3627ab8aeb9480e0908821255b637c3f1772f68895e8bd495e20ffa8cc6c",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "ac5f3627ab8aeb9480e0908821255b637c3f1772f68895e8bd495e20ffa8cc6c"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/imola-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/imola-context.geojson",
+      "sha256": "a086731b2db48a9cfd3882dde1f388d052313b9332e3243409bf391ec5edf92d",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "a086731b2db48a9cfd3882dde1f388d052313b9332e3243409bf391ec5edf92d"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/paul-ricard.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/paul-ricard.geojson",
+      "sha256": "13c1ef12535dc449eef3b88f6646bd2f51c0c6894b517cbb2fb9486f3b5e9de0",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "13c1ef12535dc449eef3b88f6646bd2f51c0c6894b517cbb2fb9486f3b5e9de0"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/interlagos-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/interlagos-context.geojson",
+      "sha256": "b9462b1dfc6e2b3b3288b18c0e69e5cfd626808c72a48b73dfacb70a9756c892",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "b9462b1dfc6e2b3b3288b18c0e69e5cfd626808c72a48b73dfacb70a9756c892"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/barcelona.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/barcelona.geojson",
+      "sha256": "f9e0b599b47dc8c75a0820f233851d785bac10e15e4bcc0cecd0419999f186c1",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "f9e0b599b47dc8c75a0820f233851d785bac10e15e4bcc0cecd0419999f186c1"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/cota.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/cota.geojson",
+      "sha256": "c2fccb7fdd79ecb14d58a927d76e17b3970940426e3c5139de92e7f726b54ce6",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "c2fccb7fdd79ecb14d58a927d76e17b3970940426e3c5139de92e7f726b54ce6"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/interlagos.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/interlagos.geojson",
+      "sha256": "a7200742aa7ff5cbd187685845af70428629f677cc1a3bb95b06c5026d828d0f",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "a7200742aa7ff5cbd187685845af70428629f677cc1a3bb95b06c5026d828d0f"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/bahrain-outer.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/bahrain-outer.geojson",
+      "sha256": "223da87b3bd2814c358fc29ada1a5fefcd6deead50305cc04f3bdfe12a161f79",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "223da87b3bd2814c358fc29ada1a5fefcd6deead50305cc04f3bdfe12a161f79"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/bahrain-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/bahrain-context.geojson",
+      "sha256": "6c1250633d8e06656c616acdef311dcf3d1fc3ef63955bfa956f5193b585224b",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "6c1250633d8e06656c616acdef311dcf3d1fc3ef63955bfa956f5193b585224b"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/silverstone-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/silverstone-context.geojson",
+      "sha256": "85f34a1222fd63016fb535599bf11e8c9783e5639822eaa2d4bb21a4853d20f3",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "85f34a1222fd63016fb535599bf11e8c9783e5639822eaa2d4bb21a4853d20f3"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/track-atlas-MIT.txt",
+      "destination": "engine/apps/browser-telemetry/data/atlas/track-atlas-MIT.txt",
+      "sha256": "bf9d967160c489e046c36a686167f8cf576aa93c6e378d293473eedc36ba9651",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "bf9d967160c489e046c36a686167f8cf576aa93c6e378d293473eedc36ba9651"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/NOTICE.txt",
+      "destination": "engine/apps/browser-telemetry/data/atlas/NOTICE.txt",
+      "sha256": "3567301dcb58e456239a5b80d0c1961e79e283f2ce87cfc052c8d0f78b309591",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "3567301dcb58e456239a5b80d0c1961e79e283f2ce87cfc052c8d0f78b309591"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/silverstone.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/silverstone.geojson",
+      "sha256": "0e2e30a3e28c41358514de9c46d8d9f5229e00ec2e57e3025d1fda38cf41108e",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "0e2e30a3e28c41358514de9c46d8d9f5229e00ec2e57e3025d1fda38cf41108e"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/laguna-seca.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/laguna-seca.geojson",
+      "sha256": "9f0fa4e11452fa0b6a04990ed9348e893d0c300b7935457c904a19da21b0bf09",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "9f0fa4e11452fa0b6a04990ed9348e893d0c300b7935457c904a19da21b0bf09"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/UPSTREAM-ATTRIBUTION.txt",
+      "destination": "engine/apps/browser-telemetry/data/atlas/UPSTREAM-ATTRIBUTION.txt",
+      "sha256": "e4652ec5e895386b434a55497af60d3e5e57f5270ec4814b92dc01834b5b68a9",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "e4652ec5e895386b434a55497af60d3e5e57f5270ec4814b92dc01834b5b68a9"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/road-atlanta.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/road-atlanta.geojson",
+      "sha256": "c9871549b96c066aaa87e0c8bdd443767e0c21455fa01a6b5f7d3122ecbff5e4",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "c9871549b96c066aaa87e0c8bdd443767e0c21455fa01a6b5f7d3122ecbff5e4"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/manifest.json",
+      "destination": "engine/apps/browser-telemetry/data/atlas/manifest.json",
+      "sha256": "b5fda5ab506aca0f08bfa4832d7fc69532ad5b5342d2651e99433c1be205e471",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "b5fda5ab506aca0f08bfa4832d7fc69532ad5b5342d2651e99433c1be205e471"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/le-mans.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/le-mans.geojson",
+      "sha256": "47ed837c99778ef6f8b31c4a7004e9ab070398886ba2b75ed749bf49c6032886",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "47ed837c99778ef6f8b31c4a7004e9ab070398886ba2b75ed749bf49c6032886"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/laguna-seca-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/laguna-seca-context.geojson",
+      "sha256": "e569230bcf6c7e5162e8d7253b5b43cd3c565417b8c294c07d9b8f1180ba62e3",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "e569230bcf6c7e5162e8d7253b5b43cd3c565417b8c294c07d9b8f1180ba62e3"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/daytona.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/daytona.geojson",
+      "sha256": "7433ca32524584eeaf388368fa385c86736367620ba1c3937e6207de6ce8f344",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "7433ca32524584eeaf388368fa385c86736367620ba1c3937e6207de6ce8f344"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/barcelona-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/barcelona-context.geojson",
+      "sha256": "a488ba20781f13d31d11006ed129267091611270b7ff088ce7875f17d91c5c4c",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "a488ba20781f13d31d11006ed129267091611270b7ff088ce7875f17d91c5c4c"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/le-mans-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/le-mans-context.geojson",
+      "sha256": "12c79990d6385a76e1e64975ddbb9bbcac533da97ba7914d15505e6d8caaa0a9",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "12c79990d6385a76e1e64975ddbb9bbcac533da97ba7914d15505e6d8caaa0a9"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/daytona-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/daytona-context.geojson",
+      "sha256": "bfe5b465bd3ae97d7df0551225653feb339ab8f85b5af2284360c19181948e20",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "bfe5b465bd3ae97d7df0551225653feb339ab8f85b5af2284360c19181948e20"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/fuji.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/fuji.geojson",
+      "sha256": "5488512ddb6aefe66e79f39c6a1fa12107e40a7d6192a00813e5dbb155f2fcd0",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "5488512ddb6aefe66e79f39c6a1fa12107e40a7d6192a00813e5dbb155f2fcd0"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/paul-ricard-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/paul-ricard-context.geojson",
+      "sha256": "062c16425095a8f2285a9d0b0dd84f987ae059c86e53e177f9375273f6a76752",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "062c16425095a8f2285a9d0b0dd84f987ae059c86e53e177f9375273f6a76752"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/spa-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/spa-context.geojson",
+      "sha256": "9269a3342584e847ea3c5e1cb82ed388599faa8ca1695443b9c45ccd43e66a4d",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "9269a3342584e847ea3c5e1cb82ed388599faa8ca1695443b9c45ccd43e66a4d"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/data/atlas/sebring-context.geojson",
+      "destination": "engine/apps/browser-telemetry/data/atlas/sebring-context.geojson",
+      "sha256": "085afb592a9bc3cec4af1bc1a7e8abd264c3f29387af7b6f7d9cf40c3dbcbd2b",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "085afb592a9bc3cec4af1bc1a7e8abd264c3f29387af7b6f7d9cf40c3dbcbd2b"
+      }
+    },
+    {
+      "source": "apps/mobile/data/circuits.js",
+      "destination": "engine/apps/mobile/data/circuits.js",
+      "sha256": "79b26f48106f1061dba233fe73dcc7e488743ccc2900df5bbfca783be2c37220",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "79b26f48106f1061dba233fe73dcc7e488743ccc2900df5bbfca783be2c37220"
+      }
+    },
+    {
+      "source": "apps/mobile/data/sebring/NOTICE.txt",
+      "destination": "engine/apps/mobile/data/sebring/NOTICE.txt",
+      "sha256": "2ac54cdde66c54a638da4fe64d365c314bfe5037efc5d9ea4a9a8e54a02e82ef",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "2ac54cdde66c54a638da4fe64d365c314bfe5037efc5d9ea4a9a8e54a02e82ef"
+      }
+    },
+    {
+      "source": "apps/mobile/data/sebring/centerline.js",
+      "destination": "engine/apps/mobile/data/sebring/centerline.js",
+      "sha256": "362b9547923236a435acbd57d9d7518052d4adf443778d7a1554fb6d5e826c86",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "362b9547923236a435acbd57d9d7518052d4adf443778d7a1554fb6d5e826c86"
+      }
+    },
+    {
+      "source": "apps/mobile/data/sebring/centerline.geojson",
+      "destination": "engine/apps/mobile/data/sebring/centerline.geojson",
+      "sha256": "a881644b3dc3fa46d82527c5c6db22bdcb0b1f863106281bdf647a14818f5541",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "a881644b3dc3fa46d82527c5c6db22bdcb0b1f863106281bdf647a14818f5541"
+      }
+    },
+    {
+      "source": "tests/browser-unit/coaching-engine.test.mjs",
+      "destination": "engine/tests/browser-unit/coaching-engine.test.mjs",
+      "sha256": "9359914093c40e54c1351e90e63df8a6ac50593a9bfdcfc2f502dcf4c4dd6daa",
+      "origin": "production",
+      "integration": {
+        "status": "public-redacted",
+        "currentSha256": "01acf59a2522d5f34a3db284fe8f4f1c5c8443206bfc0a5f3ae864499e5d9089",
+        "reason": "Private recording evidence separated; runtime mathematics unchanged."
+      }
+    },
+    {
+      "source": "tests/browser-unit/position-mapping.test.mjs",
+      "destination": "engine/tests/browser-unit/position-mapping.test.mjs",
+      "sha256": "6d8cf4eb331cb235bb045cb016b59b8a95c7b6575660b8c4d2513670547c9300",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "6d8cf4eb331cb235bb045cb016b59b8a95c7b6575660b8c4d2513670547c9300"
+      }
+    },
+    {
+      "source": "tests/browser-unit/native-trajectory.test.mjs",
+      "destination": "engine/tests/browser-unit/native-trajectory.test.mjs",
+      "sha256": "b778ab03ea3c1488e07ce51c10e09b7b23964249c7c09335883f9afc65eb3165",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "b778ab03ea3c1488e07ce51c10e09b7b23964249c7c09335883f9afc65eb3165"
+      }
+    },
+    {
+      "source": "tests/browser-unit/report.test.mjs",
+      "destination": "engine/tests/browser-unit/report.test.mjs",
+      "sha256": "7a78e185bee98fe5281a53e3478f1187eb17758d08b40b32c816d3fcc650f403",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "7a78e185bee98fe5281a53e3478f1187eb17758d08b40b32c816d3fcc650f403"
+      }
+    },
+    {
+      "source": "tests/browser-unit/analysis.test.mjs",
+      "destination": "engine/tests/browser-unit/analysis.test.mjs",
+      "sha256": "f0141f65060cbd2552cd589331b27aaf5d91677c9a329245c8b3b0fd53713470",
+      "origin": "production",
+      "integration": {
+        "status": "public-redacted",
+        "currentSha256": "f31528684d18b008b1bcec1b41d5b4808e5517d08a19f1281d93704f395da1cd",
+        "reason": "Private recording evidence separated; runtime mathematics unchanged."
+      }
+    },
+    {
+      "source": "tests/browser-unit/analytics-extended.test.mjs",
+      "destination": "engine/tests/browser-unit/analytics-extended.test.mjs",
+      "sha256": "54edd47801b558347fd667482ae55ba0bbee64a2cb59191aca1dc599ed8d51cb",
+      "origin": "production",
+      "integration": {
+        "status": "public-redacted",
+        "currentSha256": "6f3caa63b1a778d1a0d282effb264d85a2d20bd42217ccf2affe758003d062d9",
+        "reason": "Private recording evidence separated; runtime mathematics unchanged."
+      }
+    },
+    {
+      "source": "tests/browser-unit/importer.test.mjs",
+      "destination": "engine/tests/browser-unit/importer.test.mjs",
+      "sha256": "ebf8a2f4959e41d7bb01a011d828e1fee0f8d03858f2c3e5daa69500e2728744",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "ebf8a2f4959e41d7bb01a011d828e1fee0f8d03858f2c3e5daa69500e2728744"
+      }
+    },
+    {
+      "source": "evidence/progress-contract.test.mjs",
+      "destination": "tests/baseline/progress-contract.test.mjs",
+      "sha256": "1b171379e71ff45d171c3869b946cae8fa1ce712523d3cbd876f0a865f694fc5",
+      "origin": "revision52-test",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "c2c6deded002f3ce836c02fab856c659b385bd3f2ac03dcc526afa714f5cd5b4"
+      }
+    },
+    {
+      "source": "evidence/comparison.test.mjs",
+      "destination": "tests/baseline/comparison.test.mjs",
+      "sha256": "03967f9fada45bc941d7a0294c612f973ee26de4de896de6569246d39cb8da81",
+      "origin": "revision52-test",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "70cd9de776bd7dfd63abc203b5b88046bf82129c5c93748c7737436ef9029d9e"
+      }
+    },
+    {
+      "source": "evidence/camera.test.mjs",
+      "destination": "tests/baseline/camera.test.mjs",
+      "sha256": "a138a08e1bb6e6439b59ef4ffa53c34e65e2de562753b47ad8a4b6fe2610921e",
+      "origin": "revision52-test",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "191cd7e67ce98faef1e3933a4a69313a0da092aba8c94580f456ab49287f369c"
+      }
+    },
+    {
+      "source": "evidence/navigation-state.test.mjs",
+      "destination": "tests/baseline/navigation-state.test.mjs",
+      "sha256": "2b1e700b28d50bb94ce554e64aedbd9400ae288f34ba50df61359088ec995cd7",
+      "origin": "revision52-test",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "4c2e6c38b5d2ab74213e64ea079162aa8af36e0ba1d8f2ec9437008dbf6fdd31"
+      }
+    },
+    {
+      "source": "evidence/events.test.mjs",
+      "destination": "tests/baseline/events.test.mjs",
+      "sha256": "884d535a72475c0a2bc34be36dd08cfd2c8a8532ecc4402b1a19584380cef54c",
+      "origin": "revision52-test",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "79f04cfe1865b427078a2e52d0f779e1c99fd0d98b2e52c66e83dee9a47bb5bf"
+      }
+    },
+    {
+      "source": "evidence/integration.test.mjs",
+      "destination": "tests/baseline/integration.test.mjs",
+      "sha256": "f4971d2615fbbe96a7f31a0242a0dc5fd1b1df753e480326c859c71b21b4f184",
+      "origin": "revision52-test",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "bd35919ae0443eb25234647a69faf96913e5f08d0b04150278ad4676fd9e90d4"
+      }
+    },
+    {
+      "source": "evidence/estimator.test.mjs",
+      "destination": "tests/baseline/estimator.test.mjs",
+      "sha256": "5fa54ba05498c92198f5a067bb9c394d989bc0bf5d9e55a852c4a18fa7767a36",
+      "origin": "revision52-test",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "ce8ab3aaef914922f9a56c606746eb4b6160cf268a3cc01ada817821286aa297"
+      }
+    },
+    {
+      "source": "evidence/polish52.test.mjs",
+      "destination": "tests/baseline/polish52.test.mjs",
+      "sha256": "c29a283d4e407c2af78855ab63a38d1dc5f66c8dcb39ba29f95a20f5f89fac68",
+      "origin": "revision52-test",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "85b38b677140bac8b602706820550329d0a3e13ec38e94a63c070bf929bf7530"
+      }
+    },
+    {
+      "source": "apps/platform/ui/islands.jsx",
+      "destination": "engine/apps/platform/ui/islands.jsx",
+      "sha256": "7af8a676d72b0917fd355b8e726422627aea58b5098689022332d3c7fffed9a8",
+      "origin": "production-ui-source",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "7af8a676d72b0917fd355b8e726422627aea58b5098689022332d3c7fffed9a8"
+      }
+    },
+    {
+      "source": "apps/platform/ui/loading.js",
+      "destination": "engine/apps/platform/ui/loading.js",
+      "sha256": "5a62e3b9d8adf279caad328906db95bc5dd88aa6e40032eb37b78ec66848565c",
+      "origin": "production-ui-source",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "5a62e3b9d8adf279caad328906db95bc5dd88aa6e40032eb37b78ec66848565c"
+      }
+    },
+    {
+      "source": "apps/platform/ui/anime-entry.js",
+      "destination": "engine/apps/platform/ui/anime-entry.js",
+      "sha256": "b36c3e1c9885d725a5757bfc2d717c1fb5b37c616da96a867ca4f967209eda7d",
+      "origin": "production-ui-source",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "b36c3e1c9885d725a5757bfc2d717c1fb5b37c616da96a867ca4f967209eda7d"
+      }
+    },
+    {
+      "source": "apps/platform/ui/motion.js",
+      "destination": "engine/apps/platform/ui/motion.js",
+      "sha256": "e61b64083eea71ae8da9d35a2ae6eb9e20938488fd328dabc01950dccdf11f3a",
+      "origin": "production-ui-source",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "e61b64083eea71ae8da9d35a2ae6eb9e20938488fd328dabc01950dccdf11f3a"
+      }
+    },
+    {
+      "source": "apps/platform/ui/react-bits/CometDial.jsx",
+      "destination": "engine/apps/platform/ui/react-bits/CometDial.jsx",
+      "sha256": "15ca156d4c1b722b4bfb236f49008f94116683ab2b3d874dd292eb2bb34bc168",
+      "origin": "production-ui-source",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "15ca156d4c1b722b4bfb236f49008f94116683ab2b3d874dd292eb2bb34bc168"
+      }
+    },
+    {
+      "source": "apps/platform/ui/react-bits/PROVENANCE.json",
+      "destination": "engine/apps/platform/ui/react-bits/PROVENANCE.json",
+      "sha256": "73b45635d8cfb22759aedfdc598ec8dab8c79639104742fa77dbad5308c4d680",
+      "origin": "production-ui-source",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "73b45635d8cfb22759aedfdc598ec8dab8c79639104742fa77dbad5308c4d680"
+      }
+    },
+    {
+      "source": "apps/platform/ui/react-bits/SpotlightCard.jsx",
+      "destination": "engine/apps/platform/ui/react-bits/SpotlightCard.jsx",
+      "sha256": "667d703709f1f86942645b0d4e00bca6074cb73ef44b622e93c9b0dc3870f445",
+      "origin": "production-ui-source",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "667d703709f1f86942645b0d4e00bca6074cb73ef44b622e93c9b0dc3870f445"
+      }
+    },
+    {
+      "source": "apps/platform/ui/react-bits/README.md",
+      "destination": "engine/apps/platform/ui/react-bits/README.md",
+      "sha256": "0046a1f100aac3cfd467f3ff1e087caa1f8528c620b1ee76d1204371dc714d16",
+      "origin": "production-ui-source",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "0046a1f100aac3cfd467f3ff1e087caa1f8528c620b1ee76d1204371dc714d16"
+      }
+    },
+    {
+      "source": "apps/platform/ui/react-bits/SpotlightCard.css",
+      "destination": "engine/apps/platform/ui/react-bits/SpotlightCard.css",
+      "sha256": "b646b7da4bb46f0a4d819d0af275804c49a845a5c2dc848700aaf9282db13a92",
+      "origin": "production-ui-source",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "b646b7da4bb46f0a4d819d0af275804c49a845a5c2dc848700aaf9282db13a92"
+      }
+    },
+    {
+      "source": "apps/platform/ui/react-bits/CometDial.css",
+      "destination": "engine/apps/platform/ui/react-bits/CometDial.css",
+      "sha256": "428afc3fcf354f50aa21fc422755f88828fa8e0c1bc0f054b443c95630bc7197",
+      "origin": "production-ui-source",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "428afc3fcf354f50aa21fc422755f88828fa8e0c1bc0f054b443c95630bc7197"
+      }
+    },
+    {
+      "source": "package.json",
+      "destination": "package.json",
+      "sha256": "e543fefa4d8c3ef13258da5a8a2f246bcc6cd47d2f622ac51f94c695904559a1",
+      "origin": "production-locked-dependencies",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "bbea9f62356af7f57cec8b190482795ee6e0a0e1105a25507fae46162ca3720f"
+      }
+    },
+    {
+      "source": "package-lock.json",
+      "destination": "package-lock.json",
+      "sha256": "26a89e9d3bfbe0ea624d07de2ec8028a38949097ab6f7fe0ad253a32d2457e00",
+      "origin": "production-locked-dependencies",
+      "integration": {
+        "status": "modified",
+        "currentSha256": "756600479848c4333ca68eb434a2eb482e4d1f1d881ff9f3faee12b67c93af51"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/map-layers.js",
+      "destination": "engine/apps/browser-telemetry/src/map-layers.js",
+      "sha256": "3d97c31319f4770047ca84b30a7e5b1548fedc0c36fd9e3a6757a392a6607168",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "3d97c31319f4770047ca84b30a7e5b1548fedc0c36fd9e3a6757a392a6607168"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/src/hash-entry.js",
+      "destination": "engine/apps/browser-telemetry/src/hash-entry.js",
+      "sha256": "5fc5914a5b7aa3aecaf8d63c470312d33c7beb5ddef7120653b61cf3cde1ec7e",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "5fc5914a5b7aa3aecaf8d63c470312d33c7beb5ddef7120653b61cf3cde1ec7e"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/licenses/swc-helpers-LICENSE.txt",
+      "destination": "engine/apps/browser-telemetry/licenses/swc-helpers-LICENSE.txt",
+      "sha256": "d96eba1f1881334d50ffc144276dfa98e147a415e7c591ecdfcb81680361dc91",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "d96eba1f1881334d50ffc144276dfa98e147a415e7c591ecdfcb81680361dc91"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/licenses/apache-arrow-LICENSE.txt",
+      "destination": "engine/apps/browser-telemetry/licenses/apache-arrow-LICENSE.txt",
+      "sha256": "229dbe29e4e1344e95172f6f3a4277ec0da5c7850cb03897c47f3a24b7afce08",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "229dbe29e4e1344e95172f6f3a4277ec0da5c7850cb03897c47f3a24b7afce08"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/licenses/README.md",
+      "destination": "engine/apps/browser-telemetry/licenses/README.md",
+      "sha256": "f7c087ec08542b89b5c691cb7ec5788562b2857b8db7a0b8eb11e6cea2130d62",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "f7c087ec08542b89b5c691cb7ec5788562b2857b8db7a0b8eb11e6cea2130d62"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/licenses/flatbuffers-LICENSE.txt",
+      "destination": "engine/apps/browser-telemetry/licenses/flatbuffers-LICENSE.txt",
+      "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/licenses/apache-arrow-NOTICE.txt",
+      "destination": "engine/apps/browser-telemetry/licenses/apache-arrow-NOTICE.txt",
+      "sha256": "b62ea242642d3a18f1e29b0c1fe082415a6943fe158ee22b48cff3762f354009",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "b62ea242642d3a18f1e29b0c1fe082415a6943fe158ee22b48cff3762f354009"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/licenses/js-sha256-MIT.txt",
+      "destination": "engine/apps/browser-telemetry/licenses/js-sha256-MIT.txt",
+      "sha256": "0fea2e0cffe72ee17adc25c42e55daf5c87c6e9cd5b3362ee4213890bda0ee7c",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "0fea2e0cffe72ee17adc25c42e55daf5c87c6e9cd5b3362ee4213890bda0ee7c"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/licenses/tslib-LICENSE.txt",
+      "destination": "engine/apps/browser-telemetry/licenses/tslib-LICENSE.txt",
+      "sha256": "5989359645911c04a140c49d89496b13feca980bbf36d2250a12d3b9d06250d6",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "5989359645911c04a140c49d89496b13feca980bbf36d2250a12d3b9d06250d6"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/licenses/tslib-CopyrightNotice.txt",
+      "destination": "engine/apps/browser-telemetry/licenses/tslib-CopyrightNotice.txt",
+      "sha256": "f8b254da37e08406ccb6c9d8321ef584d1b22f44f9e12d5436325aeea0e6d60b",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "f8b254da37e08406ccb6c9d8321ef584d1b22f44f9e12d5436325aeea0e6d60b"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/licenses/duckdb-wasm-MIT.txt",
+      "destination": "engine/apps/browser-telemetry/licenses/duckdb-wasm-MIT.txt",
+      "sha256": "7e17fd31249fa875cb3b1c5e05c6c3e99b75509f6a2804ca176c217834de1dcb",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "7e17fd31249fa875cb3b1c5e05c6c3e99b75509f6a2804ca176c217834de1dcb"
+      }
+    },
+    {
+      "source": "apps/browser-telemetry/licenses/json-bignum-LICENSE.txt",
+      "destination": "engine/apps/browser-telemetry/licenses/json-bignum-LICENSE.txt",
+      "sha256": "99abe8adce6d4fca0a75c2215d32036dc4c482198eeef0510955153980a97961",
+      "origin": "production",
+      "integration": {
+        "status": "unchanged",
+        "currentSha256": "99abe8adce6d4fca0a75c2215d32036dc4c482198eeef0510955153980a97961"
+      }
+    }
+  ],
+  "integrationNotes": [
+    "Original source hashes remain the immutable baseline. integration.currentSha256 describes the new project only.",
+    "Phase 1 creates one shell/store/playback owner; importer/analysis/quality/Coach formulas remain unchanged.",
+    "app/foundation.css is a local accessibility correction for four native select heights; original Revision 5.2 CSS remains unchanged.",
+    "2026-10-20 public export: source locations use origin-relative paths; private oracle assertions and historical recording results retained only locally; mathematical modules and R5.2 runtime byte-identical to Phase 1."
+  ]
+}
