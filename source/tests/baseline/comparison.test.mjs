@@ -1,0 +1,8 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {comparisonAt,advantage,AB} from '../../app/comparison.js';import {valueAt,timeAt,lapTime,pointAt} from '../../app/core/context.js';
+const base={a:1,b:2,cursorM:2050,alignment:'distance'};
+test('same-distance compares corresponding values and keeps shared position',()=>{const c=comparisonAt(base);assert.equal(c.da,c.db);assert.deepEqual(c.a,valueAt(1,2050));assert.deepEqual(c.b,valueAt(2,2050));assert.deepEqual(pointAt(c.da),pointAt(c.db));});
+test('time alignment uses same elapsed time except explicit A-finished clamp',()=>{const c=comparisonAt({...base,alignment:'time'});assert.notEqual(c.da,c.db);assert.ok(Math.abs(timeAt(1,c.da)-timeAt(2,c.db))<1e-7);assert.equal(c.aFinished,false);});
+test('finish clamp is explicit and bounded',()=>{const c=comparisonAt({...base,alignment:'time',cursorM:5000});assert.equal(c.da,5000);assert.equal(c.aFinished,true);});
+test('speed, equal-distance timing and full-lap results remain independent',()=>{const c=comparisonAt(base);assert.equal(c.speedDifference,c.b.speed-c.a.speed);assert.equal(c.delta,timeAt(2,2050)-timeAt(1,2050));assert.equal(c.total,lapTime(2)-lapTime(1));assert.equal(c.totalText.startsWith('A'),true);});
+test('reversing A/B reverses distance and total delta',()=>{const a=comparisonAt(base),b=comparisonAt({...base,a:2,b:1});assert.equal(a.delta,-b.delta);assert.equal(a.total,-b.total);});
+test('ties and missing channels stay honest',()=>{assert.equal(advantage(0),'Равны');assert.equal(advantage(0,'speed'),'Равны');assert.equal(comparisonAt({...base,a:3}).a.steering,null);assert.notEqual(AB.a.color,AB.b.color);assert.notEqual(AB.a.shape,AB.b.shape);});

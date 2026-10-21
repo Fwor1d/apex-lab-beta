@@ -1,0 +1,9 @@
+/* Phase 1 accessibility correction: WebKit's native select ignores min-height alone.
+   R5.2's segment selector already uses explicit height. Preserve native appearance. */
+#motion,
+#sector-select,
+#alignment,
+#rate {
+  height: 44px;
+  min-height: 44px;
+}

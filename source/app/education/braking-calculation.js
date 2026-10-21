@@ -1,0 +1,1 @@
+export function brakingCalculation(v0,v1,a,reaction){if(![v0,v1,a,reaction].every(Number.isFinite)||v0<0||v0>400||v1<0||v1>v0||a<.5||a>20||reaction<0||reaction>3)return {error:'Введите 0 ≤ целевая ≤ начальная ≤ 400 км/ч, замедление 0,5–20 м/с² и реакцию 0–3 с.'};const x=v0/3.6,y=v1/3.6;return {brakingM:(x*x-y*y)/(2*a),reactionM:x*reaction,totalM:(x*x-y*y)/(2*a)+x*reaction};}

@@ -1,0 +1,93 @@
+# Разработка APEX LAB Phase 1
+
+Версия приложения `0.13.0-phase1`. DEMO работает самостоятельно; реальный импорт к UI не подключён. Нужен Node.js >=22 (окружение закрепляет major 22) и npm. Python, личные записи, API-ключи и .env не требуются. Обязательных environment variables нет, поэтому .env.example не создаётся.
+
+## Расположение исходников
+
+В GitHub-ветке `codex/secure-foundation-cloud` приложение находится в `source/`. Корень репозитория сохраняет прежнюю static beta. Её не запускать вместо нового приложения и не заменять при сборке. В самостоятельном локальном Phase 1 checkpoint package.json находится непосредственно в корне проекта.
+
+## Обычный clone
+
+```sh
+git clone --branch codex/secure-foundation-cloud https://github.com/Fwor1d/apex-lab-beta.git
+cd apex-lab-beta/source
+npm run setup:cloud
+npm test
+npm run dev
+```
+
+Адрес: http://127.0.0.1:4190/apex-lab/. Dev-сервер отдаёт только dist, разрешает GET/HEAD и слушает loopback. После изменения исходников выполнить `npm run build -- --base=/apex-lab/` и обновить страницу; автоматического hot reload нет.
+
+setup:cloud проверяет Node, выполняет `npm ci --ignore-scripts --no-audit --no-fund` с локальным cache, build, check:build, check:security и check:provenance. Версии/integrity из package-lock не изменяются. Установка esbuild использует закреплённый platform package; произвольные lifecycle scripts отключены.
+
+## GitHub Codespaces
+
+Открыть указанную feature-ветку → Code → Codespaces → создать окружение этой ветки. Корневой `.devcontainer/devcontainer.json` использует официальный Node22/bookworm image и выполняет setup:cloud. В терминале:
+
+```sh
+cd source
+npm test
+npm run dev
+```
+
+Открыть forwarded port **4190**, добавить `/apex-lab/` к его URL. Оставить видимость порта **Private**. Это preview разработки, не Pages deployment. Реальное создание Codespace не входит в автоматическую проверку конфигурации; расходы аккаунта не активируются этим checkpoint.
+
+Официальные инструкции: [Node devcontainer](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/adding-a-dev-container-configuration/setting-up-your-nodejs-project-for-codespaces), [port forwarding](https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace).
+
+## Codex Cloud
+
+Создать environment для `Fwor1d/apex-lab-beta`, выбрать feature-ветку `codex/secure-foundation-cloud`, Node22 и приватный доступ к окружению. Если checkout начался с main, сначала получить и выбрать feature-ветку: main ещё содержит только старую static beta.
+
+Команды установки из корня репозитория:
+
+```sh
+cd source
+npm run setup:cloud
+npm test
+```
+
+Команда запуска из source: `npm run dev`. Проверка готовности: HTTP GET `http://127.0.0.1:4190/apex-lab/`. Runtime не нуждается в интернете; setup требует npm registry. Для установки Playwright отдельно требуются официальные browser-download hosts. Не добавлять private oracle, записи и секреты.
+
+В текущем Cloud UI установка задаётся Install script, запуск — Start skill. Для legacy environments те же команды используются в setup script. Сначала проверить setup, затем сохранить подготовленное личное окружение. Это не публикация приложения. Локальные personal skills автоматически не предполагаются; проектные AGENTS.md доступны в Git. Новое Cloud environment в этой задаче не создаётся, его успешный запуск не заявляется.
+
+Источники: [Cloud environments](https://learn.chatgpt.com/docs/environments/cloud-environments), [legacy environment setup](https://learn.chatgpt.com/docs/environments/cloud-environment).
+
+## Проверки
+
+```sh
+npm test
+npm run check:security
+npm run check:provenance
+npm run check:publication
+npm run build -- --base=/apex-lab/
+npm run check:build
+```
+
+Для Chromium (Linux требует системных библиотек через `--with-deps`):
+
+```sh
+PLAYWRIGHT_BROWSERS_PATH="$PWD/.cache/playwright" node node_modules/playwright/cli.js install --with-deps chromium
+npm run test:e2e
+```
+
+Для WebKit установить аналогично `webkit`, затем `APEX_BROWSER=webkit npm run test:e2e`. Системный Chrome можно явно выбрать через `APEX_BROWSER_CHANNEL=chrome`; он больше не является обязательной зависимостью.
+
+Все 12 функциональных E2E-сценариев и 4 viewport проверяются без внешнего прототипа. Сравнение со старым R5.2 включается только явно: `APEX_REFERENCE_ROOT` указывает на read-only прототип; без него report честно отмечает пропуск reference comparison. Отсутствующий указанный reference приводит к ошибке, а не тихому fallback.
+
+## Переменные и локальные исключения
+
+| Переменная | Назначение |
+| --- | --- |
+| PORT | Dev-порт; default 4190 |
+| APEX_BROWSER | webkit либо Chromium по умолчанию |
+| APEX_BROWSER_CHANNEL | Необязательный установленный channel, например chrome |
+| PLAYWRIGHT_BROWSERS_PATH | Cache браузеров; harness default .cache/playwright в приложении |
+| APEX_REFERENCE_ROOT | Только локальная read-only сверка R5.2 и side-by-side snapshots |
+| APEX_PRODUCTION_ROOT | Только локальная сверка 604 original hashes/HEAD/status |
+| APEX_PRIVATE_TESTS + APEX_BROWSER_ORACLE | Явный local-only запуск трёх приватных assertion bodies с частным oracle; не задавать в cloud/CI |
+
+Portable provenance всегда проверяет включённые immutable copies и все locked dependency versions/integrities. Внешние 604/60 original hashes проверяются дополнительно при заданных путях. Privacy-редакции docs/tests имеют отдельные current hashes; runtime engine не исключён из проверки.
+
+Worker/Wasm eh/mvp копируются из locked DuckDB-Wasm при build и раздаются локально. Native pipeline сохранён в engine, но в DEMO не запускается и не импортирует реальные файлы. SW/PWA нового shell, реальные траектории и аппаратная приёмка остаются вне Phase 1.
+
+CI не имеет deployment jobs, Pages/write permissions, secrets или telemetry inputs. Существующий Pages старой beta до этой работы был включён на main; feature-ветка не обновляет этот сайт. Merge и переключение Pages требуют отдельного решения.

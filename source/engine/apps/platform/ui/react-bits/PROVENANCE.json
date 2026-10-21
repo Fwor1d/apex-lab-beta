@@ -1,0 +1,34 @@
+{
+  "repository": "https://github.com/DavidHDev/react-bits",
+  "revision": "43591e8b3fa327d45633b4e8239ff6742ef706ef",
+  "license": "MIT + Commons Clause License Condition v1.0",
+  "originalSHA256": {
+    "CometDial.jsx": "68681d0452eb00b07e06616f19e02c32f21f6b29466372445cfb93795c4d4e82",
+    "LICENSE.md": "f4c33af6739191537738662d223b68d77bc226f4b57ea883e16481d8cc5c73c9",
+    "ShinyText.jsx": "2f7fa6e4e929985b97bd3542383d748749c2ac32e0f498f37d87d7d9b35bb159",
+    "LatticeLoader.jsx": "db7cca7b929adf93e33bd9636a077e3b755d9142fd8a1beab5bc90855fc0272d",
+    "SpotlightCard.jsx": "e0b91ba07c173c98b87b44ec451d0243fe0a3edc67864e2779ad8507d455af67",
+    "CountUp.jsx": "7c3d3b6cdbd6957484fd7f3a2149d9cd56ad3e4df11437e09dcfa84225b648e3",
+    "SpotlightCard.css": "b646b7da4bb46f0a4d819d0af275804c49a845a5c2dc848700aaf9282db13a92",
+    "DecryptedText.jsx": "6ea64cddaff8c725ad0939a14e0d1b57a759355f88af1bdffc05a56385a79d5c",
+    "Topography.jsx": "c974208bbeff6a7d392a5615a69e8dd580e41cdd51c69803bb46f39b84352d8f",
+    "Radar.jsx": "e115e1227806603f2a5cf94c56399ab73a7b1767f88ca9d5ee6b3bdac596db25",
+    "CometDial.css": "428afc3fcf354f50aa21fc422755f88828fa8e0c1bc0f054b443c95630bc7197",
+    "AnimatedContent.jsx": "f18acb24614948733f8351479f03a06d3052ddacfb291e4cbaccead58499bab2"
+  },
+  "used": [
+    "CometDial",
+    "SpotlightCard"
+  ],
+  "adaptations": {
+    "CometDial": [
+      "read-only loader semantics",
+      "indeterminate readout",
+      "motion preference override",
+      "same arc, spring, trail, paint algorithm"
+    ],
+    "SpotlightCard": [
+      "omit grain data URI when grain=0 (strict CSP)"
+    ]
+  }
+}

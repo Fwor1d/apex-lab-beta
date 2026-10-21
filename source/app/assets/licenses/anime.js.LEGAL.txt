@@ -1,0 +1,70 @@
+Bundled license information:
+
+animejs/dist/modules/core/consts.js:
+animejs/dist/modules/core/globals.js:
+animejs/dist/modules/core/helpers.js:
+animejs/dist/modules/core/transforms.js:
+animejs/dist/modules/core/colors.js:
+animejs/dist/modules/core/values.js:
+animejs/dist/modules/core/render.js:
+animejs/dist/modules/core/styles.js:
+animejs/dist/modules/core/clock.js:
+animejs/dist/modules/core/targets.js:
+animejs/dist/modules/core/units.js:
+  /**
+   * Anime.js - core - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   */
+
+animejs/dist/modules/adapters/registry.js:
+  /**
+   * Anime.js - adapters - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   */
+
+animejs/dist/modules/animation/additive.js:
+animejs/dist/modules/animation/composition.js:
+animejs/dist/modules/animation/animation.js:
+  /**
+   * Anime.js - animation - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   */
+
+animejs/dist/modules/engine/engine.js:
+  /**
+   * Anime.js - engine - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   */
+
+animejs/dist/modules/timer/timer.js:
+  /**
+   * Anime.js - timer - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   */
+
+animejs/dist/modules/easings/none.js:
+animejs/dist/modules/easings/eases/parser.js:
+  /**
+   * Anime.js - easings - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   */
+
+animejs/dist/modules/index.js:
+  /**
+   * Anime.js - ESM
+   * @version v4.5.0
+   * @license MIT
+   * @copyright 2026 - Julian Garnier
+   */
