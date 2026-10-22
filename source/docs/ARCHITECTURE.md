@@ -72,3 +72,7 @@ Locked dependencies установлены заново внутри проек�
 CSP сохраняет локальные script/style/connect/worker ограничения. В DEMO нет сетевой телеметрии, внешних шрифтов, CDN, backend или OPFS. Сервис-воркер нового shell не подключён: offlinePrepared=false. PWA/offline и cache upgrade нельзя считать завершёнными на основании этой фазы.
 
 Static server допускает только loopback GET/HEAD и realpath containment. Baseline mount существует только внутри E2E harness; обычный сервер отдаёт dist. Все source/docs/private diagnostics исключены из runtime. Build manifest содержит SHA-256 каждого asset и явные nativeImportConnected=false/offlinePrepared=false.
+
+## Актуализация Phase 2
+
+Исторический граф Phase 1 дополнен действующим `RecordingSource` и import-controller. Полный текущий контракт и lifecycle: [PHASE-2-ARCHITECTURE.md](PHASE-2-ARCHITECTURE.md). `UnavailableRealSource` не является пользовательским импортёром. Запись без пары или без временного mapping остаётся доступна в Sessions; REAL аналитические маршруты явно закрыты до следующего этапа.

@@ -1,9 +1,9 @@
 name: Foundation checks
 on:
   push:
-    branches: ['codex/secure-foundation-cloud']
+    branches: ['codex/secure-foundation-cloud', 'codex/real-lmu-import-phase2']
   pull_request:
-    branches: [main]
+    branches: [main, 'codex/secure-foundation-cloud']
 permissions:
   contents: read
 concurrency:
@@ -49,3 +49,5 @@ jobs:
         run: PLAYWRIGHT_BROWSERS_PATH="$PWD/.cache/playwright" node node_modules/playwright/cli.js install --with-deps chromium
       - name: Browser acceptance (DEMO only)
         run: npm run test:e2e
+      - name: Native Worker import using generated synthetic databases
+        run: npm run test:import:e2e

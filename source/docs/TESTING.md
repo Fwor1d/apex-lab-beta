@@ -63,3 +63,41 @@ Functional text в проверенных controls ≥11 CSS px. Символ с
 ## Переносимость security checkpoint
 
 Актуальные команды Linux/Codespaces/Codex Cloud — в CLOUD-DEVELOPMENT.md. Отдельные public-redacted записи provenance описывают только docs и optional private tests; численные runtime модули и утверждённый UI не менялись. Три локальные функции сохраняют исходные assertions без изменения. Наличие конфигурации CI не считается успешным remote run: его статус подтверждается по GitHub Actions.
+
+## Phase 2 — native import
+
+`npm test` сохраняет Phase 1/domain regression и добавляет import-controller, RecordingSource, tagged cursor без mapping, безопасный HTML и исходный AnalyzerWorker lifecycle. Таймауты проверяются под контролируемыми таймерами; ожидание 60 реальных секунд не требуется. Три прежних private-oracle теста без локальных env явно skip.
+
+`npm run test:import:e2e` использует Playwright и закреплённый DuckDB-Wasm. Только dev-only генератор на Node/Wasm записывает synthetic SQL-fixture внутри tmp/, считывает его в тест и удаляет. Runtime импортирует через настоящий browser File и исходный Worker, а не через JSON-отчёт. Все metadata fixture явно тестовые; APEXDataKind=synthetic сохраняется до UI. Generated DB не коммитятся.
+
+Браузеры:
+
+```sh
+PLAYWRIGHT_BROWSERS_PATH="$PWD/.cache/playwright" node node_modules/playwright/cli.js install chromium webkit
+npm run test:e2e
+npm run test:import:e2e
+APEX_BROWSER=webkit npm run test:e2e
+APEX_BROWSER=webkit npm run test:import:e2e
+```
+
+`APEX_BROWSER_CHANNEL=chrome` выбирает установленный Chrome вместо bundled Chromium. Chrome и WebKit — автоматические проверки, не физический iPhone.
+
+Для локальной проверки приватных файлов задать существующие внешние read-only пути (не копировать данные в проект):
+
+```sh
+APEX_REAL_BROWSER=1 \
+APEX_AUDIT_ROOT="$LOCAL_PHASE0_AUDIT" \
+APEX_LMU_DATA_ROOT="$LOCAL_LMU_DATA" \
+APEX_BROWSER_ORACLE="$LOCAL_PYTHON_ORACLE" \
+npm run test:import:e2e
+```
+
+Audit root должен содержать evidence/database-audit.json и evidence/browser-native-audit.json из Phase 0. Data root — существующий каталог записи. Oracle root — manifest.json с существующими oracle paths. Без oracle независимая проверка явно skip; baseline native parity проверяется отдельно. CI и Codespaces не получают эти переменные и файлы.
+
+Результаты и screenshots находятся только в ignored evidence/phase2/{chromium,webkit}. Private screenshots не публикуются. Сеть наблюдается на уровне browser context, включая Worker requests; разрешены локальные GET и local blob reads. Проверяются отсутствие POST/external/query payload, raw DB caches, IndexedDB и Service Worker registrations. Ошибки и снимки настоящих записей остаются локальными.
+
+### Результат локальной приёмки Phase 2
+
+21 октября 2026: portable 255 pass / 0 fail / 3 private skips; opt-in с сохранёнными исходными private assertion bodies 258 pass / 0 fail / 0 skip. Native suite 19/19 Chromium и 19/19 WebKit, включая шесть real файлов и сравнение с native/Python baseline. DEMO 12/12 в обоих браузерах с approved reference. Подробности: ../PHASE-2-REPORT.md.
+
+В native harness намеренно блокируются Worker/Wasm assets. Только ожидаемый Failed to fetch при этом fault injection отмечается отдельно; остальные pageerrors должны отсутствовать. Test navigation не делает full reload текущего Sessions URL, чтобы не потерять in-memory source в WebKit.

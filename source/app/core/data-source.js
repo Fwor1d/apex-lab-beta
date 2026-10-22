@@ -1,7 +1,7 @@
 // Normalized DataSource contract. UI formatting is the only km/h / percent conversion.
 export function assertDataSource(source){
   if(!source?.descriptor||!['demo','real'].includes(source.descriptor.mode))throw new TypeError('Invalid DataSource descriptor');
-  if(source.descriptor.mode==='real'&&source.descriptor.kind!=='telemetry-derived')throw new TypeError('Real source cannot contain synthetic data');
+  if(source.descriptor.mode==='real'&&!['telemetry-derived','synthetic'].includes(source.descriptor.kind))throw new TypeError('Native file must declare its data kind');
   for(const method of ['available','valueAt','datumAt','timeAt','duration','distanceAtTime','positionAt','samples','events','dispose'])if(typeof source[method]!=='function')throw new TypeError('Missing DataSource method: '+method);
   return source;
 }
