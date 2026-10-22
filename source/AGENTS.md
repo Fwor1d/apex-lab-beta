@@ -1,4 +1,4 @@
-# APEX LAB — правила unified Phase 1
+# APEX LAB — правила unified Phase 2
 
 - Общение, UI и документация — на русском; код и идентификаторы — на английском.
 - Работать только внутри checkout приложения. В GitHub он находится в `source/`; в самостоятельном локальном checkpoint — в корне с package.json. Артефакты/cache/tmp хранить внутри него. Не писать в синхронизируемые iCloud/OneDrive папки.
@@ -7,7 +7,7 @@
 - `app/core/app-state.js` — один AppState, `app/core/playback.js` — единственный владелец playback. Машина/HUD/графики читают тот же курсор. Камера не создаёт собственных часов и не меняет analysis range.
 - DEMO явно synthetic. Не выдумывать authentic telemetry; не подставлять DEMO при отказе real source. Missing = null, единицы и происхождение обязательны.
 - `engine/apps/` защищён исходными SHA-256. Не менять валидированные mathematics/importer/quality/Coach/export/Worker limits без отдельного задания и регрессионных тестов; не менять их ради UI или совпадения теста. Не ослаблять assertions/thresholds.
-- Phases 2–6 и native-импорт в этот UI автоматически не начинать. Наличие Worker-кода не означает реальную интеграцию.
+- Phase 2 подключает только `open` существующего AnalyzerWorker: File → RecordingSource → AppState → Sessions. Phases 3–6 автоматически не начинать. Real graphs/playback/trajectories/Coach/export пока не подключены.
 - Не вводить скрытые runtime CDN, удалённые шрифты, аналитику, upload, accounts, backend, OPFS или передачу телеметрии. npm/container/browser downloads разрешены для dev setup; runtime остаётся локальным static dist.
 - React Bits (MIT + Commons Clause), Anime.js, DuckDB, OSM/ODbL и все notices/provenance сохранять. Не назначать собственному коду новую permissive или окончательную proprietary лицензию. См. LICENSING-PLAN.md.
 - Lockfile versions/integrity сохранять. Node>=22; `npm run setup:cloud`, `npm test`, `npm run check:security`, `npm run check:provenance`, `npm run check:publication`, build/check для `/` и `/apex-lab/`. Браузер: install Chromium, `npm run test:e2e`; WebKit отдельно.
@@ -15,5 +15,12 @@
 - E2E без APEX_REFERENCE_ROOT проверяет все сценарии нового UI, но явно отмечает отсутствие side-by-side reference. С ним дополнительно проверяется именно R5.2. После UI-изменений осматривать screenshots. WebKit не заменяет физический iPhone.
 - Static runtime: один HTML entry, относительные пути, local Worker/Wasm assets. Исходные JSX и личные данные не попадают в dist; generated dist/cache/evidence не коммитить.
 - Публичный GitHub checkpoint разрешён только после аудита staged files и всех outgoing objects. Push только явной feature-ветки. Не force-push, не merge unrelated histories, не merge PR и не менять main/Pages/deployment/DNS автоматически.
-- Старый static snapshot в корне GitHub сохранён как история опубликованной beta. Разработка Phase 1 — в source/. Не редактировать старый snapshot ради совпадения нового интерфейса.
+- Старый static snapshot в корне GitHub сохранён как история опубликованной beta. Разработка unified приложения — в source/. Не редактировать старый snapshot ради совпадения нового интерфейса.
 - Не повторять успешные suites без новых изменений или конкретного риска. Непроверенные устройства, приватные oracle и ограничения среды записывать явно.
+
+- `app/core/import-controller.js` владеет поколением операции и повторным выбором File в памяти. `RecordingSource` использует исходный AnalyzerWorker, method=handle. Не переносить SQL/нормализацию на main thread и не менять deadlines/лимиты импортёра.
+- Импортированный сеанс, inspectable lap, eligible pair и available analysis — разные состояния. `loaded=true` допустим без пары и без cursor. Полный Lap Time не использовать как синтетическую time-distance mapping. REAL source возвращает null для неподключённых каналов/курсов.
+- При смене файла/DEMO/закрытии отменять Worker и обнулять зависимые выборы. Поздние callbacks защищены поколениями. Не заменять terminate одним release RPC без ограниченного teardown.
+- Метаданные только из allowlist; DriverName/SteamID/CarSetup исключены. Не использовать raw error.message в UI. `sessions.js` экранирует импортированный текст. Synthetic базы имеют отдельную явную маркировку и не получают certified_valid.
+- Проверять `npm run test:import:e2e`: synthetic DuckDB создаётся dev-only Node/Wasm binding из закреплённого пакета внутри tmp/. Python и личные файлы для CI не нужны. Реальные тесты только opt-in локально; переменные описаны в docs/TESTING.md.
+- Phase 2 публикуется отдельной feature-веткой от Phase 1, draft PR на `codex/secure-foundation-cloud`. Существующий PR #1, main, Pages и legacy static snapshot не менять. Сверять staging и все outgoing objects перед push.
