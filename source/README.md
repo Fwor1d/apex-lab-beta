@@ -1,8 +1,8 @@
-# APEX LAB · Unified Application · Phase 2
+# APEX LAB · Unified Application · Phase 3
 
-Версия **0.14.0-phase2**. Одобренный интерфейс Revision 5.2, один AppState и один владелец playback. Локальный `.duckdb` открывается существующим Worker: доступны метаданные, все обнаруженные круги, причины ограничений и выбор допустимой A/B пары.
+Версия **0.15.0-phase3**. Одобренный интерфейс Revision 5.2, один AppState и один владелец playback. Локальный `.duckdb` открывается существующим Worker: доступны метаданные, все обнаруженные круги, причины ограничений и выбор допустимой A/B пары.
 
-Реальные графики, playback/HUD, траектории, Coaching и экспорт отчётов **ещё не подключены**. DEMO сохраняет полный синтетический опыт R5.2 и явно переключается отдельно.
+Для допустимой пары работают настоящие Overview, Pit Wall, speed/brake/throttle/steering, дельта и синхронный B-time playback/HUD. Измеренные траектории, новые советы и экспорт отчётов **ещё не подключены**. DEMO сохраняет полный синтетический опыт R5.2 и явно переключается отдельно.
 
 ## Запуск
 
@@ -28,9 +28,10 @@ npm run check:publication
 PLAYWRIGHT_BROWSERS_PATH="$PWD/.cache/playwright" node node_modules/playwright/cli.js install chromium
 npm run test:e2e
 npm run test:import:e2e
+npm run test:analysis:e2e
 ```
 
-Последняя команда генерирует synthetic DuckDB из SQL с APEXDataKind=synthetic через локальный Node/Wasm пакет и проверяет настоящий File/Worker pipeline. Личные базы не нужны. Подробности и opt-in проверки: [TESTING](docs/TESTING.md).
+Native import suite генерирует synthetic DuckDB из SQL с APEXDataKind=synthetic через локальный Node/Wasm пакет и проверяет настоящий File/Worker pipeline. Личные базы не нужны. Подробности и opt-in проверки: [TESTING](docs/TESTING.md).
 
 ## Границы
 
@@ -40,6 +41,6 @@ npm run test:import:e2e
 - Никаких runtime CDN, аналитики, аккаунтов, telemetry upload, raw database persistence или backend.
 - Производственные алгоритмы и 10 исходных CSS R5.2 защищены provenance-хешами.
 
-[Архитектура Phase 2](docs/PHASE-2-ARCHITECTURE.md) · [Подготовка Phase 3](docs/PHASE-3-READINESS.md) · [Облачная разработка](docs/CLOUD-DEVELOPMENT.md) · [Лицензионный план](LICENSING-PLAN.md).
+[Архитектура Phase 3](docs/PHASE-3-ARCHITECTURE.md) · [Подготовка Phase 4](docs/PHASE-4-READINESS.md) · [Облачная разработка](docs/CLOUD-DEVELOPMENT.md) · [Лицензионный план](LICENSING-PLAN.md).
 
 Старый публичный beta snapshot остаётся в корне GitHub репозитория. Его `main`/Pages не обновляются этим исходным feature PR. Новая публикация — отдельный draft PR; автоматического deployment нет.

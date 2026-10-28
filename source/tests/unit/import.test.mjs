@@ -285,7 +285,7 @@ test("metadata escaping and explicit unavailable routes block all demo analytica
         html,
       ),
     );
-    assert.ok(html.includes("пока недоступны"));
+    assert.ok(html.includes("Пространственные пути, советы и экспорт подключаются отдельно"));
   }
 });
 test("import lifecycle commands reject invalid transitions and mutable status overrides", () => {

@@ -1,0 +1,254 @@
+/* Phase 3 additions, scoped to measured presentation. R5.2 styles remain intact. */
+.real-analysis {
+  min-width: 0;
+}
+.real-analysis .page-title p {
+  overflow-wrap: anywhere;
+}
+.real-analysis-pair {
+  align-items: end;
+  margin-block: 14px;
+}
+.real-analysis-pair select {
+  height: 44px;
+  width: 100%;
+}
+.real-analysis-pair button {
+  min-height: 44px;
+}
+.real-analysis-status {
+  color: var(--muted);
+  font-size: 14px;
+}
+.real-pitwall-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 340px;
+  gap: 16px;
+  align-items: start;
+}
+.real-pitwall-context {
+  min-width: 0;
+}
+.real-analysis .real-hud {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 12px 0;
+  gap: 16px 8px;
+}
+.real-pitwall-context .real-hud {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.real-hud .hud-metric {
+  border: 0;
+  padding: 0;
+  min-width: 0;
+}
+.real-hud .hud-metric strong {
+  font-size: 22px;
+}
+.real-hud .hud-metric output {
+  white-space: normal;
+  font-size: 12px;
+}
+.real-hud-title {
+  margin-top: 24px;
+}
+.real-analysis .overview-lap-result strong {
+  font-size: 26px;
+}
+.real-analysis .real-analysis-dock {
+  grid-column: 1/-1;
+  position: sticky;
+  bottom: 0;
+  background: var(--bg);
+  border-top: 1px solid var(--line);
+  padding-top: 8px;
+  z-index: 3;
+}
+.real-analysis .real-playback {
+  padding: 0;
+}
+.real-analysis button,
+.real-analysis select {
+  min-height: 44px;
+}
+.real-analysis select {
+  height: 44px;
+  font-size: 14px;
+}
+.real-seek-fields {
+  display: flex;
+  gap: 12px;
+  align-items: end;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+.real-seek-fields .field {
+  width: 160px;
+  min-width: 0;
+  margin: 0;
+}
+.real-seek-fields input {
+  width: 100%;
+  min-height: 44px;
+  font-size: 16px;
+}
+.real-seek-fields > span {
+  align-self: center;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+.real-seek-feedback {
+  margin: 6px 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.real-analysis .real-plot {
+  display: block;
+  height: 164px;
+  width: 100%;
+  touch-action: pan-y;
+}
+.real-analysis .plot text {
+  font-size: 12px;
+}
+.real-analysis .real-trace-dock {
+  max-height: none;
+}
+.real-range-tools {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) minmax(0, 1fr) 44px;
+  gap: 8px;
+  align-items: end;
+  margin: 12px 0;
+}
+.real-range-tools .field {
+  min-width: 0;
+  margin: 0;
+}
+.real-range-tools input {
+  width: 100%;
+  font-size: 16px;
+  min-height: 44px;
+}
+.real-analysis .overview-context .cap-list dd {
+  overflow-wrap: anywhere;
+}
+.real-analysis .overview-signals {
+  grid-template-columns: 1fr;
+  gap: 4px;
+}
+.real-analysis .overview-signals dd {
+  text-align: left;
+  margin-bottom: 8px;
+}
+.real-analysis .overview-table {
+  table-layout: fixed;
+}
+.real-analysis .overview-table th {
+  width: 66%;
+}
+.real-analysis .overview-table td {
+  overflow-wrap: anywhere;
+}
+@media (max-width: 1100px) {
+  .real-pitwall-grid {
+    grid-template-columns: minmax(0, 1fr) 280px;
+  }
+}
+@media (max-width: 760px), (max-height: 500px) and (max-width: 1000px) {
+  .real-analysis .real-pitwall-grid,
+  .real-analysis .overview-grid {
+    grid-template-columns: 1fr;
+  }
+  .real-analysis-pair {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .real-analysis-pair .field {
+    flex: 1 1 130px;
+    min-width: 0;
+  }
+  .real-analysis .overview-lap-result {
+    gap: 8px;
+  }
+  .real-analysis .overview-lap-result strong {
+    font-size: 18px;
+  }
+  .real-analysis .real-analysis-dock {
+    grid-row: 1;
+    position: static;
+  }
+  .real-analysis .real-trace-dock {
+    grid-row: 2;
+  }
+  .real-analysis .real-pitwall-context {
+    grid-row: 3;
+  }
+  .real-analysis .overview-playback {
+    position: static;
+  }
+  .real-seek-fields {
+    gap: 8px;
+  }
+  .real-seek-fields .field {
+    flex: 1 1 130px;
+  }
+  .real-analysis .comparison-readouts strong {
+    white-space: normal;
+    text-align: right;
+  }
+  .real-analysis .comparison-readouts span {
+    flex: 1 0 40%;
+  }
+  .real-analysis .real-playback select {
+    grid-column: 4;
+  }
+  .real-analysis .real-playback output {
+    grid-row: 2;
+    grid-column: 2/4;
+  }
+  .real-pitwall-context .real-hud {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .real-analysis .chart-head {
+    flex-wrap: wrap;
+  }
+  .real-analysis .chart-head output {
+    max-width: 100%;
+  }
+}
+
+.real-analysis .pair-toggle {
+  display: none;
+}
+.real-analysis .real-precision {
+  margin-top: 4px;
+}
+.real-analysis .real-precision summary {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  font-size: 12px;
+}
+.real-analysis .overview-context .overview-signals {
+  display: grid;
+}
+.real-analysis .overview-context h3 {
+  display: block;
+}
+@media (max-width: 760px) {
+  .real-analysis .pair-toggle {
+    display: flex;
+    width: 100%;
+  }
+  .real-analysis .telemetry-context .real-analysis-pair {
+    display: none;
+  }
+  .real-analysis .telemetry-context .real-analysis-pair.pair-open {
+    display: flex;
+  }
+  .real-analysis .telemetry-context .real-analysis-pair.pair-open > .field {
+    flex-basis: 100%;
+  }
+}

@@ -128,9 +128,13 @@ export interface DataSource {
   } | null;
   samples(lap: LapId, start?: number, end?: number): Sample[];
   events(lap: LapId): ReadonlyArray<unknown>;
+  playbackLimit?(lap: LapId, timeS: number): number | null;
+  deltaAt?(distanceM: number): number | null;
   dispose(): void;
 }
 export interface RecordingDataSource extends DataSource {
+  comparePair(a: LapId, b: LapId): Promise<AnalysisStatus | null>;
+  clearAnalysis(): void;
   open(
     file: File,
     onProgress?: (status: ImportStatus) => void,
@@ -154,6 +158,7 @@ export interface AppState {
   mode: string;
   range: [number | null, number | null];
   playback: PlaybackState;
+  analysisStatus: AnalysisStatus;
   generation: number;
   segmentId: string | null;
   camera: unknown;
@@ -162,4 +167,31 @@ export interface AppState {
 }
 // Snapshot timeS/cursorM/PairRef are derived, never competing mutable owners.
 // Native file mode can contain an explicitly synthetic test database. kind is never promoted.
-// Phase 2 exposes metadata and inventory; normalized profiles remain inside the Worker.
+// The Worker retains imported profiles; main thread borrows only the active A/B result.
+// Snapshots contain bounded summaries, never profiles or comparison arrays.
+export interface AnalysisStatus {
+  phase: "pending" | "ready" | "partial" | "unavailable" | "failed";
+  message: string;
+  pair?: PairRef;
+  bounds?: readonly [number, number];
+  gridPoints?: number;
+  continuityBreaks?: number;
+  coverage?: number;
+  plateau?: boolean;
+  originM?: number | null;
+  recordedA?: number | null;
+  recordedB?: number | null;
+  recordedDifferenceS?: number | null;
+  commonEndM?: number | null;
+  commonEndDeltaS?: number | null;
+  channels?: Readonly<
+    Record<string, Readonly<Record<"a" | "b", Availability>>>
+  >;
+  mapping?: {
+    intervals: number;
+    reason: string | null;
+    startM: number | null;
+    startS: number | null;
+    endS: number | null;
+  };
+}

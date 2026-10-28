@@ -1,9 +1,9 @@
 name: Foundation checks
 on:
   push:
-    branches: ['codex/secure-foundation-cloud', 'codex/real-lmu-import-phase2']
+    branches: ['codex/secure-foundation-cloud', 'codex/real-lmu-import-phase2', 'codex/real-ab-telemetry-phase3']
   pull_request:
-    branches: [main, 'codex/secure-foundation-cloud']
+    branches: [main, 'codex/secure-foundation-cloud', 'codex/real-lmu-import-phase2']
 permissions:
   contents: read
 concurrency:
@@ -51,3 +51,6 @@ jobs:
         run: npm run test:e2e
       - name: Native Worker import using generated synthetic databases
         run: npm run test:import:e2e
+
+      - name: Synthetic A/B analytics and playback
+        run: npm run test:analysis:e2e

@@ -1,5 +1,5 @@
 {
-  "name": "APEX LAB Phase 2",
+  "name": "APEX LAB Phase 3",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22-bookworm",
   "remoteUser": "node",
   "postCreateCommand": "if [ -f source/package.json ]; then cd source; fi; npm run setup:cloud",
@@ -8,7 +8,7 @@
   ],
   "portsAttributes": {
     "4190": {
-      "label": "APEX LAB · local import",
+      "label": "APEX LAB · A/B telemetry",
       "onAutoForward": "notify"
     }
   },

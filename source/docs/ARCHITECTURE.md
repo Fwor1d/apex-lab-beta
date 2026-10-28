@@ -76,3 +76,7 @@ Static server допускает только loopback GET/HEAD и realpath cont
 ## Актуализация Phase 2
 
 Исторический граф Phase 1 дополнен действующим `RecordingSource` и import-controller. Полный текущий контракт и lifecycle: [PHASE-2-ARCHITECTURE.md](PHASE-2-ARCHITECTURE.md). `UnavailableRealSource` не является пользовательским импортёром. Запись без пары или без временного mapping остаётся доступна в Sessions; REAL аналитические маршруты явно закрыты до следующего этапа.
+
+## Актуализация Phase 3
+
+Действующие profile/compare adapter, B mapping и REAL presentation описаны в [PHASE-3-ARCHITECTURE.md](PHASE-3-ARCHITECTURE.md). Native open сохраняется; в Overview/Pit Wall больше не применяется прежнее общее unavailable Phase 2. Остальные spatial/Coach/export boundaries сохранены.

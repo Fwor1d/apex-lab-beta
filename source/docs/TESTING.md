@@ -101,3 +101,65 @@ Audit root должен содержать evidence/database-audit.json и evide
 21 октября 2026: portable 255 pass / 0 fail / 3 private skips; opt-in с сохранёнными исходными private assertion bodies 258 pass / 0 fail / 0 skip. Native suite 19/19 Chromium и 19/19 WebKit, включая шесть real файлов и сравнение с native/Python baseline. DEMO 12/12 в обоих браузерах с approved reference. Подробности: ../PHASE-2-REPORT.md.
 
 В native harness намеренно блокируются Worker/Wasm assets. Только ожидаемый Failed to fetch при этом fault injection отмечается отдельно; остальные pageerrors должны отсутствовать. Test navigation не делает full reload текущего Sessions URL, чтобы не потерять in-memory source в WebKit.
+
+## Phase 3 — настоящее сравнение A/B, 28 октября 2026
+
+Текущая версия 0.15.0-phase3. Прежние разделы выше — исторические результаты отдельных фаз, не замена этой приёмки.
+
+| Проверка | Фактический результат |
+| --- | --- |
+| Portable unit/domain | 269 pass, 0 fail, 3 явных private skips; 272 total |
+| Local private assertions | 272 pass, 0 fail, 0 skip |
+| Phase 3 Chromium / WebKit | По 15 групп: 9 synthetic journeys и 6 authentic native imports |
+| Native import regression | По 13 synthetic групп в Chromium и WebKit |
+| R5.2 DEMO regression | По 12 групп в Chromium и WebKit с approved read-only reference |
+| Static bases | Build/check:build для / и /apex-lab/ |
+| Source integrity | 604 production и 60 R5.2 files unchanged; 133 preserved/redacted copies, 10 CSS, locked dependency graph |
+| Private dataset | 9 исходных файлов: SHA-256, размер и mtime неизменны |
+
+### Воспроизведение
+
+После setup/build и установки browser binaries:
+
+```sh
+npm run test:analysis:e2e
+APEX_BROWSER=webkit npm run test:analysis:e2e
+```
+
+Настоящий A/B File/Worker путь проверяется только локально и явно:
+
+```sh
+APEX_REAL_BROWSER=1 \
+APEX_AUDIT_ROOT="$LOCAL_PHASE0_AUDIT" \
+APEX_LMU_DATA_ROOT="$LOCAL_LMU_DATA" \
+APEX_BROWSER_ORACLE="$LOCAL_PYTHON_ORACLE" \
+npm run test:analysis:e2e
+```
+
+Для WebKit добавить APEX_BROWSER=webkit. Не задавать private env и не загружать данные в CI/cloud. Результаты и снимки: ignored evidence/phase3/{chromium,webkit}; тестовые browser profiles — tmp/ внутри приложения. App server не раздаёт эти каталоги.
+
+### Уровни доказательств
+
+Public synthetic SQL-fixtures проверяют настоящий native импорт, но исходный Worker не допускает их к certified A/B. Этот guard сохранён. Новый test-only synthetic transport выдаёт явно synthetic профили, вызывает оригинальный compare и проходит adapter/AppState/UI. Harness разрешает ровно два fixture modules только на своём локальном origin; они не включены в dist. Он не подменяет доказательство authentic pipeline.
+
+Private приёмка открыла все шесть original записей без копирования. Для S2 и S4 сравнила каждое числовое значение обоих профилей и comparison, включая distance/time/signals/delta, policy, origin, coverage и plateau. 169153 и 166932 числовых сверки; 64 и 41 missing masks. Максимальное отклонение 0 в обоих браузерах при прежнем допуске 1e-10. Все 23 lap validation совпали с Python. Oracle хранит более быстрый круг как A; для запрошенного обратного порядка переставлены роли A/B и инвертирован знак reference delta, сетка/маски/допуск не менялись.
+
+Реальные S1/S3/S5 остаются импортированными без пары; S6 имеет один eligible lap и также не получает A/B. Незачётные/partial/pit сегменты не становятся допустимыми ради UI. Recorded full Lap Time и common-distance delta проверены раздельно. Полные private массивы и записанные численные профили не публикуются.
+
+### UX, lifecycle и производительность
+
+Проверены Overview/Pit Wall на 1440×900, 1280×720, 768×1024, 390×844, 844×390. Нет horizontal overflow; функциональный текст не меньше 11 CSS px, видимые native controls не меньше 44 px. Desktop/mobile screenshots просмотрены. DEMO reference сохраняет компактные события, Auto-fit, Follow, силуэты A/B, три Driving Lab tabs и один playback. View changes сохраняют canonical cursor; на паузе HUD имеет 0 DOM mutations.
+
+Проверки включают точный seek, нелинейный B time↔distance, speed ×3.6 один раз, series/channel/range, смену A/B/sign, gaps, plateau, missing steering/speed, invalid mapping, cancel/retry, failed comparison, stale pair/source response, repeated mounting, return to DEMO и release. REAL вне mapping возвращает null, без endpoint clamping. Валидация grid coverage не соединяет скрытые между узлами разрывы: partial status и interval delta учитывают continuityBreaks.
+
+В обоих браузерах 0 неожиданных pageerrors и 0 запрещённых сетевых запросов, включая Worker. Native fault-injection suite отдельно учитывает ожидаемую ошибку блокированного Wasm. Storage/Worker teardown assertions пройдены.
+
+Измерения одного финального локального запуска, с накладными расходами Playwright и параллельной DEMO suite:
+
+- Import + готовность analysis: Chromium 0.62–1.57 с, WebKit 1.08–1.83 с по шести файлам; largest S6: 1.57/1.83 с, без допустимой пары.
+- Profile/compare request для S2/S4: Chromium 166/154 мс, WebKit 151/120 мс; Worker comparisonMs 21.3/23.4 и 16/18 мс соответственно.
+- Aligned grid payload 222336 байт; два активных профиля 23570/23196 samples. Это размеры выбранных данных, не полная стоимость Worker structured clone.
+- 100 принудительных вызовов updateRealCursor на паузе: 31.5/35.6 мс Chromium, 40/53 мс WebKit; обычный paused loop не переписывает HUD. Pit Wall main содержит 259 DOM элементов, а не по элементу на sample.
+- Chromium usedJSHeapSize около 55.6/87.8 MB для всей вкладки после соответствующих journeys. Это приблизительный снимок, не retained-memory/leak proof. WebKit этот счётчик не предоставляет.
+
+Новые произвольные performance thresholds не вводились. Длительная память, максимальный разрешённый размер записи на слабых устройствах и physical iPhone остаются непроверенными. Автоматический WebKit на Mac не заменяет аппаратную приёмку. PWA/offline и Windows packaging вне этой фазы. Фактические clean-clone/CI результаты фиксируются в Phase 3 PR и отчёте handoff; локальный успех не объявляется GitHub Actions успехом.

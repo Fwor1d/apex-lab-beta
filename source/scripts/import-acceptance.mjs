@@ -161,8 +161,13 @@ async function shot(name) {
 }
 async function isolated() {
   const s = await state();
-  assert.equal(s.cursorM, null);
-  assert.equal(s.playback.timeS, null);
+  if (["ready", "partial"].includes(s.analysisStatus.phase)) {
+    assert.ok(Number.isFinite(s.cursorM));
+    assert.ok(Number.isFinite(s.playback.timeS));
+  } else {
+    assert.equal(s.cursorM, null);
+    assert.equal(s.playback.timeS, null);
+  }
   assert.equal(s.playback.playing, false);
   assert.equal(
     await page

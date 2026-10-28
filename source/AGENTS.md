@@ -1,4 +1,4 @@
-# APEX LAB — правила unified Phase 2
+# APEX LAB — правила unified Phase 3
 
 - Общение, UI и документация — на русском; код и идентификаторы — на английском.
 - Работать только внутри checkout приложения. В GitHub он находится в `source/`; в самостоятельном локальном checkpoint — в корне с package.json. Артефакты/cache/tmp хранить внутри него. Не писать в синхронизируемые iCloud/OneDrive папки.
@@ -7,7 +7,7 @@
 - `app/core/app-state.js` — один AppState, `app/core/playback.js` — единственный владелец playback. Машина/HUD/графики читают тот же курсор. Камера не создаёт собственных часов и не меняет analysis range.
 - DEMO явно synthetic. Не выдумывать authentic telemetry; не подставлять DEMO при отказе real source. Missing = null, единицы и происхождение обязательны.
 - `engine/apps/` защищён исходными SHA-256. Не менять валидированные mathematics/importer/quality/Coach/export/Worker limits без отдельного задания и регрессионных тестов; не менять их ради UI или совпадения теста. Не ослаблять assertions/thresholds.
-- Phase 2 подключает только `open` существующего AnalyzerWorker: File → RecordingSource → AppState → Sessions. Phases 3–6 автоматически не начинать. Real graphs/playback/trajectories/Coach/export пока не подключены.
+- Phase 3 использует только `open`, `profile`, `compare` существующего AnalyzerWorker. Overview/Pit Wall/HUD получают настоящий aligned comparison. Phases 4–6 автоматически не начинать; measured map, новый Coach и экспорт не подключены.
 - Не вводить скрытые runtime CDN, удалённые шрифты, аналитику, upload, accounts, backend, OPFS или передачу телеметрии. npm/container/browser downloads разрешены для dev setup; runtime остаётся локальным static dist.
 - React Bits (MIT + Commons Clause), Anime.js, DuckDB, OSM/ODbL и все notices/provenance сохранять. Не назначать собственному коду новую permissive или окончательную proprietary лицензию. См. LICENSING-PLAN.md.
 - Lockfile versions/integrity сохранять. Node>=22; `npm run setup:cloud`, `npm test`, `npm run check:security`, `npm run check:provenance`, `npm run check:publication`, build/check для `/` и `/apex-lab/`. Браузер: install Chromium, `npm run test:e2e`; WebKit отдельно.
@@ -19,8 +19,14 @@
 - Не повторять успешные suites без новых изменений или конкретного риска. Непроверенные устройства, приватные oracle и ограничения среды записывать явно.
 
 - `app/core/import-controller.js` владеет поколением операции и повторным выбором File в памяти. `RecordingSource` использует исходный AnalyzerWorker, method=handle. Не переносить SQL/нормализацию на main thread и не менять deadlines/лимиты импортёра.
-- Импортированный сеанс, inspectable lap, eligible pair и available analysis — разные состояния. `loaded=true` допустим без пары и без cursor. Полный Lap Time не использовать как синтетическую time-distance mapping. REAL source возвращает null для неподключённых каналов/курсов.
+- Импортированный сеанс, inspectable lap, eligible pair и available analysis — разные состояния. `loaded=true` допустим без пары и без cursor. Полный Lap Time не использовать как синтетическую time-distance mapping. REAL source возвращает null для отсутствующих/невалидных сигналов и неоднозначных mapping.
 - При смене файла/DEMO/закрытии отменять Worker и обнулять зависимые выборы. Поздние callbacks защищены поколениями. Не заменять terminate одним release RPC без ограниченного teardown.
 - Метаданные только из allowlist; DriverName/SteamID/CarSetup исключены. Не использовать raw error.message в UI. `sessions.js` экранирует импортированный текст. Synthetic базы имеют отдельную явную маркировку и не получают certified_valid.
 - Проверять `npm run test:import:e2e`: synthetic DuckDB создаётся dev-only Node/Wasm binding из закреплённого пакета внутри tmp/. Python и личные файлы для CI не нужны. Реальные тесты только opt-in локально; переменные описаны в docs/TESTING.md.
-- Phase 2 публикуется отдельной feature-веткой от Phase 1, draft PR на `codex/secure-foundation-cloud`. Существующий PR #1, main, Pages и legacy static snapshot не менять. Сверять staging и все outgoing objects перед push.
+- Phase 3 публикуется только в `codex/real-ab-telemetry-phase3` от published Phase 2, draft PR на `codex/real-lmu-import-phase2`. PR #1/#2 и их ветки, main, Pages и legacy static snapshot не менять. Независимый local root переносится в remote source/ через audited alternate index; истории не сливать.
+
+- `measured-analysis.js` адаптирует неизменную сетку и массивы engine compare. Не вычислять новую сетку или заменять normalized delta вычитанием timeAt: B−A положительно означает более медленный B. Записанная разница полных Lap Time, common-end delta, current delta и interval delta change различаются.
+- `measuredMapping` использует фактические timeS/Lap Dist профиля B и policy движка. Повторы/неоднозначность/пропуски разрывают mapping, регрессия отклоняет её. Никакого endpoint clamping REAL, ближайшей точки или линейного масштаба полного Lap Time.
+- Main thread хранит только активную пару; snapshots — summary без массивов. Pair/source generations инвалидируют поздние ответы. SQL не переоткрывать для графика или кадра. Cancel comparison сохраняет сессию, release завершает Worker.
+- `real-telemetry.js` — presentation. Canvas/SVG упрощение только для отображения, с исходными экстремумами и разрывами. Полные массивы остаются неизменными. Не включать пространственные DEMO surfaces для REAL.
+- `test:analysis:e2e` дополняет native import и DEMO suites. Public synthetic transport harness явно маркирует synthetic и не снимает guard исходного Worker: native synthetic базы не допускаются к certified A/B. Полный authentic путь проверяется локально opt-in, full-array oracle tolerance 1e-10.

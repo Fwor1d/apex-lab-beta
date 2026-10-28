@@ -1,6 +1,6 @@
 # APEX LAB
 
-В этой ветке сохранена прежняя опубликованная static beta. Исходники нового единого приложения **0.14.0-phase2**, с утверждённым интерфейсом **Revision 5.2**, находятся в [source/](source/README.md).
+В этой ветке сохранена прежняя опубликованная static beta. Исходники единого приложения **0.15.0-phase3**, с утверждённым интерфейсом **Revision 5.2**, находятся в [source/](source/README.md).
 
 ```sh
 cd source
@@ -9,8 +9,8 @@ npm test
 npm run dev
 ```
 
-Preview: http://127.0.0.1:4190/apex-lab/. Работает synthetic DEMO и локальный LMU File → Worker → Sessions import. Доступны метаданные, все круги и выбор допустимой A/B пары. Реальные графики, карта, playback, Coaching и экспорт ещё не подключены. Главная ветка и существующий Pages не обновляются этой feature-веткой.
+Preview: http://127.0.0.1:4190/apex-lab/. Работают synthetic DEMO, локальный LMU File → Worker → Sessions import и настоящий A/B анализ: Overview, Pit Wall, speed/brake/throttle/steering/delta, HUD и единый playback по измеренному времени B. REAL карта, новые советы и экспорт ещё не подключены. Главная ветка и прежний Pages этой feature-веткой не обновляются.
 
-[Cloud/Codespaces setup](source/docs/CLOUD-DEVELOPMENT.md) · [Архитектура](source/docs/ARCHITECTURE.md) · [Licensing plan](source/LICENSING-PLAN.md) · [Third-party notices](source/NOTICE.md) · [Отчёт Phase 2](source/PHASE-2-REPORT.md).
+[Отчёт Phase 3](source/PHASE-3-REPORT.md) · [Облачная разработка](source/docs/CLOUD-DEVELOPMENT.md) · [Архитектура](source/docs/PHASE-3-ARCHITECTURE.md) · [Независимый обзор](source/docs/PHASE-3-REVIEW.md) · [Граница Phase 4](source/docs/PHASE-4-READINESS.md) · [Лицензии](source/LICENSING-PLAN.md) · [Сторонние notices](source/NOTICE.md).
 
-CI выполняет только проверки. Merge PR и deployment требуют отдельного решения.
+Draft PR направлен в Phase 2; PR #1/#2 и main сохраняются. CI выполняет только проверки, без private recordings или deployment. Phase 4 автоматически не начинается.

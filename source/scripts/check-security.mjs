@@ -37,7 +37,7 @@ console.log(
   "Security/architecture boundary verified; production engine hashes unchanged.",
 );
 
-// Phase 2 may invoke only the preserved native open path. No persistence or second Worker owner in adapters.
+// Phase 3 invokes only the preserved native open/profile/compare path. No persistence or second Worker owner in adapters.
 for (const directory of ["app/core", "app/data"]) {
   for (const entry of await fs.readdir(path.join(root, directory))) {
     if (!entry.endsWith(".js")) continue;
@@ -65,10 +65,10 @@ const actions = [...adapter.matchAll(/\.call\(\s*['"]([^'"]+)['"]/g)].map(
 );
 assert.deepEqual(
   actions,
-  ["open"],
-  "Phase 2 must not expose later-phase Worker actions",
+  ["open", "profile", "profile", "compare"],
+  "Phase 3 must not expose spatial/export actions",
 );
 assert.match(adapter, /method:\s*['"]handle['"]/);
 console.log(
-  "Phase 2 adapter: one native owner, open/FileHandle only, no private persistence or remote API.",
+  "Phase 3 adapter: one native owner, open/FileHandle + profile/compare only, no private persistence or remote API.",
 );

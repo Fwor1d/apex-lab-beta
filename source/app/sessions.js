@@ -58,7 +58,7 @@ export function realPairHTML(state) {
           `<option value="${escapeHTML(l.id)}" ${state[key] === l.id ? "selected" : ""} ${state[key === "a" ? "b" : "a"] === l.id ? "disabled" : ""}>${escapeHTML(l.label)} · ${seconds(l.validation.recordedTimeS)}</option>`,
       )
       .join("");
-  return `<section class="real-pair"><h2>Выбрать пару A/B</h2><div class="pair-strip"><label class="field a"><span>A · базовый круг</span><select id="real-lap-a">${options("a")}</select></label><label class="field b"><span>B · разбираемый круг</span><select id="real-lap-b">${options("b")}</select></label></div><button id="swap-real-pair">Поменять A и B</button><p>Пара сохранена в контексте этой записи. Графики и дельта будут подключены на следующем этапе.</p></section>`;
+  return `<section class="real-pair"><h2>Выбрать пару A/B</h2><div class="pair-strip"><label class="field a"><span>A · базовый круг</span><select id="real-lap-a">${options("a")}</select></label><label class="field b"><span>B · разбираемый круг</span><select id="real-lap-b">${options("b")}</select></label></div><button id="swap-real-pair">Поменять A и B</button><a href="#telemetry">Открыть обзор и Pit Wall</a><p>Пара сохранена в этой записи. Сравнение выполняется исходным Worker.</p></section>`;
 }
 function lapDetails(lap) {
   if (!lap)
@@ -96,7 +96,7 @@ const availability = {
   unavailable: "Нет данных",
 };
 function channelsHTML(d) {
-  return `<details class="session-details"><summary>Каналы и единицы</summary><p>Наличие таблицы и нормализация проверены отдельно. Графики этого интерфейса пока не подключены.</p><div class="session-table-scroll" tabindex="0" aria-label="Каталог основных каналов"><table class="data-table"><thead><tr><th scope="col">Канал</th><th scope="col">Источник</th><th scope="col">Нормализация</th><th scope="col">Единицы</th></tr></thead><tbody>${d.channels.map((c) => `<tr><th scope="row">${channelNames[c.id]}</th><td>${availability[c.rawStatus]}</td><td>${availability[c.normalizedStatus]}</td><td>${show(c.sourceUnit)} → ${show(c.unit)}</td></tr>`).join("")}</tbody></table></div><p>Руль — нормированный ввод со знаком, не угол колёс. Частотная привязка value-only каналов имеет ограничения импортёра.</p></details>`;
+  return `<details class="session-details"><summary>Каналы и единицы</summary><p>Наличие таблицы, нормализация и валидность точек сравнения проверяются отдельно.</p><div class="session-table-scroll" tabindex="0" aria-label="Каталог основных каналов"><table class="data-table"><thead><tr><th scope="col">Канал</th><th scope="col">Источник</th><th scope="col">Нормализация</th><th scope="col">Единицы</th></tr></thead><tbody>${d.channels.map((c) => `<tr><th scope="row">${channelNames[c.id]}</th><td>${availability[c.rawStatus]}</td><td>${availability[c.normalizedStatus]}</td><td>${show(c.sourceUnit)} → ${show(c.unit)}</td></tr>`).join("")}</tbody></table></div><p>Руль — нормированный ввод со знаком, не угол колёс. Частотная привязка value-only каналов имеет ограничения импортёра.</p></details>`;
 }
 export function recordingDetailsHTML(state) {
   const d = state.source;
@@ -141,5 +141,5 @@ export function realRouteHTML(state) {
           .join("") +
         "</div>"
       : ""
-  }<section class="panel real-unavailable"><h2>${state.loaded ? titles[state.route] : "Локальная запись не открыта"}</h2><p>${state.loaded ? "Импортированы метаданные и список кругов. Реальные сигналы, дельта, playback, траектории, события, советы, сектора и экспорт в этом интерфейсе пока недоступны." : "Выберите файл .duckdb, чтобы увидеть его метаданные и круги."}</p>${state.pair ? `<p>Выбрана пара: A · круг ${escapeHTML(state.a)} / B · круг ${escapeHTML(state.b)}. Анализ ещё не выполнен.</p>` : ""}<div class="row"><a href="#sessions">Открыть сессии и круги</a><button data-action="use-demo">Переключиться на DEMO</button></div></section>`;
+  }<section class="panel real-unavailable"><h2>${state.loaded ? titles[state.route] : "Локальная запись не открыта"}</h2><p>${state.loaded ? "Импортированы метаданные и список кругов. Сигналы, дельта и воспроизведение доступны для допустимой пары в разделе «Телеметрия». Пространственные пути, советы и экспорт подключаются отдельно." : "Выберите файл .duckdb, чтобы увидеть его метаданные и круги."}</p>${state.pair ? `<p>Выбрана пара: A · круг ${escapeHTML(state.a)} / B · круг ${escapeHTML(state.b)}. Анализ ещё не выполнен.</p>` : ""}<div class="row"><a href="#telemetry">Открыть обзор и Pit Wall</a><a href="#sessions">Открыть сессии и круги</a><button data-action="use-demo">Переключиться на DEMO</button></div></section>`;
 }

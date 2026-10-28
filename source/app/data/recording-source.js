@@ -1,3 +1,4 @@
+import { prepareMeasuredAnalysis, SIGNAL_KEYS } from "./measured-analysis.js";
 import { AnalyzerWorker } from "../../engine/apps/browser-telemetry/src/client.js";
 import { MAPPING } from "../../engine/apps/browser-telemetry/src/importer.js";
 
@@ -269,6 +270,10 @@ export class RecordingSource {
   #epoch = 0;
   #abort = null;
   #createAnalyzer;
+  #analysis = null;
+  #importDescriptor = null;
+  #analysisEpoch = 0;
+  #analysisQueue = Promise.resolve();
   constructor({
     createAnalyzer = (progress) => new AnalyzerWorker(progress),
   } = {}) {
@@ -349,6 +354,7 @@ export class RecordingSource {
       const summary = await Promise.race([request, interrupted]);
       if (!current()) return null;
       this.descriptor = recordingDescriptor(summary);
+      this.#importDescriptor = this.descriptor;
       return this.descriptor;
     } catch (error) {
       if (!current()) return null;
@@ -378,42 +384,164 @@ export class RecordingSource {
       lap.validation.pit === false
     );
   }
-  available() {
-    return false;
+  get analysis() {
+    return this.#analysis;
   }
-  valueAt() {
-    return null;
+  clearAnalysis() {
+    this.#analysisEpoch++;
+    this.#analysis = null;
+    if (this.#importDescriptor) this.descriptor = this.#importDescriptor;
   }
-  datumAt(lap, channel) {
+  async comparePair(a, b) {
+    this.clearAnalysis();
+    const generation = this.#analysisEpoch,
+      epoch = this.#epoch;
+    const current = () =>
+      generation === this.#analysisEpoch && epoch === this.#epoch;
+    if (a === b || ![a, b].every((id) => this.eligibleForPair(id))) return null;
+    const previous = this.#analysisQueue;
+    const request = (async () => {
+      await previous.catch(() => {});
+      if (!current() || !this.#client) return null;
+      const started = performance.now();
+      const profileA = await this.#client.call("profile", { a });
+      if (!current()) return null;
+      const profileB = await this.#client.call("profile", { a: b });
+      if (!current()) return null;
+      const result = await this.#client.call("compare", { a, b });
+      if (!current()) return null;
+      const analysis = prepareMeasuredAnalysis(
+        this.descriptor,
+        a,
+        b,
+        profileA,
+        profileB,
+        result,
+      );
+      analysis.summary.metrics.requestMs = performance.now() - started;
+      freeze(analysis.summary);
+      this.#analysis = analysis;
+      this.descriptor = freeze({
+        ...this.#importDescriptor,
+        lengthM: analysis.summary.bounds[1],
+        capabilities: {
+          ...this.#importDescriptor.capabilities,
+          signals: true,
+          analysis: true,
+          playback: analysis.summary.mapping.intervals > 0,
+        },
+        laps: this.#importDescriptor.laps.map((l) => ({
+          ...l,
+          available: l.id === a || l.id === b,
+        })),
+        channels: this.#importDescriptor.channels.map((c) => ({
+          ...c,
+          displayStatus: analysis.summary.channels[c.id]
+            ? Object.values(analysis.summary.channels[c.id]).every(
+                (v) => v === "available",
+              )
+              ? "available"
+              : Object.values(analysis.summary.channels[c.id]).every(
+                    (v) => v === "unavailable",
+                  )
+                ? "unavailable"
+                : "partial"
+            : "unavailable",
+        })),
+      });
+      return analysis.summary;
+    })();
+    this.#analysisQueue = request.then(
+      () => undefined,
+      () => undefined,
+    );
+    return request;
+  }
+  available(id) {
+    return (
+      !!this.#analysis &&
+      [this.#analysis.summary.pair.a, this.#analysis.summary.pair.b].includes(
+        id,
+      )
+    );
+  }
+  valueAt(id, d) {
+    return this.available(id)
+      ? Object.fromEntries(
+          SIGNAL_KEYS.filter((k) => k !== "timeS").map((k) => [
+            k,
+            this.#analysis.sample(id, k, d),
+          ]),
+        )
+      : null;
+  }
+  datumAt(id, channel, d) {
+    const value = this.available(id)
+      ? this.#analysis.sample(id, channel, d)
+      : null;
+    const descriptor = this.descriptor.channels.find((c) => c.id === channel);
     return {
-      value: null,
-      unit: channel === "timeS" ? "s" : (MAPPING[channel]?.[2] ?? null),
+      value,
+      unit: descriptor?.unit ?? null,
       kind: this.descriptor.kind,
-      status: "unavailable",
-      reason: "Сигналы подключаются на следующем этапе.",
+      status: value === null ? "unavailable" : "available",
+      reason:
+        value === null ? "Нет валидного отсчёта на этой дистанции." : null,
       source: this.descriptor.id,
-      samplingBoundS: null,
+      samplingBoundS: descriptor?.samplingBoundS ?? null,
     };
   }
-  timeAt() {
-    return null;
+  timeAt(id, d) {
+    return this.#analysis?.mappings[id]?.timeAt(d) ?? null;
   }
-  duration() {
-    return null;
+  duration(id) {
+    return this.#analysis?.mappings[id]?.intervals.at(-1)?.endS ?? null;
   }
-  distanceAtTime() {
-    return null;
+  distanceAtTime(id, t) {
+    return this.#analysis?.mappings[id]?.distanceAt(t) ?? null;
+  }
+  playbackLimit(id, t) {
+    return this.#analysis?.mappings[id]?.endAt(t) ?? null;
+  }
+  deltaAt(d) {
+    return (
+      this.#analysis?.sample(this.#analysis.summary.pair.b, "deltaS", d) ?? null
+    );
   }
   positionAt() {
     return null;
   }
-  samples() {
-    return [];
+  samples(
+    id,
+    start = this.#analysis?.summary.bounds[0],
+    end = this.#analysis?.summary.bounds[1],
+  ) {
+    if (
+      !this.available(id) ||
+      !Number.isFinite(start) ||
+      !Number.isFinite(end) ||
+      end < start
+    )
+      return [];
+    const c = this.#analysis.comparison,
+      values = c[id === this.#analysis.summary.pair.a ? "a" : "b"];
+    const samples = [];
+    for (let i = 0; i < c.distanceM.length; i++)
+      if (c.distanceM[i] >= start && c.distanceM[i] <= end)
+        samples.push({
+          distanceM: c.distanceM[i],
+          ...Object.fromEntries(
+            SIGNAL_KEYS.map((key) => [key, finite(values[key][i])]),
+          ),
+        });
+    return samples;
   }
   events() {
     return [];
   }
   dispose() {
+    this.clearAnalysis();
+    this.#analysisQueue = Promise.resolve();
     this.#epoch++;
     this.#abort?.();
     this.#abort = null;
@@ -421,6 +549,7 @@ export class RecordingSource {
     // A release RPC alone cannot interrupt a blocked import.
     this.#client?.stop();
     this.#client = null;
+    this.#importDescriptor = null;
     this.descriptor = emptyDescriptor();
   }
 }
