@@ -37,7 +37,7 @@ console.log(
   "Security/architecture boundary verified; production engine hashes unchanged.",
 );
 
-// Phase 3 invokes only the preserved native open/profile/compare path. No persistence or second Worker owner in adapters.
+// Phase 4 adds the preserved native-trajectory action. No persistence or second Worker owner in adapters.
 for (const directory of ["app/core", "app/data"]) {
   for (const entry of await fs.readdir(path.join(root, directory))) {
     if (!entry.endsWith(".js")) continue;
@@ -65,10 +65,24 @@ const actions = [...adapter.matchAll(/\.call\(\s*['"]([^'"]+)['"]/g)].map(
 );
 assert.deepEqual(
   actions,
-  ["open", "profile", "profile", "compare"],
-  "Phase 3 must not expose spatial/export actions",
+  ["open", "profile", "profile", "compare", "native-trajectory"],
+  "Phase 4 must not expose geographic/export or arbitrary Worker actions",
 );
 assert.match(adapter, /method:\s*['"]handle['"]/);
 console.log(
-  "Phase 3 adapter: one native owner, open/FileHandle + profile/compare only, no private persistence or remote API.",
+  "Phase 4 adapter: one native owner, open/FileHandle + profile/compare/native-trajectory only, no private persistence or remote API.",
 );
+
+for (const file of [
+  "app/native-map.js",
+  "app/native-camera.js",
+  "app/data/native-spatial.js",
+]) {
+  const text = await fs.readFile(path.join(root, file), "utf8");
+  assert.ok(
+    !/requestAnimationFrame|setInterval|new Worker|fetch\s*\(|new AnalyzerWorker|buildNativePair\s*\(/.test(
+      text,
+    ),
+    file + " creates competing clock/engine or network access",
+  );
+}

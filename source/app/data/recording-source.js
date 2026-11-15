@@ -1,3 +1,4 @@
+import { prepareNativeSpatial } from "./native-spatial.js";
 import { prepareMeasuredAnalysis, SIGNAL_KEYS } from "./measured-analysis.js";
 import { AnalyzerWorker } from "../../engine/apps/browser-telemetry/src/client.js";
 import { MAPPING } from "../../engine/apps/browser-telemetry/src/importer.js";
@@ -271,6 +272,10 @@ export class RecordingSource {
   #abort = null;
   #createAnalyzer;
   #analysis = null;
+  #trajectory = null;
+  #spatialEpoch = 0;
+  #spatialQueue = Promise.resolve();
+  #spatialRequest = null;
   #importDescriptor = null;
   #analysisEpoch = 0;
   #analysisQueue = Promise.resolve();
@@ -388,6 +393,7 @@ export class RecordingSource {
     return this.#analysis;
   }
   clearAnalysis() {
+    this.clearTrajectory();
     this.#analysisEpoch++;
     this.#analysis = null;
     if (this.#importDescriptor) this.descriptor = this.#importDescriptor;
@@ -457,6 +463,62 @@ export class RecordingSource {
     );
     return request;
   }
+  get trajectory() {
+    return this.#trajectory;
+  }
+  clearTrajectory() {
+    this.#spatialEpoch++;
+    this.#trajectory = null;
+    this.#spatialRequest = null;
+    if (this.descriptor.capabilities.positions)
+      this.descriptor = freeze({
+        ...this.descriptor,
+        capabilities: { ...this.descriptor.capabilities, positions: false },
+      });
+  }
+  requestTrajectory() {
+    const analysis = this.#analysis;
+    if (!analysis) return Promise.resolve(null);
+    if (this.#trajectory) return Promise.resolve(this.#trajectory.summary);
+    if (this.#spatialRequest?.analysis === analysis)
+      return this.#spatialRequest.promise;
+    const epoch = this.#epoch,
+      generation = this.#spatialEpoch,
+      { a, b } = analysis.summary.pair;
+    const current = () =>
+      epoch === this.#epoch &&
+      generation === this.#spatialEpoch &&
+      analysis === this.#analysis;
+    const previous = this.#spatialQueue;
+    const promise = (async () => {
+      await previous.catch(() => {});
+      if (!current() || !this.#client) return null;
+      const started = performance.now();
+      const result = await this.#client.call("native-trajectory", { a, b });
+      if (!current()) return null;
+      const adaptationStarted = performance.now();
+      const prepared = prepareNativeSpatial(this.descriptor, analysis, result);
+      prepared.summary.metrics.adaptationMs =
+        performance.now() - adaptationStarted;
+      prepared.summary.metrics.requestMs = performance.now() - started;
+      freeze(prepared.summary);
+      this.#trajectory = prepared;
+      this.descriptor = freeze({
+        ...this.descriptor,
+        capabilities: {
+          ...this.descriptor.capabilities,
+          positions: !!prepared.summary.bounds,
+        },
+      });
+      return prepared.summary;
+    })();
+    this.#spatialRequest = { analysis, promise };
+    this.#spatialQueue = promise.then(
+      () => undefined,
+      () => undefined,
+    );
+    return promise;
+  }
   available(id) {
     return (
       !!this.#analysis &&
@@ -508,8 +570,16 @@ export class RecordingSource {
       this.#analysis?.sample(this.#analysis.summary.pair.b, "deltaS", d) ?? null
     );
   }
-  positionAt() {
-    return null;
+  positionAt(id, distanceM) {
+    const point = this.#trajectory?.positionAt(id, distanceM);
+    if (!point) return null;
+    const role = this.#trajectory.summary.pair.a === id ? "a" : "b";
+    return {
+      ...point,
+      kind: this.descriptor.kind,
+      unit: "candidate-metre",
+      frame: this.#trajectory.paths[role].frame,
+    };
   }
   samples(
     id,
@@ -542,6 +612,7 @@ export class RecordingSource {
   dispose() {
     this.clearAnalysis();
     this.#analysisQueue = Promise.resolve();
+    this.#spatialQueue = Promise.resolve();
     this.#epoch++;
     this.#abort?.();
     this.#abort = null;

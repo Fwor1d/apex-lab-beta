@@ -18,6 +18,11 @@ export function createAppStore(initialSource) {
       phase: "unavailable",
       message: "Выберите допустимую пару.",
     },
+    spatialStatus: {
+      phase: "idle",
+      message: "Откройте карту для проверки координат.",
+    },
+    nativeCamera: null,
     selectedLapId: null,
     importStatus: {
       phase: "idle",
@@ -127,12 +132,67 @@ export function createAppStore(initialSource) {
     data.trainingContext = null;
     data.trainingAnalysis = null;
   }
+  let spatialGeneration = 0;
+  function invalidateSpatial() {
+    spatialGeneration++;
+    source.clearTrajectory?.();
+    data.spatialStatus = {
+      phase: "idle",
+      message: "Откройте карту для проверки координат.",
+    };
+    data.nativeCamera = null;
+  }
+  async function loadTrajectory(retry = false) {
+    if (
+      source.descriptor.mode !== "real" ||
+      !source.analysis ||
+      !source.requestTrajectory
+    )
+      return false;
+    if (data.spatialStatus.phase === "pending") return false;
+    if (!retry && source.trajectory) return true;
+    if (retry) source.clearTrajectory();
+    const active = source,
+      analysis = source.analysis,
+      generation = ++spatialGeneration;
+    data.spatialStatus = {
+      phase: "pending",
+      message: "Проверяем записанные координаты A/B…",
+    };
+    notify();
+    const current = () =>
+      source === active &&
+      source.analysis === analysis &&
+      spatialGeneration === generation;
+    try {
+      const summary = await active.requestTrajectory();
+      if (!current()) return false;
+      data.spatialStatus = summary ?? {
+        phase: "unavailable",
+        message: "Для этой пары нет доступных координат.",
+      };
+      for (const fn of sourceListeners) fn(source.descriptor);
+      notify();
+      return !!summary?.bounds;
+    } catch {
+      if (!current()) return false;
+      source.clearTrajectory();
+      data.spatialStatus = {
+        phase: "failed",
+        message:
+          "Не удалось подготовить карту. Повторите проверку; графики остаются доступны.",
+      };
+      notify();
+      return false;
+    }
+  }
   async function analyzePair() {
     if (source.descriptor.mode !== "real" || !source.comparePair) return false;
     const activeSource = source,
       generation = ++data.generation,
       a = data.a,
       b = data.b;
+    invalidateSpatial();
     source.clearAnalysis?.();
     data.playback.playing = false;
     data.playback.cursor = { basis: "distance", value: null };
@@ -208,6 +268,7 @@ export function createAppStore(initialSource) {
   };
   function initializeSource(loaded = false) {
     data.generation++;
+    invalidateSpatial();
     data.loaded = loaded;
     data.playback.playing = false;
     data.playback.cursor = { basis: "time", value: null };
@@ -249,7 +310,10 @@ export function createAppStore(initialSource) {
         if (root && k === "cursorM") return distance();
         if (root && ["playing", "rate"].includes(k)) return o.playback[k];
         if (root && k === "source") return source.descriptor;
-        if (root && ["importStatus", "analysisStatus"].includes(k))
+        if (
+          root &&
+          ["importStatus", "analysisStatus", "spatialStatus"].includes(k)
+        )
           return Object.freeze({ ...o[k] });
         if (root && k === "playback")
           return Object.freeze({
@@ -291,6 +355,7 @@ export function createAppStore(initialSource) {
             "importStatus",
             "selectedLapId",
             "analysisStatus",
+            "spatialStatus",
           ].includes(k)
         )
           throw new TypeError("Use store commands for " + k);
@@ -315,6 +380,7 @@ export function createAppStore(initialSource) {
             "importStatus",
             "selectedLapId",
             "analysisStatus",
+            "spatialStatus",
           ].includes(k)
         )
           throw new TypeError("Cannot delete canonical state: " + k);
@@ -340,7 +406,18 @@ export function createAppStore(initialSource) {
     seekTime,
     selectPair: pair,
     analyzePair,
+    loadTrajectory,
+    cancelTrajectory() {
+      spatialGeneration++;
+      source.clearTrajectory?.();
+      data.spatialStatus = {
+        phase: "cancelled",
+        message: "Подготовка карты отменена. Сравнение кругов сохранено.",
+      };
+      notify();
+    },
     cancelAnalysis() {
+      invalidateSpatial();
       data.generation++;
       source.clearAnalysis?.();
       data.playback.playing = false;

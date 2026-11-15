@@ -1,4 +1,6 @@
-# APEX LAB — единая основа Phase 1
+# APEX LAB — Phase 4 candidate
+
+Текущее состояние описано в разделе Phase 4 ниже; разделы прежних фаз сохранены как история.
 
 <!-- impeccable:product-schema 1 -->
 
@@ -55,3 +57,9 @@ Phase 0: проверенные шесть записей и две допуст
 ## Phase 3 · действующие возможности
 
 Версия 0.15.0-phase3 подключает настоящие профили выбранной пары и исходный compare в сохранённом Worker. Overview показывает recorded Lap Time отдельно от aligned delta; Pit Wall показывает пять сигналов по исходной общей дистанционной сетке. Один tagged cursor и прежний scheduler управляют HUD/графиками и measured elapsed time B. Missing/plateau/gaps не заменяются нулём или синтетикой. Настоящая карта, Driving Lab integration, новые советы, сектора и export остаются отдельными фазами. Предыдущие ограничения Phase 1/2 — исторические.
+
+## Phase 4 · native spatial candidate
+
+Версия 0.16.0-phase4 подключает исходный native-trajectory pipeline к карте R5.2, общему measured B-time cursor, HUD и графикам. Один локальный кадр A/B сохраняет относительные различия исходных точек. Fit/Follow/manual/mini-map — только камера, без изменения интервала. Missing и недопустимые наложения объясняются отдельно; графики остаются доступны. REAL events, geographic registration, physical yaw, новый Coaching, real Driving Lab editing и экспорт вне этой фазы. DEMO остаётся явно synthetic.
+
+Публичный синтетический стенд проверяет поведение приложения; acceptance шести authentic LMU записей и физические устройства остаются отдельной локальной процедурой. Статус candidate обязателен до её выполнения. Phases 5–6 не начинать автоматически. Источник видимых координат и ограничение временной выборки 10 Гц должны быть доступны рядом с картой.

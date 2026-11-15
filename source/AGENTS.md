@@ -1,4 +1,4 @@
-# APEX LAB — правила unified Phase 3
+# APEX LAB — правила unified Phase 4 · candidate
 
 - Общение, UI и документация — на русском; код и идентификаторы — на английском.
 - Работать только внутри checkout приложения. В GitHub он находится в `source/`; в самостоятельном локальном checkpoint — в корне с package.json. Артефакты/cache/tmp хранить внутри него. Не писать в синхронизируемые iCloud/OneDrive папки.
@@ -7,7 +7,7 @@
 - `app/core/app-state.js` — один AppState, `app/core/playback.js` — единственный владелец playback. Машина/HUD/графики читают тот же курсор. Камера не создаёт собственных часов и не меняет analysis range.
 - DEMO явно synthetic. Не выдумывать authentic telemetry; не подставлять DEMO при отказе real source. Missing = null, единицы и происхождение обязательны.
 - `engine/apps/` защищён исходными SHA-256. Не менять валидированные mathematics/importer/quality/Coach/export/Worker limits без отдельного задания и регрессионных тестов; не менять их ради UI или совпадения теста. Не ослаблять assertions/thresholds.
-- Phase 3 использует только `open`, `profile`, `compare` существующего AnalyzerWorker. Overview/Pit Wall/HUD получают настоящий aligned comparison. Phases 4–6 автоматически не начинать; measured map, новый Coach и экспорт не подключены.
+- Phase 4 использует только `open`, `profile`, `compare`, `native-trajectory` существующего AnalyzerWorker. Карта читает прежний buildNativePair; geographic registration, yaw, REAL events, новый Coach и экспорт не подключены. Authentic spatial acceptance pending; Phases 5–6 автоматически не начинать.
 - Не вводить скрытые runtime CDN, удалённые шрифты, аналитику, upload, accounts, backend, OPFS или передачу телеметрии. npm/container/browser downloads разрешены для dev setup; runtime остаётся локальным static dist.
 - React Bits (MIT + Commons Clause), Anime.js, DuckDB, OSM/ODbL и все notices/provenance сохранять. Не назначать собственному коду новую permissive или окончательную proprietary лицензию. См. LICENSING-PLAN.md.
 - Lockfile versions/integrity сохранять. Node>=22; `npm run setup:cloud`, `npm test`, `npm run check:security`, `npm run check:provenance`, `npm run check:publication`, build/check для `/` и `/apex-lab/`. Браузер: install Chromium, `npm run test:e2e`; WebKit отдельно.
@@ -23,10 +23,15 @@
 - При смене файла/DEMO/закрытии отменять Worker и обнулять зависимые выборы. Поздние callbacks защищены поколениями. Не заменять terminate одним release RPC без ограниченного teardown.
 - Метаданные только из allowlist; DriverName/SteamID/CarSetup исключены. Не использовать raw error.message в UI. `sessions.js` экранирует импортированный текст. Synthetic базы имеют отдельную явную маркировку и не получают certified_valid.
 - Проверять `npm run test:import:e2e`: synthetic DuckDB создаётся dev-only Node/Wasm binding из закреплённого пакета внутри tmp/. Python и личные файлы для CI не нужны. Реальные тесты только opt-in локально; переменные описаны в docs/TESTING.md.
-- Phase 3 публикуется только в `codex/real-ab-telemetry-phase3` от published Phase 2, draft PR на `codex/real-lmu-import-phase2`. PR #1/#2 и их ветки, main, Pages и legacy static snapshot не менять. Независимый local root переносится в remote source/ через audited alternate index; истории не сливать.
+- Phase 4 публикуется в `real-track-map-phase4` прямым потомком `real-ab-telemetry-phase3` (b7e67101660589652e694cf6cc45ec8a6179101d), отдельный draft PR. Исторические PR #1/#2/#3 закрыты без merge; старые ветки/tag/main/Pages/legacy snapshot не менять. Независимый local root переносится в remote source/ через audited alternate index; истории не сливать.
 
 - `measured-analysis.js` адаптирует неизменную сетку и массивы engine compare. Не вычислять новую сетку или заменять normalized delta вычитанием timeAt: B−A положительно означает более медленный B. Записанная разница полных Lap Time, common-end delta, current delta и interval delta change различаются.
 - `measuredMapping` использует фактические timeS/Lap Dist профиля B и policy движка. Повторы/неоднозначность/пропуски разрывают mapping, регрессия отклоняет её. Никакого endpoint clamping REAL, ближайшей точки или линейного масштаба полного Lap Time.
 - Main thread хранит только активную пару; snapshots — summary без массивов. Pair/source generations инвалидируют поздние ответы. SQL не переоткрывать для графика или кадра. Cancel comparison сохраняет сессию, release завершает Worker.
 - `real-telemetry.js` — presentation. Canvas/SVG упрощение только для отображения, с исходными экстремумами и разрывами. Полные массивы остаются неизменными. Не включать пространственные DEMO surfaces для REAL.
 - `test:analysis:e2e` дополняет native import и DEMO suites. Public synthetic transport harness явно маркирует synthetic и не снимает guard исходного Worker: native synthetic базы не допускаются к certified A/B. Полный authentic путь проверяется локально opt-in, full-array oracle tolerance 1e-10.
+
+- `native-spatial.js` — контрактный адаптер, не новая spatial модель. Полные points/links неизменны; один общий frame A/B. Исходный nearestTime bound 0.051s после прежнего timeAt, никакой coordinate interpolation, endpoint clamp, per-lap fit, ICP, smoothing, synthetic fallback или yaw из steering.
+- `native-map.js`/`native-camera.js` — presentation. AppState.nativeCamera не меняет canonical cursor/range. Fit uniform; Follow только valid sampled point; mini-map тот же кадр. Geometry подготовка не в frame loop; disposal listeners/ResizeObserver обязателен.
+- Spatial generation независим от comparison; cancel логический с исходным RPC timeout, release terminate. Сохранять active-pair dedupe/очистку, не кешировать историю координат.
+- `npm run test:trajectory:e2e` — публичный synthetic transport + защищённый native engine, не authentic validation. Проверять пять viewport и Chromium/WebKit; фиксировать невозможность физического device/LMU acceptance. Финальный Phase 4 tag запрещён до отдельной локальной приёмки.

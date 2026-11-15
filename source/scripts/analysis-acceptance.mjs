@@ -343,7 +343,7 @@ try {
     },
   );
   await check(
-    "Swap invalidates old pair and inverts B−A; real map stays unavailable",
+    "Swap invalidates old pair and inverts B−A; missing spatial transport preserves charts",
     async () => {
       await page.locator("#swap-real-pair").click();
       await analysisSettled();
@@ -354,7 +354,10 @@ try {
       assert.equal(s.analysisStatus.commonEndDeltaS, -1);
       assert.equal(s.playback.playing, false);
       await mode("map");
-      assert.equal(await page.locator("#map,.plot,#play").count(), 0);
+      await page.waitForSelector("[data-spatial-state=failed]");
+      assert.equal(await page.locator("#map,[data-native-path]").count(), 0);
+      assert.equal(await page.locator(".real-plot").count(), 5);
+      assert.equal(await page.locator("#play").count(), 1);
     },
   );
   await check(
