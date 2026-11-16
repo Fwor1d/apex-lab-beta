@@ -1,9 +1,9 @@
 name: Foundation checks
 on:
   push:
-    branches: ['codex/secure-foundation-cloud', 'codex/real-lmu-import-phase2', 'codex/real-ab-telemetry-phase3']
+    branches: ['real-track-map-phase4']
   pull_request:
-    branches: [main, 'codex/secure-foundation-cloud', 'codex/real-lmu-import-phase2']
+    branches: ['real-ab-telemetry-phase3']
 permissions:
   contents: read
 concurrency:
@@ -54,3 +54,6 @@ jobs:
 
       - name: Synthetic A/B analytics and playback
         run: npm run test:analysis:e2e
+
+      - name: Synthetic native trajectories and camera
+        run: npm run test:trajectory:e2e

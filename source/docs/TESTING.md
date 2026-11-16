@@ -163,3 +163,13 @@ Private приёмка открыла все шесть original записей 
 - Chromium usedJSHeapSize около 55.6/87.8 MB для всей вкладки после соответствующих journeys. Это приблизительный снимок, не retained-memory/leak proof. WebKit этот счётчик не предоставляет.
 
 Новые произвольные performance thresholds не вводились. Длительная память, максимальный разрешённый размер записи на слабых устройствах и physical iPhone остаются непроверенными. Автоматический WebKit на Mac не заменяет аппаратную приёмку. PWA/offline и Windows packaging вне этой фазы. Фактические clean-clone/CI результаты фиксируются в Phase 3 PR и отчёте handoff; локальный успех не объявляется GitHub Actions успехом.
+
+## Phase 4 · candidate / synthetic spatial verification
+
+`npm run test:trajectory:e2e` дополняет прежние suites. `APEX_BROWSER=webkit npm run test:trajectory:e2e` — тот же сценарий в WebKit. Публичный тестовый transport вызывает защищённый `buildNativePair` с явно synthetic профилями/координатами; никакой authentic eligibility production Worker не изменена. Harness раздаёт ровно три allowlisted fixture modules; в dist их нет.
+
+Новые unit tests проверяют raw frame/geometry, shared cursor, missing/jumps, native coverage, неоднозначный mapping, bounded sampling, malformed contract, single-path capability, source/pair epochs, dedupe/cancel/retry/dispose и uniform camera fit. Browser suite проверяет пять viewport (1440×900, 1280×720, 768×1024, 390×844, 844×390), Fit/Follow/manual/mini-map, HUD/graphs, active swap, missing/invalid UI, late responses и repeated release. Параметры камеры не меняют analysis range/time. Сохраняются старые suites; Phase 3 assertion «карта не подключена» обновлён на более строгую проверку: без spatial transport нет геометрии, но пять графиков/playback остаются.
+
+Все результаты и synthetic screenshots остаются в ignored `evidence/phase4/{chromium,webkit}`. Test browser profiles — `tmp/phase4-browser-*`. Полная authentic приёмка и исходный Python oracle **не запускались** в рамках Phase 4. Три opt-in private assertions остаются явно skipped в public npm test. Исторические Phase 3 числа не выдаются за новые.
+
+Chromium CDP позволяет проверить настоящий browser touch event path для two-finger pinch/translation. WebKit автоматизация подтверждает tap/pointer/keyboard, но не доказывает физический iPhone pinch/VoiceOver. Desktop/headless проверки не закрывают аппаратные blockers. Таблица итоговых результатов — PHASE-4-TEST-MATRIX.md; отдельная локальная процедура — PHASE-4-LOCAL-ACCEPTANCE.md.

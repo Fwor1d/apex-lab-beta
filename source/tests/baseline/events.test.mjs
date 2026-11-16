@@ -24,10 +24,36 @@ test('explicit wrap segment handles lap boundary; ordinary corners never wrap',(
 test('unlike data kind never pairs',()=>{const a=event('a',500),b={...event('b',510),dataKind:'telemetry-derived'};assert.equal(compareEvent(a,[a,b]).matched,false);});
 const straight=d=>({x:d,y:100});
 const projected=(scale=2)=>projectedEvent(event('a',150),{pointAt:straight,project:p=>({x:p.x*scale,y:p.y*scale})});
-test('normal offset uses immutable source coordinates and constant pixel size',()=>{for(const scale of [2,4]){const p=projected(scale),copy={...p.source},result=layoutEvents([p],{width:1400,height:900});assert.equal(result.placed.length,1);const marker=result.placed[0];assert.deepEqual(p.source,copy);assert.equal(marker.hitSize,44);assert.equal(marker.visualSize,26);assert.equal(Math.abs(marker.y-p.anchor.y),p.roadWidth/2+18);assert.equal(marker.x,p.anchor.x);}});
+test('the whole visible marker fits between the road edges while its anchor stays fixed',()=>{
+ for(const scale of [1.2,2,4]){
+  const p=projected(scale),source={...p.source};
+  const {placed}=layoutEvents([p],{width:1400,height:900});
+  assert.equal(placed.length,1);
+  const [marker]=placed;
+  assert.deepEqual(p.source,source);
+  assert.equal(marker.hitSize,44);
+  assert.equal(marker.visualSize,26);
+  assert.ok(Math.abs(marker.y-p.anchor.y)+marker.visualSize/2<p.roadWidth/2);
+  assert.equal(marker.x,p.anchor.x);
+ }
+});
 test('overview and insufficient width hide all individual markers',()=>{assert.equal(layoutEvents([projected(1)],{width:900,height:500}).placed.length,0);assert.equal(layoutEvents([projected(4)],{width:900,height:900,overview:true}).placed.length,0);});
 test('hysteresis keeps visible event at 42px and hides below39',()=>{const p=projected(1.05),previous=new Set([p.event.uiId]);assert.equal(layoutEvents([p],{width:900,height:500}).placed.length,0);assert.equal(layoutEvents([p],{width:900,height:500,previous}).placed.length,1);assert.equal(layoutEvents([projected(.95)],{width:900,height:500,previous}).placed.length,0);});
-test('collision uses both near-road sides and hides if neither is free',()=>{const p=projected(),options={width:900,height:500,occupied:[{x:260,y:0,w:80,h:500}]};assert.equal(layoutEvents([p],options).placed.length,0);assert.equal(layoutEvents([p],options).placed.length,0);});
+test('collision tries the other side within the road and hides when the corridor is blocked',()=>{
+ const p=projected(),options={width:900,height:500};
+ const {placed}=layoutEvents([p],{...options,occupied:[{x:260,y:140,w:80,h:42}]});
+ assert.equal(placed.length,1);
+ assert.ok(placed[0].y>p.anchor.y);
+ assert.equal(layoutEvents([p],{...options,occupied:[{x:260,y:0,w:80,h:500}]}).placed.length,0);
+});
+test('visible disc clears the car even when the transparent hit target overlaps it',()=>{
+ const p=projected(3), vehicles=[{x:p.anchor.x-24,y:p.anchor.y-24,w:48,h:48}];
+ const {placed}=layoutEvents([p],{width:1400,height:900,vehicles});
+ assert.equal(placed.length,1);
+ const offset=Math.abs(placed[0].y-p.anchor.y);
+ assert.ok(offset>=24+13&&offset<24+22);
+ assert.equal(layoutEvents([projected(2)],{width:1400,height:900,vehicles:[{x:276,y:176,w:48,h:48}]}).placed.length,0);
+});
 test('close A/B events use opposite normal sides without scattering',()=>{const a=projected(),b=projectedEvent(event('b',150),{pointAt:straight,project:p=>({x:p.x*2,y:p.y*2})});const result=layoutEvents([a,b],{width:900,height:500});assert.equal(result.placed.length,2);assert.equal(result.placed[0].x,result.placed[1].x);assert.ok(result.placed[0].y<200&&result.placed[1].y>200);});
 test('A time event seeks B distance, distance alignment preserves source',()=>{const e=event('a',2050),timeState={a:1,b:2,alignment:'time'};assert.equal(eventSeekDistance(e,timeState),distanceAtTime(2,timeAt(1,2050)));assert.equal(eventSeekDistance(e,{...timeState,alignment:'distance'}),2050);assert.equal(eventSeekDistance({...e,key:'b'},timeState),2050);});
 test('map and graphs share semantic selected IDs',()=>{const events=pairEvents(),e=events.find(e=>e.type==='brake-on');state.selectedEvent=e.uiId;const html=graphEventsHTML('brake',d=>d);assert.ok(html.includes('data-graph-event="'+e.uiId+'"'));assert.ok(html.includes('event-selected'));state.selectedEvent=null;});

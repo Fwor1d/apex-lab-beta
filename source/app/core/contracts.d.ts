@@ -125,6 +125,8 @@ export interface DataSource {
     kind: DataKind;
     unit: string;
     frame: string;
+    timeS?: number;
+    distanceM?: number;
   } | null;
   samples(lap: LapId, start?: number, end?: number): Sample[];
   events(lap: LapId): ReadonlyArray<unknown>;
@@ -135,6 +137,8 @@ export interface DataSource {
 export interface RecordingDataSource extends DataSource {
   comparePair(a: LapId, b: LapId): Promise<AnalysisStatus | null>;
   clearAnalysis(): void;
+  requestTrajectory(): Promise<SpatialStatus | null>;
+  clearTrajectory(): void;
   open(
     file: File,
     onProgress?: (status: ImportStatus) => void,
@@ -159,6 +163,8 @@ export interface AppState {
   range: [number | null, number | null];
   playback: PlaybackState;
   analysisStatus: AnalysisStatus;
+  spatialStatus: SpatialStatus;
+  nativeCamera: NativeCamera | null;
   generation: number;
   segmentId: string | null;
   camera: unknown;
@@ -193,5 +199,44 @@ export interface AnalysisStatus {
     startM: number | null;
     startS: number | null;
     endS: number | null;
+  };
+}
+
+// Presentation capability independent of comparison eligibility and geographic registration.
+export interface NativeCamera {
+  mode: "fit" | "follow" | "manual";
+  follow: "a" | "b";
+  zoom: number;
+  cx: number | null;
+  cy: number | null;
+}
+export interface SpatialStatus {
+  phase:
+    | "idle"
+    | "pending"
+    | "ready"
+    | "partial"
+    | "unavailable"
+    | "failed"
+    | "cancelled";
+  message: string;
+  pair?: PairRef;
+  bounds?: { minX: number; minY: number; maxX: number; maxY: number } | null;
+  available?: { a: boolean; b: boolean };
+  individual?: { a: boolean; b: boolean };
+  reasons?: { a: readonly string[]; b: readonly string[] };
+  pairAvailable?: boolean;
+  unit?: "candidate-metre";
+  geographic?: false;
+  physicalScaleVerified?: false;
+  yaw?: false;
+  events?: false;
+  brokenLinks?: number;
+  points?: number;
+  samplingBoundS?: number;
+  metrics?: {
+    preparationMs: number | null;
+    adaptationMs: number;
+    requestMs: number;
   };
 }

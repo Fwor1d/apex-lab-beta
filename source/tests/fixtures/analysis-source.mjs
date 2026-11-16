@@ -52,6 +52,7 @@ export function profiles({ mutation = () => {} } = {}) {
 }
 export function analysisFixture({
   mutation,
+  native = null,
   beforeCall = async () => {},
 } = {}) {
   const ps = profiles({ mutation }),
@@ -91,6 +92,7 @@ export function analysisFixture({
           pair: [args.a, args.b],
           comparisonMs: 0,
         };
+      if (action === "native-trajectory" && native) return native(args, ps);
       throw Error("Unexpected test action");
     },
   };

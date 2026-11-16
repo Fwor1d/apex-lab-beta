@@ -1,4 +1,5 @@
 // R5.2 presentation for a measured source. No SQL, alignment, clock, or demo fallback.
+import { nativeMapHTML } from "./native-map.js";
 import { escapeHTML as esc } from "./sessions.js";
 import { displaySegments } from "./data/measured-analysis.js";
 export const REAL_CHANNELS = {
@@ -75,7 +76,7 @@ function qualityHTML(a) {
     )
     .join(
       "",
-    )}</dl><p>Карта и записанные траектории подключаются отдельно. Географическая привязка, yaw, официальные сектора и причины потери времени здесь не установлены.</p><a href="#sessions">Исходная сессия и проверки качества</a></section>`;
+    )}</dl><p>Локальные записанные траектории проверяются независимо во вкладке «Карта». Географическая привязка, yaw, официальные сектора и причины потери времени здесь не установлены.</p><a href="#sessions">Исходная сессия и проверки качества</a></section>`;
 }
 function chartsHTML(s) {
   return `<section class="trace-dock real-trace-dock"><div class="traces"><div class="section-head"><h2>Pit Wall · сигналы по дистанции</h2><button data-real-range="full">Весь диапазон</button></div><div class="signal-controls"><label class="field"><span>Основной канал</span><select id="real-channel">${Object.entries(
@@ -116,10 +117,16 @@ export function realTelemetryHTML(s, source) {
       start +
       `<section class="panel real-analysis-status" role="status"><h2>${{ pending: "Подготовка сравнения", failed: "Сравнение не выполнено", unavailable: "Сравнение недоступно" }[a.phase]}</h2>${a.phase === "pending" ? '<progress aria-label="Подготовка профилей и сравнение"></progress>' : ""}<p>${esc(a.message)}</p><div class="row">${s.pair ? `<button data-real-analysis="${a.phase === "pending" ? "cancel" : "retry"}">${a.phase === "pending" ? "Отменить сравнение" : "Повторить сравнение"}</button>` : ""}<a href="#sessions">Сессии и круги</a></div></section></div>`
     );
-  if (!["overview", "pitwall"].includes(s.mode))
+  if (!["overview", "pitwall", "map"].includes(s.mode))
     return (
       start +
-      `<section class="panel real-unavailable"><h2>${s.mode === "map" ? "Измеренная карта пока недоступна" : "Этот раздел ещё не подключён"}</h2><p>В Phase 3 доступны дистанционные графики, сравнение времени и общий курсор. Пространственные пути, новые советы и setup не выводятся из этих сигналов.</p><button data-mode="pitwall">Открыть Pit Wall</button></section></div>`
+      `<section class="panel real-unavailable"><h2>Этот раздел ещё не подключён</h2><p>Доступны графики, сравнение времени, общий курсор и отдельно проверенные локальные траектории. Новые советы и setup не выводятся из этих сигналов.</p><button data-mode="pitwall">Открыть Pit Wall</button></section></div>`
+    );
+  if (s.mode === "map")
+    return (
+      start +
+      comparisonHTML() +
+      `<div class="real-native-grid"><div class="real-native-primary">${nativeMapHTML(s)}<section class="real-native-playback" aria-label="Общий курсор и воспроизведение">${playback(s)}</section>${hudHTML()}</div>${chartsHTML(s)}</div></div>`
     );
   const times = `<div class="overview-lap-result"><div class="identity-a"><span>A · круг ${esc(s.a)} · записанный Lap Time</span><strong>${lapTime(a.recordedA)}</strong></div><div class="identity-b"><span>B · круг ${esc(s.b)} · записанный Lap Time</span><strong>${lapTime(a.recordedB)}</strong></div><div><span>B − A · записанный полный круг</span><strong id="real-recorded-difference">${signed(a.recordedDifferenceS)}</strong></div></div>`;
   return (

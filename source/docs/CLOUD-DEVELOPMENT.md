@@ -1,15 +1,15 @@
-# Разработка APEX LAB Phase 3
+# Разработка APEX LAB Phase 4 candidate
 
-Версия приложения `0.15.0-phase3`. DEMO работает самостоятельно; локальный File → Worker импорт подключён к Sessions. Графики и playback подключены для допустимой пары; в облаке используются только синтетические тестовые данные. Нужен Node.js >=22 (окружение закрепляет major 22) и npm. Python, личные записи, API-ключи и .env не требуются. Обязательных environment variables нет, поэтому .env.example не создаётся.
+Версия приложения `0.16.0-phase4`. DEMO работает самостоятельно; локальный File → Worker импорт подключён к Sessions. Графики и playback подключены для допустимой пары; в облаке используются только синтетические тестовые данные. Нужен Node.js >=22 (окружение закрепляет major 22) и npm. Python, личные записи, API-ключи и .env не требуются. Обязательных environment variables нет, поэтому .env.example не создаётся.
 
 ## Расположение исходников
 
-В GitHub-ветке `codex/real-ab-telemetry-phase3` приложение находится в `source/`. Корень репозитория сохраняет прежнюю static beta. Её не запускать вместо нового приложения и не заменять при сборке. В самостоятельном локальном checkpoint package.json находится непосредственно в корне проекта.
+В GitHub-ветке `real-track-map-phase4` приложение находится в `source/`. Корень репозитория сохраняет прежнюю static beta. Её не запускать вместо нового приложения и не заменять при сборке. В самостоятельном локальном checkpoint package.json находится непосредственно в корне проекта.
 
 ## Обычный clone
 
 ```sh
-git clone --branch codex/real-ab-telemetry-phase3 https://github.com/Fwor1d/apex-lab-beta.git
+git clone --branch real-track-map-phase4 https://github.com/Fwor1d/apex-lab-beta.git
 cd apex-lab-beta/source
 npm run setup:cloud
 npm test
@@ -36,7 +36,7 @@ npm run dev
 
 ## Codex Cloud
 
-Создать environment для `Fwor1d/apex-lab-beta`, выбрать feature-ветку `codex/real-ab-telemetry-phase3`, Node22 и приватный доступ к окружению. Если checkout начался с main, сначала получить и выбрать feature-ветку: main ещё содержит только старую static beta.
+Создать environment для `Fwor1d/apex-lab-beta`, выбрать feature-ветку `real-track-map-phase4`, Node22 и приватный доступ к окружению. Если checkout начался с main, сначала получить и выбрать feature-ветку: main ещё содержит только старую static beta.
 
 Команды установки из корня репозитория:
 
@@ -70,6 +70,7 @@ PLAYWRIGHT_BROWSERS_PATH="$PWD/.cache/playwright" node node_modules/playwright/c
 npm run test:e2e
 npm run test:import:e2e
 npm run test:analysis:e2e
+npm run test:trajectory:e2e
 ```
 
 Для WebKit установить аналогично `webkit`, затем `APEX_BROWSER=webkit npm run test:e2e`. Системный Chrome можно явно выбрать через `APEX_BROWSER_CHANNEL=chrome`; он больше не является обязательной зависимостью.
@@ -90,7 +91,7 @@ npm run test:analysis:e2e
 
 Portable provenance всегда проверяет включённые immutable copies и все locked dependency versions/integrities. Внешние 604/60 original hashes проверяются дополнительно при заданных путях. Privacy-редакции docs/tests имеют отдельные current hashes; runtime engine не исключён из проверки.
 
-Worker/Wasm eh/mvp копируются из locked DuckDB-Wasm при build и раздаются локально. Native pipeline сохранён в engine, но в DEMO не запускается и не импортирует реальные файлы. SW/PWA нового shell, реальные траектории и аппаратная приёмка остаются вне Phase 3.
+Worker/Wasm eh/mvp копируются из locked DuckDB-Wasm при build и раздаются локально. Native pipeline сохранён в engine, но в DEMO не запускается и не импортирует реальные файлы. Native trajectories подключены; SW/PWA нового shell, geographic registration и аппаратная приёмка остаются вне Phase 4 candidate.
 
 CI не имеет deployment jobs, Pages/write permissions, secrets или telemetry inputs. Существующий Pages старой beta до этой работы был включён на main; feature-ветка не обновляет этот сайт. Merge и переключение Pages требуют отдельного решения.
 
@@ -102,8 +103,13 @@ CI не имеет deployment jobs, Pages/write permissions, secrets или tele
 
 Worker/Wasm assets находятся в dist/engine и dist/engine/apps/browser-telemetry/vendor; пути относительные. DEMO не загружает Wasm. Все runtime зависимости обслуживаются тем же static origin. CSP не ослаблена, COOP/COEP не требуется исходному single-thread pipeline.
 
-Phase 3 draft PR направлен в `codex/real-lmu-import-phase2`; PR #1/#2, их ветки и main сохраняются. Cloud configuration, clean-clone setup и GitHub Actions — разные уровни проверки. Реальные Codespace/Codex Cloud environments в этой задаче не создаются; их запуск не заявляется.
+Phase 4 draft PR направлен в `real-ab-telemetry-phase3`; закрытые без merge PR #1/#2/#3, их commits/tags и main сохраняются. Cloud configuration, clean-clone setup и GitHub Actions — разные уровни проверки. Реальные Codespace/Codex Cloud environments в этой задаче не создаются; их запуск не заявляется.
 
 ## Анализ Phase 3
 
-`npm run test:analysis:e2e` проверяет synthetic profiles → неизменный compare → adapter/UI/playback. Native synthetic файлы по-прежнему не получают certified eligibility: test-only transport явно изолирован от dist. Полный File/Worker A/B проверяется только локально на разрешённых authentic записях. Все три browser suites запускаются после build; CI не нуждается в внешнем прототипе или private oracle.
+`npm run test:analysis:e2e
+npm run test:trajectory:e2e` проверяет synthetic profiles → неизменный compare → adapter/UI/playback. Native synthetic файлы по-прежнему не получают certified eligibility: test-only transport явно изолирован от dist. Полный File/Worker A/B проверяется только локально на разрешённых authentic записях. Все три browser suites запускаются после build; CI не нуждается в внешнем прототипе или private oracle.
+
+## Проверка Phase 4
+
+Новая suite `test:trajectory:e2e` использует только synthetic transport и исходный buildNativePair. Worker authenticity guard не снят; authentic spatial acceptance в облаке не заявляется. WebKit: `APEX_BROWSER=webkit npm run test:trajectory:e2e`. Пять viewport, lifecycle, missing positions, camera и native cursor проверяются отдельно от DEMO и native import. Секреты/новые environment variables не требуются. Checklist шести записей — PHASE-4-LOCAL-ACCEPTANCE.md, только на разрешённом компьютере, без upload файлов.
