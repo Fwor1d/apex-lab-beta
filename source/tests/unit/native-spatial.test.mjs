@@ -4,6 +4,7 @@ import { trajectoryFixture, duckFile } from "../fixtures/trajectory-source.mjs";
 import { createAppStore } from "../../app/core/app-state.js";
 import { DemoSource } from "../../app/data/demo-source.js";
 import { fitNativeBounds, cameraFrame } from "../../app/native-camera.js";
+import { measuredMapping } from "../../app/data/measured-analysis.js";
 import { prepareNativeSpatial } from "../../app/data/native-spatial.js";
 async function fixture(options = {}) {
   const f = trajectoryFixture(options);
@@ -70,6 +71,52 @@ test("canonical B-time maps both markers to original bounded samples, without co
   assert.equal(store.state.playback.cursor.basis, "time");
   assert.equal(store.state.playback.cursor.value, 10.517);
   store.source.dispose();
+});
+test("0.051 s includes the exact boundary inside a link but never bridges a broken link", () => {
+  const sessionId = "bound-test";
+  const origin = [0, 0];
+  const samples = [0, 0.14, 0.24, 0.34].map((timeS) => ({
+    timeS,
+    distanceM: timeS * 100,
+    x: timeS * 100,
+    y: 0,
+  }));
+  const mapping = measuredMapping(samples);
+  const front = {
+    schemaVersion: "1.0.0",
+    kind: "synthetic",
+    coordinateUnit: "candidate-metre",
+    origin,
+    frame: JSON.stringify([sessionId, origin]),
+    geographicMapping: false,
+    physicalScaleVerified: false,
+    yawVerified: false,
+    jumps: 0,
+    available: true,
+    samples,
+  };
+  const setup = (link) =>
+    prepareNativeSpatial(
+      { id: sessionId, kind: "synthetic" },
+      {
+        summary: { pair: { a: "1", b: "2", sessionId } },
+        mappings: { 1: mapping, 2: mapping },
+      },
+      {
+        schemaVersion: "1.0.0",
+        pair: { available: true },
+        a: { ...front, lapId: "1", links: [false, link, true, true] },
+        b: { ...front, lapId: "2", links: [false, true, true, true] },
+      },
+    );
+  const continuous = setup(true);
+  assert.equal(continuous.positionAt("1", 5.1), samples[0]);
+  assert.equal(continuous.positionAt("1", 5.1001), null);
+  assert.equal(continuous.positionAt("1", 8.8999), null);
+  assert.equal(continuous.positionAt("1", 8.9001), samples[1]);
+  const broken = setup(false);
+  assert.equal(broken.positionAt("1", 4), null);
+  assert.equal(broken.positionAt("1", samples[1].distanceM), samples[1]);
 });
 test("native gaps break paths and hide markers throughout unavailable links", async () => {
   const f = await fixture({ variant: "gap" });

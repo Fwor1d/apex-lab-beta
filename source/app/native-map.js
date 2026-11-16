@@ -24,6 +24,17 @@ export function mountNativeMap(root, store) {
     ownAnalysis = ownSource.analysis;
   const scene = host.querySelector("#native-scene"),
     mini = host.querySelector("#native-mini");
+  const fitControl = host.querySelector("#native-fit");
+  const followControl = host.querySelector("#native-follow");
+  const zoomIn = host.querySelector("#native-plus");
+  const zoomOut = host.querySelector("#native-minus");
+  const disableCamera = () => {
+    fitControl.disabled =
+      followControl.disabled =
+      zoomIn.disabled =
+      zoomOut.disabled =
+        true;
+  };
   const trajectory = ownSource.trajectory,
     state = store.state;
   const abort = new AbortController(),
@@ -144,10 +155,7 @@ export function mountNativeMap(root, store) {
   function update() {
     if (!fresh()) return;
     if (!trajectory?.summary.bounds) {
-      for (const el of host.querySelectorAll(
-        ".native-toolbar button,.native-toolbar select",
-      ))
-        el.disabled = true;
+      disableCamera();
       return;
     }
     const visible = `${state.series.a}:${state.series.b}`;
@@ -186,6 +194,7 @@ export function mountNativeMap(root, store) {
       );
     frame = cameraFrame(fit, state.nativeCamera ?? camera);
     if (!frame) {
+      disableCamera();
       scene.style.visibility = "hidden";
       mini.style.visibility = "hidden";
       setText(
@@ -196,6 +205,7 @@ export function mountNativeMap(root, store) {
       );
       return;
     }
+    fitControl.disabled = followControl.disabled = false;
     scene.style.visibility = "";
     mini.style.visibility = "";
     scene.setAttribute("viewBox", viewBox(frame));
@@ -268,7 +278,7 @@ export function mountNativeMap(root, store) {
         )
         .join(" · "),
     );
-    host.querySelector("#native-follow").value =
+    followControl.value =
       state.nativeCamera?.mode === "follow"
         ? state.nativeCamera.follow
         : (state.nativeCamera?.mode ?? "fit");
@@ -276,13 +286,11 @@ export function mountNativeMap(root, store) {
       host.querySelector(`#native-follow option[value="${r}"]`).disabled =
         !paths[r] || !state.series[r];
     setText("#native-zoom-value", `${frame.zoom.toFixed(1)}×`);
-    host.querySelector("#native-minus").disabled =
-      frame.zoom <= CAMERA_LIMITS.min;
-    host.querySelector("#native-plus").disabled =
-      frame.zoom >= CAMERA_LIMITS.max;
+    zoomOut.disabled = frame.zoom <= CAMERA_LIMITS.min;
+    zoomIn.disabled = frame.zoom >= CAMERA_LIMITS.max;
   }
-  listen(host.querySelector("#native-fit"), "click", reset);
-  listen(host.querySelector("#native-follow"), "change", (e) => {
+  listen(fitControl, "click", reset);
+  listen(followControl, "change", (e) => {
     const value = e.target.value;
     if (value === "fit") reset();
     else if (value === "manual" && frame) move(frame.cx, frame.cy);
@@ -295,8 +303,8 @@ export function mountNativeMap(root, store) {
         cy: frame.cy,
       });
   });
-  listen(host.querySelector("#native-plus"), "click", () => zoom(1.25));
-  listen(host.querySelector("#native-minus"), "click", () => zoom(1 / 1.25));
+  listen(zoomIn, "click", () => zoom(1.25));
+  listen(zoomOut, "click", () => zoom(1 / 1.25));
   listen(host.querySelector("#native-cancel"), "click", () =>
     store.cancelTrajectory(),
   );

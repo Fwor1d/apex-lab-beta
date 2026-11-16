@@ -105,15 +105,16 @@ const check = async (name, fn) => {
 const mode = async (value) => {
   await page.locator(`[data-mode=${value}]`).first().click();
 };
-const settled = () =>
-  page.waitForFunction(async () => {
-    const s = (await import("./core/context.js")).appStore.state;
-    return (
-      ["ready", "partial", "failed", "unavailable", "cancelled"].includes(
-        s.spatialStatus.phase,
-      ) && s.analysisStatus.phase !== "pending"
-    );
-  });
+async function settled() {
+  const terminal = ["ready", "partial", "failed", "unavailable", "cancelled"];
+  const selector = terminal
+    .map((phase) => `[data-spatial-state="${phase}"]`)
+    .join(",");
+  await page.locator(`#native-map-host:is(${selector})`).waitFor();
+  const current = await state();
+  assert.ok(terminal.includes(current.spatialStatus.phase));
+  assert.notEqual(current.analysisStatus.phase, "pending");
+}
 async function fixture(variant = "normal", nativePoints = 201) {
   await page.evaluate(
     async ({ variant, nativePoints }) => {
@@ -309,7 +310,35 @@ try {
       await page.locator("#rate").selectOption("2");
       await page.locator("#play").click();
       const start = (await state()).playback.timeS;
-      await page.waitForTimeout(230);
+      const cursorPaint = await page.evaluate(
+        () =>
+          new Promise((resolve) => {
+            const cursor = document.querySelector("#plot-speed [data-cursor]");
+            let samples = 0,
+              duplicates = 0;
+            const observer = new MutationObserver((records) => {
+              const current = cursor.getAttribute("x1");
+              samples += records.length;
+              duplicates += records.filter(
+                (record) => record.oldValue === current,
+              ).length;
+            });
+            observer.observe(cursor, {
+              attributeFilter: ["x1"],
+              attributeOldValue: true,
+            });
+            setTimeout(() => {
+              observer.disconnect();
+              resolve({ samples, duplicates });
+            }, 230);
+          }),
+      );
+      assert.ok(cursorPaint.samples > 0);
+      assert.equal(
+        cursorPaint.duplicates,
+        0,
+        "published REAL cursor repainted twice",
+      );
       await page.locator("#play").click();
       assert.ok((await state()).playback.timeS > start);
       await assertCursor();
@@ -389,7 +418,11 @@ try {
       );
       await page.locator("#real-series-a").uncheck();
       assert.equal(await page.locator("#native-scene").isVisible(), false);
+      for (const id of ["fit", "follow", "plus", "minus"])
+        assert.equal(await page.locator(`#native-${id}`).isDisabled(), true);
       await page.locator("#real-series-b").check();
+      assert.equal(await page.locator("#native-fit").isEnabled(), true);
+      assert.equal(await page.locator("#native-follow").isEnabled(), true);
       await page.locator("#real-series-a").check();
       await page.locator("#native-follow").selectOption("b");
       const camera = (await state()).nativeCamera;

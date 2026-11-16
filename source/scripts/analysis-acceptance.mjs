@@ -119,6 +119,8 @@ async function mode(value) {
   );
 }
 async function shot(name) {
+  // Real-recording visuals belong to the separately masked local acceptance.
+  if (process.env.APEX_REAL_BROWSER === "1") return;
   await page.evaluate(() => scrollTo(0, 0));
   await page.screenshot({
     path: path.join(out, name + ".png"),
