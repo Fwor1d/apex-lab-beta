@@ -32,7 +32,56 @@ try{
   await page.setViewportSize({width:1440,height:900});await page.locator('[data-mode="pitwall"]').first().click();await shot(label+'-pitwall');await page.locator('a[href="#lab"]').first().click();await shot(label+'-lab');
  }
  await page.goto(origin+'/apex-lab/');await page.locator('[data-action="start"]').first().click();await page.locator('[data-mode="map"]').first().click();
- await check('Compact events retain source anchor and 26px symbol / 44px target',async()=>{await page.locator('.event-disclosure>summary').click();await page.locator('#event-list [data-event]').first().click();for(let i=0;i<5;i++)await page.locator('[data-workspace="zoom-in"]').click();await page.locator('.pedal-marker').first().waitFor({state:'visible'});const count=await page.locator('.pedal-marker:visible').count();assert.ok(count>0);for(const r of await page.locator('.pedal-marker:visible').evaluateAll(es=>es.map(e=>({hit:e.getBoundingClientRect().width,symbol:e.querySelector('.event-symbol').getBoundingClientRect().width})))){assert.equal(r.symbol,26);assert.ok(r.hit>=44);}await page.locator('.pedal-marker:visible').first().click();assert.equal((await state()).playback.playing,false);await page.keyboard.press('Escape');});
+ await check('Brake and throttle markers fit inside the rendered road on desktop and mobile', async () => {
+  const frame = page.locator('.main-map-frame');
+  for (const [name, width, height, zoomSteps] of [['desktop', 1440, 900, 7], ['mobile', 390, 844, 10]]) {
+   await page.setViewportSize({ width, height });
+   for (const type of ['brake-on', 'throttle-on', 'full-throttle']) {
+    await page.locator('[data-workspace="reset"]').click();
+    await page.locator('.event-disclosure>summary').click();
+    const item = page.locator(`#event-list button[data-event^="a:"][data-event*=":${type}:"]`).first();
+    const id = await item.getAttribute('data-event');
+    await item.click();
+    for (let i = 0; i < zoomSteps; i++) await page.locator('[data-workspace="zoom-in"]').click();
+    const marker = frame.locator(`button.pedal-marker[data-event="${id}"]`);
+    await marker.waitFor({ state: 'visible' });
+    const measurements = await frame.locator('.pedal-marker:visible').evaluateAll((buttons) => {
+     const road = document.querySelector('#map [data-road="surface"]');
+     const inverse = road.getScreenCTM().inverse();
+     return buttons.map(button => {
+      const hit = button.getBoundingClientRect();
+      const symbol = button.querySelector('.event-symbol').getBoundingClientRect();
+      const cx = symbol.left + symbol.width / 2;
+      const cy = symbol.top + symbol.height / 2;
+      const inside = Array.from({ length: 24 }, (_, i) => {
+       const angle = i * Math.PI / 12;
+       const p = new DOMPoint(cx + Math.cos(angle) * symbol.width / 2, cy + Math.sin(angle) * symbol.height / 2).matrixTransform(inverse);
+       return road.matches('.circuit-union-surface') ? road.isPointInStroke(p) : road.isPointInFill(p);
+      }).every(Boolean);
+      return { id: button.dataset.event, hitWidth: hit.width, hitHeight: hit.height, symbol: symbol.width, inside };
+     });
+    });
+    assert.ok(measurements.some(result => result.id === id));
+    for (const result of measurements) {
+     assert.equal(result.symbol, 26);
+     assert.ok(result.hitWidth >= 44 && result.hitHeight >= 44);
+     assert.ok(result.inside, `${name}: ${result.id} touches the road edge`);
+    }
+    if ((name === 'desktop' && type === 'brake-on') || (name === 'mobile' && type === 'throttle-on')) {
+     const file = `markers-${type}-${name}.png`;
+     await frame.screenshot({ path: path.join(out, file), animations: 'disabled' });
+     report.screenshots.push(file);
+    }
+    const distance = Number(await marker.getAttribute('data-distance'));
+    await marker.click();
+    const snapshot = await state();
+    assert.equal(snapshot.playback.playing, false);
+    assert.equal(snapshot.cursorM, distance);
+    await page.keyboard.press('Escape');
+   }
+  }
+  await page.setViewportSize({ width: 1440, height: 900 });
+ });
  await check('Native selectors remain operable with 44px targets',async()=>{await page.locator('#rate').selectOption('2');assert.equal((await state()).playback.rate,2);await page.locator('#rate').selectOption('1');await page.locator('#alignment').selectOption('time');assert.equal((await state()).alignment,'time');await page.locator('#alignment').selectOption('distance');});
  await check('Routes use one AppState and preserve context',async()=>{const before=await state();for(const route of ['reports','sessions','dashboard','telemetry']){await page.goto(origin+'/apex-lab/#'+route);await page.waitForTimeout(20);const next=await state();assert.equal(next.cursorM,before.cursorM);assert.deepEqual([next.a,next.b,next.range],[before.a,before.b,before.range]);}});
  await check('Lifecycle resume does not create competing playback callbacks',async()=>{await page.evaluate(()=>{dispatchEvent(new PageTransitionEvent('pagehide'));dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true}));dispatchEvent(new PageTransitionEvent('pageshow',{persisted:true}));});await page.locator('#cursor').fill('1000');await page.locator('#play').click();const before=(await state()).playback.timeS;await page.waitForTimeout(250);const after=await state();assert.ok(after.playback.timeS-before>0&&after.playback.timeS-before<.6);await page.locator('#play').click();});

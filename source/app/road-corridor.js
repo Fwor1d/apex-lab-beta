@@ -1,4 +1,5 @@
 /** An illustrative, closed corridor in synthetic coordinate units. Never surveyed edges. */
+export const DEMO_ROAD_HALF_WIDTH = 20;
 const cross=(a,b,c)=>(b.x-a.x)*(c.y-a.y)-(b.y-a.y)*(c.x-a.x);
 function intersects(a,b,c,d){return cross(a,b,c)*cross(a,b,d)<-1e-9&&cross(c,d,a)*cross(c,d,b)<-1e-9;}
 export function selfIntersects(points){const n=points.length;for(let i=0;i<n;i++)for(let j=i+2;j<n;j++){if(i===0&&j===n-1)continue;if(intersects(points[i],points[(i+1)%n],points[j],points[(j+1)%n]))return true;}return false;}
